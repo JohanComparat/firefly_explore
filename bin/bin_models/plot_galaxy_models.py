@@ -62,20 +62,20 @@ p.axes([0.1,0.15,0.85,0.8])
 
 for file_name in file_list_miles:
 	ids = os.path.basename(file_name).split('.')[-1]
-	imf = ids[:-3]
+	imf = ids[:-4]
 	zzz = ids[-3:]
 	DATA = n.loadtxt(file_name, unpack=True)
 	ages = n.array(list(set(DATA[0])))
 	ages.sort()
-	for age in ages[::5]:
+	for age in ages[::15]:
 		sel = (DATA[0]==age)
-		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
+		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf,rasterized=True)
 
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
 p.xscale('log')
 p.yscale('log')
-p.ylim((1e27,1e32))
+p.ylim((1e28,1e33))
 p.xlim((3000,9700))
 p.grid()
 p.title('Solar metallicity')
@@ -90,20 +90,20 @@ p.axes([0.1,0.15,0.85,0.8])
 
 for file_name in file_list_elodie:
 	ids = os.path.basename(file_name).split('.')[-1]
-	imf = ids[:-3]
+	imf = ids[:-4]
 	zzz = ids[-3:]
 	DATA = n.loadtxt(file_name, unpack=True)
 	ages = n.array(list(set(DATA[0])))
 	ages.sort()
-	for age in ages[::5]:
+	for age in ages[::15]:
 		sel = (DATA[0]==age)
-		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
+		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf,rasterized=True)
 
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
 p.xscale('log')
 p.yscale('log')
-p.ylim((1e27,1e32))
+p.ylim((1e28,1e33))
 p.xlim((3000,9700))
 p.grid()
 p.title('Solar metallicity')
@@ -118,20 +118,20 @@ p.axes([0.1,0.15,0.85,0.8])
 
 for file_name in file_list_stelib:
 	ids = os.path.basename(file_name).split('.')[-1]
-	imf = ids[:-3]
+	imf = ids[:-4]
 	zzz = ids[-3:]
 	DATA = n.loadtxt(file_name, unpack=True)
 	ages = n.array(list(set(DATA[0])))
 	ages.sort()
-	for age in ages[::5]:
+	for age in ages[::15]:
 		sel = (DATA[0]==age)
-		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
+		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf,rasterized=True)
 
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
 p.xscale('log')
 p.yscale('log')
-p.ylim((1e27,1e32))
+p.ylim((1e28,1e33))
 p.xlim((3000,9700))
 p.grid()
 p.title('Solar metallicity')
