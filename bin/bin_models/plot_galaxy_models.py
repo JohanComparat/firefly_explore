@@ -72,13 +72,15 @@ for file_name in file_list_miles:
 	ages.sort()
 	for age in ages[(ages==aaa)]:
 		sel = (DATA[0]==age)
-		p.plot(DATA[2][sel], DATA[3][sel],label="MILES, "+IMF[imf],rasterized=True, lw=0.5)
+		p.plot(DATA[2][sel], DATA[3][sel],label="MILES, "+IMF[imf],rasterized=True, lw=0.7)
 
+p.axvline(3934, ls='dashed', label='Ca H')
+p.axvline(3969, ls='dashed', label='Ca K')
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
 #p.xscale('log')
 p.yscale('log')
-p.ylim((1e28,2e29))
+p.ylim((6e27,1e29))
 p.xlim((3800,4500))
 p.grid()
 p.title(str(aaa)+' Gyr old, Solar metallicity')
@@ -99,14 +101,16 @@ for file_name in file_list_stelib:
 	ages.sort()
 	for age in ages[(ages==aaa)]:
 		sel = (DATA[0]==age)
-		p.plot(DATA[2][sel], DATA[3][sel],label="STELIB "+IMF[imf],rasterized=True, lw=0.5)
+		p.plot(DATA[2][sel], DATA[3][sel],label="STELIB "+IMF[imf],rasterized=True, lw=0.7)
 
 
+p.axvline(3934, ls='dashed', label='Ca H')
+p.axvline(3969, ls='dashed', label='Ca K')
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
 #p.xscale('log')
 p.yscale('log')
-p.ylim((1e28,2e29))
+p.ylim((6e27,1e29))
 p.xlim((3800,4500))
 p.grid()
 p.title(str(aaa)+' Gyr old, Solar metallicity')
@@ -127,14 +131,15 @@ for file_name in file_list_elodie:
 	ages.sort()
 	for age in ages[(ages==aaa)]:
 		sel = (DATA[0]==age)
-		p.plot(DATA[2][sel], DATA[3][sel],label="ELODIE, "+IMF[imf],rasterized=True, lw=0.5)
+		p.plot(DATA[2][sel], DATA[3][sel],label="ELODIE, "+IMF[imf],rasterized=True, lw=0.7)
 
-
+p.axvline(3934, ls='dashed', label='Ca H')
+p.axvline(3969, ls='dashed', label='Ca K')
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
 #p.xscale('log')
 p.yscale('log')
-p.ylim((1e28,2e29))
+p.ylim((6e27,1e29))
 p.xlim((3800,4500))
 p.grid()
 p.title(str(aaa)+' Gyr old, Solar metallicity')
