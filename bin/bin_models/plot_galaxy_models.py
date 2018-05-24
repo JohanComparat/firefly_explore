@@ -67,7 +67,7 @@ for file_name in file_list_miles:
 	DATA = n.loadtxt(file_name, unpack=True)
 	ages = n.array(list(set(DATA[0])))
 	ages.sort()
-	for age in ages[::3]:
+	for age in ages[::5]:
 		sel = (DATA[0]==age)
 		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
 
@@ -95,7 +95,7 @@ for file_name in file_list_elodie:
 	DATA = n.loadtxt(file_name, unpack=True)
 	ages = n.array(list(set(DATA[0])))
 	ages.sort()
-	for age in ages[::3]:
+	for age in ages[::5]:
 		sel = (DATA[0]==age)
 		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
 
@@ -123,7 +123,7 @@ for file_name in file_list_stelib:
 	DATA = n.loadtxt(file_name, unpack=True)
 	ages = n.array(list(set(DATA[0])))
 	ages.sort()
-	for age in ages[::3]:
+	for age in ages[::5]:
 		sel = (DATA[0]==age)
 		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
 
