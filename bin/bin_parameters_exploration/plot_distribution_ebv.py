@@ -7,7 +7,7 @@ out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'da
 
 m_bins = n.arange(-0.01, 0.7, 0.01)
 
-p.figure(2, (6.5, 3.5))
+p.figure(2, (4.5, 4.5))
 p.axes([0.12,0.18,0.8,0.73])
 
 print('eboss')
@@ -39,7 +39,7 @@ p.savefig(os.path.join(out_dir, "ebv_distribution_eboss.png" ))
 p.clf()
 
 print('sdss')
-p.figure(2, (6.5, 3.5))
+p.figure(2, (4.5, 4.5))
 p.axes([0.12,0.18,0.8,0.73])
 
 for imf in imfs:
@@ -70,7 +70,7 @@ p.savefig(os.path.join(out_dir, "ebv_distribution_sdss.png" ))
 p.clf()
 
 print('deep2')
-p.figure(2, (6.5, 3.5))
+p.figure(2, (4.5, 4.5))
 p.axes([0.12,0.18,0.8,0.73])
 
 
