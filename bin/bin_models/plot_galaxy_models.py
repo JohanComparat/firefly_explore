@@ -69,7 +69,7 @@ for file_name in file_list_miles:
 	ages.sort()
 	for age in ages[::3]:
 		sel = (DATA[0]==age)
-		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(int(age))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
+		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
 
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
@@ -97,7 +97,7 @@ for file_name in file_list_elodie:
 	ages.sort()
 	for age in ages[::3]:
 		sel = (DATA[0]==age)
-		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(int(age))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
+		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
 
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
@@ -125,7 +125,7 @@ for file_name in file_list_stelib:
 	ages.sort()
 	for age in ages[::3]:
 		sel = (DATA[0]==age)
-		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(int(age))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
+		p.plot(DATA[2][sel], DATA[3][sel],label="age="+str(n.round(age,3))+" Gyr, imf="+imf+", z="+zzz,rasterized=True)
 
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
