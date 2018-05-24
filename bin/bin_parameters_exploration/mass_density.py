@@ -84,7 +84,7 @@ volume_cosmos = 1.52  * volume_per_deg2_val
 volume_deep2 = 2.78  * volume_per_deg2_val
 
 
-out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures/mass-functions')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'catalogs', 'mass-functions')
 
 imfs = ["Chabrier_ELODIE_", "Chabrier_MILES_", "Chabrier_STELIB_", "Kroupa_ELODIE_", "Kroupa_MILES_", "Kroupa_STELIB_",  "Salpeter_ELODIE_", "Salpeter_MILES_", "Salpeter_STELIB_" ]
 

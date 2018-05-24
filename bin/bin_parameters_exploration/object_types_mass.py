@@ -46,7 +46,7 @@ cosmos = fits.open(path_2_cosmos_cat)[1].data
 from lib_spm import *
 
 #out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures', 'mass-redshift-presentation')
-out_dir = os.path.join(os.environ['HOME'], 'Documents', 'firefly')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'catalogs', 'mass-redshift-presentation')
 
 imf = imfs[0]
 stellar_mass = imf+'stellar_mass'

@@ -1,7 +1,7 @@
 from lib_spm import *
 
 #out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures', 'mass-redshift-presentation')
-out_dir = os.path.join(os.environ['HOME'], 'wwwDir', 'firefly', 'az')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'az')
 
 def plot_az(imf_ref):
 	stellar_mass = imf_ref+'stellar_mass'

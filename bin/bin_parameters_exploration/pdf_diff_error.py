@@ -31,7 +31,7 @@ x_err_bins = (err_bins[1:] + err_bins[:-1])/2.
 #redshift_reliable = (hdus[1].data['Z'] >= 0) & ( hdus[1].data['Z_ERR'] >= 0) & (hdus[1].data['ZWARNING'] == 0) & (hdus[1].data['Z'] > hdus[1].data['Z_ERR'] )
 
 prefix = 'BOSS'
-out_dir = os.path.join(os.environ['DATA_DIR'], 'spm', 'results', 'catalogs')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'catalogs')
 
 hdus = fits.open(os.path.join(os.environ['DATA_DIR'], 'spm', 'firefly', 'FireflyGalaxyEbossDR14.fits'))
 

@@ -1,7 +1,7 @@
 from lib_spm import *
 from scipy.stats import norm
 #out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures', 'mass-redshift-presentation')
-out_dir = os.path.join(os.environ['HOME'], 'wwwDir', 'firefly')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images')
 
 def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	print('eboss')

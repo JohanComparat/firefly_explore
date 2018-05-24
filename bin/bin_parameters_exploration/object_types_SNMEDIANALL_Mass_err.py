@@ -13,7 +13,7 @@ matplotlib.rcParams.update({'font.size': 13})
 import matplotlib.pyplot as p
 
 
-out_dir = os.path.join(os.environ['HOME'], 'wwwDir/firefly_catalogs/figures')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'catalogs')
 
 imfs = ["Chabrier_ELODIE_", "Chabrier_MILES_", "Chabrier_STELIB_", "Kroupa_ELODIE_", "Kroupa_MILES_", "Kroupa_STELIB_",  "Salpeter_ELODIE_", "Salpeter_MILES_", "Salpeter_STELIB_" ]
 

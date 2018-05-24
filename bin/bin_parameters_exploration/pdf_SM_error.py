@@ -15,7 +15,7 @@ from cycler import cycler
 from lib_spm import *
 import cPickle
 
-out_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'results', 'convergence')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'convergence')
 
 imfs = ["Chabrier_ELODIE_", "Chabrier_MILES_", "Chabrier_STELIB_", "Kroupa_ELODIE_", "Kroupa_MILES_", "Kroupa_STELIB_",  "Salpeter_ELODIE_", "Salpeter_MILES_", "Salpeter_STELIB_" ]
 
