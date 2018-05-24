@@ -11,47 +11,47 @@ dir_stelib = os.path.join( os.environ['STELLARPOPMODELS_DIR'], 'data', 'SSP_M11_
 
 file_list_elodie = n.array([
 # chabrier
-os.path.join(dir_elodie, 'ssp_M11_ELODIE.chaz001'),
+#os.path.join(dir_elodie, 'ssp_M11_ELODIE.chaz001'),
 os.path.join(dir_elodie, 'ssp_M11_ELODIE.chaz002'),
-os.path.join(dir_elodie, 'ssp_M11_ELODIE.chaz004'),
+#os.path.join(dir_elodie, 'ssp_M11_ELODIE.chaz004'),
 # kroupa
-os.path.join(dir_elodie, 'ssp_M11_ELODIE.krz001'),
+#os.path.join(dir_elodie, 'ssp_M11_ELODIE.krz001'),
 os.path.join(dir_elodie, 'ssp_M11_ELODIE.krz002'),
-os.path.join(dir_elodie, 'ssp_M11_ELODIE.krz004'),
+#os.path.join(dir_elodie, 'ssp_M11_ELODIE.krz004'),
 # salpeter
-os.path.join(dir_elodie, 'ssp_M11_ELODIE.ssz001'),
+#os.path.join(dir_elodie, 'ssp_M11_ELODIE.ssz001'),
 os.path.join(dir_elodie, 'ssp_M11_ELODIE.ssz002'),
-os.path.join(dir_elodie, 'ssp_M11_ELODIE.ssz004')
+#os.path.join(dir_elodie, 'ssp_M11_ELODIE.ssz004')
 ])
 
 file_list_miles = n.array([
 # chabrier
-os.path.join(dir_miles, 'ssp_M11_MILES.chaz001'),
+#os.path.join(dir_miles, 'ssp_M11_MILES.chaz001'),
 os.path.join(dir_miles, 'ssp_M11_MILES.chaz002'),
-os.path.join(dir_miles, 'ssp_M11_MILES.chaz004'),
+#os.path.join(dir_miles, 'ssp_M11_MILES.chaz004'),
 # kroupa
-os.path.join(dir_miles, 'ssp_M11_MILES.krz001'),
+#os.path.join(dir_miles, 'ssp_M11_MILES.krz001'),
 os.path.join(dir_miles, 'ssp_M11_MILES.krz002'),
-os.path.join(dir_miles, 'ssp_M11_MILES.krz004'),
+#os.path.join(dir_miles, 'ssp_M11_MILES.krz004'),
 # salpeter
-os.path.join(dir_miles, 'ssp_M11_MILES.ssz001'),
+#os.path.join(dir_miles, 'ssp_M11_MILES.ssz001'),
 os.path.join(dir_miles, 'ssp_M11_MILES.ssz002'),
-os.path.join(dir_miles, 'ssp_M11_MILES.ssz004')
+#os.path.join(dir_miles, 'ssp_M11_MILES.ssz004')
 ])
 
 file_list_stelib = n.array([
 # chabrier
-os.path.join(dir_stelib, 'ssp_M11_STELIB.chaz001'),
+#os.path.join(dir_stelib, 'ssp_M11_STELIB.chaz001'),
 os.path.join(dir_stelib, 'ssp_M11_STELIB.chaz002'),
-os.path.join(dir_stelib, 'ssp_M11_STELIB.chaz004'),
+#os.path.join(dir_stelib, 'ssp_M11_STELIB.chaz004'),
 # kroupa
-os.path.join(dir_stelib, 'ssp_M11_STELIB.krz001'),
+#os.path.join(dir_stelib, 'ssp_M11_STELIB.krz001'),
 os.path.join(dir_stelib, 'ssp_M11_STELIB.krz002'),
-os.path.join(dir_stelib, 'ssp_M11_STELIB.krz004'),
+#os.path.join(dir_stelib, 'ssp_M11_STELIB.krz004'),
 # salpeter
-os.path.join(dir_stelib, 'ssp_M11_STELIB.ssz001'),
+#os.path.join(dir_stelib, 'ssp_M11_STELIB.ssz001'),
 os.path.join(dir_stelib, 'ssp_M11_STELIB.ssz002'),
-os.path.join(dir_stelib, 'ssp_M11_STELIB.ssz004')
+#os.path.join(dir_stelib, 'ssp_M11_STELIB.ssz004')
 ])
 
 
