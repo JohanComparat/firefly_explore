@@ -1,52 +1,7 @@
-"""
-Plots log stellar mass vs. log(1+z) for each PROGRAMNAME.
-
-
-import os
-import numpy as n
-import astropy.io.fits as fits
-import matplotlib
-matplotlib.rcParams['agg.path.chunksize'] = 2000000
-matplotlib.rcParams.update({'font.size': 13})
-#matplotlib.use('Agg')
-import matplotlib.pyplot as p
-
-
-out_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'results', 'mass-redshift-presentation')
-
-imfs = ["Chabrier_ELODIE_", "Chabrier_MILES_", "Chabrier_STELIB_", "Kroupa_ELODIE_", "Kroupa_MILES_", "Kroupa_STELIB_",  "Salpeter_ELODIE_", "Salpeter_MILES_", "Salpeter_STELIB_" ]
-
-cosmos_dir = os.path.join(os.environ['OBS_REPO'], 'COSMOS', 'catalogs' )
-path_2_cosmos_cat = os.path.join( cosmos_dir, "photoz-2.0", "photoz_vers2.0_010312.fits")
-#path_2_cosmos_cat = os.path.join( cosmos_dir, "COSMOS2015_Laigle+_v1.1.fits.gz")
-
-sdss_dir = os.path.join(os.environ['OBS_REPO'], 'SDSS', 'dr14')
-path_2_sdss_cat = os.path.join( sdss_dir, 'firefly', "FireflyGalaxySdss26.fits" )
-path_2_eboss_cat = os.path.join( sdss_dir, 'firefly', "FireflyGalaxyEbossDR14.fits" )
-
-# DEEP SURVEYS
-deep2_dir = os.path.join(os.environ['OBS_REPO'], 'DEEP2')
-path_2_deep2_cat = os.path.join( deep2_dir, "zcat.deep2.dr4.v4.LFcatalogTC.Planck15.spm.v3.fits" )
-
-vipers_dir = os.path.join(os.environ['OBS_REPO'], 'VIPERS')
-path_2_vipers_cat = os.path.join( vipers_dir, "VIPERS_W14_summary_v2.1.linesFitted.spm.fits" )
-
-vvds_dir = os.path.join(os.environ['OBS_REPO'], 'VVDS')
-path_2_vvdsW_cat = os.path.join( vvds_dir, "catalogs", "VVDS_WIDE_summary.v1.spm.fits" )
-path_2_vvdsD_cat = os.path.join( vvds_dir, "catalogs", "VVDS_DEEP_summary.v1.spm.fits" )
-
-# path_2_F16_cat = os.path.join( sdss_dir, "RA_DEC_z_w_fluxOII_Mstar_grcol_Mr_lumOII.dat" )
-
-# OPENS THE CATALOGS
-deep2   = fits.open(path_2_deep2_cat)[1].data
-sdss   = fits.open(path_2_sdss_cat)[1].data
-boss   = fits.open(path_2_eboss_cat)[1].data
-cosmos = fits.open(path_2_cosmos_cat)[1].data
-"""
 from lib_spm import *
 
 #out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures', 'mass-redshift-presentation')
-out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'catalogs', 'mass-redshift-presentation')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'mass-redshift-presentation')
 
 imf = imfs[0]
 stellar_mass = imf+'stellar_mass'
