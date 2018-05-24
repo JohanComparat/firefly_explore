@@ -54,7 +54,7 @@ python pdf_SM_error.py
 # Figures comparing all the parameters
 python3.4 plot_distribution_masses.py
 python3.4 plot_distribution_ages.py
-python3.4 plot_distribution_metal.py
+python3.4 plot_distribution_metals.py
 python3.4 plot_differences_age.py
 python3.4 plot_distribution_masses_imf_diff.py
 python3.4 plot_age_metal_plane.py
