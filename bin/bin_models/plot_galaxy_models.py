@@ -73,7 +73,7 @@ for file_name in file_list_miles:
 
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
-p.xscale('log')
+#p.xscale('log')
 p.yscale('log')
 p.ylim((1e28,1e33))
 #p.xlim((3000,9700))
@@ -101,7 +101,7 @@ for file_name in file_list_elodie:
 
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
-p.xscale('log')
+#p.xscale('log')
 p.yscale('log')
 p.ylim((1e28,1e33))
 #p.xlim((3000,9700))
@@ -129,7 +129,7 @@ for file_name in file_list_stelib:
 
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
-p.xscale('log')
+#p.xscale('log')
 p.yscale('log')
 p.ylim((1e28,1e33))
 #p.xlim((3000,9700))
