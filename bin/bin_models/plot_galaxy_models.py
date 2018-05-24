@@ -1,7 +1,7 @@
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as p
-
+import sys
 import os
 import numpy as n
 
@@ -57,8 +57,8 @@ os.path.join(dir_stelib, 'ssp_M11_STELIB.ssz002'),
 ])
 
 
-# 7 Gyr model, solar metallicity
 aaa = 10
+
 
 p.figure(0, (12,5))
 p.axes([0.1,0.15,0.85,0.8])
@@ -74,6 +74,22 @@ for file_name in file_list_miles:
 		sel = (DATA[0]==age)
 		p.plot(DATA[2][sel], DATA[3][sel],label="MILES, "+IMF[imf],rasterized=True, lw=0.5)
 
+p.xlabel(r'$\lambda$ Angstrom')
+p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
+#p.xscale('log')
+p.yscale('log')
+p.ylim((1e28,2e29))
+p.xlim((3800,4500))
+p.grid()
+p.title(str(aaa)+' Gyr old, Solar metallicity')
+p.legend(frameon=False, loc=0)
+p.savefig('/home/comparat/software/linux/firefly_explore/data/images/models/Zsun_'+str(aaa)+'Gyr_MILES_models_38_45.png')
+p.clf()
+
+
+p.figure(0, (12,5))
+p.axes([0.1,0.15,0.85,0.8])
+
 for file_name in file_list_stelib:
 	ids = os.path.basename(file_name).split('.')[-1]
 	imf = ids[:-4]
@@ -85,6 +101,22 @@ for file_name in file_list_stelib:
 		sel = (DATA[0]==age)
 		p.plot(DATA[2][sel], DATA[3][sel],label="STELIB "+IMF[imf],rasterized=True, lw=0.5)
 
+
+p.xlabel(r'$\lambda$ Angstrom')
+p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
+#p.xscale('log')
+p.yscale('log')
+p.ylim((1e28,2e29))
+p.xlim((3800,4500))
+p.grid()
+p.title(str(aaa)+' Gyr old, Solar metallicity')
+p.legend(frameon=False, loc=0)
+p.savefig('/home/comparat/software/linux/firefly_explore/data/images/models/Zsun_'+str(aaa)+'Gyr_STELIB_models_38_45.png')
+p.clf()
+
+
+p.figure(0, (12,5))
+p.axes([0.1,0.15,0.85,0.8])
 
 for file_name in file_list_elodie:
 	ids = os.path.basename(file_name).split('.')[-1]
@@ -103,12 +135,18 @@ p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
 #p.xscale('log')
 p.yscale('log')
 p.ylim((1e28,2e29))
-#p.xlim((3000,9700))
+p.xlim((3800,4500))
 p.grid()
 p.title(str(aaa)+' Gyr old, Solar metallicity')
 p.legend(frameon=False, loc=0)
-p.savefig('/home/comparat/software/linux/firefly_explore/data/images/models/Zsun_'+str(aaa)+'Gyr_all_models.png')
+p.savefig('/home/comparat/software/linux/firefly_explore/data/images/models/Zsun_'+str(aaa)+'Gyr_ELODIE_models_38_45.png')
 p.clf()
+
+
+sys.exit()
+
+# 10 Gyr model, solar metallicity
+aaa = 10
 
 
 p.figure(0, (12,5))
@@ -195,6 +233,58 @@ p.clf()
 
 
 sys.exit()
+
+
+
+p.figure(0, (12,5))
+p.axes([0.1,0.15,0.85,0.8])
+
+for file_name in file_list_miles:
+	ids = os.path.basename(file_name).split('.')[-1]
+	imf = ids[:-4]
+	zzz = ids[-3:]
+	DATA = n.loadtxt(file_name, unpack=True)
+	ages = n.array(list(set(DATA[0])))
+	ages.sort()
+	for age in ages[(ages==aaa)]:
+		sel = (DATA[0]==age)
+		p.plot(DATA[2][sel], DATA[3][sel],label="MILES, "+IMF[imf],rasterized=True, lw=0.5)
+
+for file_name in file_list_stelib:
+	ids = os.path.basename(file_name).split('.')[-1]
+	imf = ids[:-4]
+	zzz = ids[-3:]
+	DATA = n.loadtxt(file_name, unpack=True)
+	ages = n.array(list(set(DATA[0])))
+	ages.sort()
+	for age in ages[(ages==aaa)]:
+		sel = (DATA[0]==age)
+		p.plot(DATA[2][sel], DATA[3][sel],label="STELIB "+IMF[imf],rasterized=True, lw=0.5)
+
+
+for file_name in file_list_elodie:
+	ids = os.path.basename(file_name).split('.')[-1]
+	imf = ids[:-4]
+	zzz = ids[-3:]
+	DATA = n.loadtxt(file_name, unpack=True)
+	ages = n.array(list(set(DATA[0])))
+	ages.sort()
+	for age in ages[(ages==aaa)]:
+		sel = (DATA[0]==age)
+		p.plot(DATA[2][sel], DATA[3][sel],label="ELODIE, "+IMF[imf],rasterized=True, lw=0.5)
+
+
+p.xlabel(r'$\lambda$ Angstrom')
+p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
+#p.xscale('log')
+p.yscale('log')
+p.ylim((1e28,2e29))
+#p.xlim((3000,9700))
+p.grid()
+p.title(str(aaa)+' Gyr old, Solar metallicity')
+p.legend(frameon=False, loc=0)
+p.savefig('/home/comparat/software/linux/firefly_explore/data/images/models/Zsun_'+str(aaa)+'Gyr_all_models.png')
+p.clf()
 
 p.figure(0, (12,5))
 p.axes([0.1,0.15,0.85,0.8])
