@@ -6,6 +6,13 @@ import os
 import numpy as n
 import GalaxySpectrumFIREFLY as gs
 
+##        Index band       blue continuum     red continuum Units name
+#01    4142.125 4177.125  4080.125 4117.625  4244.125 4284.125 1  CN_1   
+iii, b0, b1, bc0, bc1, rc0, rc1, unit, name = n.loadtxt('../../data/lick_indices/indices_table.txt', unpack=True, dtype='str')
+
+li0 = b0.astype('float')
+li1 = b1.astype('float')
+
 dir_elodie = os.path.join( os.environ['STELLARPOPMODELS_DIR'], 'data', 'SSP_M11_ELODIE') 
 dir_miles = os.path.join( os.environ['STELLARPOPMODELS_DIR'], 'data', 'SSP_M11_MILES') 
 dir_stelib = os.path.join( os.environ['STELLARPOPMODELS_DIR'], 'data', 'SSP_M11_STELIB') 
@@ -73,6 +80,9 @@ aaa = 10
 
 p.figure(0, (12,5))
 p.axes([0.1,0.15,0.85,0.8])
+
+for a0, a1, na in zip(li0, li1, name):
+	p.plot([a0,a1],[1e29,1e29],label=na)
 
 for file_name in file_list_miles:
 	ids = os.path.basename(file_name).split('.')[-1]

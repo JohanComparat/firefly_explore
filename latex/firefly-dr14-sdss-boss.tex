@@ -236,6 +236,90 @@ We consider objects for which a definite positive redshift was derived using gal
 For the data observed with the BOSS spectrograph, we consider the "NOQSO" version of these quantities. 
 The obtain about 2.7 million optical galaxy spectra; $948,259$ million were observed with the SDSS spectrograph setup and with $1,759,362$ with the BOSS spectrograph setup, see Table \ref{table:single:spectra}. 
 
+
+\begin{table*}
+\caption{\label{table:single:spectra} Summary table of observed spectra and fit results. 
+The Table is divided in four subsets, BOSS, SDSS, DEEP2 and DEEP2 \OII galaxies.
+The last set shows the subset of the DEEP2 set that have a detection with a signal to noise ratio greater than 5 of the \OII emission line. 
+The first line in each subset gives the total number of spectra available in the survey and how many of them are considered as galaxies. 
+The assumed fitting setup (model and IMF)  is given in the first 2 columns. 
+The third column gives the number of galaxies for which the fit converged. 
+The last two columns gives the number of galaxies for which the stellar mass parameter is constrained within less than 0.4 dex and 0.2 dex, respectively. 
+The number in parenthesis give the percentage relative to the total number of galaxies.}
+%The obtain about 2.7 million optical galaxy spectra; $948,259$ million were observed with the SDSS spectrograph setup and with $1,759,362$ with the BOSS 
+\begin{center}
+\begin{tabular}{ll rrr}
+\hline \hline
+\multicolumn{5}{c}{eBOSS DR14: $1,759,362$ galaxies} \\
+IMF &
+Library & 
+fit constrained & 
+$\sigma_{\log_{10}M}<0.4$ dex & 
+$\sigma_{\log_{10}M}<0.2$ dex \\ \hline
+Chabrier & ELODIE & $1678846$ (95.4) & $1427861$ (81.2) & $980810$ (55.7) \\ 
+Chabrier & MILES & $1632471$ (92.8) & $1529842$ (87.0) & $1237575$ (70.3) \\ 
+Chabrier & STELIB & $1532700$ (87.1) & $1466376$ (83.3) & $1217235$ (69.2) \\ 
+Kroupa & ELODIE & $1682734$ (95.6) & $1446616$ (82.2) & $1012728$ (57.6) \\ 
+Kroupa & MILES & $1638112$ (93.1) & $1556522$ (88.5) & $1278732$ (72.7) \\ 
+Kroupa & STELIB & $1539613$ (87.5) & $1490832$ (84.7) & $1252335$ (71.2) \\ 
+Salpeter & ELODIE & $1681799$ (95.6) & $1467855$ (83.4) & $1047431$ (59.5) \\ 
+Salpeter & MILES & $1647045$ (93.6) & $1583900$ (90.0) & $1351031$ (76.8) \\ 
+Salpeter & STELIB & $1546335$ (87.9) & $1504425$ (85.5) & $1270344$ (72.2) \\ 
+\hline 
+ \multicolumn{5}{c}{SDSS DR14: $948,259$ galaxies} \\
+IMF &
+Library & 
+fit constrained & 
+$\sigma_{\log_{10}M}<0.4$ dex & 
+$\sigma_{\log_{10}M}<0.2$ dex \\ \hline
+Chabrier & ELODIE & $919507$ (97.0) & $886081$ (93.4) & $729736$ (77.0) \\ 
+Chabrier & MILES & $919494$ (97.0) & $901024$ (95.0) & $765905$ (80.8) \\ 
+Chabrier & STELIB & $894174$ (94.3) & $882412$ (93.1) & $722856$ (76.2) \\ 
+Kroupa & ELODIE & $920373$ (97.1) & $892330$ (94.1) & $760271$ (80.2) \\ 
+Kroupa & MILES & $919724$ (97.0) & $905489$ (95.5) & $798735$ (84.2) \\ 
+Kroupa & STELIB & $897219$ (94.6) & $890963$ (94.0) & $752197$ (79.3) \\ 
+Salpeter & ELODIE & $921261$ (97.2) & $896355$ (94.5) & $774556$ (81.7) \\ 
+Salpeter & MILES & $920451$ (97.1) & $909374$ (95.9) & $814850$ (85.9) \\ 
+Salpeter & STELIB & $898522$ (94.8) & $894546$ (94.3) & $768726$ (81.1) \\ 
+\hline 
+\multicolumn{5}{c}{DEEP2 DR4: $34,972$ galaxies} \\
+IMF &
+Library & 
+fit constrained & 
+$\sigma_{\log_{10}M}<0.4$ dex & 
+$\sigma_{\log_{10}M}<0.2$ dex \\ \hline
+Chabrier & ELODIE& $20283$ (58.0) & $8656$ (24.8) & $3986$ (11.4) \\ 
+Chabrier & MILES& $20214$ (57.8) & $10935$ (31.3) & $4619$ (13.2) \\ 
+Chabrier & STELIB& $19807$ (56.6) & $11084$ (31.7) & $2733$ (7.8) \\ 
+Kroupa & ELODIE& $20777$ (59.4) & $9524$ (27.2) & $4335$ (12.4) \\ 
+Kroupa & MILES& $20544$ (58.7) & $11689$ (33.4) & $5238$ (15.0) \\ 
+Kroupa & STELIB& $20272$ (58.0) & $12076$ (34.5) & $3350$ (9.6) \\ 
+Salpeter & ELODIE& $20971$ (60.0) & $10042$ (28.7) & $4577$ (13.1) \\ 
+Salpeter & MILES& $20760$ (59.4) & $12150$ (34.7) & $5541$ (15.8) \\ 
+Salpeter & STELIB& $20417$ (58.4) & $12573$ (36.0) & $3708$ (10.6) \\ 
+\hline 
+\multicolumn{5}{c}{DEEP2 DR4: $19,656$ \OII galaxies} \\
+IMF &
+Library & 
+fit constrained & 
+$\sigma_{\log_{10}M}<0.4$ dex & 
+$\sigma_{\log_{10}M}<0.2$ dex \\ \hline
+Chabrier & ELODIE & $10804$ (55.0) & $3829$ (19.5) & $1537$ (7.8) \\ 
+Chabrier & MILES & $10192$ (51.9) & $5023$ (25.6) & $2080$ (10.6) \\ 
+Chabrier & STELIB & $10356$ (52.7) & $4807$ (24.5) & $1149$ (5.8) \\ 
+Kroupa & ELODIE & $11110$ (56.5) & $4317$ (22.0) & $1644$ (8.4) \\ 
+Kroupa & MILES & $10332$ (52.6) & $5241$ (26.7) & $2267$ (11.5) \\ 
+Kroupa & STELIB & $10641$ (54.1) & $5286$ (26.9) & $1344$ (6.8) \\ 
+Salpeter & ELODIE & $11265$ (57.3) & $4613$ (23.5) & $1744$ (8.9) \\ 
+Salpeter & MILES & $10550$ (53.7) & $5529$ (28.1) & $2425$ (12.3) \\ 
+Salpeter & STELIB & $10735$ (54.6) & $5478$ (27.9) & $1478$ (7.5) \\ 
+
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
+
+
 For each SDSS (eBOSS) program, Tables 
 \ref{ref:table:sdss:src:firefly}
 (\ref{ref:table:boss:src:firefly}), 
@@ -533,6 +617,19 @@ Ages and masses are in good agreement. %The stellar metallicity differ slightly 
 Such a Figure is created for each fitted spectrum and provided together with the models.
 
 
+\begin{figure*}
+\begin{center}
+\caption{\label{fig:firefly:output}
+Example of a fit taken from the first plate of SDSS considered in this analysis: 0266. 
+The top panel shows the observed spectrum (grey line) and its models (colored lines). 
+The middle panel shows the $\chi^2$ distribution per pixel for each fit compared to a normal distribution (labeled N(0,1), dashed line). 
+The bottom panel shows the output parameters stellar mass (y-axis) vs stellar age (x-axis), which nicely agree. Each blue point refers to one of the nine models. The blue points are related to their respective caption by black arrows. 
+This Figure is generated for each fit and is available in the data repository.}
+\includegraphics[width=14cm]{plots/spFly-0266-51602-0004.png}
+\end{center}
+\end{figure*}
+
+
 \subsubsection{Plate-level summary catalogs (SDSS only)}
 Due to the size of the SDSS data set and its structure, we create summary catalogs for each plate, named 'spFlyPlate'.
 They contain all output parameters from the fitting procedure. 
@@ -544,6 +641,19 @@ Fig. \ref{fig:firefly:output:plate}.
 It shows the distribution of stellar age and stellar masses measured in plate (0266). It also shows a comparison of the stellar masses derived using the M11 models with the ELODIE stellar library and varying the IMFs. You may note the systematic offset in stellar masses when assuming a Salpeter or a Chabrier IMF (bottom left panel). 
 
 As the DEEP2 data is much smaller than the SDSS, we did not create this second layer of summary files for DEEP2. 
+
+\begin{figure*}
+\begin{center}
+\caption{\label{fig:firefly:output:plate}
+Summary plot for SDSS plate 0266. 
+It shows the cumulative normed distributions of stellar ages and stellar masses derived for all IMF + library setups (top row).
+The bottom panels compare the stellar masses derived assuming different IMFs. 
+It shows the known fact that the assumption of a Salpeter IMF implies stellar masses that are on average 30\% larger than those for Kroupa and Chabrier IMFs (bottom left panel).
+Chabrier and Kroupa IMFs give on average the same stellar masses (bottom right panel).}
+\includegraphics[width=14cm]{plots/spFlyPlate-0266-51602.png}
+%\includegraphics[width=14cm]{plots/spFly-0266-51602-0159.png}
+\end{center}
+\end{figure*}
 
 \subsubsection{Summary catalogs}
 Top-level summary catalogs contain all of the fitted parameters. They are available here 
@@ -576,32 +686,34 @@ Therefore, we do not provide a mean stellar mass based on these nine runs.
 % Each catalog comes with a short 'readme' file that documents its purpose. 
 % For example, we provide nine catalogs (one per IMF x library) with all the measured parameters of the star formation history. We also provide preliminary catalogs of the v1\_1 (accounting for remnants) that have slightly different metallicity and age boundary parameters.
 
-\section{Parameters fitted}
-In this section, we present statistics of the three main fitted parameters: stellar age, stellar metallicity and dust and the deduced parameter stellar mass.
+\subsection{Distributions of te parameters obtained}
+In this section, we present statistics of the four main parameters derived: dust, stellar age, stellar metallicity and stellar mass.
 
-
-\subsection{Dust}
-The dust is fitted first on the data and then assumed when fitting for the combination os SSPs. 
-The library assumed make quite a difference in the retrieve E(B-V). STELIB (largest wavelength coverage) systematically finds lower values than MILES than ELODIE (smallest wavelength covrerage), see Fig. \ref{fig:distributions:EBV}.
+\subsubsection{Dust}
+The dust is fitted first on the data and then assumed when fitting for the combination of SSPs. 
+The library assumed makes quite a difference in the retrieved E(B-V). 
+Fits done with STELIB (largest wavelength coverage) provide on average on lower values than MILES than ELODIE (smallest wavelength covrerage), see the distributions of the E(B-V) obtained in Fig. \ref{fig:distributions:EBV}. 
 The IMF assumed doe not change the E(B-V) value fitted, as expected.
 
 \begin{figure}
 \begin{center}
 \caption{\label{fig:distributions:EBV} 
 Normed cumulative distribution of the E(B-V) fitted. The IMF assumed does not make a difference. Due to different wavelenght coverage the library assumed, the E(B-V) values measured differ by up to 0.2 dex.}  
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_deep2.png}
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_eboss.png}
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_sdss.png}          \\
+\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_sdss.png}
+\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_eboss.png}          
+\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_deep2.png} \\
+\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_sdssChabrier.png}
 \includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossChabrier.png}
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossKroupa.png}
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossSalpeter.png} \\
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossELODIE.png}
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossMILES.png}
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossSTELIB.png}
+\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_deep2Chabrier.png}
+% \includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossKroupa.png}
+% \includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossSalpeter.png} \\
+% \includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossELODIE.png}
+% \includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossMILES.png}
+% \includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossSTELIB.png}
 \end{center}
 \end{figure}
 
-\subsection{Stellar age}
+\subsubsection{Stellar age}
 
 \begin{figure}
 \begin{center}
@@ -1010,116 +1122,6 @@ On Fig. \ref{fig:firefly:output:plate:unconstrained} we show such an example whe
 
 \section{Large figures and tables}
 
-\begin{figure*}
-\begin{center}
-\caption{\label{fig:firefly:output}
-Example of a fit taken from the first plate of SDSS considered in this analysis: 0266. 
-The top panel shows the observed spectrum (grey line) and its models (colored lines). 
-The middle panel shows the $\chi^2$ distribution per pixel for each fit compared to a normal distribution (labeled N(0,1), dashed line). 
-The bottom panel shows the output parameters stellar mass (y-axis) vs stellar age (x-axis), which nicely agree. Each blue point refers to one of the nine models. The blue points are related to their respective caption by black arrows. 
-This Figure is generated for each fit and is available in the data repository.}
-\includegraphics[width=14cm]{plots/spFly-0266-51602-0004.png}
-\end{center}
-\end{figure*}
-
-\begin{figure*}
-\begin{center}
-\caption{\label{fig:firefly:output:plate}
-Summary plot for SDSS plate 0266. 
-It shows the cumulative normed distributions of stellar ages and stellar masses derived for all IMF + library setups (top row).
-The bottom panels compare the stellar masses derived assuming different IMFs. 
-It shows the known fact that the assumption of a Salpeter IMF implies stellar masses that are on average 30\% larger than those for Kroupa and Chabrier IMFs (bottom left panel).
-Chabrier and Kroupa IMFs give on average the same stellar masses (bottom right panel).}
-\includegraphics[width=14cm]{plots/spFlyPlate-0266-51602.png}
-%\includegraphics[width=14cm]{plots/spFly-0266-51602-0159.png}
-\end{center}
-\end{figure*}
-
-\clearpage 
-
-\begin{table*}
-\caption{\label{table:single:spectra} Summary table of observed spectra and fit results. 
-The Table is divided in four subsets, BOSS, SDSS, DEEP2 and DEEP2 \OII galaxies.
-The last set shows the subset of the DEEP2 set that have a detection with a signal to noise ratio greater than 5 of the \OII emission line. 
-The first line in each subset gives the total number of spectra available in the survey and how many of them are considered as galaxies. 
-The assumed fitting setup (model and IMF)  is given in the first 2 columns. 
-The third column gives the number of galaxies for which the fit converged. 
-The last two columns gives the number of galaxies for which the stellar mass parameter is constrained within less than 0.4 dex and 0.2 dex, respectively. 
-The number in parenthesis give the percentage relative to the total number of galaxies.}
-%The obtain about 2.7 million optical galaxy spectra; $948,259$ million were observed with the SDSS spectrograph setup and with $1,759,362$ with the BOSS 
-\begin{center}
-\begin{tabular}{ll rrr}
-\hline \hline
-\multicolumn{5}{c}{eBOSS DR14: $1,759,362$ galaxies} \\
-IMF &
-Library & 
-fit constrained & 
-$\sigma_{\log_{10}M}<0.4$ dex & 
-$\sigma_{\log_{10}M}<0.2$ dex \\ \hline
-Chabrier & ELODIE & $1678846$ (95.4) & $1427861$ (81.2) & $980810$ (55.7) \\ 
-Chabrier & MILES & $1632471$ (92.8) & $1529842$ (87.0) & $1237575$ (70.3) \\ 
-Chabrier & STELIB & $1532700$ (87.1) & $1466376$ (83.3) & $1217235$ (69.2) \\ 
-Kroupa & ELODIE & $1682734$ (95.6) & $1446616$ (82.2) & $1012728$ (57.6) \\ 
-Kroupa & MILES & $1638112$ (93.1) & $1556522$ (88.5) & $1278732$ (72.7) \\ 
-Kroupa & STELIB & $1539613$ (87.5) & $1490832$ (84.7) & $1252335$ (71.2) \\ 
-Salpeter & ELODIE & $1681799$ (95.6) & $1467855$ (83.4) & $1047431$ (59.5) \\ 
-Salpeter & MILES & $1647045$ (93.6) & $1583900$ (90.0) & $1351031$ (76.8) \\ 
-Salpeter & STELIB & $1546335$ (87.9) & $1504425$ (85.5) & $1270344$ (72.2) \\ 
-\hline 
- \multicolumn{5}{c}{SDSS DR14: $948,259$ galaxies} \\
-IMF &
-Library & 
-fit constrained & 
-$\sigma_{\log_{10}M}<0.4$ dex & 
-$\sigma_{\log_{10}M}<0.2$ dex \\ \hline
-Chabrier & ELODIE & $919507$ (97.0) & $886081$ (93.4) & $729736$ (77.0) \\ 
-Chabrier & MILES & $919494$ (97.0) & $901024$ (95.0) & $765905$ (80.8) \\ 
-Chabrier & STELIB & $894174$ (94.3) & $882412$ (93.1) & $722856$ (76.2) \\ 
-Kroupa & ELODIE & $920373$ (97.1) & $892330$ (94.1) & $760271$ (80.2) \\ 
-Kroupa & MILES & $919724$ (97.0) & $905489$ (95.5) & $798735$ (84.2) \\ 
-Kroupa & STELIB & $897219$ (94.6) & $890963$ (94.0) & $752197$ (79.3) \\ 
-Salpeter & ELODIE & $921261$ (97.2) & $896355$ (94.5) & $774556$ (81.7) \\ 
-Salpeter & MILES & $920451$ (97.1) & $909374$ (95.9) & $814850$ (85.9) \\ 
-Salpeter & STELIB & $898522$ (94.8) & $894546$ (94.3) & $768726$ (81.1) \\ 
-\hline 
-\multicolumn{5}{c}{DEEP2 DR4: $34,972$ galaxies} \\
-IMF &
-Library & 
-fit constrained & 
-$\sigma_{\log_{10}M}<0.4$ dex & 
-$\sigma_{\log_{10}M}<0.2$ dex \\ \hline
-Chabrier & ELODIE& $20283$ (58.0) & $8656$ (24.8) & $3986$ (11.4) \\ 
-Chabrier & MILES& $20214$ (57.8) & $10935$ (31.3) & $4619$ (13.2) \\ 
-Chabrier & STELIB& $19807$ (56.6) & $11084$ (31.7) & $2733$ (7.8) \\ 
-Kroupa & ELODIE& $20777$ (59.4) & $9524$ (27.2) & $4335$ (12.4) \\ 
-Kroupa & MILES& $20544$ (58.7) & $11689$ (33.4) & $5238$ (15.0) \\ 
-Kroupa & STELIB& $20272$ (58.0) & $12076$ (34.5) & $3350$ (9.6) \\ 
-Salpeter & ELODIE& $20971$ (60.0) & $10042$ (28.7) & $4577$ (13.1) \\ 
-Salpeter & MILES& $20760$ (59.4) & $12150$ (34.7) & $5541$ (15.8) \\ 
-Salpeter & STELIB& $20417$ (58.4) & $12573$ (36.0) & $3708$ (10.6) \\ 
-\hline 
-\multicolumn{5}{c}{DEEP2 DR4: $19,656$ \OII galaxies} \\
-IMF &
-Library & 
-fit constrained & 
-$\sigma_{\log_{10}M}<0.4$ dex & 
-$\sigma_{\log_{10}M}<0.2$ dex \\ \hline
-Chabrier & ELODIE & $10804$ (55.0) & $3829$ (19.5) & $1537$ (7.8) \\ 
-Chabrier & MILES & $10192$ (51.9) & $5023$ (25.6) & $2080$ (10.6) \\ 
-Chabrier & STELIB & $10356$ (52.7) & $4807$ (24.5) & $1149$ (5.8) \\ 
-Kroupa & ELODIE & $11110$ (56.5) & $4317$ (22.0) & $1644$ (8.4) \\ 
-Kroupa & MILES & $10332$ (52.6) & $5241$ (26.7) & $2267$ (11.5) \\ 
-Kroupa & STELIB & $10641$ (54.1) & $5286$ (26.9) & $1344$ (6.8) \\ 
-Salpeter & ELODIE & $11265$ (57.3) & $4613$ (23.5) & $1744$ (8.9) \\ 
-Salpeter & MILES & $10550$ (53.7) & $5529$ (28.1) & $2425$ (12.3) \\ 
-Salpeter & STELIB & $10735$ (54.6) & $5478$ (27.9) & $1478$ (7.5) \\ 
-
-\hline
-\end{tabular}
-\end{center}
-\end{table*}
-
-\clearpage
 
 \begin{table*}
 \begin{center}
