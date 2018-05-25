@@ -81,8 +81,10 @@ aaa = 10
 p.figure(0, (12,5))
 p.axes([0.1,0.15,0.85,0.8])
 
-for a0, a1, na in zip(li0, li1, name):
-	p.plot([a0,a1],[1e29,1e29],label=na)
+#for a0, a1, na in zip(li0, li1, name):
+	#if a1<4200 and a1>3900:
+		#p.plot([a0,a1],[1e29,1e29])
+		#p.text(a0, 1.3e29, na)
 
 for file_name in file_list_miles:
 	ids = os.path.basename(file_name).split('.')[-1]
