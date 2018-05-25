@@ -4,12 +4,23 @@ import matplotlib.pyplot as p
 import sys
 import os
 import numpy as n
+import GalaxySpectrumFIREFLY as gs
 
 dir_elodie = os.path.join( os.environ['STELLARPOPMODELS_DIR'], 'data', 'SSP_M11_ELODIE') 
 dir_miles = os.path.join( os.environ['STELLARPOPMODELS_DIR'], 'data', 'SSP_M11_MILES') 
 dir_stelib = os.path.join( os.environ['STELLARPOPMODELS_DIR'], 'data', 'SSP_M11_STELIB') 
 
 IMF = {'cha': 'Ch', 'kr': 'Kr', 'ss': 'Sa'}
+
+spec_sdss = gs.GalaxySpectrumFIREFLY( '/home/comparat/SDSS/26/spectra/0266/spec-0266-51602-0004.fits' )
+spec_sdss.openObservedSDSSSpectrum('sdssMain')
+
+spec_boss = gs.GalaxySpectrumFIREFLY( '/home/comparat/SDSS/v5_10_0/spectra/3586/spec-3586-55181-0024.fits' )
+spec_boss.openObservedSDSSSpectrum('sdss4')
+
+path_2_deep2 = '/home/comparat/data2/firefly/v1_1_0/DEEP2/spectra/2/deep2-2249-22052688.fits' 
+spec_deep2 = gs.GalaxySpectrumFIREFLY( path_2_deep2 )
+spec_deep2.openObservedDEEP2pectrum(path_2_deep2, survey='deep2_fits')
 
 file_list_elodie = n.array([
 # chabrier
@@ -74,20 +85,22 @@ for file_name in file_list_miles:
 		sel = (DATA[0]==age)
 		p.plot(DATA[2][sel], DATA[3][sel],label="MILES, "+IMF[imf],rasterized=True, lw=0.7)
 
+#p.plot(spec_sdss.restframe_wavelength,  3e28*spec_sdss.flux, label='sdss')
+p.plot(spec_boss.restframe_wavelength,  3e28*spec_boss.flux, label='rescaled boss spectrum z='+str(n.round(spec_boss.redshift,2)), lw=0.7)
+#p.plot(spec_deep2.restframe_wavelength, 3e28*spec_deep2.flux, label='deep2')
 p.axvline(3934, ls='dashed', label='Ca H')
 p.axvline(3969, ls='dashed', label='Ca K', c='m')
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
 #p.xscale('log')
 p.yscale('log')
-p.ylim((6e27,1e29))
+p.ylim((6e27,2e29))
 p.xlim((3900,4200))
 p.grid()
 p.title(str(aaa)+' Gyr old, Solar metallicity')
 p.legend(frameon=False, loc=0)
 p.savefig('/home/comparat/software/linux/firefly_explore/data/images/models/Zsun_'+str(aaa)+'Gyr_MILES_models_38_45.png')
 p.clf()
-
 
 p.figure(0, (12,5))
 p.axes([0.1,0.15,0.85,0.8])
@@ -104,13 +117,16 @@ for file_name in file_list_stelib:
 		p.plot(DATA[2][sel], DATA[3][sel],label="STELIB "+IMF[imf],rasterized=True, lw=0.7)
 
 
+#p.plot(spec_sdss.restframe_wavelength,  1e30*spec_sdss.flux, label='sdss')
+p.plot(spec_boss.restframe_wavelength,  3e28*spec_boss.flux, label='rescaled boss spectrum z='+str(n.round(spec_boss.redshift,2)), lw=0.7)
+#p.plot(spec_deep2.restframe_wavelength, 1e30*spec_deep2.flux, label='deep2')
 p.axvline(3934, ls='dashed', label='Ca H')
 p.axvline(3969, ls='dashed', label='Ca K', c='m')
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
 #p.xscale('log')
 p.yscale('log')
-p.ylim((6e27,1e29))
+p.ylim((6e27,2e29))
 p.xlim((3900,4200))
 p.grid()
 p.title(str(aaa)+' Gyr old, Solar metallicity')
@@ -133,13 +149,16 @@ for file_name in file_list_elodie:
 		sel = (DATA[0]==age)
 		p.plot(DATA[2][sel], DATA[3][sel],label="ELODIE, "+IMF[imf],rasterized=True, lw=0.7)
 
+#p.plot(spec_sdss.restframe_wavelength,  1e30*spec_sdss.flux, label='sdss')
+p.plot(spec_boss.restframe_wavelength,  3e28*spec_boss.flux, label='rescaled boss spectrum z='+str(n.round(spec_boss.redshift,2)), lw=0.7)
+#p.plot(spec_deep2.restframe_wavelength, 1e30*spec_deep2.flux, label='deep2')
 p.axvline(3934, ls='dashed', label='Ca H')
 p.axvline(3969, ls='dashed', label='Ca K', c='m')
 p.xlabel(r'$\lambda$ Angstrom')
 p.ylabel(r'Flux for $M_\odot$ $[f_{\lambda},\; erg s^{-1} A^{-1}]$')
 #p.xscale('log')
 p.yscale('log')
-p.ylim((6e27,1e29))
+p.ylim((6e27,2e29))
 p.xlim((3900,4200))
 p.grid()
 p.title(str(aaa)+' Gyr old, Solar metallicity')
