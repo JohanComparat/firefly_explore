@@ -340,8 +340,9 @@ Table
 gives for five redshift bins (with boundaries $0$, $0.025$, $0.375$, $0.7$, $0.85$, $1.6$) the fraction of galaxies that has a median SNR greater than 5 or 20. For redshifts $z<0.375$ more than half of the galaxies have a SNR greater than 20. For redshifts $z>0.7$ no galaxy has a SNR greater than 5. 
 Table 
 \ref{ref:table:sdss:src:fibermag} (\ref{ref:table:boss:src:fibermag}) 
-gives, in three redshift bins (with boundaries $0$, $0.17$,  $0.55$, $1.6$), the fraction of galaxies where the fraction of the light in the fiber compared to the total light is greater than 1 (fiber magnitude smaller than the total magnitude by no more than 0.8 mag) and 10\% (0.4 mag). At redshift $z<0.17$, most galaxies have less than \%1 of the light in the fiber. Indeed they are extended objects at low redshift. 
-At high redshift $z>0.55$, more than a third of the eBOSS galaxies have more than 1\% of their light reaching the fiber.
+gives, in three redshift bins (with boundaries $0$, $0.17$,  $0.55$, $1.6$), the fraction of galaxies where the fraction of the light in the fiber compared to the total light is greater than 50\% (10\%) i.e. the fiber magnitude smaller than the total magnitude by no more than 0.75 mag (2.5 mag). 
+At redshift $z<0.17$, most SDSS galaxies have between 10 and 50\% of the light in the fiber, indeed their extension is larger than the fiber size.  
+At high redshift $z>0.55$, more than a third of the eBOSS LRG galaxies have more than 50\% of their light reaching the fiber.
 
 
 % and compares to previous SDSS galaxy products\footnote{\url{http://www.sdss.org/dr14/spectro/galaxy/}}. 
@@ -641,19 +642,19 @@ Fig. \ref{fig:firefly:output:plate}.
 It shows the distribution of stellar age and stellar masses measured in plate (0266). It also shows a comparison of the stellar masses derived using the M11 models with the ELODIE stellar library and varying the IMFs. You may note the systematic offset in stellar masses when assuming a Salpeter or a Chabrier IMF (bottom left panel). 
 
 As the DEEP2 data is much smaller than the SDSS, we did not create this second layer of summary files for DEEP2. 
-
-\begin{figure*}
-\begin{center}
-\caption{\label{fig:firefly:output:plate}
-Summary plot for SDSS plate 0266. 
-It shows the cumulative normed distributions of stellar ages and stellar masses derived for all IMF + library setups (top row).
-The bottom panels compare the stellar masses derived assuming different IMFs. 
-It shows the known fact that the assumption of a Salpeter IMF implies stellar masses that are on average 30\% larger than those for Kroupa and Chabrier IMFs (bottom left panel).
-Chabrier and Kroupa IMFs give on average the same stellar masses (bottom right panel).}
-\includegraphics[width=14cm]{plots/spFlyPlate-0266-51602.png}
-%\includegraphics[width=14cm]{plots/spFly-0266-51602-0159.png}
-\end{center}
-\end{figure*}
+% 
+% \begin{figure*}
+% \begin{center}
+% \caption{\label{fig:firefly:output:plate}
+% Summary plot for SDSS plate 0266. 
+% It shows the cumulative normed distributions of stellar ages and stellar masses derived for all IMF + library setups (top row).
+% The bottom panels compare the stellar masses derived assuming different IMFs. 
+% It shows the known fact that the assumption of a Salpeter IMF implies stellar masses that are on average 30\% larger than those for Kroupa and Chabrier IMFs (bottom left panel).
+% Chabrier and Kroupa IMFs give on average the same stellar masses (bottom right panel).}
+% \includegraphics[width=14cm]{plots/spFlyPlate-0266-51602.png}
+% %\includegraphics[width=14cm]{plots/spFly-0266-51602-0159.png}
+% \end{center}
+% \end{figure*}
 
 \subsubsection{Summary catalogs}
 Top-level summary catalogs contain all of the fitted parameters. They are available here 
@@ -686,13 +687,14 @@ Therefore, we do not provide a mean stellar mass based on these nine runs.
 % Each catalog comes with a short 'readme' file that documents its purpose. 
 % For example, we provide nine catalogs (one per IMF x library) with all the measured parameters of the star formation history. We also provide preliminary catalogs of the v1\_1 (accounting for remnants) that have slightly different metallicity and age boundary parameters.
 
-\subsection{Distributions of te parameters obtained}
+\subsection{Distributions of the parameters obtained}
 In this section, we present statistics of the four main parameters derived: dust, stellar age, stellar metallicity and stellar mass.
 
 \subsubsection{Dust}
 The dust is fitted first on the data and then assumed when fitting for the combination of SSPs. 
 The library assumed makes quite a difference in the retrieved E(B-V). 
 Fits done with STELIB (largest wavelength coverage) provide on average on lower values than MILES than ELODIE (smallest wavelength covrerage), see the distributions of the E(B-V) obtained in Fig. \ref{fig:distributions:EBV}. 
+
 The IMF assumed doe not change the E(B-V) value fitted, as expected.
 
 \begin{figure}
@@ -713,109 +715,123 @@ Normed cumulative distribution of the E(B-V) fitted. The IMF assumed does not ma
 \end{center}
 \end{figure}
 
+
+\subsubsection{Ages and metallicities sampled by the models}
+We show in the figures below how each dataset 
+
+\begin{figure}
+\begin{center}
+\caption{\label{fig:distributions:AZ} 
+Age metallicity 2d-histograms for the SDSS (top row) eBOSS (middle row) and DEEP2 (ADD IT) data in the 3 library setups: columns ELODIE, MILES, STELIB for the Chabrier IMF. 
+It shows how each library samples the age-metallicity plane. 
+The differnces in occupation between surveys are driven by the redshift distribution in the samples.}
+%, Kroupa and Salpeter.}  
+\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_ELODIE_sdss_04.png}
+\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_MILES_sdss_04.png}
+\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_STELIB_sdss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_ELODIE_sdss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_MILES_sdss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_STELIB_sdss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_ELODIE_sdss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_MILES_sdss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_STELIB_sdss_04.png}
+\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_ELODIE_eboss_04.png}
+\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_MILES_eboss_04.png}
+\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_STELIB_eboss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_ELODIE_eboss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_MILES_eboss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_STELIB_eboss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_ELODIE_eboss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_MILES_eboss_04.png}
+% \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_STELIB_eboss_04.png}
+\end{center}
+\end{figure}
+% 
+% \begin{figure}
+% \begin{center}
+% \caption{\label{fig:distributions:AZ} 
+% Age metallicity 2d-histograms for the SDSS data in the 9 setups: columns ELODIE, MILES, STELIB and rows Chabrier, Kroupa and Salpeter.}  
+% \end{center}
+% \end{figure}
+
+
 \subsubsection{Stellar age}
+
+Comment on the distributions.
+
+In eBOSS data, assuming different stellar libraries, ages are boradly consistent, see Fig. \ref{fig:distributions:MwA} bottom plot. DO the same for SDSS and DEEP2.
+%At fixed stellar library the ages determined are consistent.
 
 \begin{figure}
 \begin{center}
 \caption{\label{fig:distributions:MwA} 
-Normed cumulative distribution of the stellar parameters fitted: mass weighted age.}  
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/age_massW_distribution_sdss.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/age_massW_distribution_eboss.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/age_massW_distribution_deep2.png}
+Normed cumulative distribution of the stellar parameters fitted: mass weighted age (left) light weighted (right).}  
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/age_massW_distribution_sdss.png}
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/age_lightW_distribution_sdss.png}\\
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/age_massW_distribution_eboss.png}
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/age_lightW_distribution_eboss.png}\\
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/age_massW_distribution_deep2.png}
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/age_lightW_distribution_deep2.png}\\
+\includegraphics[height=8cm]{comparison/delta_A_distribution_ebossChabrier.png}
 \end{center}
 \end{figure}
 
-
-\begin{figure}
-\begin{center}
-\caption{\label{fig:distributions:LwA} 
-Normed cumulative distribution of the stellar parameters fitted: light weighted age.}  
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/age_lightW_distribution_sdss.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/age_lightW_distribution_eboss.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/age_lightW_distribution_deep2.png}
-\end{center}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-\caption{\label{fig:comparison:imfs:A} 
-Direct comparison of the light weighted stellar ages fitted $(M_1-M_{ref})/\sqrt{\sigma^2_{M_1}+\sigma^2_{M_{ref}}}$ where $\sigma$ are 1$\sigma$ errors for a fixed stellar library (ELODIE, left; STELIB, middle; MILES, right) varying the IMF. 
-If the obtained distribution follows a normal distribution depicted with the line 'N(0,1)' then measurements agree within errors. 
-At fixed stellar library the ages determined are consistent.}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_A_distribution_ebossELODIE.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_A_distribution_ebossSTELIB.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_A_distribution_ebossMILES.png}
-\end{center}
-\end{figure}
+% \begin{figure}
+% \begin{center}
+% \caption{\label{fig:distributions:LwA} 
+% Normed cumulative distribution of the stellar parameters fitted: light weighted age.}  
+% \end{center}
+% \end{figure}
+% 
+% \begin{figure}
+% \begin{center}
+% \caption{\label{fig:comparison:imfs:A} 
+% Direct comparison of the light weighted stellar ages fitted $(M_1-M_{ref})/\sqrt{\sigma^2_{M_1}+\sigma^2_{M_{ref}}}$ where $\sigma$ are 1$\sigma$ errors for a fixed stellar library (ELODIE, left; STELIB, middle; MILES, right) varying the IMF. 
+% If the obtained distribution follows a normal distribution depicted with the line 'N(0,1)' then measurements agree within errors. 
+% At fixed stellar library the ages determined are consistent.}
+% \includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_A_distribution_ebossELODIE.png}
+% \includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_A_distribution_ebossSTELIB.png}
+% \includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_A_distribution_ebossMILES.png}
+% \end{center}
+% \end{figure}
 
 \subsection{Stellar metallicity}
+
+The change in stellar library produces vast changes in metallicities.
 
 \begin{figure}
 \begin{center}
 \caption{\label{fig:distributions:MwZ} 
-Normed cumulative distribution of the stellar parameters fitted: mass weighted metallicity.}  
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/metallicity_massW_distribution_sdss.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/metallicity_massW_distribution_eboss.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/metallicity_massW_distribution_deep2.png}
+Normed cumulative distribution of the stellar parameters fitted: mass weighted metallicity (left), light weighted metallicities (right).}  
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/metallicity_massW_distribution_sdss.png}
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/metallicity_lightW_distribution_sdss.png}    \\
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/metallicity_massW_distribution_eboss.png}
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/metallicity_lightW_distribution_eboss.png}     \\
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/metallicity_massW_distribution_deep2.png}
+\includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/metallicity_lightW_distribution_deep2.png} \\
+\includegraphics[height=8cm]{comparison/delta_Z_distribution_ebossChabrier.png}
+
 \end{center}
 \end{figure}
-
-\begin{figure}
-\begin{center}
-\caption{\label{fig:distributions:LwZ} 
-Normed cumulative distribution of the stellar parameters fitted: light weighted metallicity.}  
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/metallicity_lightW_distribution_sdss.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/metallicity_lightW_distribution_eboss.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/metallicity_lightW_distribution_deep2.png}
-\end{center}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-\caption{\label{fig:comparison:imfs:Z} 
-Direct comparison of the light weighted stellar metallicities fitted $(M_1-M_{ref})/\sqrt{\sigma^2_{M_1}+\sigma^2_{M_{ref}}}$ where $\sigma$ are 1$\sigma$ errors for a fixed stellar library (ELODIE, left; STELIB, middle; MILES, right) varying the IMF. 
-If the obtained distribution follows a normal distribution depicted with the line 'N(0,1)' then measurements agree within errors. 
-At fixed stellar library the metallicities determined are consistent.}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_Z_distribution_ebossELODIE.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_Z_distribution_ebossSTELIB.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_Z_distribution_ebossMILES.png}
-\end{center}
-\end{figure}
-
-\subsection{The age-metallicity degeneracy}
-
-\begin{figure}
-\begin{center}
-\caption{\label{fig:distributions:} 
-Age metallicity 2d-histograms for the eBOSS data in the 9 setups: columns ELODIE, MILES, STELIB and rows Chabrier, Kroupa and Salpeter.}  
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_ELODIE_eboss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_MILES_eboss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_STELIB_eboss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_ELODIE_eboss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_MILES_eboss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_STELIB_eboss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_ELODIE_eboss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_MILES_eboss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_STELIB_eboss_04.png}
-\end{center}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-\caption{\label{fig:distributions:} 
-Age metallicity 2d-histograms for the SDSS data in the 9 setups: columns ELODIE, MILES, STELIB and rows Chabrier, Kroupa and Salpeter.}  
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_ELODIE_sdss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_MILES_sdss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_STELIB_sdss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_ELODIE_sdss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_MILES_sdss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_STELIB_sdss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_ELODIE_sdss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_MILES_sdss_04.png}
-\includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_STELIB_sdss_04.png}
-\end{center}
-\end{figure}
-
+% 
+% \begin{figure}
+% \begin{center}
+% \caption{\label{fig:distributions:LwZ} 
+% Normed cumulative distribution of the stellar parameters fitted: light weighted metallicity.}  
+% \end{center}
+% \end{figure}
+% % 
+% \begin{figure}
+% \begin{center}
+% \caption{\label{fig:comparison:imfs:Z} 
+% Direct comparison of the light weighted stellar metallicities fitted $(M_1-M_{ref})/\sqrt{\sigma^2_{M_1}+\sigma^2_{M_{ref}}}$ where $\sigma$ are 1$\sigma$ errors for a fixed stellar library (ELODIE, left; STELIB, middle; MILES, right) varying the IMF. 
+% If the obtained distribution follows a normal distribution depicted with the line 'N(0,1)' then measurements agree within errors. 
+% At fixed stellar library the metallicities determined are consistent.}
+% \includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_Z_distribution_ebossELODIE.png}
+% \includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_Z_distribution_ebossSTELIB.png}
+% \includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/fixed_lib/delta_Z_distribution_ebossMILES.png}
+% \end{center}
+% \end{figure}
 
 
 \subsection{Stellar mass}
@@ -856,8 +872,8 @@ Stellar masses and metallicities are not.
 With STELIB and MILES stellar mass and metallicity parameters obtained are systematically higher than with ELODIE. 
 These systematic differences do not depend on the IMF.}  
 \includegraphics[height=8cm]{comparison/delta_M_distribution_ebossChabrier.png}
-\includegraphics[height=8cm]{comparison/delta_A_distribution_ebossChabrier.png}
-\includegraphics[height=8cm]{comparison/delta_Z_distribution_ebossChabrier.png}
+% \includegraphics[height=8cm]{comparison/delta_A_distribution_ebossChabrier.png}
+% \includegraphics[height=8cm]{comparison/delta_Z_distribution_ebossChabrier.png}
 
 % \includegraphics[height=3cm]{comparison/delta_M_distribution_ebossSalpeter.png}
 % \includegraphics[height=3cm]{comparison/delta_A_distribution_ebossSalpeter.png}
