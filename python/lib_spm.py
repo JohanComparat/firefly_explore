@@ -105,9 +105,10 @@ def get_basic_stat_deep2(catalog, z_name, z_flg, name, zflg_min, prefix, o2=Fals
     dex02 = (dex04) & ( - n.log10(catalog[prefix+'stellar_mass_low_1sig'])  + n.log10(catalog[prefix+'stellar_mass_up_1sig']) < 0.4 )
     m_catalog = n.log10(catalog[prefix+'stellar_mass'])
     w_catalog = 1. / (catalog['TSR'] * catalog['SSR'])
-    print(ld(catalog_zOk))
+    print('z ok:', ld(catalog_zOk))
     if o2:
       l_o2 = lineSelection(catalog, "O2_3728") & catalog_zOk
+      print('o2',ld(l_o2))
       return name +' & $'+ sld(converged & l_o2)+"$ ("+str(n.round(ld(converged & l_o2)/ld(catalog_zOk & l_o2)*100.,1))+") & $"+ sld(dex04 & l_o2)+"$ ("+str(n.round(ld(dex04 & l_o2)/ld(catalog_zOk & l_o2)*100.,1))+") & $"+ sld(dex02 & l_o2)+"$ ("+str(n.round(ld(dex02 & l_o2)/ld(catalog_zOk & l_o2)*100.,1))+r") \\\\"
     else:
       return name + '& $'+ sld(converged)+"$ ("+str(n.round(ld(converged)/ld(catalog_zOk)*100.,1))+") & $"+ sld(dex04)+"$ ("+str(n.round(ld(dex04)/ld(catalog_zOk)*100.,1))+") & $"+ sld(dex02)+"$ ("+str(n.round(ld(dex02)/ld(catalog_zOk)*100.,1))+r") \\\\"
