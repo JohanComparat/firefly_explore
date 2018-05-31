@@ -282,7 +282,7 @@ Salpeter & ELODIE & $921261$ (97.2) & $896355$ (94.5) & $774556$ (81.7) \\
 Salpeter & MILES & $920451$ (97.1) & $909374$ (95.9) & $814850$ (85.9) \\ 
 Salpeter & STELIB & $898522$ (94.8) & $894546$ (94.3) & $768726$ (81.1) \\ 
 \hline 
-\multicolumn{5}{c}{DEEP2 DR4: $34,972$ galaxies} \\
+\multicolumn{5}{c}{DEEP2 DR4: $34,972$ galaxies $0.7<z<1.2$} \\
 IMF &
 Library & 
 fit constrained & 
@@ -298,7 +298,7 @@ Salpeter & ELODIE& $20971$ (60.0) & $10042$ (28.7) & $4577$ (13.1) \\
 Salpeter & MILES& $20760$ (59.4) & $12150$ (34.7) & $5541$ (15.8) \\ 
 Salpeter & STELIB& $20417$ (58.4) & $12573$ (36.0) & $3708$ (10.6) \\ 
 \hline 
-\multicolumn{5}{c}{DEEP2 DR4: $19,656$ \OII galaxies} \\
+\multicolumn{5}{c}{DEEP2 DR4: $19,656$ \OII galaxies $0.7<z<1.2$} \\
 IMF &
 Library & 
 fit constrained & 
@@ -372,9 +372,10 @@ DEEP2 is a deep pencil beam survey that acquired spectra for galaxies brighter t
 The DEIMOS spectrograph at Keck was used, which covers approximately the wavelength range $6500-9300\AA$ at a resolution $\sim$6000 \citep{Faber2003}. It accommodates order of 120 slits per mask. 
 Although DEEP2 is a major galaxy evolution survey and stellar masses for galaxies observed by DEEP2 are mentioned in many publications, there does not seems to be a public stellar mass catalog available online for comparison \citep{kassin2007,covington2010,mostek2013,2017ApJ...838...87C}. 
 
-In this analysis we consider the galaxy spectra that have a redshift in the range $0.001<z<1.7$ and that are classified with a flag $Z\_FLG\geq2$.
+In this analysis we consider the galaxy spectra that have a redshift in the range $0.001<z<1.7$ and that are classified with a flag $Z\_FLG\geq2$. 
+Because the fitting requires the 4000$\AA$ break to be covered to recover the stellar age properly, we further constrain the redshift range to $0.7<z<1.2$. 
 We use flux-calibrated spectra produced by \citet{Comparat2016LFs}. 
-Out of the $50,319$ entries in the DEEP2 DR4 catalog, $34,972$ are considered for a stellar population model fit, see Table \ref{table:single:spectra} for the detailed numbers. 
+Out of the $50,319$ entries in the DEEP2 DR4 catalog, $34,972$ are considered for a stellar population model fit \textcolor{red}{and $XXXX$ with $0.7<z<1.2$}, see Table \ref{table:single:spectra} for the detailed numbers. 
 To compare to the numbers obtained in \citet{Comparat2016LFs}, we further divided the data after the eventual detection of emission line in the spectrum. 
 
 %One of the DEEP2 fields is located in the AEGIS\footnote{\url{http://aegis.ucolick.org}} field where deep multi-wavelength data is available.
@@ -440,7 +441,12 @@ The code and the models used to create this dataset are public via the SDSS serv
 We output the actual (present) stellar mass, including its fraction locked in stellar remnants (white dwarfs, neutron stars and black holes) or lost via stellar evolution (returned fraction). 
 %The extended v1\_1 level catalogs are available at the MPE mirror. 
 %They will be available through the SDSS mirror for the next data release DR16, see Sec. \ref{subsec:alt:cat}
-.
+
+\subsubsection{Effect of wavelength}
+\citet{firefly2017MNRAS} showed (section 5.2, Fig. 19) that to reliably recover of the age, the 4000$\AA$ break region is needed in the observations. This is not a problem for the SDSS+eBOSS observations. This is an issue for the DEEP2 spectra that only cover the wavelength range 6500 − 9300$\AA$ i.e. accurate ages for the DEEP2 galaxies can be recovered only if the redshift is in the window 3800(1+z)$>$6500 and 4200(1+z)$<$9300 i.e. $0.7<z<1.2$.
+
+\subsubsection{Comparison with previous measurements}
+\citet{firefly2017MNRAS} compared (section 6.2, Figs. 24, 25) the \textsc{firefly}-SDSS measurements to the results from \textcolor{red}{Cid-Fernandes et al. (2005) and from Tojeiro et al. (2009)}. In both cases, a good wualitative agreement was found.
 
 \subsection{Performances}
 \label{subsec:firefly:performances}
@@ -481,37 +487,42 @@ They assume different input stellar libraries, of which we use three, namely :
 \item ELODIE, covering 3900–6800$\AA$ with a 0.55$\AA$ sampling at 5500$\AA$ i.e. at a resolution $R=10000$ \citep{Prugniel2007}.
 \end{itemize}
 Recall that SDSS, BOSS and DEIMOS cover 3800-9200, 3650-10,400, 6500-9300 at R$\sim$2000, 2000, 6000. The mismatch between the wavelength coverage of DEEP2 and those models explain the lack of fits at low redshift. It is part of an ongoing effort to complete the low-redshift extension of DEEP2 with IR extended models, which we shall release in the future.
-Figures \ref{fig:distributions:10Gyr:models} and \ref{fig:distributions:10Gyr:models:zoom} show a model of a 10 Gyr old stellar population with solar metallicity for the three libraries and three IMFs. It illustrates that the change in library corresponds mainly to a change of resolution and wavelength coverage. and that the change in IMF corresponds to a change in the normalization of the flux emitted.
+Figure \ref{fig:distributions:10Gyr:models} shows a model of a 10 Gyr old stellar population with solar metallicity for the three libraries and three IMFs. It illustrates that the change in library corresponds mainly to a change of resolution and wavelength coverage and that the change in IMF corresponds to a change in the normalization of the flux emitted.
 
 \begin{figure}
 \begin{center}
 \caption{\label{fig:distributions:10Gyr:models} 
 Model of a 10 Gyr old stellar population with solar metallicity with a flux normalized to 1 solar mass. The top, middle, bottom plots show the model based on STELIB, MILES and ELODIE libraries. 
+The left column shows the whole models and the right column the zoom on the 4000$\AA$ break region (3900$\AA$-4400$\AA$), most important for age determination. 
 For each model are shown the corresponding curves for each IMF, that induce only a change in the flux normalization. 
 The STELIB model has the largest wavelength coverage with the lowest resolution, then the MILES (medium resolution) and then the ELODIE (highest resolution).
+In the zoomed in plots, we see that the main Calcium absorption lines are present in the three resolutions, but you can note some substructure between the Ca H and the Ca K absorption is clearly visible in the highest resolution ELODIE templates, less visible in the MILES and absent from the STELIB. 
+It stresses the importance of resolution matching before fitting.
 }  
 %\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_7Gyr_all_models.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_STELIB_models.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_MILES_models.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_ELODIE_models.png}
+\includegraphics[width=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_STELIB_models.png}
+\includegraphics[width=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_STELIB_models_38_45.png} \\
+
+\includegraphics[width=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_MILES_models.png}
+\includegraphics[width=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_MILES_models_38_45.png} \\
+
+\includegraphics[width=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_ELODIE_models.png}
+\includegraphics[width=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_ELODIE_models_38_45.png}
 \end{center}
 \end{figure}
 
-
-\begin{figure}
-\begin{center}
-\caption{\label{fig:distributions:10Gyr:models:zoom} 
-Same as Fig. \ref{fig:distributions:10Gyr:models} zoomed in on the 4000$\AA$ break region (3900$\AA$-4400$\AA$). 
-The difference in resolution is seen in the number of spectral features existing in the models. 
-The main Calcium absorption lines are present in the three resolutions, but you can note some substructure between the Ca H and the Ca K absorption is clearly visible in the highest resolution ELODIE templates, less visible in the MILES and absent from the STELIB. 
-%This motivates the need of downsampling the models to the resolution of the data.
-}  
-%\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_7Gyr_all_models.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_STELIB_models_38_45.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_MILES_models_38_45.png}
-\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_10Gyr_ELODIE_models_38_45.png}
-\end{center}
-\end{figure}
+% 
+% \begin{figure}
+% \begin{center}
+% \caption{\label{fig:distributions:10Gyr:models:zoom} 
+% Same as Fig. \ref{fig:distributions:10Gyr:models} zoomed in on the 4000$\AA$ break region (3900$\AA$-4400$\AA$). 
+% The difference in resolution is seen in the number of spectral features existing in the models. 
+% The main Calcium absorption lines are present in the three resolutions, but you can note some substructure between the Ca H and the Ca K absorption is clearly visible in the highest resolution ELODIE templates, less visible in the MILES and absent from the STELIB. 
+% %This motivates the need of downsampling the models to the resolution of the data.
+% }  
+% %\includegraphics[height=8cm]{/home/comparat/software/firefly_explore/data/images/models/Zsun_7Gyr_all_models.png}
+% \end{center}
+% \end{figure}
 
 \subsection{Parameters of the run}
 \label{subsec:parameters}
@@ -687,7 +698,64 @@ Therefore, we do not provide a mean stellar mass based on these nine runs.
 % Each catalog comes with a short 'readme' file that documents its purpose. 
 % For example, we provide nine catalogs (one per IMF x library) with all the measured parameters of the star formation history. We also provide preliminary catalogs of the v1\_1 (accounting for remnants) that have slightly different metallicity and age boundary parameters.
 
-\subsection{Distributions of the parameters obtained}
+\textbf{ADD DATA MODEL FOR THE SUMMARY FILES. Clarify all definitions with links to equations in the firefly paper.}
+
+% SPECOBJID	str		Spectroscopic unique identifier
+% OBJID	int		Photometric unique identifier
+% RUN2D	str		version of the 2d reduction pipeline
+% RUN1D	str		version of the 1d reduction pipeline
+% MJD	int		MJD of observation
+% PLATE	int		Plate number
+% FIBERID	int		Fiber identification number
+% PLUG_RA	Double		Right ascension of fiber, J2000
+% PLUG_DEC	Double		Declination of fiber, J2000
+% Z	float		Best redshift
+% Z_ERR	float		Error in redshift
+% ZWARNING	int		Warnings in "z" redshift
+% CLASS	str		Classification in redshift
+% SUBCLASS	str		Sub-classification in redshift
+% Kroupa_age_lightW	float		light weighted age upper error, Kroupa IMF
+% Kroupa_age_lightW_err_plus	float		light weighted age lower error, Kroupa IMF
+% Kroupa_age_lightW_err_minus	float		light weighted stellar metallicity, Kroupa IMF
+% Kroupa_metallicity_lightW	float		light weighted stellar metallicity upper error, Kroupa IMF
+% Kroupa_metallicity_lightW_err_plus	float		light weighted stellar metallicity upper error, Kroupa IMF
+% Kroupa_metallicity_lightW_err_minus	float		light weighted stellar metallicity lower error, Kroupa IMF
+% Kroupa_stellar_mass	float		stellar mass, Kroupa IMF
+% Kroupa_stellar_mass_err_plus	float		stellar mass upper error, Kroupa IMF
+% Kroupa_stellar_mass_err_minus	float		stellar mass lower error, Kroupa IMF
+% Kroupa_spm_EBV	float		reddenning fitted, Kroupa IMF
+% Kroupa_nComponentsSSP	float		number of single stellar population components, Kroupa IMF
+% Kroupa_chi2	float		chi squared, Kroupa IMF
+% Kroupa_ndof	float		number of degrees of freedom, Kroupa IMF
+% Salpeter_age_lightW	float		light weighted age upper error, Salpeter IMF
+% Salpeter_age_lightW_err_plus	float		light weighted age lower error, Salpeter IMF
+% Salpeter_age_lightW_err_minus	float		light weighted stellar metallicity, Salpeter IMF
+% Salpeter_metallicity_lightW	float		light weighted stellar metallicity upper error, Salpeter IMF
+% Salpeter_metallicity_lightW_err_plus	float		light weighted stellar metallicity upper error, Salpeter IMF
+% Salpeter_metallicity_lightW_err_minus	float		light weighted stellar metallicity lower error, Salpeter IMF
+% Salpeter_stellar_mass	float		stellar mass, Salpeter IMF
+% Salpeter_stellar_mass_err_plus	float		stellar mass upper error, Salpeter IMF
+% Salpeter_stellar_mass_err_minus	float		stellar mass lower error, Salpeter IMF
+% Salpeter_spm_EBV	float		reddenning fitted, Salpeter IMF
+% Salpeter_nComponentsSSP	float		number of single stellar population components, Salpeter IMF
+% Salpeter_chi2	float		chi squared, Salpeter IMF
+% Salpeter_ndof	float		number of degrees of freedom, Salpeter IMF
+% Chabrier_age_lightW	float		light weighted age upper error, Chabrier IMF
+% Chabrier_age_lightW_err_plus	float		light weighted age lower error, Chabrier IMF
+% Chabrier_age_lightW_err_minus	float		light weighted stellar metallicity, Chabrier IMF
+% Chabrier_metallicity_lightW	float		light weighted stellar metallicity upper error, Chabrier IMF
+% Chabrier_metallicity_lightW_err_plus	float		light weighted stellar metallicity upper error, Chabrier IMF
+% Chabrier_metallicity_lightW_err_minus	float		light weighted stellar metallicity lower error, Chabrier IMF
+% Chabrier_stellar_mass	float		stellar mass, Chabrier IMF
+% Chabrier_stellar_mass_err_plus	float		stellar mass upper error, Chabrier IMF
+% Chabrier_stellar_mass_err_minus	float		stellar mass lower error, Chabrier IMF
+% Chabrier_spm_EBV	float		reddenning fitted, Chabrier IMF
+% Chabrier_nComponentsSSP	float		number of single stellar population components, Chabrier IMF
+% Chabrier_chi2	float		chi squared, Chabrier IMF
+% Chabrier_ndof	float		number of degrees of freedom, Chabrier IMF
+
+
+\subsection{Description of the parameters obtained}
 In this section, we present statistics of the four main parameters derived: dust, stellar age, stellar metallicity and stellar mass.
 
 \subsubsection{Dust}
@@ -884,7 +952,7 @@ These systematic differences do not depend on the IMF.}
 
 
 
-
+\subsubsection{Star formation histories}
 
 
 
@@ -1846,13 +1914,13 @@ CXOBRIGHT 		& 104    & 69 & 68 & 10 & 51 		  & 23 & 23 & 17 & 23 \\
 \hline
 \end{longtable}
 \end{center}
-
-\begin{figure*}
-\begin{center}
-\caption{\label{fig:firefly:output:plate:unconstrained}
-Summary plot (Same of Fig. \ref{fig:firefly:output}) for a spectral fit SDSS plate 0266 where the stellar mass is not constrained when using the MILES library, see bottom panel the three points on the bottom left. }
-\includegraphics[width=14cm]{plots/spFly-0266-51602-0159.png}
-\end{center}
-\end{figure*}
+% 
+% \begin{figure*}
+% \begin{center}
+% \caption{\label{fig:firefly:output:plate:unconstrained}
+% Summary plot (Same of Fig. \ref{fig:firefly:output}) for a spectral fit SDSS plate 0266 where the stellar mass is not constrained when using the MILES library, see bottom panel the three points on the bottom left. }
+% \includegraphics[width=14cm]{plots/spFly-0266-51602-0159.png}
+% \end{center}
+% \end{figure*}
 
 \end{document}

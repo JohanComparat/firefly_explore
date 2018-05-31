@@ -54,7 +54,7 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), label='N(0,1)', ls='dashed')
 	p.ylabel('normed distribution')
 	p.xlabel(r'$(M_1-M_{ref})/\sqrt{\sigma^2_{M_1}+\sigma^2_{M_{ref}}}$')
-	p.title('SDSS '+imf_ref.split('_')[0])
+	p.title('SDSS	 '+imf_ref.split('_')[0])
 	p.legend(loc=2, frameon = False, fontsize=11)
 	p.xlim((-7.5, 7.5))
 	p.grid()
