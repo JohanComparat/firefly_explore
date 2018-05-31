@@ -55,3 +55,14 @@ for IMF in imfs :
 
 f.close()
 
+
+out_file = os.path.join('../../data/tables/', "table_deep2.tex")
+f=open(out_file, 'w')
+
+for IMF in imfs :
+	prf = IMF.split('_')[0]+' & '+IMF.split('_')[1]
+	l2w = get_basic_stat_deep2(deep2, 'ZBEST', 'ZQUALITY', prf, 2., IMF, o2=False)
+	f.write(l2w + " \n")
+
+f.close()
+
