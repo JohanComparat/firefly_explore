@@ -1,4 +1,4 @@
-# on ds52 
+	# on ds52 
 import astropy.io.fits as fits
 import matplotlib
 matplotlib.use('Agg')
@@ -99,7 +99,7 @@ def get_basic_stat_firefly_DR14(catalog, z_name, z_err_name, class_name, zwarnin
     #return catalog_sel, m_catalog, w_catalog
 
 def get_basic_stat_deep2(catalog, z_name, z_flg, name, zflg_min, prefix, o2=False):
-    catalog_zOk = (catalog[z_name] > z_min) & (catalog[z_flg]>=zflg_min) & (catalog[z_name] > z_min) & (catalog[z_name] < z_max) & (catalog['SSR']>0) & (catalog['TSR']>0) & (catalog['SSR']<=1.0001) & (catalog['TSR']<=1.0001)
+    catalog_zOk = (catalog[z_name] > 0.7) & (catalog[z_flg]>=zflg_min) & (catalog[z_name] > 1.2) & (catalog[z_name] < z_max) & (catalog['SSR']>0) & (catalog['TSR']>0) & (catalog['SSR']<=1.0001) & (catalog['TSR']<=1.0001)
     converged = (catalog_zOk)&(catalog[prefix+'stellar_mass'] < 10**13. ) & (catalog[prefix+'stellar_mass'] > 10**4 )  & (catalog[prefix+'stellar_mass'] > catalog[prefix+'stellar_mass_low_1sig'] ) & (catalog[prefix+'stellar_mass'] < catalog[prefix+'stellar_mass_up_1sig'] ) 
     dex04 = (converged) & (catalog[prefix+'stellar_mass'] < 10**14. ) & (catalog[prefix+'stellar_mass'] > 0 )  & (catalog[prefix+'stellar_mass'] > catalog[prefix+'stellar_mass_low_1sig'] ) & (catalog[prefix+'stellar_mass'] < catalog[prefix+'stellar_mass_up_1sig'] ) & ( - n.log10(catalog[prefix+'stellar_mass_low_1sig'])  + n.log10(catalog[prefix+'stellar_mass_up_1sig']) < 0.8 )
     dex02 = (dex04) & ( - n.log10(catalog[prefix+'stellar_mass_low_1sig'])  + n.log10(catalog[prefix+'stellar_mass_up_1sig']) < 0.4 )
