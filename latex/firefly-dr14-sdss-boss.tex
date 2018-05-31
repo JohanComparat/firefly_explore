@@ -705,1222 +705,29 @@ Therefore, we do not provide a mean stellar mass based on these nine runs.
 % Each catalog comes with a short 'readme' file that documents its purpose. 
 % For example, we provide nine catalogs (one per IMF x library) with all the measured parameters of the star formation history. We also provide preliminary catalogs of the v1\_1 (accounting for remnants) that have slightly different metallicity and age boundary parameters.
 
-\textbf{ADD DATA MODEL FOR THE SUMMARY FILES. Clarify all definitions with links to equations in the firefly paper.}
-
-The SDSS summary file contains the following columns.
-
-\begin{tabular}{| c | L{3cm} |  L{3cm} | L{3cm} | L{3cm} | L{3cm} | L{3cm} | L{3cm} | L{3cm} | C{3cm} | R{3cm} |}
-
-\begin{itemize}
-\item SURVEY: 
-\item INSTRUMENT: 
-\item CHUNK: 
-\item PROGRAMNAME: 
-\item PLATERUN: 
-\item PLATEQUALITY: 
-\item PLATESN2: 
-\item DEREDSN2: 
-\item LAMBDA\_EFF: 
-\item BLUEFIBER: 
-\item ZOFFSET: 
-\item SNTURNOFF: 
-\item NTURNOFF: 
-\item SPECPRIMARY: 
-\item SPECSDSS: 
-\item SPECLEGACY: 
-\item SPECSEGUE: 
-\item SPECSEGUE1: 
-\item SPECSEGUE2: 
-\end{itemize}
-
-& 
+The SDSS and eBOSS summary files contain the columns described in Table \ref{table:data:model}. The DEEP2 summary file columns are described in the readme on the website.
 
 
-\begin{itemize} 
-\item SPECBOSS: 
-\item BOSS\_SPECOBJ\_ID: 
-\item SPECOBJID: 
-\item FLUXOBJID: 
-\item BESTOBJID: 
-\item TARGETOBJID: 
-\item PLATEID: 
-\item NSPECOBS: 
-\item FIRSTRELEASE: 
-\item RUN2D: 
-\item RUN1D: 
-\item DESIGNID: 
-\item CX: 
-\item CY: 
-\item CZ: 
-\item XFOCAL: 
-\item YFOCAL: 
-\item SOURCETYPE: 
-\item TARGETTYPE: 
-\end{itemize}
-
-& 
-
-
-\begin{itemize} 
-\item THING\_ID\_TARGETING: 
-\item THING\_ID: 
-\item PRIMTARGET: 
-\item SECTARGET: 
-\item LEGACY\_TARGET1: 
-\item LEGACY\_TARGET2: 
-\item SPECIAL\_TARGET1: 
-\item SPECIAL\_TARGET2: 
-\item SEGUE1\_TARGET1: 
-\item SEGUE1\_TARGET2: 
-\item SEGUE2\_TARGET1: 
-\item SEGUE2\_TARGET2: 
-\item MARVELS\_TARGET1: 
-\item MARVELS\_TARGET2: 
-\item BOSS\_TARGET1: 
-\item BOSS\_TARGET2: 
-\item EBOSS\_TARGET0: 
-\item EBOSS\_TARGET1: 
-\item EBOSS\_TARGET2: 
-\item EBOSS\_TARGET\_ID: 
-\item ANCILLARY\_TARGET1: 
-\item ANCILLARY\_TARGET2: 
-\end{itemize}
-
-& 
-
-
-\begin{itemize} 
-\item SPECTROGRAPHID: 
-\item PLATE: 
-\item TILE: 
-\item MJD: 
-\item FIBERID: 
-\item OBJID: 
-\item PLUG\_RA: 
-\item PLUG\_DEC: 
-\item CLASS: 
-\item SUBCLASS: 
-\item Z: 
-\item Z\_ERR: 
-\item RCHI2: 
-\item DOF: 
-\item RCHI2DIFF: 
-\item TFILE: 
-\item TCOLUMN: 
-\item NPOLY: 
-\item THETA: 
-\item VDISP: 
-\item VDISP\_ERR: 
-\item VDISPZ: 
-\item VDISPZ\_ERR: 
-\end{itemize}
-
-& 
-
-
-\begin{itemize} 
-\item VDISPCHI2: 
-\item VDISPNPIX: 
-\item VDISPDOF: 
-\item WAVEMIN: 
-\item WAVEMAX: 
-\item WCOVERAGE: 
-\item ZWARNING: 
-\item SN\_MEDIAN\_ALL: 
-\item SN\_MEDIAN: 
-\item CHI68P: 
-\item FRACNSIGMA: 
-\item FRACNSIGHI: 
-\item FRACNSIGLO: 
-\item SPECTROFLUX: 
-\item SPECTROFLUX\_IVAR: 
-\item SPECTROSYNFLUX: 
-\item SPECTROSYNFLUX\_IVAR: 
-\item SPECTROSKYFLUX: 
-\item ANYANDMASK: 
-\item ANYORMASK: 
-\item SPEC1\_G: 
-\item SPEC1\_R: 
-\item SPEC1\_I: 
-\item SPEC2\_G: 
-\item SPEC2\_R: 
-\item SPEC2\_I: 
-\item ELODIE\_FILENAME: 
-\item ELODIE\_OBJECT: 
-\item ELODIE\_SPTYPE: 
-\item ELODIE\_BV: 
-\item ELODIE\_TEFF: 
-\item ELODIE\_LOGG: 
-\item ELODIE\_FEH: 
-\item ELODIE\_Z: 
-\item ELODIE\_Z\_ERR: 
-\item ELODIE\_Z\_MODELERR: 
-\item ELODIE\_RCHI2: 
-\item ELODIE\_DOF: 
-\end{itemize}
-
-& 
-
-
-\begin{itemize} 
-\item Z\_NOQSO: 
-\item Z\_ERR\_NOQSO: 
-\item ZWARNING\_NOQSO: 
-\item CLASS\_NOQSO: 
-\item SUBCLASS\_NOQSO: 
-\item RCHI2DIFF\_NOQSO: 
-\item Z\_PERSON: 
-\item CLASS\_PERSON: 
-\item Z\_CONF\_PERSON: 
-\item COMMENTS\_PERSON: 
-\item CALIBFLUX: 
-\item CALIBFLUX\_IVAR: 
-\item Chabrier\_MILES\_age\_lightW: 
-\item Chabrier\_MILES\_age\_lightW\_up\_1sig: 
-\item Chabrier\_MILES\_age\_lightW\_low\_1sig: 
-\item Chabrier\_MILES\_age\_lightW\_up\_2sig: 
-\item Chabrier\_MILES\_age\_lightW\_low\_2sig: 
-\item Chabrier\_MILES\_metallicity\_lightW: 
-\item Chabrier\_MILES\_metallicity\_lightW\_up\_1sig: 
-\item Chabrier\_MILES\_metallicity\_lightW\_low\_1sig: 
-\item Chabrier\_MILES\_metallicity\_lightW\_up\_2sig: 
-\item Chabrier\_MILES\_metallicity\_lightW\_low\_2sig: 
-\item Chabrier\_MILES\_age\_massW: 
-\item Chabrier\_MILES\_age\_massW\_up\_1sig: 
-\item Chabrier\_MILES\_age\_massW\_low\_1sig: 
-\item Chabrier\_MILES\_age\_massW\_up\_2sig: 
-\item Chabrier\_MILES\_age\_massW\_low\_2sig: 
-\item Chabrier\_MILES\_metallicity\_massW: 
-\item Chabrier\_MILES\_metallicity\_massW\_up\_1sig: 
-\item Chabrier\_MILES\_metallicity\_massW\_low\_1sig: 
-\item Chabrier\_MILES\_metallicity\_massW\_up\_2sig: 
-\item Chabrier\_MILES\_metallicity\_massW\_low\_2sig: 
-\item Chabrier\_MILES\_stellar\_mass: 
-\item Chabrier\_MILES\_stellar\_mass\_up\_1sig: 
-\item Chabrier\_MILES\_stellar\_mass\_low\_1sig: 
-\item Chabrier\_MILES\_stellar\_mass\_up\_2sig: 
-\item Chabrier\_MILES\_stellar\_mass\_low\_2sig: 
-\item Chabrier\_MILES\_living\_star\_mass: 
-\item Chabrier\_MILES\_remnant\_mass: 
-\item Chabrier\_MILES\_remnant\_mass\_in\_whitedwarfs: 
-\item Chabrier\_MILES\_remnant\_mass\_in\_neutronstars: 
-\item Chabrier\_MILES\_remnant\_mass\_blackholes: 
-\item Chabrier\_MILES\_mass\_of\_ejecta: 
-\item Chabrier\_MILES\_spm\_EBV: 
-\item Chabrier\_MILES\_nComponentsSSP: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_0: 
-\item Chabrier\_MILES\_age\_ssp\_0: 
-\item Chabrier\_MILES\_metal\_ssp\_0: 
-\item Chabrier\_MILES\_weightMass\_ssp\_0: 
-\item Chabrier\_MILES\_weightLight\_ssp\_0: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_1: 
-\item Chabrier\_MILES\_age\_ssp\_1: 
-\item Chabrier\_MILES\_metal\_ssp\_1: 
-\item Chabrier\_MILES\_weightMass\_ssp\_1: 
-\item Chabrier\_MILES\_weightLight\_ssp\_1: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_2: 
-\item Chabrier\_MILES\_age\_ssp\_2: 
-\item Chabrier\_MILES\_metal\_ssp\_2: 
-\item Chabrier\_MILES\_weightMass\_ssp\_2: 
-\item Chabrier\_MILES\_weightLight\_ssp\_2: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_3: 
-\item Chabrier\_MILES\_age\_ssp\_3: 
-\item Chabrier\_MILES\_metal\_ssp\_3: 
-\item Chabrier\_MILES\_weightMass\_ssp\_3: 
-\item Chabrier\_MILES\_weightLight\_ssp\_3: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_4: 
-\item Chabrier\_MILES\_age\_ssp\_4: 
-\item Chabrier\_MILES\_metal\_ssp\_4: 
-\item Chabrier\_MILES\_weightMass\_ssp\_4: 
-\item Chabrier\_MILES\_weightLight\_ssp\_4: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_5: 
-\item Chabrier\_MILES\_age\_ssp\_5: 
-\item Chabrier\_MILES\_metal\_ssp\_5: 
-\item Chabrier\_MILES\_weightMass\_ssp\_5: 
-\item Chabrier\_MILES\_weightLight\_ssp\_5: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_6: 
-\item Chabrier\_MILES\_age\_ssp\_6: 
-\item Chabrier\_MILES\_metal\_ssp\_6: 
-\item Chabrier\_MILES\_weightMass\_ssp\_6: 
-\item Chabrier\_MILES\_weightLight\_ssp\_6: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_7: 
-\item Chabrier\_MILES\_age\_ssp\_7: 
-\item Chabrier\_MILES\_metal\_ssp\_7: 
-\item Chabrier\_MILES\_weightMass\_ssp\_7: 
-\item Chabrier\_MILES\_weightLight\_ssp\_7: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_8: 
-\item Chabrier\_MILES\_age\_ssp\_8: 
-\item Chabrier\_MILES\_metal\_ssp\_8: 
-\item Chabrier\_MILES\_weightMass\_ssp\_8: 
-\item Chabrier\_MILES\_weightLight\_ssp\_8: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_9: 
-\item Chabrier\_MILES\_age\_ssp\_9: 
-\item Chabrier\_MILES\_metal\_ssp\_9: 
-\item Chabrier\_MILES\_weightMass\_ssp\_9: 
-\item Chabrier\_MILES\_weightLight\_ssp\_9: 
-\end{itemize}
-
-\\
-
-\end{tabular}
-
-
-\begin{itemize} 
-\item THING\_ID\_TARGETING: 
-\item THING\_ID: 
-\item PRIMTARGET: 
-\item SECTARGET: 
-\item LEGACY\_TARGET1: 
-\item LEGACY\_TARGET2: 
-\item SPECIAL\_TARGET1: 
-\item SPECIAL\_TARGET2: 
-\item SEGUE1\_TARGET1: 
-\item SEGUE1\_TARGET2: 
-\item SEGUE2\_TARGET1: 
-\item SEGUE2\_TARGET2: 
-\item MARVELS\_TARGET1: 
-\item MARVELS\_TARGET2: 
-\item BOSS\_TARGET1: 
-\item BOSS\_TARGET2: 
-\item EBOSS\_TARGET0: 
-\item EBOSS\_TARGET1: 
-\item EBOSS\_TARGET2: 
-\item EBOSS\_TARGET\_ID: 
-\item ANCILLARY\_TARGET1: 
-\item ANCILLARY\_TARGET2: 
-\item SPECTROGRAPHID: 
-\item PLATE: 
-\item TILE: 
-\item MJD: 
-\item FIBERID: 
-\item OBJID: 
-\item PLUG\_RA: 
-\item PLUG\_DEC: 
-\item CLASS: 
-\item SUBCLASS: 
-\item Z: 
-\item Z\_ERR: 
-\item RCHI2: 
-\item DOF: 
-\item RCHI2DIFF: 
-\item TFILE: 
-\item TCOLUMN: 
-\item NPOLY: 
-\item THETA: 
-\item VDISP: 
-\item VDISP\_ERR: 
-\item VDISPZ: 
-\item VDISPZ\_ERR: 
-\item VDISPCHI2: 
-\item VDISPNPIX: 
-\item VDISPDOF: 
-\item WAVEMIN: 
-\item WAVEMAX: 
-\item WCOVERAGE: 
-\item ZWARNING: 
-\item SN\_MEDIAN\_ALL: 
-\item SN\_MEDIAN: 
-\item CHI68P: 
-\item FRACNSIGMA: 
-\item FRACNSIGHI: 
-\item FRACNSIGLO: 
-\item SPECTROFLUX: 
-\item SPECTROFLUX\_IVAR: 
-\item SPECTROSYNFLUX: 
-\item SPECTROSYNFLUX\_IVAR: 
-\item SPECTROSKYFLUX: 
-\item ANYANDMASK: 
-\item ANYORMASK: 
-\item SPEC1\_G: 
-\item SPEC1\_R: 
-\item SPEC1\_I: 
-\item SPEC2\_G: 
-\item SPEC2\_R: 
-\item SPEC2\_I: 
-\item ELODIE\_FILENAME: 
-\item ELODIE\_OBJECT: 
-\item ELODIE\_SPTYPE: 
-\item ELODIE\_BV: 
-\item ELODIE\_TEFF: 
-\item ELODIE\_LOGG: 
-\item ELODIE\_FEH: 
-\item ELODIE\_Z: 
-\item ELODIE\_Z\_ERR: 
-\item ELODIE\_Z\_MODELERR: 
-\item ELODIE\_RCHI2: 
-\item ELODIE\_DOF: 
-\item Z\_NOQSO: 
-\item Z\_ERR\_NOQSO: 
-\item ZWARNING\_NOQSO: 
-\item CLASS\_NOQSO: 
-\item SUBCLASS\_NOQSO: 
-\item RCHI2DIFF\_NOQSO: 
-\item Z\_PERSON: 
-\item CLASS\_PERSON: 
-\item Z\_CONF\_PERSON: 
-\item COMMENTS\_PERSON: 
-\item CALIBFLUX: 
-\item CALIBFLUX\_IVAR: 
-\item Chabrier\_MILES\_age\_lightW: 
-\item Chabrier\_MILES\_age\_lightW\_up\_1sig: 
-\item Chabrier\_MILES\_age\_lightW\_low\_1sig: 
-\item Chabrier\_MILES\_age\_lightW\_up\_2sig: 
-\item Chabrier\_MILES\_age\_lightW\_low\_2sig: 
-\item Chabrier\_MILES\_metallicity\_lightW: 
-\item Chabrier\_MILES\_metallicity\_lightW\_up\_1sig: 
-\item Chabrier\_MILES\_metallicity\_lightW\_low\_1sig: 
-\item Chabrier\_MILES\_metallicity\_lightW\_up\_2sig: 
-\item Chabrier\_MILES\_metallicity\_lightW\_low\_2sig: 
-\item Chabrier\_MILES\_age\_massW: 
-\item Chabrier\_MILES\_age\_massW\_up\_1sig: 
-\item Chabrier\_MILES\_age\_massW\_low\_1sig: 
-\item Chabrier\_MILES\_age\_massW\_up\_2sig: 
-\item Chabrier\_MILES\_age\_massW\_low\_2sig: 
-\item Chabrier\_MILES\_metallicity\_massW: 
-\item Chabrier\_MILES\_metallicity\_massW\_up\_1sig: 
-\item Chabrier\_MILES\_metallicity\_massW\_low\_1sig: 
-\item Chabrier\_MILES\_metallicity\_massW\_up\_2sig: 
-\item Chabrier\_MILES\_metallicity\_massW\_low\_2sig: 
-\item Chabrier\_MILES\_stellar\_mass: 
-\item Chabrier\_MILES\_stellar\_mass\_up\_1sig: 
-\item Chabrier\_MILES\_stellar\_mass\_low\_1sig: 
-\item Chabrier\_MILES\_stellar\_mass\_up\_2sig: 
-\item Chabrier\_MILES\_stellar\_mass\_low\_2sig: 
-\item Chabrier\_MILES\_living\_star\_mass: 
-\item Chabrier\_MILES\_remnant\_mass: 
-\item Chabrier\_MILES\_remnant\_mass\_in\_whitedwarfs: 
-\item Chabrier\_MILES\_remnant\_mass\_in\_neutronstars: 
-\item Chabrier\_MILES\_remnant\_mass\_blackholes: 
-\item Chabrier\_MILES\_mass\_of\_ejecta: 
-\item Chabrier\_MILES\_spm\_EBV: 
-\item Chabrier\_MILES\_nComponentsSSP: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_0: 
-\item Chabrier\_MILES\_age\_ssp\_0: 
-\item Chabrier\_MILES\_metal\_ssp\_0: 
-\item Chabrier\_MILES\_weightMass\_ssp\_0: 
-\item Chabrier\_MILES\_weightLight\_ssp\_0: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_1: 
-\item Chabrier\_MILES\_age\_ssp\_1: 
-\item Chabrier\_MILES\_metal\_ssp\_1: 
-\item Chabrier\_MILES\_weightMass\_ssp\_1: 
-\item Chabrier\_MILES\_weightLight\_ssp\_1: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_2: 
-\item Chabrier\_MILES\_age\_ssp\_2: 
-\item Chabrier\_MILES\_metal\_ssp\_2: 
-\item Chabrier\_MILES\_weightMass\_ssp\_2: 
-\item Chabrier\_MILES\_weightLight\_ssp\_2: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_3: 
-\item Chabrier\_MILES\_age\_ssp\_3: 
-\item Chabrier\_MILES\_metal\_ssp\_3: 
-\item Chabrier\_MILES\_weightMass\_ssp\_3: 
-\item Chabrier\_MILES\_weightLight\_ssp\_3: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_4: 
-\item Chabrier\_MILES\_age\_ssp\_4: 
-\item Chabrier\_MILES\_metal\_ssp\_4: 
-\item Chabrier\_MILES\_weightMass\_ssp\_4: 
-\item Chabrier\_MILES\_weightLight\_ssp\_4: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_5: 
-\item Chabrier\_MILES\_age\_ssp\_5: 
-\item Chabrier\_MILES\_metal\_ssp\_5: 
-\item Chabrier\_MILES\_weightMass\_ssp\_5: 
-\item Chabrier\_MILES\_weightLight\_ssp\_5: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_6: 
-\item Chabrier\_MILES\_age\_ssp\_6: 
-\item Chabrier\_MILES\_metal\_ssp\_6: 
-\item Chabrier\_MILES\_weightMass\_ssp\_6: 
-\item Chabrier\_MILES\_weightLight\_ssp\_6: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_7: 
-\item Chabrier\_MILES\_age\_ssp\_7: 
-\item Chabrier\_MILES\_metal\_ssp\_7: 
-\item Chabrier\_MILES\_weightMass\_ssp\_7: 
-\item Chabrier\_MILES\_weightLight\_ssp\_7: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_8: 
-\item Chabrier\_MILES\_age\_ssp\_8: 
-\item Chabrier\_MILES\_metal\_ssp\_8: 
-\item Chabrier\_MILES\_weightMass\_ssp\_8: 
-\item Chabrier\_MILES\_weightLight\_ssp\_8: 
-\item Chabrier\_MILES\_stellar\_mass\_ssp\_9: 
-\item Chabrier\_MILES\_age\_ssp\_9: 
-\item Chabrier\_MILES\_metal\_ssp\_9: 
-\item Chabrier\_MILES\_weightMass\_ssp\_9: 
-\item Chabrier\_MILES\_weightLight\_ssp\_9: 
-% \item Salpeter\_MILES\_age\_lightW: 
-% \item Salpeter\_MILES\_age\_lightW\_up\_1sig: 
-% \item Salpeter\_MILES\_age\_lightW\_low\_1sig: 
-% \item Salpeter\_MILES\_age\_lightW\_up\_2sig: 
-% \item Salpeter\_MILES\_age\_lightW\_low\_2sig: 
-% \item Salpeter\_MILES\_metallicity\_lightW: 
-% \item Salpeter\_MILES\_metallicity\_lightW\_up\_1sig: 
-% \item Salpeter\_MILES\_metallicity\_lightW\_low\_1sig: 
-% \item Salpeter\_MILES\_metallicity\_lightW\_up\_2sig: 
-% \item Salpeter\_MILES\_metallicity\_lightW\_low\_2sig: 
-% \item Salpeter\_MILES\_age\_massW: 
-% \item Salpeter\_MILES\_age\_massW\_up\_1sig: 
-% \item Salpeter\_MILES\_age\_massW\_low\_1sig: 
-% \item Salpeter\_MILES\_age\_massW\_up\_2sig: 
-% \item Salpeter\_MILES\_age\_massW\_low\_2sig: 
-% \item Salpeter\_MILES\_metallicity\_massW: 
-% \item Salpeter\_MILES\_metallicity\_massW\_up\_1sig: 
-% \item Salpeter\_MILES\_metallicity\_massW\_low\_1sig: 
-% \item Salpeter\_MILES\_metallicity\_massW\_up\_2sig: 
-% \item Salpeter\_MILES\_metallicity\_massW\_low\_2sig: 
-% \item Salpeter\_MILES\_stellar\_mass: 
-% \item Salpeter\_MILES\_stellar\_mass\_up\_1sig: 
-% \item Salpeter\_MILES\_stellar\_mass\_low\_1sig: 
-% \item Salpeter\_MILES\_stellar\_mass\_up\_2sig: 
-% \item Salpeter\_MILES\_stellar\_mass\_low\_2sig: 
-% \item Salpeter\_MILES\_living\_star\_mass: 
-% \item Salpeter\_MILES\_remnant\_mass: 
-% \item Salpeter\_MILES\_remnant\_mass\_in\_whitedwarfs: 
-% \item Salpeter\_MILES\_remnant\_mass\_in\_neutronstars: 
-% \item Salpeter\_MILES\_remnant\_mass\_blackholes: 
-% \item Salpeter\_MILES\_mass\_of\_ejecta: 
-% \item Salpeter\_MILES\_spm\_EBV: 
-% \item Salpeter\_MILES\_nComponentsSSP: 
-% \item Salpeter\_MILES\_stellar\_mass\_ssp\_0: 
-% \item Salpeter\_MILES\_age\_ssp\_0: 
-% \item Salpeter\_MILES\_metal\_ssp\_0: 
-% \item Salpeter\_MILES\_weightMass\_ssp\_0: 
-% \item Salpeter\_MILES\_weightLight\_ssp\_0: 
-% \item Salpeter\_MILES\_stellar\_mass\_ssp\_1: 
-% \item Salpeter\_MILES\_age\_ssp\_1: 
-% \item Salpeter\_MILES\_metal\_ssp\_1: 
-% \item Salpeter\_MILES\_weightMass\_ssp\_1: 
-% \item Salpeter\_MILES\_weightLight\_ssp\_1: 
-% \item Salpeter\_MILES\_stellar\_mass\_ssp\_2: 
-% \item Salpeter\_MILES\_age\_ssp\_2: 
-% \item Salpeter\_MILES\_metal\_ssp\_2: 
-% \item Salpeter\_MILES\_weightMass\_ssp\_2: 
-% \item Salpeter\_MILES\_weightLight\_ssp\_2: 
-% \item Salpeter\_MILES\_stellar\_mass\_ssp\_3: 
-% \item Salpeter\_MILES\_age\_ssp\_3: 
-% \item Salpeter\_MILES\_metal\_ssp\_3: 
-% \item Salpeter\_MILES\_weightMass\_ssp\_3: 
-% \item Salpeter\_MILES\_weightLight\_ssp\_3: 
-% \item Salpeter\_MILES\_stellar\_mass\_ssp\_4: 
-% \item Salpeter\_MILES\_age\_ssp\_4: 
-% \item Salpeter\_MILES\_metal\_ssp\_4: 
-% \item Salpeter\_MILES\_weightMass\_ssp\_4: 
-% \item Salpeter\_MILES\_weightLight\_ssp\_4: 
-% \item Salpeter\_MILES\_stellar\_mass\_ssp\_5: 
-% \item Salpeter\_MILES\_age\_ssp\_5: 
-% \item Salpeter\_MILES\_metal\_ssp\_5: 
-% \item Salpeter\_MILES\_weightMass\_ssp\_5: 
-% \item Salpeter\_MILES\_weightLight\_ssp\_5: 
-% \item Salpeter\_MILES\_stellar\_mass\_ssp\_6: 
-% \item Salpeter\_MILES\_age\_ssp\_6: 
-% \item Salpeter\_MILES\_metal\_ssp\_6: 
-% \item Salpeter\_MILES\_weightMass\_ssp\_6: 
-% \item Salpeter\_MILES\_weightLight\_ssp\_6: 
-% \item Salpeter\_MILES\_stellar\_mass\_ssp\_7: 
-% \item Salpeter\_MILES\_age\_ssp\_7: 
-% \item Salpeter\_MILES\_metal\_ssp\_7: 
-% \item Salpeter\_MILES\_weightMass\_ssp\_7: 
-% \item Salpeter\_MILES\_weightLight\_ssp\_7: 
-% \item Salpeter\_MILES\_stellar\_mass\_ssp\_8: 
-% \item Salpeter\_MILES\_age\_ssp\_8: 
-% \item Salpeter\_MILES\_metal\_ssp\_8: 
-% \item Salpeter\_MILES\_weightMass\_ssp\_8: 
-% \item Salpeter\_MILES\_weightLight\_ssp\_8: 
-% \item Salpeter\_MILES\_stellar\_mass\_ssp\_9: 
-% \item Salpeter\_MILES\_age\_ssp\_9: 
-% \item Salpeter\_MILES\_metal\_ssp\_9: 
-% \item Salpeter\_MILES\_weightMass\_ssp\_9: 
-% \item Salpeter\_MILES\_weightLight\_ssp\_9: 
-% \item Kroupa\_MILES\_age\_lightW: 
-% \item Kroupa\_MILES\_age\_lightW\_up\_1sig: 
-% \item Kroupa\_MILES\_age\_lightW\_low\_1sig: 
-% \item Kroupa\_MILES\_age\_lightW\_up\_2sig: 
-% \item Kroupa\_MILES\_age\_lightW\_low\_2sig: 
-% \item Kroupa\_MILES\_metallicity\_lightW: 
-% \item Kroupa\_MILES\_metallicity\_lightW\_up\_1sig: 
-% \item Kroupa\_MILES\_metallicity\_lightW\_low\_1sig: 
-% \item Kroupa\_MILES\_metallicity\_lightW\_up\_2sig: 
-% \item Kroupa\_MILES\_metallicity\_lightW\_low\_2sig: 
-% \item Kroupa\_MILES\_age\_massW: 
-% \item Kroupa\_MILES\_age\_massW\_up\_1sig: 
-% \item Kroupa\_MILES\_age\_massW\_low\_1sig: 
-% \item Kroupa\_MILES\_age\_massW\_up\_2sig: 
-% \item Kroupa\_MILES\_age\_massW\_low\_2sig: 
-% \item Kroupa\_MILES\_metallicity\_massW: 
-% \item Kroupa\_MILES\_metallicity\_massW\_up\_1sig: 
-% \item Kroupa\_MILES\_metallicity\_massW\_low\_1sig: 
-% \item Kroupa\_MILES\_metallicity\_massW\_up\_2sig: 
-% \item Kroupa\_MILES\_metallicity\_massW\_low\_2sig: 
-% \item Kroupa\_MILES\_stellar\_mass: 
-% \item Kroupa\_MILES\_stellar\_mass\_up\_1sig: 
-% \item Kroupa\_MILES\_stellar\_mass\_low\_1sig: 
-% \item Kroupa\_MILES\_stellar\_mass\_up\_2sig: 
-% \item Kroupa\_MILES\_stellar\_mass\_low\_2sig: 
-% \item Kroupa\_MILES\_living\_star\_mass: 
-% \item Kroupa\_MILES\_remnant\_mass: 
-% \item Kroupa\_MILES\_remnant\_mass\_in\_whitedwarfs: 
-% \item Kroupa\_MILES\_remnant\_mass\_in\_neutronstars: 
-% \item Kroupa\_MILES\_remnant\_mass\_blackholes: 
-% \item Kroupa\_MILES\_mass\_of\_ejecta: 
-% \item Kroupa\_MILES\_spm\_EBV: 
-% \item Kroupa\_MILES\_nComponentsSSP: 
-% \item Kroupa\_MILES\_stellar\_mass\_ssp\_0: 
-% \item Kroupa\_MILES\_age\_ssp\_0: 
-% \item Kroupa\_MILES\_metal\_ssp\_0: 
-% \item Kroupa\_MILES\_weightMass\_ssp\_0: 
-% \item Kroupa\_MILES\_weightLight\_ssp\_0: 
-% \item Kroupa\_MILES\_stellar\_mass\_ssp\_1: 
-% \item Kroupa\_MILES\_age\_ssp\_1: 
-% \item Kroupa\_MILES\_metal\_ssp\_1: 
-% \item Kroupa\_MILES\_weightMass\_ssp\_1: 
-% \item Kroupa\_MILES\_weightLight\_ssp\_1: 
-% \item Kroupa\_MILES\_stellar\_mass\_ssp\_2: 
-% \item Kroupa\_MILES\_age\_ssp\_2: 
-% \item Kroupa\_MILES\_metal\_ssp\_2: 
-% \item Kroupa\_MILES\_weightMass\_ssp\_2: 
-% \item Kroupa\_MILES\_weightLight\_ssp\_2: 
-% \item Kroupa\_MILES\_stellar\_mass\_ssp\_3: 
-% \item Kroupa\_MILES\_age\_ssp\_3: 
-% \item Kroupa\_MILES\_metal\_ssp\_3: 
-% \item Kroupa\_MILES\_weightMass\_ssp\_3: 
-% \item Kroupa\_MILES\_weightLight\_ssp\_3: 
-% \item Kroupa\_MILES\_stellar\_mass\_ssp\_4: 
-% \item Kroupa\_MILES\_age\_ssp\_4: 
-% \item Kroupa\_MILES\_metal\_ssp\_4: 
-% \item Kroupa\_MILES\_weightMass\_ssp\_4: 
-% \item Kroupa\_MILES\_weightLight\_ssp\_4: 
-% \item Kroupa\_MILES\_stellar\_mass\_ssp\_5: 
-% \item Kroupa\_MILES\_age\_ssp\_5: 
-% \item Kroupa\_MILES\_metal\_ssp\_5: 
-% \item Kroupa\_MILES\_weightMass\_ssp\_5: 
-% \item Kroupa\_MILES\_weightLight\_ssp\_5: 
-% \item Kroupa\_MILES\_stellar\_mass\_ssp\_6: 
-% \item Kroupa\_MILES\_age\_ssp\_6: 
-% \item Kroupa\_MILES\_metal\_ssp\_6: 
-% \item Kroupa\_MILES\_weightMass\_ssp\_6: 
-% \item Kroupa\_MILES\_weightLight\_ssp\_6: 
-% \item Kroupa\_MILES\_stellar\_mass\_ssp\_7: 
-% \item Kroupa\_MILES\_age\_ssp\_7: 
-% \item Kroupa\_MILES\_metal\_ssp\_7: 
-% \item Kroupa\_MILES\_weightMass\_ssp\_7: 
-% \item Kroupa\_MILES\_weightLight\_ssp\_7: 
-% \item Kroupa\_MILES\_stellar\_mass\_ssp\_8: 
-% \item Kroupa\_MILES\_age\_ssp\_8: 
-% \item Kroupa\_MILES\_metal\_ssp\_8: 
-% \item Kroupa\_MILES\_weightMass\_ssp\_8: 
-% \item Kroupa\_MILES\_weightLight\_ssp\_8: 
-% \item Kroupa\_MILES\_stellar\_mass\_ssp\_9: 
-% \item Kroupa\_MILES\_age\_ssp\_9: 
-% \item Kroupa\_MILES\_metal\_ssp\_9: 
-% \item Kroupa\_MILES\_weightMass\_ssp\_9: 
-% \item Kroupa\_MILES\_weightLight\_ssp\_9: 
-% \item Chabrier\_ELODIE\_age\_lightW: 
-% \item Chabrier\_ELODIE\_age\_lightW\_up\_1sig: 
-% \item Chabrier\_ELODIE\_age\_lightW\_low\_1sig: 
-% \item Chabrier\_ELODIE\_age\_lightW\_up\_2sig: 
-% \item Chabrier\_ELODIE\_age\_lightW\_low\_2sig: 
-% \item Chabrier\_ELODIE\_metallicity\_lightW: 
-% \item Chabrier\_ELODIE\_metallicity\_lightW\_up\_1sig: 
-% \item Chabrier\_ELODIE\_metallicity\_lightW\_low\_1sig: 
-% \item Chabrier\_ELODIE\_metallicity\_lightW\_up\_2sig: 
-% \item Chabrier\_ELODIE\_metallicity\_lightW\_low\_2sig: 
-% \item Chabrier\_ELODIE\_age\_massW: 
-% \item Chabrier\_ELODIE\_age\_massW\_up\_1sig: 
-% \item Chabrier\_ELODIE\_age\_massW\_low\_1sig: 
-% \item Chabrier\_ELODIE\_age\_massW\_up\_2sig: 
-% \item Chabrier\_ELODIE\_age\_massW\_low\_2sig: 
-% \item Chabrier\_ELODIE\_metallicity\_massW: 
-% \item Chabrier\_ELODIE\_metallicity\_massW\_up\_1sig: 
-% \item Chabrier\_ELODIE\_metallicity\_massW\_low\_1sig: 
-% \item Chabrier\_ELODIE\_metallicity\_massW\_up\_2sig: 
-% \item Chabrier\_ELODIE\_metallicity\_massW\_low\_2sig: 
-% \item Chabrier\_ELODIE\_stellar\_mass: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_up\_1sig: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_low\_1sig: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_up\_2sig: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_low\_2sig: 
-% \item Chabrier\_ELODIE\_living\_star\_mass: 
-% \item Chabrier\_ELODIE\_remnant\_mass: 
-% \item Chabrier\_ELODIE\_remnant\_mass\_in\_whitedwarfs: 
-% \item Chabrier\_ELODIE\_remnant\_mass\_in\_neutronstars: 
-% \item Chabrier\_ELODIE\_remnant\_mass\_blackholes: 
-% \item Chabrier\_ELODIE\_mass\_of\_ejecta: 
-% \item Chabrier\_ELODIE\_spm\_EBV: 
-% \item Chabrier\_ELODIE\_nComponentsSSP: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_ssp\_0: 
-% \item Chabrier\_ELODIE\_age\_ssp\_0: 
-% \item Chabrier\_ELODIE\_metal\_ssp\_0: 
-% \item Chabrier\_ELODIE\_weightMass\_ssp\_0: 
-% \item Chabrier\_ELODIE\_weightLight\_ssp\_0: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_ssp\_1: 
-% \item Chabrier\_ELODIE\_age\_ssp\_1: 
-% \item Chabrier\_ELODIE\_metal\_ssp\_1: 
-% \item Chabrier\_ELODIE\_weightMass\_ssp\_1: 
-% \item Chabrier\_ELODIE\_weightLight\_ssp\_1: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_ssp\_2: 
-% \item Chabrier\_ELODIE\_age\_ssp\_2: 
-% \item Chabrier\_ELODIE\_metal\_ssp\_2: 
-% \item Chabrier\_ELODIE\_weightMass\_ssp\_2: 
-% \item Chabrier\_ELODIE\_weightLight\_ssp\_2: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_ssp\_3: 
-% \item Chabrier\_ELODIE\_age\_ssp\_3: 
-% \item Chabrier\_ELODIE\_metal\_ssp\_3: 
-% \item Chabrier\_ELODIE\_weightMass\_ssp\_3: 
-% \item Chabrier\_ELODIE\_weightLight\_ssp\_3: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_ssp\_4: 
-% \item Chabrier\_ELODIE\_age\_ssp\_4: 
-% \item Chabrier\_ELODIE\_metal\_ssp\_4: 
-% \item Chabrier\_ELODIE\_weightMass\_ssp\_4: 
-% \item Chabrier\_ELODIE\_weightLight\_ssp\_4: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_ssp\_5: 
-% \item Chabrier\_ELODIE\_age\_ssp\_5: 
-% \item Chabrier\_ELODIE\_metal\_ssp\_5: 
-% \item Chabrier\_ELODIE\_weightMass\_ssp\_5: 
-% \item Chabrier\_ELODIE\_weightLight\_ssp\_5: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_ssp\_6: 
-% \item Chabrier\_ELODIE\_age\_ssp\_6: 
-% \item Chabrier\_ELODIE\_metal\_ssp\_6: 
-% \item Chabrier\_ELODIE\_weightMass\_ssp\_6: 
-% \item Chabrier\_ELODIE\_weightLight\_ssp\_6: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_ssp\_7: 
-% \item Chabrier\_ELODIE\_age\_ssp\_7: 
-% \item Chabrier\_ELODIE\_metal\_ssp\_7: 
-% \item Chabrier\_ELODIE\_weightMass\_ssp\_7: 
-% \item Chabrier\_ELODIE\_weightLight\_ssp\_7: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_ssp\_8: 
-% \item Chabrier\_ELODIE\_age\_ssp\_8: 
-% \item Chabrier\_ELODIE\_metal\_ssp\_8: 
-% \item Chabrier\_ELODIE\_weightMass\_ssp\_8: 
-% \item Chabrier\_ELODIE\_weightLight\_ssp\_8: 
-% \item Chabrier\_ELODIE\_stellar\_mass\_ssp\_9: 
-% \item Chabrier\_ELODIE\_age\_ssp\_9: 
-% \item Chabrier\_ELODIE\_metal\_ssp\_9: 
-% \item Chabrier\_ELODIE\_weightMass\_ssp\_9: 
-% \item Chabrier\_ELODIE\_weightLight\_ssp\_9: 
-% \item Salpeter\_ELODIE\_age\_lightW: 
-% \item Salpeter\_ELODIE\_age\_lightW\_up\_1sig: 
-% \item Salpeter\_ELODIE\_age\_lightW\_low\_1sig: 
-% \item Salpeter\_ELODIE\_age\_lightW\_up\_2sig: 
-% \item Salpeter\_ELODIE\_age\_lightW\_low\_2sig: 
-% \item Salpeter\_ELODIE\_metallicity\_lightW: 
-% \item Salpeter\_ELODIE\_metallicity\_lightW\_up\_1sig: 
-% \item Salpeter\_ELODIE\_metallicity\_lightW\_low\_1sig: 
-% \item Salpeter\_ELODIE\_metallicity\_lightW\_up\_2sig: 
-% \item Salpeter\_ELODIE\_metallicity\_lightW\_low\_2sig: 
-% \item Salpeter\_ELODIE\_age\_massW: 
-% \item Salpeter\_ELODIE\_age\_massW\_up\_1sig: 
-% \item Salpeter\_ELODIE\_age\_massW\_low\_1sig: 
-% \item Salpeter\_ELODIE\_age\_massW\_up\_2sig: 
-% \item Salpeter\_ELODIE\_age\_massW\_low\_2sig: 
-% \item Salpeter\_ELODIE\_metallicity\_massW: 
-% \item Salpeter\_ELODIE\_metallicity\_massW\_up\_1sig: 
-% \item Salpeter\_ELODIE\_metallicity\_massW\_low\_1sig: 
-% \item Salpeter\_ELODIE\_metallicity\_massW\_up\_2sig: 
-% \item Salpeter\_ELODIE\_metallicity\_massW\_low\_2sig: 
-% \item Salpeter\_ELODIE\_stellar\_mass: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_up\_1sig: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_low\_1sig: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_up\_2sig: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_low\_2sig: 
-% \item Salpeter\_ELODIE\_living\_star\_mass: 
-% \item Salpeter\_ELODIE\_remnant\_mass: 
-% \item Salpeter\_ELODIE\_remnant\_mass\_in\_whitedwarfs: 
-% \item Salpeter\_ELODIE\_remnant\_mass\_in\_neutronstars: 
-% \item Salpeter\_ELODIE\_remnant\_mass\_blackholes: 
-% \item Salpeter\_ELODIE\_mass\_of\_ejecta: 
-% \item Salpeter\_ELODIE\_spm\_EBV: 
-% \item Salpeter\_ELODIE\_nComponentsSSP: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_ssp\_0: 
-% \item Salpeter\_ELODIE\_age\_ssp\_0: 
-% \item Salpeter\_ELODIE\_metal\_ssp\_0: 
-% \item Salpeter\_ELODIE\_weightMass\_ssp\_0: 
-% \item Salpeter\_ELODIE\_weightLight\_ssp\_0: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_ssp\_1: 
-% \item Salpeter\_ELODIE\_age\_ssp\_1: 
-% \item Salpeter\_ELODIE\_metal\_ssp\_1: 
-% \item Salpeter\_ELODIE\_weightMass\_ssp\_1: 
-% \item Salpeter\_ELODIE\_weightLight\_ssp\_1: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_ssp\_2: 
-% \item Salpeter\_ELODIE\_age\_ssp\_2: 
-% \item Salpeter\_ELODIE\_metal\_ssp\_2: 
-% \item Salpeter\_ELODIE\_weightMass\_ssp\_2: 
-% \item Salpeter\_ELODIE\_weightLight\_ssp\_2: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_ssp\_3: 
-% \item Salpeter\_ELODIE\_age\_ssp\_3: 
-% \item Salpeter\_ELODIE\_metal\_ssp\_3: 
-% \item Salpeter\_ELODIE\_weightMass\_ssp\_3: 
-% \item Salpeter\_ELODIE\_weightLight\_ssp\_3: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_ssp\_4: 
-% \item Salpeter\_ELODIE\_age\_ssp\_4: 
-% \item Salpeter\_ELODIE\_metal\_ssp\_4: 
-% \item Salpeter\_ELODIE\_weightMass\_ssp\_4: 
-% \item Salpeter\_ELODIE\_weightLight\_ssp\_4: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_ssp\_5: 
-% \item Salpeter\_ELODIE\_age\_ssp\_5: 
-% \item Salpeter\_ELODIE\_metal\_ssp\_5: 
-% \item Salpeter\_ELODIE\_weightMass\_ssp\_5: 
-% \item Salpeter\_ELODIE\_weightLight\_ssp\_5: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_ssp\_6: 
-% \item Salpeter\_ELODIE\_age\_ssp\_6: 
-% \item Salpeter\_ELODIE\_metal\_ssp\_6: 
-% \item Salpeter\_ELODIE\_weightMass\_ssp\_6: 
-% \item Salpeter\_ELODIE\_weightLight\_ssp\_6: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_ssp\_7: 
-% \item Salpeter\_ELODIE\_age\_ssp\_7: 
-% \item Salpeter\_ELODIE\_metal\_ssp\_7: 
-% \item Salpeter\_ELODIE\_weightMass\_ssp\_7: 
-% \item Salpeter\_ELODIE\_weightLight\_ssp\_7: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_ssp\_8: 
-% \item Salpeter\_ELODIE\_age\_ssp\_8: 
-% \item Salpeter\_ELODIE\_metal\_ssp\_8: 
-% \item Salpeter\_ELODIE\_weightMass\_ssp\_8: 
-% \item Salpeter\_ELODIE\_weightLight\_ssp\_8: 
-% \item Salpeter\_ELODIE\_stellar\_mass\_ssp\_9: 
-% \item Salpeter\_ELODIE\_age\_ssp\_9: 
-% \item Salpeter\_ELODIE\_metal\_ssp\_9: 
-% \item Salpeter\_ELODIE\_weightMass\_ssp\_9: 
-% \item Salpeter\_ELODIE\_weightLight\_ssp\_9: 
-% \item Kroupa\_ELODIE\_age\_lightW: 
-% \item Kroupa\_ELODIE\_age\_lightW\_up\_1sig: 
-% \item Kroupa\_ELODIE\_age\_lightW\_low\_1sig: 
-% \item Kroupa\_ELODIE\_age\_lightW\_up\_2sig: 
-% \item Kroupa\_ELODIE\_age\_lightW\_low\_2sig: 
-% \item Kroupa\_ELODIE\_metallicity\_lightW: 
-% \item Kroupa\_ELODIE\_metallicity\_lightW\_up\_1sig: 
-% \item Kroupa\_ELODIE\_metallicity\_lightW\_low\_1sig: 
-% \item Kroupa\_ELODIE\_metallicity\_lightW\_up\_2sig: 
-% \item Kroupa\_ELODIE\_metallicity\_lightW\_low\_2sig: 
-% \item Kroupa\_ELODIE\_age\_massW: 
-% \item Kroupa\_ELODIE\_age\_massW\_up\_1sig: 
-% \item Kroupa\_ELODIE\_age\_massW\_low\_1sig: 
-% \item Kroupa\_ELODIE\_age\_massW\_up\_2sig: 
-% \item Kroupa\_ELODIE\_age\_massW\_low\_2sig: 
-% \item Kroupa\_ELODIE\_metallicity\_massW: 
-% \item Kroupa\_ELODIE\_metallicity\_massW\_up\_1sig: 
-% \item Kroupa\_ELODIE\_metallicity\_massW\_low\_1sig: 
-% \item Kroupa\_ELODIE\_metallicity\_massW\_up\_2sig: 
-% \item Kroupa\_ELODIE\_metallicity\_massW\_low\_2sig: 
-% \item Kroupa\_ELODIE\_stellar\_mass: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_up\_1sig: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_low\_1sig: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_up\_2sig: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_low\_2sig: 
-% \item Kroupa\_ELODIE\_living\_star\_mass: 
-% \item Kroupa\_ELODIE\_remnant\_mass: 
-% \item Kroupa\_ELODIE\_remnant\_mass\_in\_whitedwarfs: 
-% \item Kroupa\_ELODIE\_remnant\_mass\_in\_neutronstars: 
-% \item Kroupa\_ELODIE\_remnant\_mass\_blackholes: 
-% \item Kroupa\_ELODIE\_mass\_of\_ejecta: 
-% \item Kroupa\_ELODIE\_spm\_EBV: 
-% \item Kroupa\_ELODIE\_nComponentsSSP: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_ssp\_0: 
-% \item Kroupa\_ELODIE\_age\_ssp\_0: 
-% \item Kroupa\_ELODIE\_metal\_ssp\_0: 
-% \item Kroupa\_ELODIE\_weightMass\_ssp\_0: 
-% \item Kroupa\_ELODIE\_weightLight\_ssp\_0: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_ssp\_1: 
-% \item Kroupa\_ELODIE\_age\_ssp\_1: 
-% \item Kroupa\_ELODIE\_metal\_ssp\_1: 
-% \item Kroupa\_ELODIE\_weightMass\_ssp\_1: 
-% \item Kroupa\_ELODIE\_weightLight\_ssp\_1: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_ssp\_2: 
-% \item Kroupa\_ELODIE\_age\_ssp\_2: 
-% \item Kroupa\_ELODIE\_metal\_ssp\_2: 
-% \item Kroupa\_ELODIE\_weightMass\_ssp\_2: 
-% \item Kroupa\_ELODIE\_weightLight\_ssp\_2: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_ssp\_3: 
-% \item Kroupa\_ELODIE\_age\_ssp\_3: 
-% \item Kroupa\_ELODIE\_metal\_ssp\_3: 
-% \item Kroupa\_ELODIE\_weightMass\_ssp\_3: 
-% \item Kroupa\_ELODIE\_weightLight\_ssp\_3: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_ssp\_4: 
-% \item Kroupa\_ELODIE\_age\_ssp\_4: 
-% \item Kroupa\_ELODIE\_metal\_ssp\_4: 
-% \item Kroupa\_ELODIE\_weightMass\_ssp\_4: 
-% \item Kroupa\_ELODIE\_weightLight\_ssp\_4: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_ssp\_5: 
-% \item Kroupa\_ELODIE\_age\_ssp\_5: 
-% \item Kroupa\_ELODIE\_metal\_ssp\_5: 
-% \item Kroupa\_ELODIE\_weightMass\_ssp\_5: 
-% \item Kroupa\_ELODIE\_weightLight\_ssp\_5: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_ssp\_6: 
-% \item Kroupa\_ELODIE\_age\_ssp\_6: 
-% \item Kroupa\_ELODIE\_metal\_ssp\_6: 
-% \item Kroupa\_ELODIE\_weightMass\_ssp\_6: 
-% \item Kroupa\_ELODIE\_weightLight\_ssp\_6: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_ssp\_7: 
-% \item Kroupa\_ELODIE\_age\_ssp\_7: 
-% \item Kroupa\_ELODIE\_metal\_ssp\_7: 
-% \item Kroupa\_ELODIE\_weightMass\_ssp\_7: 
-% \item Kroupa\_ELODIE\_weightLight\_ssp\_7: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_ssp\_8: 
-% \item Kroupa\_ELODIE\_age\_ssp\_8: 
-% \item Kroupa\_ELODIE\_metal\_ssp\_8: 
-% \item Kroupa\_ELODIE\_weightMass\_ssp\_8: 
-% \item Kroupa\_ELODIE\_weightLight\_ssp\_8: 
-% \item Kroupa\_ELODIE\_stellar\_mass\_ssp\_9: 
-% \item Kroupa\_ELODIE\_age\_ssp\_9: 
-% \item Kroupa\_ELODIE\_metal\_ssp\_9: 
-% \item Kroupa\_ELODIE\_weightMass\_ssp\_9: 
-% \item Kroupa\_ELODIE\_weightLight\_ssp\_9: 
-% \item Chabrier\_STELIB\_age\_lightW: 
-% \item Chabrier\_STELIB\_age\_lightW\_up\_1sig: 
-% \item Chabrier\_STELIB\_age\_lightW\_low\_1sig: 
-% \item Chabrier\_STELIB\_age\_lightW\_up\_2sig: 
-% \item Chabrier\_STELIB\_age\_lightW\_low\_2sig: 
-% \item Chabrier\_STELIB\_metallicity\_lightW: 
-% \item Chabrier\_STELIB\_metallicity\_lightW\_up\_1sig: 
-% \item Chabrier\_STELIB\_metallicity\_lightW\_low\_1sig: 
-% \item Chabrier\_STELIB\_metallicity\_lightW\_up\_2sig: 
-% \item Chabrier\_STELIB\_metallicity\_lightW\_low\_2sig: 
-% \item Chabrier\_STELIB\_age\_massW: 
-% \item Chabrier\_STELIB\_age\_massW\_up\_1sig: 
-% \item Chabrier\_STELIB\_age\_massW\_low\_1sig: 
-% \item Chabrier\_STELIB\_age\_massW\_up\_2sig: 
-% \item Chabrier\_STELIB\_age\_massW\_low\_2sig: 
-% \item Chabrier\_STELIB\_metallicity\_massW: 
-% \item Chabrier\_STELIB\_metallicity\_massW\_up\_1sig: 
-% \item Chabrier\_STELIB\_metallicity\_massW\_low\_1sig: 
-% \item Chabrier\_STELIB\_metallicity\_massW\_up\_2sig: 
-% \item Chabrier\_STELIB\_metallicity\_massW\_low\_2sig: 
-% \item Chabrier\_STELIB\_stellar\_mass: 
-% \item Chabrier\_STELIB\_stellar\_mass\_up\_1sig: 
-% \item Chabrier\_STELIB\_stellar\_mass\_low\_1sig: 
-% \item Chabrier\_STELIB\_stellar\_mass\_up\_2sig: 
-% \item Chabrier\_STELIB\_stellar\_mass\_low\_2sig: 
-% \item Chabrier\_STELIB\_living\_star\_mass: 
-% \item Chabrier\_STELIB\_remnant\_mass: 
-% \item Chabrier\_STELIB\_remnant\_mass\_in\_whitedwarfs: 
-% \item Chabrier\_STELIB\_remnant\_mass\_in\_neutronstars: 
-% \item Chabrier\_STELIB\_remnant\_mass\_blackholes: 
-% \item Chabrier\_STELIB\_mass\_of\_ejecta: 
-% \item Chabrier\_STELIB\_spm\_EBV: 
-% \item Chabrier\_STELIB\_nComponentsSSP: 
-% \item Chabrier\_STELIB\_stellar\_mass\_ssp\_0: 
-% \item Chabrier\_STELIB\_age\_ssp\_0: 
-% \item Chabrier\_STELIB\_metal\_ssp\_0: 
-% \item Chabrier\_STELIB\_weightMass\_ssp\_0: 
-% \item Chabrier\_STELIB\_weightLight\_ssp\_0: 
-% \item Chabrier\_STELIB\_stellar\_mass\_ssp\_1: 
-% \item Chabrier\_STELIB\_age\_ssp\_1: 
-% \item Chabrier\_STELIB\_metal\_ssp\_1: 
-% \item Chabrier\_STELIB\_weightMass\_ssp\_1: 
-% \item Chabrier\_STELIB\_weightLight\_ssp\_1: 
-% \item Chabrier\_STELIB\_stellar\_mass\_ssp\_2: 
-% \item Chabrier\_STELIB\_age\_ssp\_2: 
-% \item Chabrier\_STELIB\_metal\_ssp\_2: 
-% \item Chabrier\_STELIB\_weightMass\_ssp\_2: 
-% \item Chabrier\_STELIB\_weightLight\_ssp\_2: 
-% \item Chabrier\_STELIB\_stellar\_mass\_ssp\_3: 
-% \item Chabrier\_STELIB\_age\_ssp\_3: 
-% \item Chabrier\_STELIB\_metal\_ssp\_3: 
-% \item Chabrier\_STELIB\_weightMass\_ssp\_3: 
-% \item Chabrier\_STELIB\_weightLight\_ssp\_3: 
-% \item Chabrier\_STELIB\_stellar\_mass\_ssp\_4: 
-% \item Chabrier\_STELIB\_age\_ssp\_4: 
-% \item Chabrier\_STELIB\_metal\_ssp\_4: 
-% \item Chabrier\_STELIB\_weightMass\_ssp\_4: 
-% \item Chabrier\_STELIB\_weightLight\_ssp\_4: 
-% \item Chabrier\_STELIB\_stellar\_mass\_ssp\_5: 
-% \item Chabrier\_STELIB\_age\_ssp\_5: 
-% \item Chabrier\_STELIB\_metal\_ssp\_5: 
-% \item Chabrier\_STELIB\_weightMass\_ssp\_5: 
-% \item Chabrier\_STELIB\_weightLight\_ssp\_5: 
-% \item Chabrier\_STELIB\_stellar\_mass\_ssp\_6: 
-% \item Chabrier\_STELIB\_age\_ssp\_6: 
-% \item Chabrier\_STELIB\_metal\_ssp\_6: 
-% \item Chabrier\_STELIB\_weightMass\_ssp\_6: 
-% \item Chabrier\_STELIB\_weightLight\_ssp\_6: 
-% \item Chabrier\_STELIB\_stellar\_mass\_ssp\_7: 
-% \item Chabrier\_STELIB\_age\_ssp\_7: 
-% \item Chabrier\_STELIB\_metal\_ssp\_7: 
-% \item Chabrier\_STELIB\_weightMass\_ssp\_7: 
-% \item Chabrier\_STELIB\_weightLight\_ssp\_7: 
-% \item Chabrier\_STELIB\_stellar\_mass\_ssp\_8: 
-% \item Chabrier\_STELIB\_age\_ssp\_8: 
-% \item Chabrier\_STELIB\_metal\_ssp\_8: 
-% \item Chabrier\_STELIB\_weightMass\_ssp\_8: 
-% \item Chabrier\_STELIB\_weightLight\_ssp\_8: 
-% \item Chabrier\_STELIB\_stellar\_mass\_ssp\_9: 
-% \item Chabrier\_STELIB\_age\_ssp\_9: 
-% \item Chabrier\_STELIB\_metal\_ssp\_9: 
-% \item Chabrier\_STELIB\_weightMass\_ssp\_9: 
-% \item Chabrier\_STELIB\_weightLight\_ssp\_9: 
-% \item Salpeter\_STELIB\_age\_lightW: 
-% \item Salpeter\_STELIB\_age\_lightW\_up\_1sig: 
-% \item Salpeter\_STELIB\_age\_lightW\_low\_1sig: 
-% \item Salpeter\_STELIB\_age\_lightW\_up\_2sig: 
-% \item Salpeter\_STELIB\_age\_lightW\_low\_2sig: 
-% \item Salpeter\_STELIB\_metallicity\_lightW: 
-% \item Salpeter\_STELIB\_metallicity\_lightW\_up\_1sig: 
-% \item Salpeter\_STELIB\_metallicity\_lightW\_low\_1sig: 
-% \item Salpeter\_STELIB\_metallicity\_lightW\_up\_2sig: 
-% \item Salpeter\_STELIB\_metallicity\_lightW\_low\_2sig: 
-% \item Salpeter\_STELIB\_age\_massW: 
-% \item Salpeter\_STELIB\_age\_massW\_up\_1sig: 
-% \item Salpeter\_STELIB\_age\_massW\_low\_1sig: 
-% \item Salpeter\_STELIB\_age\_massW\_up\_2sig: 
-% \item Salpeter\_STELIB\_age\_massW\_low\_2sig: 
-% \item Salpeter\_STELIB\_metallicity\_massW: 
-% \item Salpeter\_STELIB\_metallicity\_massW\_up\_1sig: 
-% \item Salpeter\_STELIB\_metallicity\_massW\_low\_1sig: 
-% \item Salpeter\_STELIB\_metallicity\_massW\_up\_2sig: 
-% \item Salpeter\_STELIB\_metallicity\_massW\_low\_2sig: 
-% \item Salpeter\_STELIB\_stellar\_mass: 
-% \item Salpeter\_STELIB\_stellar\_mass\_up\_1sig: 
-% \item Salpeter\_STELIB\_stellar\_mass\_low\_1sig: 
-% \item Salpeter\_STELIB\_stellar\_mass\_up\_2sig: 
-% \item Salpeter\_STELIB\_stellar\_mass\_low\_2sig: 
-% \item Salpeter\_STELIB\_living\_star\_mass: 
-% \item Salpeter\_STELIB\_remnant\_mass: 
-% \item Salpeter\_STELIB\_remnant\_mass\_in\_whitedwarfs: 
-% \item Salpeter\_STELIB\_remnant\_mass\_in\_neutronstars: 
-% \item Salpeter\_STELIB\_remnant\_mass\_blackholes: 
-% \item Salpeter\_STELIB\_mass\_of\_ejecta: 
-% \item Salpeter\_STELIB\_spm\_EBV: 
-% \item Salpeter\_STELIB\_nComponentsSSP: 
-% \item Salpeter\_STELIB\_stellar\_mass\_ssp\_0: 
-% \item Salpeter\_STELIB\_age\_ssp\_0: 
-% \item Salpeter\_STELIB\_metal\_ssp\_0: 
-% \item Salpeter\_STELIB\_weightMass\_ssp\_0: 
-% \item Salpeter\_STELIB\_weightLight\_ssp\_0: 
-% \item Salpeter\_STELIB\_stellar\_mass\_ssp\_1: 
-% \item Salpeter\_STELIB\_age\_ssp\_1: 
-% \item Salpeter\_STELIB\_metal\_ssp\_1: 
-% \item Salpeter\_STELIB\_weightMass\_ssp\_1: 
-% \item Salpeter\_STELIB\_weightLight\_ssp\_1: 
-% \item Salpeter\_STELIB\_stellar\_mass\_ssp\_2: 
-% \item Salpeter\_STELIB\_age\_ssp\_2: 
-% \item Salpeter\_STELIB\_metal\_ssp\_2: 
-% \item Salpeter\_STELIB\_weightMass\_ssp\_2: 
-% \item Salpeter\_STELIB\_weightLight\_ssp\_2: 
-% \item Salpeter\_STELIB\_stellar\_mass\_ssp\_3: 
-% \item Salpeter\_STELIB\_age\_ssp\_3: 
-% \item Salpeter\_STELIB\_metal\_ssp\_3: 
-% \item Salpeter\_STELIB\_weightMass\_ssp\_3: 
-% \item Salpeter\_STELIB\_weightLight\_ssp\_3: 
-% \item Salpeter\_STELIB\_stellar\_mass\_ssp\_4: 
-% \item Salpeter\_STELIB\_age\_ssp\_4: 
-% \item Salpeter\_STELIB\_metal\_ssp\_4: 
-% \item Salpeter\_STELIB\_weightMass\_ssp\_4: 
-% \item Salpeter\_STELIB\_weightLight\_ssp\_4: 
-% \item Salpeter\_STELIB\_stellar\_mass\_ssp\_5: 
-% \item Salpeter\_STELIB\_age\_ssp\_5: 
-% \item Salpeter\_STELIB\_metal\_ssp\_5: 
-% \item Salpeter\_STELIB\_weightMass\_ssp\_5: 
-% \item Salpeter\_STELIB\_weightLight\_ssp\_5: 
-% \item Salpeter\_STELIB\_stellar\_mass\_ssp\_6: 
-% \item Salpeter\_STELIB\_age\_ssp\_6: 
-% \item Salpeter\_STELIB\_metal\_ssp\_6: 
-% \item Salpeter\_STELIB\_weightMass\_ssp\_6: 
-% \item Salpeter\_STELIB\_weightLight\_ssp\_6: 
-% \item Salpeter\_STELIB\_stellar\_mass\_ssp\_7: 
-% \item Salpeter\_STELIB\_age\_ssp\_7: 
-% \item Salpeter\_STELIB\_metal\_ssp\_7: 
-% \item Salpeter\_STELIB\_weightMass\_ssp\_7: 
-% \item Salpeter\_STELIB\_weightLight\_ssp\_7: 
-% \item Salpeter\_STELIB\_stellar\_mass\_ssp\_8: 
-% \item Salpeter\_STELIB\_age\_ssp\_8: 
-% \item Salpeter\_STELIB\_metal\_ssp\_8: 
-% \item Salpeter\_STELIB\_weightMass\_ssp\_8: 
-% \item Salpeter\_STELIB\_weightLight\_ssp\_8: 
-% \item Salpeter\_STELIB\_stellar\_mass\_ssp\_9: 
-% \item Salpeter\_STELIB\_age\_ssp\_9: 
-% \item Salpeter\_STELIB\_metal\_ssp\_9: 
-% \item Salpeter\_STELIB\_weightMass\_ssp\_9: 
-% \item Salpeter\_STELIB\_weightLight\_ssp\_9: 
-% \item Kroupa\_STELIB\_age\_lightW: 
-% \item Kroupa\_STELIB\_age\_lightW\_up\_1sig: 
-% \item Kroupa\_STELIB\_age\_lightW\_low\_1sig: 
-% \item Kroupa\_STELIB\_age\_lightW\_up\_2sig: 
-% \item Kroupa\_STELIB\_age\_lightW\_low\_2sig: 
-% \item Kroupa\_STELIB\_metallicity\_lightW: 
-% \item Kroupa\_STELIB\_metallicity\_lightW\_up\_1sig: 
-% \item Kroupa\_STELIB\_metallicity\_lightW\_low\_1sig: 
-% \item Kroupa\_STELIB\_metallicity\_lightW\_up\_2sig: 
-% \item Kroupa\_STELIB\_metallicity\_lightW\_low\_2sig: 
-% \item Kroupa\_STELIB\_age\_massW: 
-% \item Kroupa\_STELIB\_age\_massW\_up\_1sig: 
-% \item Kroupa\_STELIB\_age\_massW\_low\_1sig: 
-% \item Kroupa\_STELIB\_age\_massW\_up\_2sig: 
-% \item Kroupa\_STELIB\_age\_massW\_low\_2sig: 
-% \item Kroupa\_STELIB\_metallicity\_massW: 
-% \item Kroupa\_STELIB\_metallicity\_massW\_up\_1sig: 
-% \item Kroupa\_STELIB\_metallicity\_massW\_low\_1sig: 
-% \item Kroupa\_STELIB\_metallicity\_massW\_up\_2sig: 
-% \item Kroupa\_STELIB\_metallicity\_massW\_low\_2sig: 
-% \item Kroupa\_STELIB\_stellar\_mass: 
-% \item Kroupa\_STELIB\_stellar\_mass\_up\_1sig: 
-% \item Kroupa\_STELIB\_stellar\_mass\_low\_1sig: 
-% \item Kroupa\_STELIB\_stellar\_mass\_up\_2sig: 
-% \item Kroupa\_STELIB\_stellar\_mass\_low\_2sig: 
-% \item Kroupa\_STELIB\_living\_star\_mass: 
-% \item Kroupa\_STELIB\_remnant\_mass: 
-% \item Kroupa\_STELIB\_remnant\_mass\_in\_whitedwarfs: 
-% \item Kroupa\_STELIB\_remnant\_mass\_in\_neutronstars: 
-% \item Kroupa\_STELIB\_remnant\_mass\_blackholes: 
-% \item Kroupa\_STELIB\_mass\_of\_ejecta: 
-% \item Kroupa\_STELIB\_spm\_EBV: 
-% \item Kroupa\_STELIB\_nComponentsSSP: 
-% \item Kroupa\_STELIB\_stellar\_mass\_ssp\_0: 
-% \item Kroupa\_STELIB\_age\_ssp\_0: 
-% \item Kroupa\_STELIB\_metal\_ssp\_0: 
-% \item Kroupa\_STELIB\_weightMass\_ssp\_0: 
-% \item Kroupa\_STELIB\_weightLight\_ssp\_0: 
-% \item Kroupa\_STELIB\_stellar\_mass\_ssp\_1: 
-% \item Kroupa\_STELIB\_age\_ssp\_1: 
-% \item Kroupa\_STELIB\_metal\_ssp\_1: 
-% \item Kroupa\_STELIB\_weightMass\_ssp\_1: 
-% \item Kroupa\_STELIB\_weightLight\_ssp\_1: 
-% \item Kroupa\_STELIB\_stellar\_mass\_ssp\_2: 
-% \item Kroupa\_STELIB\_age\_ssp\_2: 
-% \item Kroupa\_STELIB\_metal\_ssp\_2: 
-% \item Kroupa\_STELIB\_weightMass\_ssp\_2: 
-% \item Kroupa\_STELIB\_weightLight\_ssp\_2: 
-% \item Kroupa\_STELIB\_stellar\_mass\_ssp\_3: 
-% \item Kroupa\_STELIB\_age\_ssp\_3: 
-% \item Kroupa\_STELIB\_metal\_ssp\_3: 
-% \item Kroupa\_STELIB\_weightMass\_ssp\_3: 
-% \item Kroupa\_STELIB\_weightLight\_ssp\_3: 
-% \item Kroupa\_STELIB\_stellar\_mass\_ssp\_4: 
-% \item Kroupa\_STELIB\_age\_ssp\_4: 
-% \item Kroupa\_STELIB\_metal\_ssp\_4: 
-% \item Kroupa\_STELIB\_weightMass\_ssp\_4: 
-% \item Kroupa\_STELIB\_weightLight\_ssp\_4: 
-% \item Kroupa\_STELIB\_stellar\_mass\_ssp\_5: 
-% \item Kroupa\_STELIB\_age\_ssp\_5: 
-% \item Kroupa\_STELIB\_metal\_ssp\_5: 
-% \item Kroupa\_STELIB\_weightMass\_ssp\_5: 
-% \item Kroupa\_STELIB\_weightLight\_ssp\_5: 
-% \item Kroupa\_STELIB\_stellar\_mass\_ssp\_6: 
-% \item Kroupa\_STELIB\_age\_ssp\_6: 
-% \item Kroupa\_STELIB\_metal\_ssp\_6: 
-% \item Kroupa\_STELIB\_weightMass\_ssp\_6: 
-% \item Kroupa\_STELIB\_weightLight\_ssp\_6: 
-% \item Kroupa\_STELIB\_stellar\_mass\_ssp\_7: 
-% \item Kroupa\_STELIB\_age\_ssp\_7: 
-% \item Kroupa\_STELIB\_metal\_ssp\_7: 
-% \item Kroupa\_STELIB\_weightMass\_ssp\_7: 
-% \item Kroupa\_STELIB\_weightLight\_ssp\_7: 
-% \item Kroupa\_STELIB\_stellar\_mass\_ssp\_8: 
-% \item Kroupa\_STELIB\_age\_ssp\_8: 
-% \item Kroupa\_STELIB\_metal\_ssp\_8: 
-% \item Kroupa\_STELIB\_weightMass\_ssp\_8: 
-% \item Kroupa\_STELIB\_weightLight\_ssp\_8: 
-% \item Kroupa\_STELIB\_stellar\_mass\_ssp\_9: 
-% \item Kroupa\_STELIB\_age\_ssp\_9: 
-% \item Kroupa\_STELIB\_metal\_ssp\_9: 
-% \item Kroupa\_STELIB\_weightMass\_ssp\_9: 
-% \item Kroupa\_STELIB\_weightLight\_ssp\_9: 
-% \item Chabrier\_MILES\_chi2: 
-% \item Chabrier\_MILES\_ndof: 
-% \item Salpeter\_MILES\_chi2: 
-% \item Salpeter\_MILES\_ndof: 
-% \item Kroupa\_MILES\_chi2: 
-% \item Kroupa\_MILES\_ndof: 
-% \item Chabrier\_ELODIE\_chi2: 
-% \item Chabrier\_ELODIE\_ndof: 
-% \item Salpeter\_ELODIE\_chi2: 
-% \item Salpeter\_ELODIE\_ndof: 
-% \item Kroupa\_ELODIE\_chi2: 
-% \item Kroupa\_ELODIE\_ndof: 
-% \item Chabrier\_STELIB\_chi2: 
-% \item Chabrier\_STELIB\_ndof: 
-% \item Salpeter\_STELIB\_chi2: 
-% \item Salpeter\_STELIB\_ndof: 
-\item Kroupa\_STELIB\_chi2: 
-\item Kroupa\_STELIB\_ndof: 
-\item abs\_mag\_u\_spec: 
-\item abs\_mag\_g\_spec: 
-\item abs\_mag\_r\_spec: 
-\item abs\_mag\_i\_spec: 
-\item abs\_mag\_u\_noise: 
-\item abs\_mag\_g\_noise: 
-\item abs\_mag\_r\_noise: 
-\item abs\_mag\_i\_noise: 
-\item SNR\_ALL: 
-\item SNR\_32\_35: 
-\item SNR\_35\_39: 
-\item SNR\_39\_41: 
-\item SNR\_41\_55: 
-\item SNR\_55\_68: 
-\item SNR\_68\_74: 
-\item SNR\_74\_93: 
-% \item Separation:  
-\end{itemize}
-
-
-% SPECOBJID	str		Spectroscopic unique identifier
-% OBJID	int		Photometric unique identifier
-% RUN2D	str		version of the 2d reduction pipeline
-% RUN1D	str		version of the 1d reduction pipeline
-% MJD	int		MJD of observation
-% PLATE	int		Plate number
-% FIBERID	int		Fiber identification number
-% PLUG_RA	Double		Right ascension of fiber, J2000
-% PLUG_DEC	Double		Declination of fiber, J2000
-% Z	float		Best redshift
-% Z_ERR	float		Error in redshift
-% ZWARNING	int		Warnings in "z" redshift
-% CLASS	str		Classification in redshift
-% SUBCLASS	str		Sub-classification in redshift
-% Kroupa_age_lightW	float		light weighted age upper error, Kroupa IMF
-% Kroupa_age_lightW_err_plus	float		light weighted age lower error, Kroupa IMF
-% Kroupa_age_lightW_err_minus	float		light weighted stellar metallicity, Kroupa IMF
-% Kroupa_metallicity_lightW	float		light weighted stellar metallicity upper error, Kroupa IMF
-% Kroupa_metallicity_lightW_err_plus	float		light weighted stellar metallicity upper error, Kroupa IMF
-% Kroupa_metallicity_lightW_err_minus	float		light weighted stellar metallicity lower error, Kroupa IMF
-% Kroupa_stellar_mass	float		stellar mass, Kroupa IMF
-% Kroupa_stellar_mass_err_plus	float		stellar mass upper error, Kroupa IMF
-% Kroupa_stellar_mass_err_minus	float		stellar mass lower error, Kroupa IMF
-% Kroupa_spm_EBV	float		reddenning fitted, Kroupa IMF
-% Kroupa_nComponentsSSP	float		number of single stellar population components, Kroupa IMF
-% Kroupa_chi2	float		chi squared, Kroupa IMF
-% Kroupa_ndof	float		number of degrees of freedom, Kroupa IMF
-% Salpeter_age_lightW	float		light weighted age upper error, Salpeter IMF
-% Salpeter_age_lightW_err_plus	float		light weighted age lower error, Salpeter IMF
-% Salpeter_age_lightW_err_minus	float		light weighted stellar metallicity, Salpeter IMF
-% Salpeter_metallicity_lightW	float		light weighted stellar metallicity upper error, Salpeter IMF
-% Salpeter_metallicity_lightW_err_plus	float		light weighted stellar metallicity upper error, Salpeter IMF
-% Salpeter_metallicity_lightW_err_minus	float		light weighted stellar metallicity lower error, Salpeter IMF
-% Salpeter_stellar_mass	float		stellar mass, Salpeter IMF
-% Salpeter_stellar_mass_err_plus	float		stellar mass upper error, Salpeter IMF
-% Salpeter_stellar_mass_err_minus	float		stellar mass lower error, Salpeter IMF
-% Salpeter_spm_EBV	float		reddenning fitted, Salpeter IMF
-% Salpeter_nComponentsSSP	float		number of single stellar population components, Salpeter IMF
-% Salpeter_chi2	float		chi squared, Salpeter IMF
-% Salpeter_ndof	float		number of degrees of freedom, Salpeter IMF
-% Chabrier_age_lightW	float		light weighted age upper error, Chabrier IMF
-% Chabrier_age_lightW_err_plus	float		light weighted age lower error, Chabrier IMF
-% Chabrier_age_lightW_err_minus	float		light weighted stellar metallicity, Chabrier IMF
-% Chabrier_metallicity_lightW	float		light weighted stellar metallicity upper error, Chabrier IMF
-% Chabrier_metallicity_lightW_err_plus	float		light weighted stellar metallicity upper error, Chabrier IMF
-% Chabrier_metallicity_lightW_err_minus	float		light weighted stellar metallicity lower error, Chabrier IMF
-% Chabrier_stellar_mass	float		stellar mass, Chabrier IMF
-% Chabrier_stellar_mass_err_plus	float		stellar mass upper error, Chabrier IMF
-% Chabrier_stellar_mass_err_minus	float		stellar mass lower error, Chabrier IMF
-% Chabrier_spm_EBV	float		reddenning fitted, Chabrier IMF
-% Chabrier_nComponentsSSP	float		number of single stellar population components, Chabrier IMF
-% Chabrier_chi2	float		chi squared, Chabrier IMF
-% Chabrier_ndof	float		number of degrees of freedom, Chabrier IMF
-
-
-\subsection{Description of the parameters obtained}
+\subsection{Detailed description of the parameters obtained}
 In this section, we present statistics of the four main parameters derived: dust, stellar age, stellar metallicity and stellar mass.
 
 \subsubsection{Dust}
-The dust is fitted first on the data and then assumed when fitting for the combination of SSPs. 
+% The dust is fitted first on the data and then assumed when fitting for the combination of SSPs. 
 The library assumed makes quite a difference in the retrieved E(B-V). 
 Fits done with STELIB (largest wavelength coverage) provide on average on lower values than MILES than ELODIE (smallest wavelength covrerage), see the distributions of the E(B-V) obtained in Fig. \ref{fig:distributions:EBV}. 
-
+SDSS and eBOSS have a larger wavelength coverage than DEEP2 and the dust in DEEP2 is thus less well constrained as in SDSS and eBOSS. 
 The IMF assumed doe not change the E(B-V) value fitted, as expected.
 
 \begin{figure}
 \begin{center}
 \caption{\label{fig:distributions:EBV} 
-Normed cumulative distribution of the E(B-V) fitted. The IMF assumed does not make a difference. Due to different wavelenght coverage the library assumed, the E(B-V) values measured differ by up to 0.2 dex.}  
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_sdss.png}
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_eboss.png}          
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_deep2.png} \\
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_sdssChabrier.png}
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossChabrier.png}
-\includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_deep2Chabrier.png}
+Normed cumulative distribution of the E(B-V) fitted (top row). The IMF assumed does not make a difference. Due to different wavelenght coverage the library assumed, the E(B-V) values measured differ by up to 0.2 dex. Direct comparison of the retrieved dust value for the Chabrier IMF varying libraries (bottom row). Main differences in the distributions are due to wavelength coverage.}  
+\includegraphics[width=5.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_sdss.png}
+\includegraphics[width=5.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_eboss.png}          
+\includegraphics[width=5.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_deep2.png} \\
+\includegraphics[width=5.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_sdssChabrier.png}
+\includegraphics[width=5.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossChabrier.png}
+\includegraphics[width=5.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_deep2Chabrier.png}
 % \includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossKroupa.png}
 % \includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossSalpeter.png} \\
 % \includegraphics[width=4.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossELODIE.png}
@@ -1931,12 +738,16 @@ Normed cumulative distribution of the E(B-V) fitted. The IMF assumed does not ma
 
 
 \subsubsection{Ages and metallicities sampled by the models}
-We show in the figures below how each dataset 
+We show in Fig. \ref{fig:distributions:AZ} how each dataset occupies the input parameter space of ages and metallicities. 
+SDSS occupies mostly the space of old and metal rich galxies. 
+eBOSS due to its higher mean redshift occupies slightly youger ages and slightly lower metallicities. 
+DEEP2 occupies XXX
+
 
 \begin{figure}
 \begin{center}
 \caption{\label{fig:distributions:AZ} 
-Age metallicity 2d-histograms for the SDSS (top row) eBOSS (middle row) and DEEP2 (ADD IT) data in the 3 library setups: columns ELODIE, MILES, STELIB for the Chabrier IMF. 
+Age metallicity 2d-histograms for the SDSS (top row) eBOSS (middle row) and DEEP2 (bottom row) data in the 3 library setups: columns ELODIE, MILES, STELIB for the Chabrier IMF. 
 It shows how each library samples the age-metallicity plane. 
 The differnces in occupation between surveys are driven by the redshift distribution in the samples.}
 %, Kroupa and Salpeter.}  
@@ -1971,10 +782,15 @@ The differnces in occupation between surveys are driven by the redshift distribu
 
 \subsubsection{Stellar age}
 
-Comment on the distributions.
+\textcolor{blue}{Comment on the distributions.}
 
-In eBOSS data, assuming different stellar libraries, ages are boradly consistent, see Fig. \ref{fig:distributions:MwA} bottom plot. DO the same for SDSS and DEEP2.
-%At fixed stellar library the ages determined are consistent.
+At fixed stellar libraries (varying only the IMF) ages are consistent. 
+The ages obtained with MILES and ELODIE (fixed IMF) are consistent with each other.
+The ages obtained with STELIB are discrepant due to the small extent of the library in metallicity. 
+Fig. \ref{fig:distributions:MwA} shows the cumulative normed distribution of light weighted ages and mass-weighted ages for each combination of IMF and library. 
+Cumulative distributions groups by library. 
+The bottom plot shows the direct comparison in the eBOSS set when varying the library.  
+
 
 \begin{figure}
 \begin{center}
@@ -2010,6 +826,7 @@ Normed cumulative distribution of the stellar parameters fitted: mass weighted a
 % \end{figure}
 
 \subsection{Stellar metallicity}
+\textcolor{blue}{Comment on the distributions.}
 
 The change in stellar library produces vast changes in metallicities.
 
@@ -3068,5 +1885,269 @@ CXOBRIGHT 		& 104    & 69 & 68 & 10 & 51 		  & 23 & 23 & 17 & 23 \\
 % \includegraphics[width=14cm]{plots/spFly-0266-51602-0159.png}
 % \end{center}
 % \end{figure*}
+
+
+\begin{table}
+\caption{\label{table:data:model} Data model of the summary files. \$\{IMF\} takes values in 'Chabrier', 'Kroupa', 'Salpeter'; \$\{LIBRARY\} takes values in 'MILES', 'STELIB', 'ELODIE' and \$\{i\} takes values in 0 to 9.}
+\begin{center}
+\begin{tabular}{ L{3.5cm} L{4cm} L{11cm} }
+\hline \hline
+\multicolumn{2}{c}{columns from Spec Obj All} & \textsc{firefly} columns \\
+\hline
+SURVEY:  \newline 
+INSTRUMENT:  \newline 
+CHUNK:  \newline 
+PROGRAMNAME:  \newline 
+PLATERUN:  \newline 
+PLATEQUALITY:  \newline 
+PLATESN2:  \newline 
+DEREDSN2:  \newline 
+LAMBDA\_EFF:  \newline 
+BLUEFIBER:  \newline 
+ZOFFSET:  \newline 
+SNTURNOFF:  \newline 
+NTURNOFF:  \newline 
+SPECPRIMARY:  \newline 
+SPECSDSS:  \newline 
+SPECLEGACY:  \newline 
+SPECSEGUE:  \newline 
+SPECSEGUE1:  \newline 
+SPECSEGUE2:  \newline 
+SPECBOSS:  \newline 
+BOSS\_SPECOBJ\_ID:  \newline 
+SPECOBJID:  \newline 
+FLUXOBJID:  \newline 
+BESTOBJID:  \newline 
+TARGETOBJID:  \newline 
+PLATEID:  \newline 
+NSPECOBS:  \newline 
+FIRSTRELEASE:  \newline 
+RUN2D:  \newline 
+RUN1D:  \newline 
+DESIGNID:  \newline 
+CX:  
+CY:  
+CZ:  \newline 
+XFOCAL:  \newline 
+YFOCAL:  \newline 
+SOURCETYPE:  \newline 
+TARGETTYPE:  \newline 
+THING\_ID\_TARGETING:  \newline 
+THING\_ID:  \newline 
+PRIMTARGET:  \newline 
+SECTARGET:  \newline 
+LEGACY\_TARGET1:  \newline 
+LEGACY\_TARGET2:  \newline 
+SPECIAL\_TARGET1:  \newline 
+SPECIAL\_TARGET2:  \newline 
+SEGUE1\_TARGET1:  \newline 
+SEGUE1\_TARGET2:  \newline 
+SEGUE2\_TARGET1:  \newline 
+SEGUE2\_TARGET2:  \newline 
+MARVELS\_TARGET1:  \newline 
+MARVELS\_TARGET2:  \newline 
+BOSS\_TARGET1:  \newline 
+BOSS\_TARGET2:  \newline 
+EBOSS\_TARGET0:  \newline 
+EBOSS\_TARGET1:  \newline 
+EBOSS\_TARGET2:  \newline 
+EBOSS\_TARGET\_ID:  \newline 
+ANCILLARY\_TARGET1:  \newline 
+ANCILLARY\_TARGET2:  \newline 
+SPECTROGRAPHID:  \newline 
+PLATE:  \newline 
+TILE:   \newline 
+MJD:    \newline 
+FIBERID:  \newline 
+OBJID:  \newline 
+ & 
+PLUG\_RA:  \newline 
+PLUG\_DEC:  \newline 
+CLASS:  \newline 
+SUBCLASS:  \newline 
+Z:  \newline 
+Z\_ERR:  \newline 
+RCHI2:  \newline 
+DOF:  \newline 
+RCHI2DIFF:  \newline 
+TFILE:  \newline 
+TCOLUMN:  \newline 
+NPOLY:  \newline 
+THETA:  \newline 
+VDISP:  \newline 
+VDISP\_ERR:  \newline 
+VDISPZ:  \newline 
+VDISPZ\_ERR:  \newline 
+VDISPCHI2:  \newline 
+VDISPNPIX:  \newline 
+VDISPDOF:  \newline 
+WAVEMIN:  \newline 
+WAVEMAX:  \newline 
+WCOVERAGE:  \newline 
+ZWARNING:  \newline 
+SN\_MEDIAN\_ALL:  \newline 
+SN\_MEDIAN:  \newline 
+CHI68P:  \newline 
+FRACNSIGMA:  \newline 
+FRACNSIGHI:  \newline 
+FRACNSIGLO:  \newline 
+SPECTROFLUX:  \newline 
+SPECTROFLUX\_IVAR:  \newline 
+SPECTROSYNFLUX:  \newline 
+SPECTROSYNFLUX\_IVAR:  \newline 
+SPECTROSKYFLUX:  \newline 
+ANYANDMASK:  \newline 
+ANYORMASK:  \newline 
+SPEC1\_G:  
+SPEC1\_R:  
+SPEC1\_I:  \newline 
+SPEC2\_G:   
+SPEC2\_R:   
+SPEC2\_I:  \newline 
+ELODIE\_FILENAME:  \newline 
+ELODIE\_OBJECT:  \newline 
+ELODIE\_SPTYPE:  \newline 
+ELODIE\_BV:  \newline 
+ELODIE\_TEFF:  \newline 
+ELODIE\_LOGG:  \newline 
+ELODIE\_FEH:  \newline 
+ELODIE\_Z:  \newline 
+ELODIE\_Z\_ERR:  \newline 
+ELODIE\_Z\_MODELERR:  \newline 
+ELODIE\_RCHI2:  \newline 
+ELODIE\_DOF:  \newline 
+Z\_NOQSO:  \newline 
+Z\_ERR\_NOQSO:  \newline 
+ZWARNING\_NOQSO:  \newline 
+CLASS\_NOQSO:  \newline 
+SUBCLASS\_NOQSO:  \newline 
+RCHI2DIFF\_NOQSO:  \newline 
+Z\_PERSON:  \newline 
+CLASS\_PERSON:  \newline 
+Z\_CONF\_PERSON:  \newline 
+COMMENTS\_PERSON:  \newline 
+CALIBFLUX:  \newline 
+CALIBFLUX\_IVAR:  \newline 
+ 
+& 
+
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_lightW: light weighted age in years \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_lightW\_up\_1sig:  
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_lightW\_low\_1sig: 
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_lightW\_up\_2sig:  
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_lightW\_low\_2sig: errors \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_metallicity\_lightW: light weighted metallicity in solar metallicity \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_metallicity\_lightW\_up\_1sig:  
+\$\{IMF\}\_\$\{LIBRARY\}\_metallicity\_lightW\_low\_1sig:  
+\$\{IMF\}\_\$\{LIBRARY\}\_metallicity\_lightW\_up\_2sig:  
+\$\{IMF\}\_\$\{LIBRARY\}\_metallicity\_lightW\_low\_2sig: errors \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_massW: mass weighted age in years \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_massW\_up\_1sig: 
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_massW\_low\_1sig:
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_massW\_up\_2sig: 
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_massW\_low\_2sig:errors \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_metallicity\_massW: mass weighted metallicity in solar metallicity \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_metallicity\_massW\_up\_1sig: 
+\$\{IMF\}\_\$\{LIBRARY\}\_metallicity\_massW\_low\_1sig: 
+\$\{IMF\}\_\$\{LIBRARY\}\_metallicity\_massW\_up\_2sig: 
+\$\{IMF\}\_\$\{LIBRARY\}\_metallicity\_massW\_low\_2sig:errors \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_stellar\_mass: total stellar mass in living stars + remants + gas in solar mass \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_stellar\_mass\_up\_1sig: 
+\$\{IMF\}\_\$\{LIBRARY\}\_stellar\_mass\_low\_1sig:
+\$\{IMF\}\_\$\{LIBRARY\}\_stellar\_mass\_up\_2sig: 
+\$\{IMF\}\_\$\{LIBRARY\}\_stellar\_mass\_low\_2sig:errors \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_living\_star\_mass: stellar mass in living stars + remnants in solar mass \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_remnant\_mass: stellar mass in living stars in solar mass \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_remnant\_mass\_in\_whitedwarfs: stellar mass in white dwarfs in solar mass \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_remnant\_mass\_in\_neutronstars: stellar mass in neutron stars in solar mass \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_remnant\_mass\_blackholes: stellar mass in black holes in solar mass \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_mass\_of\_ejecta: stellar mass ejected in solar mass \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_spm\_EBV: reddenning value fitted \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_nComponentsSSP:         number of single stellar population components  \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_stellar\_mass\_ssp\_\$\{i\}:  Stellar mass in the ith SSP  \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_age\_ssp\_\$\{i\}:            Age of the ith SSP          \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_metal\_ssp\_\$\{i\}:          Metallicity of the ith SSP   \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_weightMass\_ssp\_\$\{i\}:     mass weight of the ith SSP in the overall solution \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_weightLight\_ssp\_\$\{i\}:    light weight of the ith SSP in the overall solution \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_chi2: chi square \newline 
+\$\{IMF\}\_\$\{LIBRARY\}\_ndof: Number of degree of freedom \newline 
+abs\_mag\_u\_spec: 
+abs\_mag\_g\_spec: 
+abs\_mag\_r\_spec: 
+abs\_mag\_i\_spec: Absolute magnitude (u,g,r,i-band) measured on the observed spectrum \newline 
+abs\_mag\_u\_noise:  
+abs\_mag\_g\_noise:
+abs\_mag\_r\_noise:
+abs\_mag\_i\_noise: Absolute magnitude (u,g,r,i-band) measured on the observed noise spectrum \newline
+SNR\_ALL: Median signal to noise in the spectrum \newline 
+SNR\_32\_35: Median signal to noise ratio in the band 3200-3500$\AA$; 
+SNR\_35\_39: - 3500-3900$\AA$;  
+SNR\_39\_41: - 3900-4100$\AA$;  
+SNR\_41\_55: - 4100-5500$\AA$;  
+SNR\_55\_68: - 5500-6800$\AA$;  
+SNR\_68\_74: - 6800-7400$\AA$;  
+SNR\_74\_93: - 7400-9300$\AA$  \newline 
+% Separation:  \newline 
+
+\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+% SPECOBJID		Spectroscopic unique identifier
+% OBJID	int		Photometric unique identifier
+% RUN2D	str		version of the 2d reduction pipeline
+% RUN1D	str		version of the 1d reduction pipeline
+% MJD	int		MJD of observation
+% PLATE	int		Plate number
+% FIBERID	int		Fiber identification number
+% PLUG_RA	Double		Right ascension of fiber, J2000
+% PLUG_DEC	Double		Declination of fiber, J2000
+% Z	float		Best redshift
+% Z_ERR	float		Error in redshift
+% ZWARNING	int		Warnings in "z" redshift
+% CLASS	str		Classification in redshift
+% SUBCLASS	str		Sub-classification in redshift
+% Kroupa_age_lightW	float		light weighted age upper error, Kroupa IMF
+% Kroupa_age_lightW_err_plus	float		light weighted age lower error, Kroupa IMF
+% Kroupa_age_lightW_err_minus	float		light weighted stellar metallicity, Kroupa IMF
+% Kroupa_metallicity_lightW	float		light weighted stellar metallicity upper error, Kroupa IMF
+% Kroupa_metallicity_lightW_err_plus	float		light weighted stellar metallicity upper error, Kroupa IMF
+% Kroupa_metallicity_lightW_err_minus	float		light weighted stellar metallicity lower error, Kroupa IMF
+% Kroupa_stellar_mass	float		stellar mass, Kroupa IMF
+% Kroupa_stellar_mass_err_plus	float		stellar mass upper error, Kroupa IMF
+% Kroupa_stellar_mass_err_minus	float		stellar mass lower error, Kroupa IMF
+% Kroupa_spm_EBV	float		reddenning fitted, Kroupa IMF
+% Kroupa_nComponentsSSP	float		number of single stellar population components, Kroupa IMF
+% Kroupa_chi2	float		chi squared, Kroupa IMF
+% Kroupa_ndof	float		number of degrees of freedom, Kroupa IMF
+% Salpeter_age_lightW	float		light weighted age upper error, Salpeter IMF
+% Salpeter_age_lightW_err_plus	float		light weighted age lower error, Salpeter IMF
+% Salpeter_age_lightW_err_minus	float		light weighted stellar metallicity, Salpeter IMF
+% Salpeter_metallicity_lightW	float		light weighted stellar metallicity upper error, Salpeter IMF
+% Salpeter_metallicity_lightW_err_plus	float		light weighted stellar metallicity upper error, Salpeter IMF
+% Salpeter_metallicity_lightW_err_minus	float		light weighted stellar metallicity lower error, Salpeter IMF
+% Salpeter_stellar_mass	float		stellar mass, Salpeter IMF
+% Salpeter_stellar_mass_err_plus	float		stellar mass upper error, Salpeter IMF
+% Salpeter_stellar_mass_err_minus	float		stellar mass lower error, Salpeter IMF
+% Salpeter_spm_EBV	float		reddenning fitted, Salpeter IMF
+% Salpeter_nComponentsSSP	float		number of single stellar population components, Salpeter IMF
+% Salpeter_chi2	float		chi squared, Salpeter IMF
+% Salpeter_ndof	float		number of degrees of freedom, Salpeter IMF
+% Chabrier_age_lightW	float		light weighted age upper error, Chabrier IMF
+% Chabrier_age_lightW_err_plus	float		light weighted age lower error, Chabrier IMF
+% Chabrier_age_lightW_err_minus	float		light weighted stellar metallicity, Chabrier IMF
+% Chabrier_metallicity_lightW	float		light weighted stellar metallicity upper error, Chabrier IMF
+% Chabrier_metallicity_lightW_err_plus	float		light weighted stellar metallicity upper error, Chabrier IMF
+% Chabrier_metallicity_lightW_err_minus	float		light weighted stellar metallicity lower error, Chabrier IMF
+% Chabrier_stellar_mass	float		stellar mass, Chabrier IMF
+% Chabrier_stellar_mass_err_plus	float		stellar mass upper error, Chabrier IMF
+% Chabrier_stellar_mass_err_minus	float		stellar mass lower error, Chabrier IMF
+% Chabrier_spm_EBV	float		reddenning fitted, Chabrier IMF
+% Chabrier_nComponentsSSP	float		number of single stellar population components, Chabrier IMF
+% Chabrier_chi2	float		chi squared, Chabrier IMF
+% Chabrier_ndof	float		number of degrees of freedom, Chabrier IMF
+
 
 \end{document}
