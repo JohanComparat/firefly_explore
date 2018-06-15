@@ -10,7 +10,7 @@ def writeScript(plateN):
   name = "p_"+str(plateN)
   
   plate_dir = '/data42s/comparat/firefly/v1_1_0/26/stellarpop/'+plateN
-  spec_files = n.array(glob.glob(os.path.join( plate_dir, 'spFly*.fits')))
+  spec_files = n.array(glob.glob(os.path.join( plate_dir, 'spFly-*.fits')))
   spec_files.sort()
   
   f=open(run_dir + name+".sh",'w')
