@@ -1,7 +1,5 @@
 import sys
 import os
-nside = sys.argv[1]
-
 from os.path import join                                                                                                             
 import glob                                                                                                                          
 import numpy as n
@@ -35,3 +33,6 @@ def writeScript(plateN):
     f.write("python3.6 plot_result_file.py "+spec_f+" \n")
   f.write(" \n")
   f.close()
+
+for pl in os.listdir('/data42s/comparat/firefly/v1_1_0/26/stellarpop/'):
+	writeScript(pl)
