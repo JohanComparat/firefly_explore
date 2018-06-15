@@ -35,6 +35,3 @@ def writeScript(plateN):
     f.write("python3.6 plot_result_file.py "+spec_f+" \n")
   f.write(" \n")
   f.close()
-
-
-]
