@@ -1,10 +1,4 @@
-import astropy.cosmology as co
-aa=co.Planck15
 import astropy.io.fits as fits
-import astropy.units as u
-from astropy.coordinates import angles
-#import AngularSeparation
-from astropy import coordinates as coord
 import time
 
 import matplotlib
@@ -20,15 +14,15 @@ p.rc('axes', prop_cycle=cycler('color', ["#638bd9", "#e586b6", "#dd7c25", "#5986
 import os
 import sys
 
-from scipy.interpolate import interp1d
 from scipy.stats import norm
+
 m_bins = n.arange(-4,4,0.1)
 
-path_2_spec = os.path.join(os.environ['DATA_DIR'], 'spm', 'v1_1_0', '26', 'stellarpop', '0266', 'spFly-0266-51602-0004.fits')
-path_2_figure = os.path.join(os.environ['DATA_DIR'], 'spm', 'v1_1_0', '26', 'stellarpop', '0266', 'spFly-0266-51602-0004.png')
-
-#path_2_spec = sys.argv[1]
-#path_2_figure = path_2_spec[:-5]+'.png'
+#path_2_spec = os.path.join(os.environ['DATA_DIR'], 'spm', 'v1_1_0', '26', 'stellarpop', '0266', 'spFly-0266-51602-0004.fits')
+#path_2_figure = os.path.join(os.environ['DATA_DIR'], 'spm', 'v1_1_0', '26', 'stellarpop', '0266', 'spFly-0266-51602-0004.png')
+# /data42s/comparat/firefly/v1_1_0/26/stellarpop/????/
+path_2_spec = sys.argv[1]
+path_2_figure = path_2_spec[:-5]+'.png'
 
 d = fits.open(path_2_spec)
 
