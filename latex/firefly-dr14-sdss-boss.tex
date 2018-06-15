@@ -162,6 +162,8 @@ Variations occurs in all dimensions of the problem: the models of the stellar po
 In this study we use the \citet{Maraston_2011} (M11 hereafter) stellar population models together with the \textsc{firefly} fitting routine \citep{Wilkinson_2015,Goddard2017MNRAS.465..688G,Goddard2017MNRAS.466.4731G,firefly2017MNRAS}.
 These code and models are shown to be able to reconstruct accurately a galaxy star formation history from spectra with signal to noise ratios (SNR) of about 5 per pixel, as confirmed by extensive testing using mock galaxies, real galaxies and star clusters \citep[see, ][and Sec. \ref{subsec:firefly:performances}]{firefly2017MNRAS}. 
 
+\textcolor{blue}{Paragraph listing all papers using firefly ?}
+
 We perform model fitting to the optical spectra measured by the Sloan Digital Sky Survey (SDSS DR14) and the DEEP2 survey (DR4) \citep{SDSS_DR14,Newman_2013}. 
 We chose these two medium resolution optical spectroscopic surveys because they sample the stellar mass vs. redshift plane in a complementary manner, as one can see on Fig. \ref{fig:nz}. 
 Similar stellar population model catalogs are available for the SDSS DR12. Stellar properties from broad-band SED fitting were published by \citet{Maraston2013} and emission-line properties by \citet{Thomas2013a}. Here we present a work that follows their approach and extends calculations to full spectral fitting. 
@@ -289,37 +291,37 @@ Salpeter & ELODIE & $921261$ (97.2) & $896355$ (94.5) & $774556$ (81.7) \\
 Salpeter & MILES & $920451$ (97.1) & $909374$ (95.9) & $814850$ (85.9) \\ 
 Salpeter & STELIB & $898522$ (94.8) & $894546$ (94.3) & $768726$ (81.1) \\ 
 \hline 
-\multicolumn{5}{c}{DEEP2 DR4: $34,972$ galaxies $0.7<z<1.2$} \\
-IMF &
+\multicolumn{5}{c}{DEEP2 DR4: $22,873$ galaxies $0.7<z<1.2$} \\                
+IMF &                                                                          
 Library & 
 fit constrained & 
 $\sigma_{\log_{10}M}<0.4$ dex & 
 $\sigma_{\log_{10}M}<0.2$ dex \\ \hline
-Chabrier & ELODIE& $20283$ (58.0) & $8656$ (24.8) & $3986$ (11.4) \\ 
-Chabrier & MILES& $20214$ (57.8) & $10935$ (31.3) & $4619$ (13.2) \\ 
-Chabrier & STELIB& $19807$ (56.6) & $11084$ (31.7) & $2733$ (7.8) \\ 
-Kroupa & ELODIE& $20777$ (59.4) & $9524$ (27.2) & $4335$ (12.4) \\ 
-Kroupa & MILES& $20544$ (58.7) & $11689$ (33.4) & $5238$ (15.0) \\ 
-Kroupa & STELIB& $20272$ (58.0) & $12076$ (34.5) & $3350$ (9.6) \\ 
-Salpeter & ELODIE& $20971$ (60.0) & $10042$ (28.7) & $4577$ (13.1) \\ 
-Salpeter & MILES& $20760$ (59.4) & $12150$ (34.7) & $5541$ (15.8) \\ 
-Salpeter & STELIB& $20417$ (58.4) & $12573$ (36.0) & $3708$ (10.6) \\ 
+Chabrier & ELODIE& $13803$ (60.3) & $6006$ (26.3) & $2798$ (12.2) \\ 
+Chabrier & MILES& $11864$ (51.9) & $6934$ (30.3) & $3193$ (14.0) \\ 
+Chabrier & STELIB& $11732$ (51.3) & $6823$ (29.8) & $1796$ (7.9) \\ 
+Kroupa & ELODIE& $14122$ (61.7) & $6638$ (29.0) & $3031$ (13.3) \\ 
+Kroupa & MILES& $12093$ (52.9) & $7274$ (31.8) & $3548$ (15.5) \\ 
+Kroupa & STELIB& $12111$ (52.9) & $7394$ (32.3) & $2163$ (9.5) \\ 
+Salpeter & ELODIE& $14261$ (62.3) & $7008$ (30.6) & $3162$ (13.8) \\ 
+Salpeter & MILES& $12246$ (53.5) & $7565$ (33.1) & $3752$ (16.4) \\ 
+Salpeter & STELIB& $12202$ (53.3) & $7644$ (33.4) & $2435$ (10.6) \\ 
 \hline 
-\multicolumn{5}{c}{DEEP2 DR4: $19,656$ \OII galaxies $0.7<z<1.2$} \\
+\multicolumn{5}{c}{DEEP2 DR4: $15,498$ \OII galaxies $0.7<z<1.2$} \\
 IMF &
 Library & 
 fit constrained & 
 $\sigma_{\log_{10}M}<0.4$ dex & 
 $\sigma_{\log_{10}M}<0.2$ dex \\ \hline
-Chabrier & ELODIE & $10804$ (55.0) & $3829$ (19.5) & $1537$ (7.8) \\ 
-Chabrier & MILES & $10192$ (51.9) & $5023$ (25.6) & $2080$ (10.6) \\ 
-Chabrier & STELIB & $10356$ (52.7) & $4807$ (24.5) & $1149$ (5.8) \\ 
-Kroupa & ELODIE & $11110$ (56.5) & $4317$ (22.0) & $1644$ (8.4) \\ 
-Kroupa & MILES & $10332$ (52.6) & $5241$ (26.7) & $2267$ (11.5) \\ 
-Kroupa & STELIB & $10641$ (54.1) & $5286$ (26.9) & $1344$ (6.8) \\ 
-Salpeter & ELODIE & $11265$ (57.3) & $4613$ (23.5) & $1744$ (8.9) \\ 
-Salpeter & MILES & $10550$ (53.7) & $5529$ (28.1) & $2425$ (12.3) \\ 
-Salpeter & STELIB & $10735$ (54.6) & $5478$ (27.9) & $1478$ (7.5) \\ 
+Chabrier & ELODIE & $9499$ (61.3) & $3444$ (22.2) & $1431$ (9.2) \\ 
+Chabrier & MILES & $7789$ (50.3) & $4090$ (26.4) & $1822$ (11.8) \\ 
+Chabrier & STELIB & $7898$ (51.0) & $3975$ (25.6) & $944$ (6.1) \\ 
+Kroupa & ELODIE & $9748$ (62.9) & $3903$ (25.2) & $1529$ (9.9) \\ 
+Kroupa & MILES & $7921$ (51.1) & $4267$ (27.5) & $1960$ (12.6) \\ 
+Kroupa & STELIB & $8169$ (52.7) & $4390$ (28.3) & $1108$ (7.1) \\ 
+Salpeter & ELODIE & $9868$ (63.7) & $4184$ (27.0) & $1619$ (10.4) \\ 
+Salpeter & MILES & $8113$ (52.3) & $4545$ (29.3) & $2123$ (13.7) \\ 
+Salpeter & STELIB & $8225$ (53.1) & $4559$ (29.4) & $1228$ (7.9) \\ 
 
 \hline
 \end{tabular}
@@ -382,7 +384,7 @@ Although DEEP2 is a major galaxy evolution survey and stellar masses for galaxie
 In this analysis we consider the galaxy spectra that have a redshift in the range $0.001<z<1.7$ and that are classified with a flag $Z\_FLG\geq2$. 
 Because the fitting requires the 4000$\AA$ break to be covered to recover the stellar age properly, we further constrain the redshift range to $0.7<z<1.2$. 
 We use flux-calibrated spectra produced by \citet{Comparat2016LFs}. 
-Out of the $50,319$ entries in the DEEP2 DR4 catalog, $34,972$ are considered for a stellar population model fit \textcolor{red}{and $XXXX$ with $0.7<z<1.2$}, see Table \ref{table:single:spectra} for the detailed numbers. 
+Out of the $50,319$ entries in the DEEP2 DR4 catalog, $34,972$ are considered for a stellar population model fit and about 22 thousands with $0.7<z<1.2$, see Table \ref{table:single:spectra} for the detailed numbers. 
 To compare to the numbers obtained in \citet{Comparat2016LFs}, we further divided the data after the eventual detection of emission line in the spectrum. 
 
 %One of the DEEP2 fields is located in the AEGIS\footnote{\url{http://aegis.ucolick.org}} field where deep multi-wavelength data is available.
@@ -453,7 +455,7 @@ We output the actual (present) stellar mass, including its fraction locked in st
 \citet{firefly2017MNRAS} showed (section 5.2, Fig. 19) that to reliably recover of the age, the 4000$\AA$ break region is needed in the observations. This is not a problem for the SDSS+eBOSS observations. This is an issue for the DEEP2 spectra that only cover the wavelength range 6500 − 9300$\AA$ i.e. accurate ages for the DEEP2 galaxies can be recovered only if the redshift is in the window 3800(1+z)$>$6500 and 4200(1+z)$<$9300 i.e. $0.7<z<1.2$.
 
 \subsubsection{Comparison with previous measurements}
-\citet{firefly2017MNRAS} compared (section 6.2, Figs. 24, 25) the \textsc{firefly}-SDSS measurements to the results from \textcolor{red}{Cid-Fernandes et al. (2005) and from Tojeiro et al. (2009)}. In both cases, a good wualitative agreement was found.
+\citet{firefly2017MNRAS} compared (section 6.2, Figs. 24, 25) the \textsc{firefly}-SDSS measurements to the results from \textcolor{blue}{Cid-Fernandes et al. (2005) and from Tojeiro et al. (2009)}. In both cases, a good qualitative agreement was found.
 
 \subsection{Performances}
 \label{subsec:firefly:performances}
