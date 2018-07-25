@@ -98,19 +98,22 @@ def get_basic_stat_firefly_DR14(catalog, z_name, z_err_name, class_name, zwarnin
     return name + " & $"+ sld(converged)+"$ ("+str(n.round(ld(converged)/ld(catalog_zOk)*100.,1))+") & $"+ sld(dex04)+"$ ("+str(n.round(ld(dex04)/ld(catalog_zOk)*100.,1))+") & $"+ sld(dex02)+ "$ ("+str(n.round(ld(dex02)/ld(catalog_zOk)*100.,1))+r") \\\\"
     #return catalog_sel, m_catalog, w_catalog
 
+
 def get_basic_stat_deep2(catalog, z_name, z_flg, name, zflg_min, prefix, o2=False):
-    catalog_zOk = (catalog[z_name] > 0.7) & (catalog[z_flg]>=zflg_min) & (catalog[z_name] > 0.7) & (catalog[z_name] < 1.2) & (catalog['SSR']>0) & (catalog['TSR']>0) & (catalog['SSR']<=1.0001) & (catalog['TSR']<=1.0001)
-    converged = (catalog_zOk)&(catalog[prefix+'stellar_mass'] < 10**13. ) & (catalog[prefix+'stellar_mass'] > 10**4 )  & (catalog[prefix+'stellar_mass'] > catalog[prefix+'stellar_mass_low_1sig'] ) & (catalog[prefix+'stellar_mass'] < catalog[prefix+'stellar_mass_up_1sig'] ) 
-    dex04 = (converged) & (catalog[prefix+'stellar_mass'] < 10**14. ) & (catalog[prefix+'stellar_mass'] > 0 )  & (catalog[prefix+'stellar_mass'] > catalog[prefix+'stellar_mass_low_1sig'] ) & (catalog[prefix+'stellar_mass'] < catalog[prefix+'stellar_mass_up_1sig'] ) & ( - n.log10(catalog[prefix+'stellar_mass_low_1sig'])  + n.log10(catalog[prefix+'stellar_mass_up_1sig']) < 0.8 )
+    catalog_zOk = (catalog[z_name] > 0.7) & (catalog[z_flg]>=zflg_min) & (catalog[z_name] > 0.7) & (catalog[z_name] < 1.2) & (catalog['SSR']>0) & (catalog['TSR']>0) & (catalog['SSR']<=1.0001) & (catalog['TSR']<=1.0001)&(catalog['SNR_MEDIAN_ALL']>0.1)
+    converged = (catalog_zOk)&(catalog[prefix+'stellar_mass'] > 0 )
+    converged2 = (converged)&(catalog[prefix+'stellar_mass'] < 10**13. ) & (catalog[prefix+'stellar_mass'] > 10**4 )  & (catalog[prefix+'stellar_mass'] > catalog[prefix+'stellar_mass_low_1sig'] ) & (catalog[prefix+'stellar_mass'] < catalog[prefix+'stellar_mass_up_1sig'] ) 
+    dex04 = (converged2) & (catalog[prefix+'stellar_mass'] < 10**14. ) & (catalog[prefix+'stellar_mass'] > 0 )  & (catalog[prefix+'stellar_mass'] > catalog[prefix+'stellar_mass_low_1sig'] ) & (catalog[prefix+'stellar_mass'] < catalog[prefix+'stellar_mass_up_1sig'] ) & ( - n.log10(catalog[prefix+'stellar_mass_low_1sig'])  + n.log10(catalog[prefix+'stellar_mass_up_1sig']) < 0.8 )
     dex02 = (dex04) & ( - n.log10(catalog[prefix+'stellar_mass_low_1sig'])  + n.log10(catalog[prefix+'stellar_mass_up_1sig']) < 0.4 )
     m_catalog = n.log10(catalog[prefix+'stellar_mass'])
     w_catalog = 1. / (catalog['TSR'] * catalog['SSR'])
     print('z ok:', ld(catalog_zOk))
     if o2:
       l_o2 = lineSelection(catalog, "O2_3728") & catalog_zOk
-      print('o2',ld(l_o2))
+      print('o2',ld(l_o2),sld(converged & l_o2))
       return name +' & $'+ sld(converged & l_o2)+"$ ("+str(n.round(ld(converged & l_o2)/ld(catalog_zOk & l_o2)*100.,1))+") & $"+ sld(dex04 & l_o2)+"$ ("+str(n.round(ld(dex04 & l_o2)/ld(catalog_zOk & l_o2)*100.,1))+") & $"+ sld(dex02 & l_o2)+"$ ("+str(n.round(ld(dex02 & l_o2)/ld(catalog_zOk & l_o2)*100.,1))+r") \\\\"
     else:
+      print(sld(converged))
       return name + '& $'+ sld(converged)+"$ ("+str(n.round(ld(converged)/ld(catalog_zOk)*100.,1))+") & $"+ sld(dex04)+"$ ("+str(n.round(ld(dex04)/ld(catalog_zOk)*100.,1))+") & $"+ sld(dex02)+"$ ("+str(n.round(ld(dex02)/ld(catalog_zOk)*100.,1))+r") \\\\"
     #return catalog_sel, m_catalog, w_catalog
 
