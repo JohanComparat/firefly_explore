@@ -38,7 +38,7 @@ fig = p.figure(0, (8.2, 11.7), frameon=False )
 
 
 # panel top left: spectrum + models
-fig.add_subplot(411, xlabel='wavelength [Angstrom, rest frame]', ylabel=r'Flux [$f_\lambda 10^{-17}$ erg cm$^{-2}$ s$^{-1}$ A$^{-1}$]')
+fig.add_subplot(411, title=title, xlabel='wavelength [Angstrom, rest frame]', ylabel=r'Flux [$f_\lambda 10^{-17}$ erg cm$^{-2}$ s$^{-1}$ A$^{-1}$]')
 p.plot(d[1].data['wavelength'], y_data, color='grey', lw=0.4)
 for ii in n.arange(1, len(d), 1):
 	p.plot(d[ii].data['wavelength'], d[ii].data['firefly_model'], label=d[ii].header['IMF']+" "+d[ii].header['MODEL']+r", N$_{SSP}$="+str(d[ii].header['ssp_number']))
@@ -46,30 +46,30 @@ for ii in n.arange(1, len(d), 1):
 p.legend(loc=1, fontsize=9)
 
 ## panel top right: residuals
-#fig.add_subplot(422, xlabel='(data-model)/error', ylabel='Normed distribution', xlim=((-2.5,2.5)))
-#for ii in n.arange(1, len(d), 1):
-	#chis = (d[ii].data['original_data']-d[ii].data['firefly_model'])/d[ii].data['flux_error']
-	#ok = (d[ii].data['original_data']>0)
-	#p.hist(chis[ok], bins=m_bins, normed=True, histtype='step')
+fig.add_subplot(412, xlabel='(data-model)/error', ylabel='Normed distribution', xlim=((-2.5,2.5)))
+for ii in n.arange(1, len(d), 1):
+	chis = (d[ii].data['original_data']-d[ii].data['firefly_model'])/d[ii].data['flux_error']
+	ok = (d[ii].data['original_data']>0)
+	p.hist(chis[ok], bins=m_bins, normed=True, histtype='step')
 
-#p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), label='N(0,1)', ls='dashed', lw=2)
-#p.legend( frameon=False, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
-#p.grid()
+p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), label=r'$\mathcal{N}(0,1)$', ls='dashed', lw=2)
+p.legend( frameon=False)#, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+p.grid()
 
 # panel top right: residuals
-fig.add_subplot(412, title=title, xlabel='wavelength [Angstrom, rest frame]', ylabel='data/model', ylim=((0.5,1.5)))
-for ii in n.arange(1, len(d), 1):
-	YY = (d[ii].data['original_data']/d[ii].data['firefly_model'])
-	ok = (d[ii].data['original_data']>0)
-	p.plot(d[ii].data['wavelength'][ok], YY[ok], lw=0.4)
+#fig.add_subplot(412, xlabel='wavelength [Angstrom, rest frame]', ylabel='data/model', ylim=((0.5,1.5)))
+#for ii in n.arange(1, len(d), 1):
+	#YY = (d[ii].data['original_data']/d[ii].data['firefly_model'])
+	#ok = (d[ii].data['original_data']>0)
+	#p.plot(d[ii].data['wavelength'][ok], YY[ok], lw=0.4)
 
 
-p.plot(d[ii].data['wavelength'][ok], 1+abs(d[ii].data['flux_error'][ok]/d[ii].data['original_data'][ok]), lw=0.4, ls='dashed', color='k')
+#p.plot(d[ii].data['wavelength'][ok], 1+abs(d[ii].data['flux_error'][ok]/d[ii].data['original_data'][ok]), lw=0.4, ls='dashed', color='k')
 
-p.plot(d[ii].data['wavelength'][ok], 1-abs(d[ii].data['flux_error'][ok]/d[ii].data['original_data'][ok]), lw=0.4, ls='dashed', color='k', label='uncertainty')
+#p.plot(d[ii].data['wavelength'][ok], 1-abs(d[ii].data['flux_error'][ok]/d[ii].data['original_data'][ok]), lw=0.4, ls='dashed', color='k', label='uncertainty')
 
-p.legend(loc=1, frameon=False)
-p.grid()
+#p.legend(loc=1, frameon=False)
+#p.grid()
 
 
 # age metal
@@ -146,7 +146,8 @@ for ii in n.arange(1, len(d), 1):
 	#weightL = n.array([ d[ii].header['weightLight_ssp_'+str(jj)] for jj in n.arange(d[ii].header['ssp_number'])])
 	age = n.array([ n.log10(10**9 * 10**d[ii].header['log_age_ssp_'+str(jj)]) for jj in n.arange(d[ii].header['ssp_number'])])
 	#metal = n.array([ d[ii].header['metal_ssp_'+str(jj)] for jj in n.arange(d[ii].header['ssp_number'])])
-	p.plot(age, weightM, marker='+')#, ls='none')
+	iiid=n.argsort(age)
+	p.plot(age[iiid], weightM[iiid], marker='+', lw=1.5)#, ls='none')
 
 p.grid()
 
@@ -158,7 +159,8 @@ for ii in n.arange(1, len(d), 1):
 	#weightL = n.array([ d[ii].header['weightLight_ssp_'+str(jj)] for jj in n.arange(d[ii].header['ssp_number'])])
 	#age = n.array([ n.log10(10**9 * 10**d[ii].header['log_age_ssp_'+str(jj)]) for jj in n.arange(d[ii].header['ssp_number'])])
 	metal = n.array([ d[ii].header['metal_ssp_'+str(jj)] for jj in n.arange(d[ii].header['ssp_number'])])
-	p.plot(metal, weightM, marker='+')#, ls='none')
+	iiid=n.argsort(metal)
+	p.plot(metal[iiid], weightM[iiid], marker='+', lw=1.5)#, ls='none')
 
 
 p.grid()
