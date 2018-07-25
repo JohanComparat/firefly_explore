@@ -30,7 +30,9 @@ def writeScript(plateN):
   f.write("cd /home/comparat/software/linux/firefly_explore/bin/bin_spectra \n")
   f.write(" \n")
   for spec_f in spec_files:
-    f.write("python3.6 plot_result_file.py "+spec_f+" \n")
+    if os.path.isfile(spec_f[:-5]+'.png')==False:
+      f.write("python3.6 plot_result_file.py "+spec_f+" \n")
+
   f.write(" \n")
   f.close()
 

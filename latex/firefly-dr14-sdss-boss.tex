@@ -148,7 +148,7 @@ We publish all catalogs of properties as well as model spectra of the continuum 
 \label{sec:introduction}
 
 In the current paradigm of galaxy evolution, structures and galaxies form hierarchically: larger halos are formed by the coalescence of smaller progenitors. 
-From a macroscopic or thermodynamical point of view, galaxies are typically described as systems composed of the following tightly interacting sub-systems: the dark matter halo, the central black hole, the stars, the cold gas, the hot gas and the dust. 
+From a macroscopic or thermodynamical point of view, galaxies are typically described as systems composed of the tightly interacting sub-systems: the dark matter halo, the central black hole, the stars, the cold gas, the hot gas and the dust. 
 In addition, the galaxy interacts with its surroundings, the intergalactic medium, where it ejects gas or from where it aggregates matter. 
 A galaxy in this model is characterized by the mass of each of its components and the share of mass constituted by elements heavier than hydrogen. 
 The visible component of galaxies is approximated as a tri-phased system made of stars, inter-stellar medium and circum-galactic medium. This system is driven by the stellar activity; e.g. star formation rate, supernovae rate, the activity of the central active part of the galaxy; that induce gas movements: winds, accretion and expulsion \citep{mo2010book}. What stars populate galaxies is thus a central question in galaxy evolution. 
@@ -159,19 +159,17 @@ Variations occurs in all dimensions of the problem: the models of the stellar po
 % Stellar mass function literature 
 % \citet{moustakas2013}
 % \citet{Ilbert2013SMF}
-In this study we use the \citet{Maraston_2011} (M11 hereafter) stellar population models together with the \textsc{firefly} fitting routine \citep{Wilkinson_2015,Goddard2017MNRAS.465..688G,Goddard2017MNRAS.466.4731G,firefly2017MNRAS}.
-These code and models are shown to be able to reconstruct accurately a galaxy star formation history from spectra with signal to noise ratios (SNR) of about 5 per pixel, as confirmed by extensive testing using mock galaxies, real galaxies and star clusters \citep[see, ][and Sec. \ref{subsec:firefly:performances}]{firefly2017MNRAS}. 
-
-\textcolor{blue}{Paragraph listing all papers using firefly ?}
+In this study we use the \citet{Maraston_2011} (M11 hereafter) stellar population models together with the \textsc{firefly} fitting routine \citep[hereafter FF][]{Wilkinson_2015,Goddard2017MNRAS.465..688G,Goddard2017MNRAS.466.4731G,firefly2017MNRAS}.
+These code and models are shown to be able to reconstruct accurately a galaxy star formation history from spectra with signal to noise ratios (SNR) of about 5 per pixel, as confirmed by extensive testing using mock galaxies, real galaxies and star clusters \citep[see, ][and Sec. \ref{subsec:firefly:performances}]{firefly2017MNRAS}. FF models were used in a variety of recent stellar population studies using SDSS-IV integral field spectroscopy data \citep{Wilkinson_2015,Goddard2017MNRAS.465..688G,Goddard2017MNRAS.466.4731G,2018MNRAS.474.1143L,2018MNRAS.476.3883L,2018MNRAS.477.3954P}.
 
 We perform model fitting to the optical spectra measured by the Sloan Digital Sky Survey (SDSS DR14) and the DEEP2 survey (DR4) \citep{SDSS_DR14,Newman_2013}. 
 We chose these two medium resolution optical spectroscopic surveys because they sample the stellar mass vs. redshift plane in a complementary manner, as one can see on Fig. \ref{fig:nz}. 
-Similar stellar population model catalogs are available for the SDSS DR12. Stellar properties from broad-band SED fitting were published by \citet{Maraston2013} and emission-line properties by \citet{Thomas2013a}. Here we present a work that follows their approach and extends calculations to full spectral fitting. 
+Similar stellar population model catalogs are available for the SDSS DR12. Stellar properties from broad-band SED fitting were published by \citet{Maraston2013} and emission-line properties by \citet{Thomas2013a}. Here we present a work that follows their approach and extends calculations to full spectral fitting on larger data sets. 
 
 We present the set of observed spectra in Section \ref{sec:DATA}. 
 The \textsc{firefly} fitting routine and models are described in Section \ref{sec:SPS}. 
-In Section \ref{sec:results}, we detail the results obtained, in particular the level at which properties such as the stellar masses are constrained. 
-Finally, 
+We detail the results obtained for the four main parameters fitted: stellar masse, age, metallicity and reddenning. 
+In Section \ref{sec:results},  
 %we show a couple of scientific applications based on this data set.%  Firstly, we derive the galaxy stellar mass function in SDSS and compare it to literature, showing that our derivation is consistent with previous publications (within completeness limits). 
  we calculate for the first time the stellar mass function of \OII emitters in DEEP2 and discuss the scientific implications of our findings.
 
@@ -189,7 +187,7 @@ The results are available through the \textsc{firefly} data repository
 
 \begin{figure*}
 \begin{center}
-\caption{\label{fig:nz}Redshift distribution for the galaxies considered in this analysis using a Chabrier IMF and the ELODIE library. Galaxies with stellar mass constrained within $\pm0.2$dex (solid lines) and $\pm0.4$dex (dashed lines) are depicted (top panel). The bottom row of panels show a 2D histogram of the stellar masses obtained vs. redshift, hence giving the total number of galaxies in each pixel. Pixels have a width of 0.5 in redshift and of 0.2dex in stellar mass. The color codes the number of galaxies in each bin: less than 100 (blue) around 1000 (green) and more than 10,000 (yellow). These panels show how DEEP2 and SDSS are complementary in spanning the stellar mass redshift parameter space.}
+\caption{\label{fig:nz}Redshift distribution for the galaxies considered in this analysis using a Chabrier IMF and the ELODIE library. Galaxies with stellar mass constrained within $\pm0.2$dex (solid lines) and $\pm0.4$dex (dashed lines) are depicted (top panel). The bottom row of panels show a 2D histogram of the stellar masses obtained vs. redshift, hence giving the total number of galaxies in each pixel. Pixels have a width of 0.05 in redshift and of 0.2dex in stellar mass. The color codes the number of galaxies in each bin: less than 100 (blue) around 1000 (green) and more than 10,000 (yellow). These panels show how DEEP2 and SDSS are complementary in spanning the stellar mass redshift parameter space.}
 \includegraphics[width=14cm]{plots/redshift_distribution.png}\\
 \includegraphics[height=4.5cm]{plots/mass_redshift_mass_Chabrier_ELODIE_sdss_boss_02.png}
 \hspace*{-0.5cm}
@@ -200,21 +198,6 @@ The results are available through the \textsc{firefly} data repository
 \includegraphics[height=4.5cm]{plots/mass_redshift_mass_Chabrier_ELODIE_deep2_04.png}\\
 \end{center}
 \end{figure*}
-
-\begin{figure*}
-\begin{center}
-\caption{\label{fig:mass:redshift} 
-Median signal-to-noise over all good pixels v.s. redshift (left).  
-The three other panels show the correlation between the median signal-to-noise over all good pixels in the band around 4000$(1+z)\AA$ for three redshift bins $0<z<0.1$ (middle left, median SNR over 3900\AA-4100\AA), $0.2<z<0.3$ (middle right, median SNR over 4100\AA-4500\AA), $0.4<z<0.5$ (right, median SNR over 5500\AA-6800\AA)}.  
-%The SDSS u,g,r,i,z filters transition from one another at 4000, 5500, 7000, 8500$\AA$ i.e. at redshift 0, 0.375, 0.75 and 1.125 for the 4000$\AA$ break.
-%We see in the last two redshift bins that information is shifted towards redder bands. Sadly, the median SN in the z band is not reliable due to difficult sky subtraction.}
-\includegraphics[height=4cm]{plots/SNR_ALL_redshift_sdss_boss.png}
-\includegraphics[height=4cm]{plots/SNR_39_41_stellar_mass_err_sdss_boss_00.png}
-\includegraphics[height=4cm]{plots/SNR_41_55_stellar_mass_err_sdss_boss_02.png}
-\includegraphics[height=4cm]{plots/SNR_55_68_stellar_mass_err_sdss_boss_04.png}
-\end{center}
-\end{figure*}
-
 
 
 % \clearpage
@@ -231,8 +214,6 @@ The redshift range spanned by the data is $0<z<1.7$ and most derived stellar mas
 The two surveys cover this parameter space in a complementary fashion. 
 SDSS covers the most luminous galaxies over a wide area (order of 10,000 deg$^2$) and DEEP2 samples fainter galaxies (by about 2 magnitudes) over a small area (order of 2 deg$^2$). 
 Fig. \ref{fig:nz} shows the redshift distribution of the two data sets. 
-In both samples, the median signal to noise ratio per pixel in galaxy spectra with a robust redshift spans a wide range of values between 0.1 to 100, see Fig. \ref{fig:mass:redshift}. 
-We comment on the correlation between signal to noise ratio and uncertainty on the stellar mass later in the paper. 
 %
 \subsection{SDSS}
 We consider spectra obtained with the SDSS or BOSS spectrograph \citep{2006AJ....131.2332G,Smee2013} as in the fourteenth data release \citep{dawson_2016,blanton_2017,SDSS_DR14}. 
@@ -243,7 +224,56 @@ For the stellar population fitting, we consider objects classified as galaxies f
 We consider objects for which a definite positive redshift was derived using galaxy templates 
 (CLASS=="GALAXY", $Z>Z_{ERR}>0$, $ZWARNING==0$) in the current redshift pipeline \citep[][version v5\_10\_0]{2012AJ....144..144B}. 
 For the data observed with the BOSS spectrograph, we consider the "NOQSO" version of these quantities. 
-The obtain about 2.7 million optical galaxy spectra; $948,259$ million were observed with the SDSS spectrograph setup and with $1,759,362$ with the BOSS spectrograph setup, see Table \ref{table:single:spectra}. 
+We retrieved about 2.7 million optical galaxy spectra; $948,259$ were observed with the SDSS spectrograph setup and with $1,759,362$ with the BOSS spectrograph setup, see Table \ref{table:single:spectra}. 
+
+An example of SDSS (BOSS) spectrum and FF model is shown on Fig. \ref{fig:firefly:output:sdss} (\ref{fig:firefly:output:boss}).
+
+
+\begin{figure*}
+\begin{center}
+\caption{\label{fig:firefly:output:sdss}
+Example of a fit taken from the first plate of an SDSS spectrum considered in this analysis: plate=0266, mjd=51602, fiberid=0004. 
+The {\bf top panel} shows the observed spectrum (grey line) and its models (colored lines). 
+Each model is characterized by a number of SSPs given in the caption. Gaps in the spectrum correspond to regions masked due to the presence of emission lines. 
+%
+The {\bf second panel} shows the ratio of the data divided by the model as a function of wavelength colored. The black lines correspond to the 1$\sigma$ uncertainties. \textcolor{red}{replace by residuals, not very useful ... move title up}
+% The middle panel shows the $\chi^2$ distribution per pixel for each fit compared to a normal distribution (labeled N(0,1), dashed line). 
+%
+The {\bf third and fourth rows} of panels show the values of the parameters fitted and their $1\sigma$ uncertainties. 
+The results point overall towards a metallicity value of 10$^{0.2}Z_\odot$, an age of 10$^{10}$yr, E(B-V) between 0.15 and 0.2. and a mass between 10$^{10.8}$ and 10$^{11}M_\odot$. 
+The STELIB library points toward the more massive and older stellar populations than MILES and ELODIE.
+On the {\bf third row}: age - metallicity, age - stellar mass, mass weight - age of individual SSPs. 
+On the {\bf fourth row}:  mass - metallicity, mass - reddenning, mass weight - metalliticy of individual SSPs. 
+% The bottom panel shows the output parameters stellar mass (y-axis) vs stellar age (x-axis), which nicely agree. Each blue point refers to one of the nine models. The blue points are related to their respective caption by black arrows. 
+% This Figure is generated for each fit and is available in the data repository.
+}
+\includegraphics[width=14cm]{plots/spFly-0266-51602-0004.png}
+\end{center}
+\end{figure*}
+
+
+
+\begin{figure*}
+\begin{center}
+\caption{\label{fig:firefly:output:boss}
+Example of a fit taken from the first plate of an BOSS spectrum considered in this analysis: plate=XXX, mjd=XXXXX, fiberid=XXXX. 
+The {\bf top panel} shows the observed spectrum (grey line) and its models (colored lines). 
+Each model is characterized by a number of SSPs given in the caption. Gaps in the spectrum correspond to regions masked due to the presence of emission lines. 
+%
+The {\bf second panel} shows the ratio of the data divided by the model as a function of wavelength colored. The black lines correspond to the 1$\sigma$ uncertainties. \textcolor{red}{replace by residuals, not very useful ... move title up}
+% The middle panel shows the $\chi^2$ distribution per pixel for each fit compared to a normal distribution (labeled N(0,1), dashed line). 
+%
+The {\bf third and fourth rows} of panels show the values of the parameters fitted and their $1\sigma$ uncertainties. 
+The results point overall towards a metallicity value of 10$^{0.2}Z_\odot$, an age of 10$^{10}$yr, E(B-V) between 0.15 and 0.2. and a mass between 10$^{10.8}$ and 10$^{11}M_\odot$. 
+The STELIB library points toward the more massive and older stellar populations than MILES and ELODIE.
+On the {\bf third row}: age - metallicity, age - stellar mass, mass weight - age of individual SSPs. 
+On the {\bf fourth row}:  mass - metallicity, mass - reddenning, mass weight - metalliticy of individual SSPs. 
+% The bottom panel shows the output parameters stellar mass (y-axis) vs stellar age (x-axis), which nicely agree. Each blue point refers to one of the nine models. The blue points are related to their respective caption by black arrows. 
+% This Figure is generated for each fit and is available in the data repository.
+}
+% \includegraphics[width=14cm]{plots/spFly-0266-51602-0004.png}
+\end{center}
+\end{figure*}
 
 
 \begin{table*}
@@ -291,6 +321,107 @@ Salpeter & ELODIE & $921261$ (97.2) & $896355$ (94.5) & $774556$ (81.7) \\
 Salpeter & MILES & $920451$ (97.1) & $909374$ (95.9) & $814850$ (85.9) \\ 
 Salpeter & STELIB & $898522$ (94.8) & $894546$ (94.3) & $768726$ (81.1) \\ 
 \hline 
+\end{tabular}
+\end{center}
+\end{table*}
+
+\subsubsection{Trends with source types, signal to noise ratio, redshift}
+
+SDSS  BOSS and eBOSS have large numbers of programs (or sub components) that we split according to the `SOURCETYPE' flag (there exist of order of $\sim$200 different program). 
+Among these programs only eight contain more than 10,000 spectra classified as galaxies: GALAXY, NONLEGACY, QSO, QA in SDSS and LRG, QSO, SEQUELS\_TARGET, SPIDERS\_RASS\_CLUS in eBOSS. 
+Then in eBOSS of order of 40 programs have between 1,000 and 10,000 galaxy spectra. 
+% \textcolor{red}{Be more quantitative. }
+We give the number of galaxies split by SDSS (eBOSS) program in Table 
+\ref{ref:table:sdss:src:firefly}
+(\ref{ref:table:boss:src:firefly}). 
+We give the number of galaxies considered for the fit and the fraction where the stellar mass parameter was constrained at better than 0.4 and 0.2 dex. 
+In SDSS, the target type 'GALAXY' has a constrained stellar mass for more than 95\% of its galaxy spectra which have a positive median signal to noise ratio. 
+More than 80\% have an uncertainty on the stellar mass parameter lower than $\pm$0.2 dex. 
+In eBOSS, the dominant galaxy type is LRG and 60\% have an uncertainty on the stellar mass parameter lower than $\pm$0.2 dex.  
+
+These fractions of objects with parameters obtained have two main dependences: redshift, signal to noise ratio and fraction of the light observed in the fiber. For each program with more than 100 galaxy spectra we break down the statistics as a function of these parameters. 
+The dependence on signal to noise ratio and redshift is shown in Table 
+\ref{ref:table:sdss:src:SNR} 
+(\ref{ref:table:boss:src:SNR}). 
+It gives for five redshift bins (with boundaries $0$, $0.025$, $0.375$, $0.7$, $0.85$, $1.6$) the precentile of galaxies that corresponds to a median SNR of 5 or 20. 
+For redshifts $z<0.375$ more than half of the SDSS GALAXY have SNR greater than 20. 
+For redshifts $z>0.7$ not a single galaxy has a SNR greater than 5. 
+The left panel on Fig. \ref{fig:mass:redshift} shows how the median signal to noise in good pixels are distributed with redshift. 
+Low redshift galaxies ($z<0.4$) were observed on average at higher signal to noise ratio than higher redshift galaxies.
+The other panels of Fig. \ref{fig:mass:redshift} show how the median signal to noise in good pixels in a band around the $4000\AA$ break correlates with the uncertainty on the stellar mass (for 3 redshift bins, $0<z<0.1$, $0.2<z<0.3$ and $0.4<z<0.5$).  
+%The dependence of  
+%We provide stellar population properties for three initial mass functions, and three libraries of templates; see next section about the details on the model.
+
+\begin{figure*}
+\begin{center}
+\caption{\label{fig:mass:redshift} 
+Median signal-to-noise over all good pixels v.s. redshift (left).  
+The three other panels show the correlation between the median signal-to-noise over all good pixels in the band around 4000$(1+z)\AA$ for three redshift bins $0<z<0.1$ (middle left, median SNR over 3900\AA-4100\AA), $0.2<z<0.3$ (middle right, median SNR over 4100\AA-4500\AA), $0.4<z<0.5$ (right, median SNR over 5500\AA-6800\AA)}.  
+%The SDSS u,g,r,i,z filters transition from one another at 4000, 5500, 7000, 8500$\AA$ i.e. at redshift 0, 0.375, 0.75 and 1.125 for the 4000$\AA$ break.
+%We see in the last two redshift bins that information is shifted towards redder bands. Sadly, the median SN in the z band is not reliable due to difficult sky subtraction.}
+\includegraphics[height=4cm]{plots/SNR_ALL_redshift_sdss_boss.png}
+\includegraphics[height=4cm]{plots/SNR_39_41_stellar_mass_err_sdss_boss_00.png}
+\includegraphics[height=4cm]{plots/SNR_41_55_stellar_mass_err_sdss_boss_02.png}
+\includegraphics[height=4cm]{plots/SNR_55_68_stellar_mass_err_sdss_boss_04.png}
+\end{center}
+\end{figure*}
+
+
+The dependence on fraction of light observed and redshift is shown in Table 
+\ref{ref:table:sdss:src:fibermag} 
+(\ref{ref:table:boss:src:fibermag}) 
+It gives, in three redshift bins (with boundaries $0$, $0.17$,  $0.55$, $1.6$), the fraction of galaxies where the fraction of the light in the fiber compared to the total light is greater than 50\% (10\%) i.e. the fiber magnitude smaller than the total magnitude by no more than 0.75 mag (2.5 mag). 
+At redshift $z<0.17$, most SDSS galaxies have between 10 and 50\% of the light in the fiber, indeed their extension is larger than the fiber size.  
+At high redshift $z>0.55$, more than a third of the eBOSS LRG galaxies have more than 50\% of their light reaching the fiber.
+
+\subsubsection{Comparison with previous catalogs}
+
+% and compares to previous SDSS galaxy products\footnote{\url{http://www.sdss.org/dr14/spectro/galaxy/}}. 
+Compared to previous stellar population model catalogs, we roughly double the number of stellar masses measured \citep[DR12,][]{Maraston2013,Thomas2013a}. % with an error smaller than $\pm0.2$dex . 
+In particular the number of well-constrained stellar masses (i.e. constrained to better than 0.2 dex at given IMF) has also doubled. 
+Such a gain in precision is enabled by fitting every pixel of the spectra rather than fitting the broad-band magnitudes (photometry) at the spectroscopic redshift. 
+However, this is at the cost of having a less homogeneous sample. 
+Indeed, the uncertainty on the stellar population parameters derived from full spectral fitting depends on the signal to noise ratio obtained in individual spectra, which varies according to observing conditions, position in the spectrograph and survey strategy. 
+Hence, the tighter constrain on stellar parameters is gained at the price of completeness. 
+
+\subsubsection{Data source}
+
+The complete set of observed spectra we processed occupies about 0.8T of disk space.
+The data considered for fitting in this analysis is available via the SDSS server,
+\begin{itemize}
+\item BOSS spectrograph data\\ \url{https://dr14.sdss.org/sas/dr14/eboss/spectro/redux/v5_10_0/spectra/PLATE/spec-PLATE-MJD-FIBERID.fits}. 
+\item SDSS spectrograph data\\ \url{https://dr14.sdss.org/sas/dr14/sdss/spectro/redux/26/spectra/PLATE/spec-PLATE-MJD-FIBERID.fits}.
+\end{itemize}
+The data model for the spectra is described here \url{https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/spectra/PLATE4/spec.html}. 
+
+\subsection{DEEP2}
+%For the VIPERS sample (REF), we consider the spectra that have a redshift $0.01<Z<1.4$. Out of the $91,507$ entries in the spectroscopic catalog, $87,762$ fulfill this condition. For VVDS Wide and Deep \citep{lefevre2013VVDS}, we apply the same condition and in the catalogs that contain $26,871$; $11,093$, respectively, we use $23,198$, $9,448$ spectra. 
+DEEP2 is a deep pencil beam survey that acquired spectra for galaxies brighter than $R<24.1$ to study the evolution of galaxies. The survey is split in four fields that cover 2.7 deg$^2$  \citep{Newman_2013}. 
+The DEIMOS spectrograph at Keck was used, which covers approximately the wavelength range $6500-9300\AA$ at a resolution $\sim$6000 \citep{Faber2003}. It accommodates order of 120 slits per mask. 
+Although DEEP2 is a major galaxy evolution survey and stellar masses for galaxies observed by DEEP2 are mentioned in many publications, there does not seems to be a public stellar mass catalog available online for comparison \citep{kassin2007,covington2010,mostek2013,2017ApJ...838...87C}. 
+
+In this analysis we consider the galaxy spectra that have a redshift in the range $0.001<z<1.7$ and that are classified with a flag $Z\_FLG\geq2$. 
+Because the fitting requires the 4000$\AA$ break to be covered to recover the stellar age properly, we further constrain the redshift range to $0.7<z<1.2$. 
+We use flux-calibrated spectra produced by \citet{Comparat2016LFs}. 
+Out of the $50,319$ entries in the DEEP2 DR4 catalog, $34,972$ are considered for a stellar population model fit and about $22,873$ unique objects within $0.7<z<1.2$, see Table \ref{table:single:spectra:deep2} for the detailed numbers. 
+In the second part of the Table, we further divided the data after the eventual detection of emission line in the spectrum. 
+
+%One of the DEEP2 fields is located in the AEGIS\footnote{\url{http://aegis.ucolick.org}} field where deep multi-wavelength data is available.
+
+The spectra used in this analysis were obtained via the DEEP2 server, here: \url{http://deep.ps.uci.edu/DR4/spectra.html}. 
+The subset of processed flux-calibrated spectra are available here \url{https://firefly.mpe.mpg.de/v1_1_0/DEEP2/spectra}. 
+%Slits compared to fiber provide a larger fraction of the light emitted. \textcolor{red}{give actual numbers. Fraction in slit and flux calibration. Why only 26\% converged ????}
+\textcolor{red}{Why only 26\% converged ????}
+
+An example of DEEP2 spectrum and FF model is shown on Fig. \ref{fig:firefly:output:deep2}
+
+
+\begin{table*}
+\caption{\label{table:single:spectra:deep2} Same as Table \ref{table:single:spectra} for DEEP2 and DEEP2 \OII galaxies.
+The last set shows the subset of the DEEP2 set that have a detection with a signal to noise ratio greater than 5 of the \OII emission line. }
+\begin{center}
+\begin{tabular}{ll rrr}
+\hline \hline
 \multicolumn{5}{c}{DEEP2 DR4: $22,873$ galaxies $0.7<z<1.2$} \\                
 IMF &                                                                          
 Library & 
@@ -322,81 +453,39 @@ Kroupa & STELIB & $8169$ (52.7) & $4390$ (28.3) & $1108$ (7.1) \\
 Salpeter & ELODIE & $9868$ (63.7) & $4184$ (27.0) & $1619$ (10.4) \\ 
 Salpeter & MILES & $8113$ (52.3) & $4545$ (29.3) & $2123$ (13.7) \\ 
 Salpeter & STELIB & $8225$ (53.1) & $4559$ (29.4) & $1228$ (7.9) \\ 
-
 \hline
 \end{tabular}
 \end{center}
 \end{table*}
 
-
-For each SDSS (eBOSS) program, Tables 
-\ref{ref:table:sdss:src:firefly}
-(\ref{ref:table:boss:src:firefly}), 
-\ref{ref:table:sdss:src:SNR} 
-(\ref{ref:table:boss:src:SNR}), 
-\ref{ref:table:sdss:src:fibermag} 
-(\ref{ref:table:boss:src:fibermag}) 
-describe the data set considered in its fullest. 
-
-Table 
-\ref{ref:table:sdss:src:firefly} (\ref{ref:table:boss:src:firefly})
-gives the number of galaxies considered for the fit and the fraction where the stellar mass parameter was constrained. 
-In SDSS, the target type 'GALAXY' has a constrained stellar mass for more than 95\% of its galaxy spectra where the median signal to noise ratio in the spectrum is positive. 
-More than 80\% have an uncertainty on the stellar mass parameter lower than 0.2 dex. 
-In eBOSS, the dominant galaxy type is LRG and 60\% have a stellar mass uncertainty lower than 0.2 dex. 
-Table 
-\ref{ref:table:sdss:src:SNR} (\ref{ref:table:boss:src:SNR}) 
-gives for five redshift bins (with boundaries $0$, $0.025$, $0.375$, $0.7$, $0.85$, $1.6$) the fraction of galaxies that has a median SNR greater than 5 or 20. For redshifts $z<0.375$ more than half of the galaxies have a SNR greater than 20. For redshifts $z>0.7$ no galaxy has a SNR greater than 5. 
-Table 
-\ref{ref:table:sdss:src:fibermag} (\ref{ref:table:boss:src:fibermag}) 
-gives, in three redshift bins (with boundaries $0$, $0.17$,  $0.55$, $1.6$), the fraction of galaxies where the fraction of the light in the fiber compared to the total light is greater than 50\% (10\%) i.e. the fiber magnitude smaller than the total magnitude by no more than 0.75 mag (2.5 mag). 
-At redshift $z<0.17$, most SDSS galaxies have between 10 and 50\% of the light in the fiber, indeed their extension is larger than the fiber size.  
-At high redshift $z>0.55$, more than a third of the eBOSS LRG galaxies have more than 50\% of their light reaching the fiber.
-
-
-% and compares to previous SDSS galaxy products\footnote{\url{http://www.sdss.org/dr14/spectro/galaxy/}}. 
-Compared to previous stellar population model catalogs, we roughly double the number of stellar masses measured \citep[DR12][]{Maraston2013,Thomas2013a}. % with an error smaller than $\pm0.2$dex . 
-In particular the number of well-constrained stellar masses (i.e. constrained to better than 0.2 dex at given IMF) has also doubled. 
-Such a gain in precision is enabled by fitting every pixel of the spectra rather than fitting the broad-band magnitudes (photometry) at the spectroscopic redshift. 
-However, this is at the cost of having a less homogeneous sample. 
-Indeed, the uncertainty on the stellar population parameters derived from full spectral fitting depends on the signal to noise ratio obtained in individual spectra, which varies according to observing conditions, position in the spectrograph and survey strategy. 
-Hence, the tighter constrain on stellar parameters is gained at the price of completeness. 
-The left panel on Fig. \ref{fig:mass:redshift} shows how the median signal to noise in good pixels are distributed with redshift. 
-Low redshift galaxies ($z<0.4$) were observed on average at higher signal to noise ratio than higher redshift galaxies.
-The other panels of Fig. \ref{fig:mass:redshift} show how the median signal to noise in good pixels in a band around the $4000\AA$ break correlates with the uncertainty on the stellar mass (for 3 redshift bins, $0<z<0.1$, $0.2<z<0.3$ and $0.4<z<0.5$).  
-%The dependence of  
-%We provide stellar population properties for three initial mass functions, and three libraries of templates; see next section about the details on the model.
-
-The complete set of observed spectra we processed occupies about 0.8T of disk space.
-The data considered for fitting in this analysis is available via the SDSS server,
-\begin{itemize}
-\item BOSS spectrograph data\\ \url{https://dr14.sdss.org/sas/dr14/eboss/spectro/redux/v5_10_0/spectra/PLATE/spec-PLATE-MJD-FIBERID.fits}. 
-\item SDSS spectrograph data\\ \url{https://dr14.sdss.org/sas/dr14/sdss/spectro/redux/26/spectra/PLATE/spec-PLATE-MJD-FIBERID.fits}.
-\end{itemize}
-The data model for the spectra is described here \url{https://data.sdss.org/datamodel/files/BOSS_SPECTRO_REDUX/RUN2D/spectra/PLATE4/spec.html}. 
-
-\subsection{DEEP2}
-%For the VIPERS sample (REF), we consider the spectra that have a redshift $0.01<Z<1.4$. Out of the $91,507$ entries in the spectroscopic catalog, $87,762$ fulfill this condition. For VVDS Wide and Deep \citep{lefevre2013VVDS}, we apply the same condition and in the catalogs that contain $26,871$; $11,093$, respectively, we use $23,198$, $9,448$ spectra. 
-DEEP2 is a deep pencil beam survey that acquired spectra for galaxies brighter than $R<24.1$ to study the evolution of galaxies. The survey is split in four fields that cover 2.7 deg$^2$  \citep{Newman_2013}. 
-The DEIMOS spectrograph at Keck was used, which covers approximately the wavelength range $6500-9300\AA$ at a resolution $\sim$6000 \citep{Faber2003}. It accommodates order of 120 slits per mask. 
-Although DEEP2 is a major galaxy evolution survey and stellar masses for galaxies observed by DEEP2 are mentioned in many publications, there does not seems to be a public stellar mass catalog available online for comparison \citep{kassin2007,covington2010,mostek2013,2017ApJ...838...87C}. 
-
-In this analysis we consider the galaxy spectra that have a redshift in the range $0.001<z<1.7$ and that are classified with a flag $Z\_FLG\geq2$. 
-Because the fitting requires the 4000$\AA$ break to be covered to recover the stellar age properly, we further constrain the redshift range to $0.7<z<1.2$. 
-We use flux-calibrated spectra produced by \citet{Comparat2016LFs}. 
-Out of the $50,319$ entries in the DEEP2 DR4 catalog, $34,972$ are considered for a stellar population model fit and about 22 thousands with $0.7<z<1.2$, see Table \ref{table:single:spectra} for the detailed numbers. 
-To compare to the numbers obtained in \citet{Comparat2016LFs}, we further divided the data after the eventual detection of emission line in the spectrum. 
-
-%One of the DEEP2 fields is located in the AEGIS\footnote{\url{http://aegis.ucolick.org}} field where deep multi-wavelength data is available.
-
-The spectra used in this analysis were obtained via the DEEP2 server, here: \url{http://deep.ps.uci.edu/DR4/spectra.html}. 
-The subset of processed flux-calibrated spectra are available here \url{https://firefly.mpe.mpg.de/v1_1_0/DEEP2/spectra}. Slits compared to fiber provide a larger fraction of the light emitted. \textcolor{red}{give actual numbers}
+\begin{figure*}
+\begin{center}
+\caption{\label{fig:firefly:output:deep2}
+Example of a fit taken from the first plate of an DEEP2 spectrum considered in this analysis: mask=XXX, mjd=XXXX, slit=xxxxx. 
+The {\bf top panel} shows the observed spectrum (grey line) and its models (colored lines). 
+Each model is characterized by a number of SSPs given in the caption. Gaps in the spectrum correspond to regions masked due to the presence of emission lines. 
+%
+The {\bf second panel} shows the ratio of the data divided by the model as a function of wavelength colored. The black lines correspond to the 1$\sigma$ uncertainties. \textcolor{red}{replace by residuals, not very useful ... move title up}
+% The middle panel shows the $\chi^2$ distribution per pixel for each fit compared to a normal distribution (labeled N(0,1), dashed line). 
+%
+The{\bf third and fourth rows} of panels show the values of the parameters fitted and their $1\sigma$ uncertainties. 
+The results point overall towards a metallicity value of 10$^{0.2}Z_\odot$, an age of 10$^{10}$yr, E(B-V) between 0.15 and 0.2. and a mass between 10$^{10.8}$ and 10$^{11}M_\odot$. 
+The STELIB library points toward the more massive and older stellar populations than MILES and ELODIE.
+On the {\bf third row}: age - metallicity, age - stellar mass, mass weight - age of individual SSPs. 
+On the {\bf fourth row}:  mass - metallicity, mass - reddenning, mass weight - metalliticy of individual SSPs. 
+% The bottom panel shows the output parameters stellar mass (y-axis) vs stellar age (x-axis), which nicely agree. Each blue point refers to one of the nine models. The blue points are related to their respective caption by black arrows. 
+% This Figure is generated for each fit and is available in the data repository.
+}
+% \includegraphics[width=14cm]{plots/spFly-0266-51602-0004.png}
+\end{center}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % model
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \section{Stellar population modeling}
 \label{sec:SPS}
 
@@ -471,6 +560,8 @@ Then the band of importance between $3500$-$5500\AA$ break starts to enter the $
 So, at lower redshift, selecting the best fits can be done by either a selection on the SNR or on the uncertainty on the stellar mass. 
 At higher redshift, the median SNR measure provided in the SDSS specObj summary files is not a reliable estimate of the actual SNR. 
 %To have a better handle, we would need to estimate median SNR in the $i$ or $z$-band with a mask for the sky OH lines applied. 
+% In both samples, the median signal to noise ratio per pixel in galaxy spectra with a robust redshift spans a wide range of values between 0.1 to 100, see Fig. \ref{fig:mass:redshift}. 
+% We comment on the correlation between signal to noise ratio and uncertainty on the stellar mass later in the paper. 
 
 We follow the \citet{2013AJ....145...69L} procedure to mask pixels affected by the sky and estimate SNR in a cleaner fashion, we call it the effective signal to noise ratio SNR$_{eff}$. 
 Due to time constraints, we only perform this study on a subset of the complete sample. 
@@ -486,6 +577,7 @@ To construct a sample based on the summary files, we advise the user to pre-sele
 %For the next release, we will add the estimates of SNR$_{eff}$ for all spectra to track optimally the code's performances. 
 
 %In all catalogs provided, the median signal to noise ratio in good pixel of each spectrum is given so that the user may select according to the precision he wishes.
+
 \subsection{\citet{Maraston_2011} models}
 
 We use the \citet{Maraston_2011} stellar population models. 
@@ -587,7 +679,7 @@ DEEP2
 \end{center}
 \end{table}
 
-\subsection{Data}
+\subsection{Public data created}
 
 For SDSS, all products are available here 
 \url{https://firefly.mpe.mpg.de/v1_1_0/26}. 
@@ -628,7 +720,7 @@ The data model for this product, named 'spFly', is available here \url{https://d
 The DEEP2 result model spectra are provided here \url{http://www.mpe.mpg.de/~comparat/DEEP2/stellarpop/} and follow the naming convention 'spFly-deep2-MASK-OBJNUM.fits'.% 'spec/deep2-MASK-OBJNUM.fits' and their model
 
 An automated summary plot is provided for each model file. 
-It illustrates the spectrum, the models, and the fitted parameters, see Fig. \ref{fig:firefly:output}. 
+It illustrates the spectrum, the models, and the fitted parameters, see Fig. \ref{fig:firefly:output:sdss}, \ref{fig:firefly:output:boss}, \ref{fig:firefly:output:deep2}. 
 It shows an example of these Figures for a galaxy at redshift $z=0.127$ identified by PLATE=0266, MJD=51602, FIBERID=0004. 
 The top panel shows the observed spectrum (grey line) and the models (colored lines). 
 The middle panel shows the normed distribution of the quantity (data-model)/error for each pixel considered in the fit and for each of the nine models. 
@@ -637,31 +729,17 @@ The bottom panel shows the output parameters stellar mass vs. stellar age for ea
 Ages and masses are in good agreement. %The stellar metallicity differ slightly when changing given in the 
 Such a Figure is created for each fitted spectrum and provided together with the models.
 
-
-\begin{figure*}
-\begin{center}
-\caption{\label{fig:firefly:output}
-Example of a fit taken from the first plate of SDSS considered in this analysis: 0266. 
-The top panel shows the observed spectrum (grey line) and its models (colored lines). 
-The middle panel shows the $\chi^2$ distribution per pixel for each fit compared to a normal distribution (labeled N(0,1), dashed line). 
-The bottom panel shows the output parameters stellar mass (y-axis) vs stellar age (x-axis), which nicely agree. Each blue point refers to one of the nine models. The blue points are related to their respective caption by black arrows. 
-This Figure is generated for each fit and is available in the data repository.}
-\includegraphics[width=14cm]{plots/spFly-0266-51602-0004.png}
-\end{center}
-\end{figure*}
-
-
 \subsubsection{Plate-level summary catalogs (SDSS only)}
 Due to the size of the SDSS data set and its structure, we create summary catalogs for each plate, named 'spFlyPlate'.
 They contain all output parameters from the fitting procedure. 
 The data model for these catalogs is given here 
 \url{https://data.sdss.org/datamodel/files/EBOSS_FIREFLY/FIREFLY_VER/RUN2D/SPMODELS_VER/PLATE/spFlyPlate.html}. %This page gives the link to the plate catalogs.
 
-For each spFlyPlate file, a representation of the data obtained is proposed, an example is displayed in 
-Fig. \ref{fig:firefly:output:plate}. 
-It shows the distribution of stellar age and stellar masses measured in plate (0266). It also shows a comparison of the stellar masses derived using the M11 models with the ELODIE stellar library and varying the IMFs. You may note the systematic offset in stellar masses when assuming a Salpeter or a Chabrier IMF (bottom left panel). 
+% For each spFlyPlate file, a representation of the data obtained is proposed, an example is displayed in 
+% Fig. \ref{fig:firefly:output:plate}. 
+% It shows the distribution of stellar age and stellar masses measured in plate (0266). It also shows a comparison of the stellar masses derived using the M11 models with the ELODIE stellar library and varying the IMFs. You may note the systematic offset in stellar masses when assuming a Salpeter or a Chabrier IMF (bottom left panel). 
 
-As the DEEP2 data is much smaller than the SDSS, we did not create this second layer of summary files for DEEP2. 
+% As the DEEP2 data is much smaller than the SDSS, we did not create this second layer of summary files for DEEP2. 
 % 
 % \begin{figure*}
 % \begin{center}
@@ -723,7 +801,7 @@ The IMF assumed doe not change the E(B-V) value fitted, as expected.
 \begin{figure}
 \begin{center}
 \caption{\label{fig:distributions:EBV} 
-Normed cumulative distribution of the E(B-V) fitted (top row). The IMF assumed does not make a difference. Due to different wavelenght coverage the library assumed, the E(B-V) values measured differ by up to 0.2 dex. Direct comparison of the retrieved dust value for the Chabrier IMF varying libraries (bottom row). Main differences in the distributions are due to wavelength coverage.}  
+Normed cumulative distribution of the E(B-V) fitted (top row). The IMF assumed does not make a difference. Due to different wavelength coverage the library assumed, the E(B-V) values measured differ by up to 0.2 dex. Direct comparison of the retrieved dust value for the Chabrier IMF varying libraries (bottom row). Main differences in the distributions are due to wavelength coverage.}  
 \includegraphics[width=5.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_sdss.png}
 \includegraphics[width=5.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_eboss.png}          
 \includegraphics[width=5.5cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_deep2.png} \\
@@ -1177,12 +1255,12 @@ On Fig. \ref{fig:firefly:output:plate:unconstrained} we show such an example whe
 
 \begin{table*}
 \begin{center}
-\caption{\label{ref:table:sdss:src:firefly}SDSS division of the data per source type. Ordered by decreasing number of galaxies (third column). 
+\caption{\label{ref:table:sdss:src:firefly}SDSS data sorted per source type. Ordered by decreasing number of galaxies (third column). 
 The second column, 'N', gives the number of spectra labeled under this sourcetype. 
 The third column, 'N galaxies', gives the number of spectra considered as galaxies and their fraction relatively to the second column. 
-The fourth gives, 'SNR ALL$>0$', the number of spectra considered as galaxies with a positive median SNR over its spectrum. We consider this column as the reference sample to be fitted by \textsc{firefly}, hence the 100\%. 
+The fourth column, 'SNR ALL$>0$', gives the number of spectra considered as galaxies with a positive median SNR over its spectrum. We consider this column as the reference sample to be fitted by \textsc{firefly}, hence the `100\%'. 
 The fifth column, 'firefly constrained', gives the fraction of constrained fits and their fraction relative to the reference sample (column 4). 
-For the Galaxy sourcetype (first line), it is very high at $810540/829464 \sim 97.7\%$. 
+For the `GALAXY' sourcetype (first line), it is very high at $810540/829464 \sim 97.7\%$. 
 The last two columns, '$\sigma_{\log_M}<0.4$' ('$\sigma_{\log_M}<0.2$'), give the fraction of fits that have a stellar mass constrained within 0.4 (0.2) dex. 
 It is around 80\% for the GALAXY and QA sourcetype. 
 %The completeness is much lower for other sourcetypes.
