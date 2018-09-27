@@ -26,7 +26,7 @@ path_2_figure = path_2_spec[:-5]+'.png'
 
 d = fits.open(path_2_spec)
 
-title = "PLATE="+d[0].header['PLATE']+", MJD="+d[0].header['MJD']+", FIBERID="+d[0].header['FIBERID'][:-5]+", z="+str(n.round(d[0].header['REDSHIFT'],3))
+title = "PLATE="+d[0].header['PLATE']+", MJD="+d[0].header['MJD']+", FIBERID="+d[0].header['FIBERID'].split('.')[0]+", z="+str(n.round(d[0].header['REDSHIFT'],3))
 
 y_data = d[1].data['original_data']
 y_err = d[1].data['flux_error']
@@ -38,12 +38,12 @@ fig = p.figure(0, (8.2, 11.7), frameon=False )
 
 
 # panel top left: spectrum + models
-fig.add_subplot(411, title=title, xlabel='wavelength [Angstrom, rest frame]', ylabel=r'Flux [$f_\lambda 10^{-17}$ erg cm$^{-2}$ s$^{-1}$ A$^{-1}$]')
+fig.add_subplot(411, title=title, xlabel='wavelength [Angstrom, rest frame]', ylabel=r'Flux [$f_\lambda 10^{-17}$ erg cm$^{-2}$ s$^{-1}$ A$^{-1}$]',ylim=((n.min(d[1].data['firefly_model'])*0.9,1.1* n.max(d[1].data['firefly_model']))))
 p.plot(d[1].data['wavelength'], y_data, color='grey', lw=0.4)
 for ii in n.arange(1, len(d), 1):
 	p.plot(d[ii].data['wavelength'], d[ii].data['firefly_model'], label=d[ii].header['IMF']+" "+d[ii].header['MODEL']+r", N$_{SSP}$="+str(d[ii].header['ssp_number']))
 
-p.legend(loc=1, fontsize=9)
+p.legend(loc=1, fontsize=9, frameon=False)
 
 ## panel top right: residuals
 fig.add_subplot(412, xlabel='(data-model)/error', ylabel='Normed distribution', xlim=((-2.5,2.5)))

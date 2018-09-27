@@ -11,7 +11,7 @@ p.figure(2, (4.5, 4.5))
 p.axes([0.12,0.18,0.8,0.73])
 
 print('eboss')
-for imf in imfs:
+for imf in imfs[::3]:
 	stellar_mass = imf+'stellar_mass'
 	age = imf+'spm_EBV'
 
@@ -42,7 +42,7 @@ print('sdss')
 p.figure(2, (4.5, 4.5))
 p.axes([0.12,0.18,0.8,0.73])
 
-for imf in imfs:
+for imf in imfs[::3]:
   stellar_mass = imf+'stellar_mass'
   age = imf+'spm_EBV'
 
@@ -60,7 +60,7 @@ p.ylabel('normed cumulative distribution')
 p.xlabel(r'E(B-V)')
 #p.yscale('log')
 p.title('SDSS')
-p.legend(loc=0, frameon = False, fontsize=11)
+#p.legend(loc=0, frameon = False, fontsize=11)
 #p.xlim((0.,1.))
 p.grid()
 p.savefig(os.path.join(out_dir, "ebv_distribution_sdss.png" ))
@@ -71,7 +71,7 @@ p.figure(2, (4.5, 4.5))
 p.axes([0.12,0.18,0.8,0.73])
 
 
-for imf in imfs:
+for imf in imfs[::3]:
   stellar_mass = imf+'stellar_mass'
   age = imf+'spm_ebv'
   z_flg = 'ZQUALITY'
@@ -89,7 +89,7 @@ p.ylabel('normed cumulative distribution')
 
 p.xlabel(r'E(B-V)')
 p.title('DEEP2')
-p.legend(loc=0, frameon = False, fontsize=11)
+#p.legend(loc=0, frameon = False, fontsize=11)
 #p.xlim((0.,1.))
 p.grid()
 p.savefig(os.path.join(out_dir, "ebv_distribution_deep2.png" ))
