@@ -47,7 +47,7 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	delta_m1 = (M_04_1-M_04_ref)*(eM_04_ref**2.+eM_04_1**2.)**(-0.5)
 	delta_m2 = (M_04_2-M_04_ref)*(eM_04_ref**2.+eM_04_2**2.)**(-0.5)
 	# figure
-	p.figure(2, (6.5, 3.5))
+	p.figure(3, (4.5, 4.5))
 	p.axes([0.12,0.18,0.8,0.73])
 	p.hist(delta_m1, bins=m_bins, histtype='step', label=imf_1.split('_')[1]+"-"+imf_ref.split('_')[1] , normed=True )
 	p.hist(delta_m2, bins=m_bins, histtype='step', label=imf_2.split('_')[1]+"-"+imf_ref.split('_')[1] , normed=True )
@@ -64,7 +64,7 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	delta_m1 = (A_04_1-A_04_ref)*(eA_04_ref**2.+eA_04_1**2.)**(-0.5)
 	delta_m2 = (A_04_2-A_04_ref)*(eA_04_ref**2.+eA_04_2**2.)**(-0.5)
 	# figure
-	p.figure(2, (6.5, 3.5))
+	p.figure(3, (4.5, 4.5))
 	p.axes([0.12,0.18,0.8,0.73])
 	bad = (delta_m1==-n.inf)|(delta_m1==n.inf)
 	p.hist(delta_m1[bad==False], bins=m_bins, histtype='step', label=imf_1.split('_')[1]+"-"+imf_ref.split('_')[1] , normed=True )
@@ -84,7 +84,7 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	delta_m1 = (Z_04_1-Z_04_ref)*(eZ_04_ref**2.+eZ_04_1**2.)**(-0.5)
 	delta_m2 = (Z_04_2-Z_04_ref)*(eZ_04_ref**2.+eZ_04_2**2.)**(-0.5)
 	# figure
-	p.figure(2, (6.5, 3.5))
+	p.figure(3, (4.5, 4.5))
 	p.axes([0.12,0.18,0.8,0.73])
 	bad = (delta_m1==-n.inf)|(delta_m1==n.inf)|n.isnan(delta_m1)
 	p.hist(delta_m1[bad==False], bins=m_bins, histtype='step', label=imf_1.split('_')[1]+"-"+imf_ref.split('_')[1] , normed=True )
