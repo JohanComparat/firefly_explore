@@ -57,7 +57,7 @@ for ii in n.arange(1, len(d), 1):
 		ok = (d[ii].data['original_data']>0)
 		p.hist(chis[ok], bins=m_bins, normed=True, histtype='step')
 
-p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), label=r'$\mathcal{N}(0,1)$', ls='dashed', lw=2)
+p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), color='grey', label=r'$\mathcal{N}(0,1)$', ls='dashed', lw=2)
 p.legend( frameon=False)#, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 p.grid()
 
