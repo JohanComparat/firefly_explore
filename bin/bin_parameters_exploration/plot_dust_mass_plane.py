@@ -7,7 +7,7 @@ def plot_dm_boss(imf_ref):
 	stellar_mass = imf_ref+'stellar_mass'
 	age = imf_ref+'age_massW'
 	metal = imf_ref+'metallicity_massW'
-	ebv = imf+'spm_EBV'
+	ebv = imf_ref+'spm_EBV'
 	redshift_reliable_boss =  (boss['CLASS_NOQSO'] == "GALAXY") & ( boss['Z_ERR_NOQSO'] > 0.0) & (boss['ZWARNING_NOQSO'] == 0) & (boss['Z_NOQSO']>0.001) & (boss['Z_NOQSO'] > boss['Z_ERR_NOQSO'] ) # (boss['SN_MEDIAN_ALL'] > 0.1 ) & 
 	#redshift_reliable_sdss =  (sdss['CLASS'] == "GALAXY")       & ( sdss['Z_ERR'] > 0.0)       & (sdss['ZWARNING'] == 0)       & (sdss['Z'] > 0.001) & (sdss['Z'] > sdss['Z_ERR'] ) # (sdss['SN_MEDIAN_ALL'] > 0.1 ) &
 	error_reliable_boss = (boss[stellar_mass+'_up_1sig'] > boss[stellar_mass+'_low_1sig'] ) & (boss[stellar_mass+'_up_1sig'] > 0. ) & ( boss[stellar_mass+'_low_1sig'] > 0. ) & (boss[stellar_mass+'_up_1sig'] < 1e14 ) & ( boss[stellar_mass+'_low_1sig'] < 1e14 ) 
@@ -38,7 +38,7 @@ def plot_dm_sdss(imf_ref):
 	stellar_mass = imf_ref+'stellar_mass'
 	age = imf_ref+'age_massW'
 	metal = imf_ref+'metallicity_massW'
-	ebv = imf+'spm_EBV'
+	ebv = imf_ref+'spm_EBV'
 	redshift_reliable_sdss =  (sdss['CLASS'] == "GALAXY")       & ( sdss['Z_ERR'] > 0.0)       & (sdss['ZWARNING'] == 0)       & (sdss['Z'] > 0.001) & (sdss['Z'] > sdss['Z_ERR'] ) 
 	error_reliable_sdss = (sdss[stellar_mass+'_up_1sig'] > sdss[stellar_mass+'_low_1sig'] ) & (sdss[stellar_mass+'_up_1sig'] > 0. ) & ( sdss[stellar_mass+'_low_1sig'] > 0. ) & (sdss[stellar_mass+'_up_1sig'] < 1e14 ) & ( sdss[stellar_mass+'_low_1sig'] < 1e14 ) 
 	mass_reliable_sdss_04 = (sdss[stellar_mass] > 1e6 ) & ( sdss[stellar_mass] < 1e14 ) & ((n.log10(sdss[stellar_mass+'_up_1sig']) - n.log10(sdss[stellar_mass+'_low_1sig']))/2. < 0.4 )
@@ -65,7 +65,7 @@ def plot_dm_deep2(imf_ref):
 	stellar_mass = imf_ref+'stellar_mass'
 	age = imf_ref+'age_massW'
 	metal = imf_ref+'metallicity_massW'
-	ebv = imf+'spm_EBV'
+	ebv = imf_ref+'spm_EBV'
 	z_flg = 'ZQUALITY'
 	z_name = 'ZBEST'
 	deep2_zOk = (deep2[z_name] > 0.6) & (deep2[z_flg]>=2.) & (deep2[z_name] < 1.2) & (deep2['SSR']>0) & (deep2['TSR']>0) & (deep2['SSR']<=1.0001) & (deep2['TSR']<=1.0001)

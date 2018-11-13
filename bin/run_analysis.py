@@ -66,8 +66,10 @@ python3.4 plot_age_metal_plane.py
 python3.4 plot_differences_age_sdss.py
 python3.4 plot_differences_age_eboss.py
 python3.4 plot_differences_age_deep2.py
+
 python3.4 plot_distribution_ebv.py
 python3.4 plot_differences_ebv.py
+
 python3.4 plot_dust_mass_plane.py
 python3.4 plot_age_metal_plane.py
 
