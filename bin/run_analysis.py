@@ -57,6 +57,12 @@ python3.4 plot_distribution_ebv.py
 python3.4 plot_distribution_ages.py
 python3.4 plot_distribution_metals.py
 python3.4 plot_differences_age.py
+
+python3.4 plot_differences_age_deep2.py
+python3.4 plot_differences_age_eboss.py
+python3.4 plot_differences_age_sdss.py
+
+
 python3.4 plot_distribution_masses_imf_diff.py
 python3.4 plot_age_metal_plane.py
 

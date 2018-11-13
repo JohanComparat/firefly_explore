@@ -3,6 +3,13 @@ import astropy.io.fits as fits
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as p
+
+from cycler import cycler
+# 1. Setting prop cycle on default rc parameter
+p.rc('lines', linewidth=0.7)
+p.rc('axes', prop_cycle=cycler('color', ["#638bd9", "#e586b6", "#dd7c25", "#598664", "#9631a9", "#cff159", "#534f55", "#ab1519", "#89dbde"]) )
+
+
 import numpy as n
 import os
 import sys
