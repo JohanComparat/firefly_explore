@@ -52,19 +52,25 @@ python3.4 object_types_SNMEDIANALL.py
 python pdf_SM_error.py
 
 # Figures comparing all the parameters
+
+# previous figures
 python3.4 plot_distribution_masses.py
 python3.4 plot_distribution_ebv.py
 python3.4 plot_distribution_ages.py
 python3.4 plot_distribution_metals.py
 python3.4 plot_differences_age.py
-
-python3.4 plot_differences_age_deep2.py
-python3.4 plot_differences_age_eboss.py
-python3.4 plot_differences_age_sdss.py
-
-
 python3.4 plot_distribution_masses_imf_diff.py
 python3.4 plot_age_metal_plane.py
+
+# more recent set of figures
+python3.4 plot_differences_age_sdss.py
+python3.4 plot_differences_age_eboss.py
+python3.4 plot_differences_age_deep2.py
+python3.4 plot_distribution_ebv.py
+python3.4 plot_differences_ebv.py
+python3.4 plot_dust_mass_plane.py
+python3.4 plot_age_metal_plane.py
+
 
 # copy figures to the public repo
 

@@ -66,9 +66,9 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	# figure
 	p.figure(3, (4.5, 4.5))
 	p.axes([0.12,0.18,0.8,0.73])
-	bad = (delta_m1==-n.inf)|(delta_m1==n.inf)
+	bad = (delta_m1==-n.inf)|(delta_m1==n.inf)|n.isnan(delta_m1)
 	p.hist(delta_m1[bad==False], bins=m_bins, histtype='step', label=imf_1.split('_')[1]+"-"+imf_ref.split('_')[1] , normed=True )
-	bad = (delta_m2==-n.inf)|(delta_m2==n.inf)
+	bad = (delta_m2==-n.inf)|(delta_m2==n.inf)|n.isnan(delta_m2)
 	p.hist(delta_m2[bad==False], bins=m_bins, histtype='step', label=imf_2.split('_')[1]+"-"+imf_ref.split('_')[1] , normed=True )
 	p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), label='N(0,1)', ls='dashed')
 	#p.ylabel('normed distribution')
@@ -169,9 +169,9 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	# figure
 	p.figure(3, (4.5, 4.5))
 	p.axes([0.12,0.18,0.8,0.73])
-	bad = (delta_m1==-n.inf)|(delta_m1==n.inf)
+	bad = (delta_m1==-n.inf)|(delta_m1==n.inf)|n.isnan(delta_m1)
 	p.hist(delta_m1[bad==False], bins=m_bins, histtype='step', label=imf_1.split('_')[0]+"-"+imf_ref.split('_')[0] , normed=True )
-	bad = (delta_m2==-n.inf)|(delta_m2==n.inf)
+	bad = (delta_m2==-n.inf)|(delta_m2==n.inf)|n.isnan(delta_m2)
 	p.hist(delta_m2[bad==False], bins=m_bins, histtype='step', label=imf_2.split('_')[0]+"-"+imf_ref.split('_')[0] , normed=True )
 	p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), label='N(0,1)', ls='dashed')
 	#p.ylabel('normed distribution')
