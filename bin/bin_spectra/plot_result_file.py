@@ -9,7 +9,7 @@ import numpy as n
 from cycler import cycler
 # 1. Setting prop cycle on default rc parameter
 p.rc('lines', linewidth=0.7)
-p.rc('axes', prop_cycle=cycler('color', ["#638bd9", "#e586b6", "#dd7c25", "#598664", "#9631a9", "#cff159", "#534f55", "#ab1519", "#89dbde"]) )
+p.rc('axes', prop_cycle=cycler('color', ["#638bd9", "#e586b6", "#dd7c25"]) )#, "#598664", "#9631a9", "#cff159", "#534f55", "#ab1519", "#89dbde"]) )
 
 import os
 import sys
@@ -22,6 +22,8 @@ m_bins = n.arange(-4,4,0.1)
 #path_2_figure = os.path.join(os.environ['DATA_DIR'], 'spm', 'v1_1_0', '26', 'stellarpop', '0266', 'spFly-0266-51602-0004.png')
 # /data42s/comparat/firefly/v1_1_0/26/stellarpop/????/
 # spFly-0266-51602-0004
+# python3.6 plot_result_file.py /data42s/comparat/firefly/v1_1_0/26/stellarpop/0266/spFly-0266-51602-0004.fits 
+# python3.6 plot_result_file.py /data42s/comparat/firefly/v1_1_0/v5_10_0/stellarpop/3586/spFly-3586-55181-0003.fits
 path_2_spec = sys.argv[1]
 path_2_figure = path_2_spec[:-5]+'.png'
 
@@ -45,7 +47,7 @@ for ii in n.arange(1, len(d), 1):
 	if d[ii].header['IMF']=='Chabrier':
 		p.plot(d[ii].data['wavelength'], d[ii].data['firefly_model'], label=d[ii].header['IMF']+" "+d[ii].header['MODEL']+r", N$_{SSP}$="+str(d[ii].header['ssp_number']))
 
-p.legend(loc=1, fontsize=9, frameon=False)
+p.legend(loc=2, fontsize=9, frameon=False)
 
 ## panel top right: residuals
 fig.add_subplot(412, xlabel='(data-model)/error', ylabel='Normed distribution', xlim=((-2.5,2.5)))
