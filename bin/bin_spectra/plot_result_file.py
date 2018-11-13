@@ -47,7 +47,7 @@ for ii in n.arange(1, len(d), 1):
 	if d[ii].header['IMF']=='Chabrier':
 		p.plot(d[ii].data['wavelength'], d[ii].data['firefly_model'], label=d[ii].header['IMF']+" "+d[ii].header['MODEL']+r", N$_{SSP}$="+str(d[ii].header['ssp_number']))
 
-p.legend(loc=2, fontsize=9, frameon=False)
+p.legend(loc=2, fontsize=9)#, frameon=False)
 
 ## panel top right: residuals
 fig.add_subplot(412, xlabel='(data-model)/error', ylabel='Normed distribution', xlim=((-2.5,2.5)))
