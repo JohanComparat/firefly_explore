@@ -318,10 +318,11 @@ We output the actual (present) stellar mass, including its fraction locked in st
 %The extended v1\_1 level catalogs are available at the MPE mirror. 
 %They will be available through the SDSS mirror for the next data release DR16, see Sec. \ref{subsec:alt:cat}
 
-\subsubsection{Effect of the wavelength range}
-\citet{firefly2017MNRAS} showed (section 5.2, Fig. 19) that to reliably recover of the age, the 4000$\AA$ break region is needed in the observations. This is not a problem for the SDSS+eBOSS observations. This is an issue for the DEEP2 spectra that only cover the wavelength range 6500 − 9300$\AA$ i.e. accurate ages for the DEEP2 galaxies can be recovered only if the redshift is in the window 3800(1+z)$>$6500 and 4200(1+z)$<$9300 i.e. $0.7<z<1.2$.
+% \subsubsection{Effect of the wavelength range}
+\subsubsection{Wavelength range and age estimations}
+\citet{firefly2017MNRAS} showed (section 5.2, Fig. 19) that to reliably recover ages, the 4000$\AA$ break region is needed in the observations. This is not a problem for the SDSS+eBOSS observations. This is an issue for the DEEP2 spectra that only cover the wavelength range 6500 − 9300$\AA$ i.e. accurate ages for the DEEP2 galaxies can be recovered only if the redshift is in the window 3800(1+z)$>$6500 and 4200(1+z)$<$9300 i.e. $0.7<z<1.2$.
 
-\subsubsection{Theoretical performances from \citet{firefly2017MNRAS}}
+\subsubsection{Theoretical performances from \citet{firefly2017MNRAS}, comparison with previous measurements}
 \label{subsec:firefly:performances}
 \textsc{Firefly} is able to recover stellar population properties such as age, metallicity, and stellar mass, and the star formation history, 
 for spectra with a SNR$\sim5$, for moderately dusty systems (E(B-V)<0.75). 
@@ -330,7 +331,6 @@ At lower SNR down to SNR$\sim0.5$, we find that the stellar masses are in agreem
 At such low SNR, the full star formation history cannot be reconstructed accurately based on the spectral data only. 
 The age-metallicity degeneracy also becomes important and the individual stellar ages and stellar metallicities are uncertain.
 
-\subsubsection{Comparison with previous measurements}
 \citet{firefly2017MNRAS} compared (section 6.2, Figs. 24, 25) the \textsc{firefly}-SDSS measurements to the results from \textcolor{blue}{Cid-Fernandes et al. (2005) and from Tojeiro et al. (2009)}. In both cases, a good qualitative agreement was found.
 
 \subsection{\citet{Maraston_2011} models}
@@ -381,7 +381,7 @@ Recall that SDSS, BOSS and DEIMOS cover 3800-9200, 3650-10,400, 6500-9300 at R$\
 % \end{center}
 % \end{figure}
 
-\subsection{Parameters of the run}
+\subsection{Parameters used for the model runs}
 \label{subsec:parameters}
 
 For this run, we repeat the computation for the following three choices of the stellar initial mass function (IMF):
@@ -431,25 +431,7 @@ On the {\bf fourth row}:  mass - metallicity, mass - reddenning, mass weight - m
 \begin{figure*}
 \begin{center}
 \caption{\label{fig:firefly:output:boss}
-Example of a fit taken from the first plate of BOSS. The spectrum considered in this Figure is plate=3586, mjd=55181, fiberid=3. 
-The {\bf top panel} shows the observed spectrum (grey line) and its models (colored lines). 
-Each model is characterized by a number of SSPs given in the caption. Gaps in the spectrum correspond to regions masked due to the presence of emission lines. 
-%
-The {\bf second panel} shows the ratio of the data divided by the model as a function of wavelength colored. The black lines correspond to the 1$\sigma$ uncertainties. 
-% The middle panel shows the $\chi^2$ distribution per pixel for each fit compared to a normal distribution (labeled N(0,1), dashed line). 
-%
-The {\bf third and fourth rows} of panels show the values of the parameters fitted and their $1\sigma$ uncertainties. 
-The results point overall towards two possible combinations of age, metallicity 
-(10$^{-2}Z_\odot$, 10$^{9.75}$yr) or and 
-(10$^{0}Z_\odot$, 10$^{9}$yr). 
-The second solution is constrained by the small coverage in age-metallicity of the STELIB library. 
-Both combinations indicate a stellar mass between 10$^{10}$ and 10$^{11}M_\odot$. 
-The STELIB library points toward the more massive and older stellar populations than MILES and ELODIE.
-On the {\bf third row}: age - metallicity, age - stellar mass, mass weight - age of individual SSPs. 
-On the {\bf fourth row}:  mass - metallicity, mass - reddenning, mass weight - metalliticy of individual SSPs. 
-% The bottom panel shows the output parameters stellar mass (y-axis) vs stellar age (x-axis), which nicely agree. Each blue point refers to one of the nine models. The blue points are related to their respective caption by black arrows. 
-% This Figure is generated for each fit and is available in the data repository.
-}
+Same as Fig. \ref{fig:firefly:output:sdss} for a fit taken from the first plate of BOSS. The spectrum considered in this Figure is plate=3586, mjd=55181, fiberid=3.}
 \includegraphics[width=14cm]{plots/spFly-3586-55181-0003.png}
 \end{center}
 \end{figure*}
@@ -458,21 +440,7 @@ On the {\bf fourth row}:  mass - metallicity, mass - reddenning, mass weight - m
 \begin{figure*}
 \begin{center}
 \caption{\label{fig:firefly:output:deep2}
-Example of a fit taken from the first plate of an DEEP2 spectrum considered in this analysis: mask=1103, objno=11013914. 
-The {\bf top panel} shows the observed spectrum (grey line) and its models (colored lines). 
-Each model is characterized by a number of SSPs given in the caption. Gaps in the spectrum correspond to regions masked due to the presence of emission lines. 
-%
-The {\bf second panel} shows the ratio of the data divided by the model as a function of wavelength colored. The black lines correspond to the 1$\sigma$ uncertainties. %\textcolor{red}{replace by residuals, not very useful ... move title up}
-% The middle panel shows the $\chi^2$ distribution per pixel for each fit compared to a normal distribution (labeled N(0,1), dashed line). 
-%
-The {\bf third and fourth rows} of panels show the values of the parameters fitted and their $1\sigma$ uncertainties. 
-The results point overall towards a metallicity value of 10$^{0.2}Z_\odot$, an age of 10$^{10}$yr, E(B-V) between 0.15 and 0.2. and a mass between 10$^{10.8}$ and 10$^{11}M_\odot$. 
-The STELIB library points toward the more massive and older stellar populations than MILES and ELODIE.
-On the {\bf third row}: age - metallicity, age - stellar mass, mass weight - age of individual SSPs. 
-On the {\bf fourth row}:  mass - metallicity, mass - reddenning, mass weight - metalliticy of individual SSPs. 
-% The bottom panel shows the output parameters stellar mass (y-axis) vs stellar age (x-axis), which nicely agree. Each blue point refers to one of the nine models. The blue points are related to their respective caption by black arrows. 
-% This Figure is generated for each fit and is available in the data repository.
-}
+Same as Fig. \ref{fig:firefly:output:sdss} for a fit taken from the first plate of an DEEP2 spectrum considered in this analysis: mask=1103, objno=11013914.}
 \includegraphics[width=14cm]{plots/spFly-deep2-1103-11013914.png}
 \end{center}
 \end{figure*}

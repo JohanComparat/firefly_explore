@@ -41,7 +41,12 @@ fig = p.figure(0, (8.2, 11.7), frameon=False )
 
 
 # panel top left: spectrum + models
-fig.add_subplot(411, title=title, xlabel='wavelength [Angstrom, rest frame]', ylabel=r'Flux [$f_\lambda 10^{-17}$ erg cm$^{-2}$ s$^{-1}$ A$^{-1}$]',ylim=((n.min(d[1].data['firefly_model'])*0.9,1.1* n.max(d[1].data['firefly_model']))))
+fig.add_subplot(411, 
+				title=title, 
+				xlabel='wavelength [Angstrom, rest frame]', 
+				ylabel=r'Flux [$f_\lambda 10^{-17}$ erg cm$^{-2}$ s$^{-1}$ A$^{-1}$]',
+				ylim=((n.min(d[1].data['firefly_model'])*0.9,1.1* n.max(d[1].data['firefly_model']))),
+				xlim=((n.min(d[1].data['wavelength'][d[1].data['wavelength']>0])*0.99,1.01* n.max(d[1].data['wavelength'][d[1].data['wavelength']>0])) )
 p.plot(d[1].data['wavelength'], y_data, color='grey', lw=0.4)
 for ii in n.arange(1, len(d), 1):
 	if d[ii].header['IMF']=='Chabrier':
