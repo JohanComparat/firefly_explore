@@ -43,7 +43,9 @@ chmod o+r *
 # explore the parameter space 
 cd /home/comparat/software/linux/firefly_explore/bin/bin_parameters_exploration
 
-# plots the spectra showed in the paper, Figures 1,2,3
+# plots the spectra showed in the paper
+
+# Figures 1,2,3
 python3.6 plot_result_file.py /data42s/comparat/firefly/v1_1_0/v5_10_0/stellarpop/3586/spFly-3586-55181-0003.fits
 python3.6 plot_result_file.py /data42s/comparat/firefly/v1_1_0/26/stellarpop/0266/spFly-0266-51602-0004.fits 
 python3.6 plot_result_file_deep2.py /data42s/comparat/firefly/v1_1_0/DEEP2/stellarpop/1/spFly-deep2-1103-11013914.fits
@@ -54,6 +56,11 @@ cp /data42s/comparat/firefly/v1_1_0/DEEP2/stellarpop/1/spFly-deep2-1103-11013914
 
 # Figure 4
 python3.4 plot_age_metal_plane.py
+
+# Figure 5
+python3.4 plot_differences_age_sdss.py
+python3.4 plot_differences_age_eboss.py
+python3.4 plot_differences_age_deep2.py
 
 
 # Figure 1 
@@ -76,10 +83,6 @@ python3.4 plot_differences_age.py
 python3.4 plot_distribution_masses_imf_diff.py
 python3.4 plot_age_metal_plane.py
 
-# more recent set of figures
-python3.4 plot_differences_age_sdss.py
-python3.4 plot_differences_age_eboss.py
-python3.4 plot_differences_age_deep2.py
 
 python3.4 plot_distribution_ebv.py
 python3.4 plot_differences_ebv.py

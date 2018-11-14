@@ -629,6 +629,12 @@ Normed distribution of the difference in stellar metallicity weighted by its unc
 \label{subsec:res:dust:mass}
 We show in Fig. \ref{fig:distributions:DM} how each dataset occupies the input parameter space of dust and stellar mass. 
 \textcolor{blue}{Add comments and description}
+DEEP2 galaxies seem to cluster again on the lowest dust attenuation due to the small wavelength coverage.
+
+Due to a larger volume and a preselection to include only massive galaxies, eBOSS seems relatively to contain more massive galaxies than SDSS.
+
+\textcolor{b}{mention Maraston et al. 2013 ?}
+\textcolor{b}{ there are so many dusty eBOSS galaxies if the metallicities were lower than for SDSS galaxies? }
 
 \begin{figure}
 \begin{center}
@@ -676,24 +682,28 @@ The library assumed makes quite a difference in the retrieved E(B-V).
 Fits done with STELIB (largest wavelength coverage) provide on average on lower values than MILES and than ELODIE (smallest wavelength coverage), see the distributions of the E(B-V) obtained in Fig. \ref{fig:distributions:EBV}. 
 SDSS and eBOSS have a larger wavelength coverage than the models so that the models are the limiting factor. 
 DEEP2 has a limited wavelength coverage so that is directly impact the capability to constrain E(B-V) with this technique.
-The IMF assumed does not change the E(B-V) value fitted, as expected, see Fig. \ref{fig:distributions:EBV}. 
+The IMF assumed does not change the E(B-V) value fitted, as expected, see Figs. \ref{fig:distributions:EBV}, \ref{fig:distributions:EBV2}. 
 \textcolor{blue}{Add comments and description}
 
 \begin{figure}
 \begin{center}
 \caption{\label{fig:distributions:EBV} 
-\textbf{Top row.} 
 Distribution of the difference of E(B-V) when varying the libraries: ELODIE, MILES, STELIB (fixed IMF: Chabrier).
 Due to different wavelength coverage in each library, the E(B-V) values measured differ by up to 0.2 dex.
-\textbf{Bottom row.} 
-Normed cumulative distribution of the E(B-V) fitted. The IMF assumed, Charbier, Salpeter or Kroupa does not make a difference. 
 }  
 \includegraphics[width=6cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_sdssChabrier.png}
 \hspace*{-0.6cm}
 \includegraphics[width=6cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_ebossChabrier.png}
 \hspace*{-0.6cm}
-\includegraphics[width=6cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_deep2Chabrier.png}\\
-\includegraphics[width=6cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_sdss.png}
+\includegraphics[width=6cm]{/home/comparat/software/firefly_explore/data/images/ebv/delta_EBV_distribution_deep2Chabrier.png}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{\label{fig:distributions:EBV2} 
+Normed cumulative distribution of the E(B-V) fitted. The IMF assumed, Charbier, Salpeter or Kroupa does not make a difference. 
+}  \includegraphics[width=6cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_sdss.png}
 \hspace*{-0.6cm}
 \includegraphics[width=6cm]{/home/comparat/software/firefly_explore/data/images/ebv/ebv_distribution_eboss.png}          
 \hspace*{-0.6cm}
@@ -727,8 +737,11 @@ Fig. \ref{fig:distributions:MwM} shows the difference in the stellar masses obta
 \begin{figure}
 \begin{center}
 \caption{\label{fig:comparison:imfs:MS} 
-Direct comparison of the stellar masses fitted $(M_1-M_{ref})/\sqrt{\sigma^2_{M_1}+\sigma^2_{M_{ref}}}$ where $\sigma$ are 1$\sigma$ errors for a fixed stellar library (ELODIE, left; STELIB, middle; MILES, right) varying the IMF. If the obtained distribution follows a normal distribution depicted with the line 'N(0,1)' then measurements agree within errors. 
-Stellar masses are systematically different, as expected. Kroupa is systematically less massive than Chabrier than Salpeter.}
+Direct comparison of the stellar masses fitted $(M_1-M_{ref})/\sqrt{\sigma^2_{M_1}+\sigma^2_{M_{ref}}}$ where $\sigma$ are 1$\sigma$ errors for a fixed stellar library (MILES) varying the IMF. 
+We show these distributions for the three samples: SDSS (left); eBOSS (middle); DEEP2, (right). 
+% If the obtained distribution follows a normal distribution depicted with the line 'N(0,1)' then measurements agree within errors. 
+Stellar masses are systematically different, as expected. 
+Kroupa is systematically less massive than Chabrier than Salpeter.}
 % \includegraphics[height=5.6cm]{/home/comparat/software/firefly_explore/data/images/delta_M_distribution_sdssELODIE.png}
 % \includegraphics[height=5.6cm]{/home/comparat/software/firefly_explore/data/images/delta_M_distribution_sdssSTELIB.png}
 \includegraphics[height=5.6cm]{/home/comparat/software/firefly_explore/data/images/delta_M_distribution_sdssMILES.png}
