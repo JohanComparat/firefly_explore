@@ -456,7 +456,8 @@ The decomposition in SSPs with the ELODIE library suggest a combination of a you
 \label{sec:results:params}
 
 In this section we described the results of the fitting procedure. 
-We present statistics on the four main parameters derived: dust (Sec. \ref{subsec:res:dust}), stellar age and metallicity (Sec. \ref{subsec:res:age:metal}), dust and stellar mass (Sec. \ref{subsec:res:dust:mass}).
+We present statistics on the four main parameters derived: stellar age and metallicity (Sec. \ref{subsec:res:age:metal}), dust and stellar mass (Sec. \ref{subsec:res:dust:mass}).
+\textcolor{blue}{Do we understand in each case (age, metallicity, mass, dust) what is driving the difference between using different stellar libraries? A comment about this is needed.}
 
 \subsection{Ages and metallicities sampled by the models}
 \label{subsec:res:age:metal}
@@ -464,14 +465,15 @@ We show in Fig. \ref{fig:distributions:AZ} how each dataset occupies the input p
 SDSS occupies mostly the space of old and metal rich galxies. 
 eBOSS due to its higher mean redshift occupies slightly youger ages and slightly lower metallicities. 
 DEEP2 occupies a complementary space: lower ages and metallicities.
-\textcolor{blue}{Add comments and description}
+\textcolor{blue}{Add comments and description. Comment on Stelib compared to the other libraries when you
+describe Fig. 4 and say that you quantify the differences in Fig.5.}
 
 \begin{figure}
 \begin{center}
 \caption{\label{fig:distributions:AZ} 
 Age metallicity 2d-histograms for the SDSS (top row) eBOSS (middle row) and DEEP2 (bottom row) data in the 3 library setups: columns ELODIE, MILES, STELIB for the Chabrier IMF. 
 It shows how each library samples the age-metallicity plane. 
-The differences in occupation between surveys are driven by the redshift distribution in the samples.
+The difference between surveys come from the different redshift range but also from targeting different type of galaxies.
 Note that the axis of the colour maps are different for DEEP2.}
 %, Kroupa and Salpeter.}   
 \includegraphics[height=5.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_ELODIE_sdss_04.png}
@@ -486,11 +488,11 @@ Note that the axis of the colour maps are different for DEEP2.}
 % \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_ELODIE_sdss_04.png}
 % \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_MILES_sdss_04.png}
 % \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Salpeter_STELIB_sdss_04.png}
-\includegraphics[height=5.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_ELODIE_eboss_04.png}
+\includegraphics[height=5.5cm]{/home/comparat/software/firefly_explore/data/images/az/no_X_age_metallicity_Chabrier_ELODIE_eboss_04.png}
 \hspace*{-1.7cm}
-\includegraphics[height=5.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_MILES_eboss_04.png}
+\includegraphics[height=5.5cm]{/home/comparat/software/firefly_explore/data/images/az/no_XY_age_metallicity_Chabrier_MILES_eboss_04.png}
 \hspace*{-1.7cm}
-\includegraphics[height=5.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_STELIB_eboss_04.png}\\
+\includegraphics[height=5.5cm]{/home/comparat/software/firefly_explore/data/images/az/no_XY_age_metallicity_Chabrier_STELIB_eboss_04.png}\\
 \vspace*{-1.1cm}
 
 % \includegraphics[height=4.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Kroupa_ELODIE_eboss_04.png}
@@ -519,7 +521,7 @@ Note that the axis of the colour maps are different for DEEP2.}
 \label{subsec:res:age}
 
 We find that at fixed stellar libraries (varying only the IMF) ages are always consistent. 
-The ages obtained with MILES and ELODIE (fixed IMF) are consistent with each other in both the SDSS and eBOSS samples.
+The ages obtained with MILES and ELODIE (fixed IMF) are consistent within $1\sigma$ with each other in both the SDSS and eBOSS samples.
 The ages obtained with STELIB are discrepant due to the small extent of the library in metallicity. 
 Fig. \ref{fig:distributions:MwA} shows the distribution of the difference of age normed by the uncertainty on the parameter when varying the libraries: ELODIE, MILES, STELIB (fixed IMF: Chabrier).
 \textcolor{blue}{Add comments and description}
@@ -528,7 +530,7 @@ Fig. \ref{fig:distributions:MwA} shows the distribution of the difference of age
 \begin{figure}
 \begin{center}
 \caption{\label{fig:distributions:MwA} 
-Normed distribution of the difference in age weighted by its uncertainty obtained when assuming different libraries (fixed IMF) for the DEEP2 (left) and the SDSS (middle) and eBOSS (right) samples. The Gaussian distribution shown in green shows the distribution expected if the ages derived agree within errors. So that MILES and ELODIE ages are in good agreement but STELIB and ELODIE ages disagree.}  
+Normed distribution (area is equal to 1) of the difference in age weighted by its uncertainty obtained when assuming different libraries (fixed IMF) for the DEEP2 (left) and the SDSS (middle) and eBOSS (right) samples. The Gaussian distribution shown in green shows the distribution expected if the ages derived agree within errors. So that MILES and ELODIE ages are in good agreement but STELIB and ELODIE ages disagree.}  
 % \includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/age_massW_distribution_sdss.png}
 % \includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/age_lightW_distribution_sdss.png}\\
 % \includegraphics[height=4cm]{/home/comparat/software/firefly_explore/data/images/age_massW_distribution_eboss.png}
