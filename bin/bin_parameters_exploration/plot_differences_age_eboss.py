@@ -1,4 +1,6 @@
 from lib_spm import *
+p.rc('lines', linewidth=1.5)
+
 from scipy.stats import norm
 #out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures', 'mass-redshift-presentation')
 out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images')

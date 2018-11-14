@@ -57,11 +57,13 @@ cp /data42s/comparat/firefly/v1_1_0/DEEP2/stellarpop/1/spFly-deep2-1103-11013914
 # Figure 4
 python3.4 plot_age_metal_plane.py
 
-# Figure 5
+# Figure 5, 6, 8, 9, 10
 python3.4 plot_differences_age_sdss.py
 python3.4 plot_differences_age_eboss.py
 python3.4 plot_differences_age_deep2.py
 
+# Figure 7
+python3.4 plot_dust_mass_plane.py
 
 # Figure 1 
 # first row
@@ -87,7 +89,6 @@ python3.4 plot_age_metal_plane.py
 python3.4 plot_distribution_ebv.py
 python3.4 plot_differences_ebv.py
 
-python3.4 plot_dust_mass_plane.py
 
 
 
