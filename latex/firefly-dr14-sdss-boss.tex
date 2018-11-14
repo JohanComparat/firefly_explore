@@ -409,20 +409,22 @@ These figures show the observed spectrum, the models fitted, the distribution of
 \caption{\label{fig:firefly:output:sdss}
 Example of a fit taken from the first plate of SDSS. The spectrum considered in this Figure is plate=0266, mjd=51602, fiberid=4. 
 The {\bf top panel} shows the observed spectrum (grey line) and its models (colored lines). 
-Each model is characterized by a number of SSPs given in the caption. Gaps in the spectrum correspond to regions masked due to the presence of emission lines. 
+Each model is characterized by the number of SSPs given in the caption. Gaps in the spectrum correspond to regions masked due to the presence of emission lines. 
 %
-The {\bf second panel} shows the ratio of the data divided by the model as a function of wavelength colored. The black lines correspond to the 1$\sigma$ uncertainties. %\textcolor{red}{replace by residuals, not very useful ... move title up}
+The {\bf second panel} shows the $\chi^2$ distribution per pixel for each model compared to a normal distribution (labeled N(0,1), dashed line).
+%the ratio of the data divided by the model as a function of wavelength colored. The black lines correspond to the 1$\sigma$ uncertainties. %\textcolor{red}{replace by residuals, not very useful ... move title up}
 % The middle panel shows the $\chi^2$ distribution per pixel for each fit compared to a normal distribution (labeled N(0,1), dashed line). 
 %
 The {\bf third and fourth rows} of panels show the values of the parameters fitted and their $1\sigma$ uncertainties. 
-The results point overall towards a metallicity value of 10$^{0.2}Z_\odot$, an age of 10$^{10}$yr, E(B-V) between 0.15 and 0.2. and a mass between 10$^{10.8}$ and 10$^{11}M_\odot$. 
+On the {\bf third row} from left to right: panel 1 shows age vs. metallicity, panel 2 shows age vs. stellar mass and panel 3 shows mass weight vs. age of individual SSPs. 
+On the {\bf fourth row} from left to right: panel 1 shows mass vs. metallicity, panel 2 shows mass vs. reddenning and panel 3 shows mass weight vs. metalliticy of individual SSPs. 
+The results point overall towards a metallicity value of 10$^{0.2}Z_\odot$, an age of 10$^{10}$yr, E(B-V) between 0.15 and 0.2. and a mass between 10$^{10.75}$ and 10$^{11}M_\odot$. 
 The STELIB library points toward the more massive and older stellar populations than MILES and ELODIE.
-On the {\bf third row}: age - metallicity, age - stellar mass, mass weight - age of individual SSPs. 
-On the {\bf fourth row}:  mass - metallicity, mass - reddenning, mass weight - metalliticy of individual SSPs. 
+The decomposition in SSPs shows the solution is constituted of two old SSPs: one with solar metallicity and one with higher metallicity. 
 % The bottom panel shows the output parameters stellar mass (y-axis) vs stellar age (x-axis), which nicely agree. Each blue point refers to one of the nine models. The blue points are related to their respective caption by black arrows. 
 % This Figure is generated for each fit and is available in the data repository.
 }
-\includegraphics[width=14cm]{plots/spFly-0266-51602-0004.png}
+\includegraphics[width=14cm]{/home/comparat/software/firefly_explore/data/spec_plot/spFly-0266-51602-0004.png}
 \end{center}
 \end{figure*}
 
@@ -432,7 +434,7 @@ On the {\bf fourth row}:  mass - metallicity, mass - reddenning, mass weight - m
 \begin{center}
 \caption{\label{fig:firefly:output:boss}
 Same as Fig. \ref{fig:firefly:output:sdss} for a fit taken from the first plate of BOSS. The spectrum considered in this Figure is plate=3586, mjd=55181, fiberid=3.}
-\includegraphics[width=14cm]{plots/spFly-3586-55181-0003.png}
+\includegraphics[width=14cm]{/home/comparat/software/firefly_explore/data/spec_plot/spFly-3586-55181-0003.png}
 \end{center}
 \end{figure*}
 
@@ -441,7 +443,7 @@ Same as Fig. \ref{fig:firefly:output:sdss} for a fit taken from the first plate 
 \begin{center}
 \caption{\label{fig:firefly:output:deep2}
 Same as Fig. \ref{fig:firefly:output:sdss} for a fit taken from the first plate of an DEEP2 spectrum considered in this analysis: mask=1103, objno=11013914.}
-\includegraphics[width=14cm]{plots/spFly-deep2-1103-11013914.png}
+\includegraphics[width=14cm]{/home/comparat/software/firefly_explore/data/spec_plot/spFly-deep2-1103-11013914.png}
 \end{center}
 \end{figure*}
 
@@ -466,7 +468,7 @@ DEEP2 occupies a complementary space: lower ages and metallicities.
 Age metallicity 2d-histograms for the SDSS (top row) eBOSS (middle row) and DEEP2 (bottom row) data in the 3 library setups: columns ELODIE, MILES, STELIB for the Chabrier IMF. 
 It shows how each library samples the age-metallicity plane. 
 The differences in occupation between surveys are driven by the redshift distribution in the samples.}
-%, Kroupa and Salpeter.}  
+%, Kroupa and Salpeter.}   
 \includegraphics[height=5.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_ELODIE_sdss_04.png}
 \hspace*{-1.7cm}
 \includegraphics[height=5.5cm]{/home/comparat/software/firefly_explore/data/images/az/age_metallicity_Chabrier_MILES_sdss_04.png}

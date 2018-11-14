@@ -76,6 +76,15 @@ python3.4 plot_age_metal_plane.py
 
 # copy figures to the public repo
 
+python3.6 plot_result_file.py /data42s/comparat/firefly/v1_1_0/v5_10_0/stellarpop/3586/spFly-3586-55181-0003.fits
+python3.6 plot_result_file.py /data42s/comparat/firefly/v1_1_0/26/stellarpop/0266/spFly-0266-51602-0004.fits 
+python3.6 plot_result_file_deep2.py /data42s/comparat/firefly/v1_1_0/DEEP2/stellarpop/1/spFly-deep2-1103-11013914.fits
+
+
+cp /data42s/comparat/firefly/v1_1_0/v5_10_0/stellarpop/3586/spFly-3586-55181-0003.png ../../data/spec_plot/
+cp /data42s/comparat/firefly/v1_1_0/26/stellarpop/0266/spFly-0266-51602-0004.png  ../../data/spec_plot/
+cp /data42s/comparat/firefly/v1_1_0/DEEP2/stellarpop/1/spFly-deep2-1103-11013914.png ../../data/spec_plot/
+
 #rm /home/comparat/wwwDir/firefly_data/dr14/v1_1_0/plots/*.png
 #cp /data36s/comparat/spm/results/mass-redshift-presentation/*.png /home/comparat/wwwDir/firefly_data/dr14/v1_1_0/plots/
 #cp /data36s/comparat/spm/results/mass-snr/*.png /home/comparat/wwwDir/firefly_data/dr14/v1_1_0/plots/
