@@ -44,12 +44,12 @@ path_2_cosmos_cat = os.path.join( cosmos_dir, "COSMOS2015_Laigle+_v1.1.fits.gz")
 # SDSS data and catalogs
 #path_2_spall_sdss_dr14_cat = os.path.join( os.environ['OBS_REPO'], 'SDSS', '26', 'catalogs', "specObj-SDSS-dr14.fits" )
 #path_2_spall_boss_dr14_cat = os.path.join( os.environ['OBS_REPO'], 'SDSS', 'v5_10_0', 'catalogs', "specObj-BOSS-dr14.fits" )
-path_2_sdss_cat = os.path.join(  os.environ['OBS_REPO'], 'SDSS', '26', 'catalogs', "FireFly.fits" )
-path_2_eboss_cat = os.path.join(  os.environ['OBS_REPO'], 'SDSS', 'v5_10_0', 'catalogs', "FireFly.fits" )
+path_2_sdss_cat = os.path.join(  os.environ['HOME'], 'data2/firefly/v1_1_0/26/sdss_firefly-26.fits')
+path_2_eboss_cat = os.path.join(  os.environ['HOME'], 'data2/firefly/v1_1_0/v5_10_0/eboss_firefly-v5_10_0.fits')
 
 # DEEP SURVEYS
-deep2_dir = os.path.join(os.environ['OBS_REPO'], 'DEEP2')
-path_2_deep2_cat = os.path.join( deep2_dir, "zcat.deep2.dr4.v4.LFcatalogTC.Planck13.spm.v3.SNR.fits" )
+path_2_deep2_cat = os.path.join( os.environ['HOME'], 'data2/firefly/v1_1_0/DEEP2/catalogs/zcat.deep2.dr4.v4.LFcatalogTC.Planck13.spm.v3.SNR.fits' )
+
 
 #vipers_dir = os.path.join(os.environ['OBS_REPO'], 'VIPERS')
 #path_2_vipers_cat = os.path.join( vipers_dir, "VIPERS_W14_summary_v2.1.linesFitted.spm.fits" )

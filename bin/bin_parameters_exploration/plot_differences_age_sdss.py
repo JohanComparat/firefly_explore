@@ -56,7 +56,7 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), label='N(0,1)', ls='dashed')
 	#p.ylabel('normed distribution')
 	p.xlabel(r'$(M_1-M_{ref})/\sqrt{\sigma^2_{M_1}+\sigma^2_{M_{ref}}}$')
-	p.title('SDSS	 '+imf_ref.split('_')[0])
+	p.title('SDSS '+imf_ref.split('_')[0])
 	p.legend(loc=2, frameon = False, fontsize=14)
 	p.xlim((-5.5, 5.5))
 	p.grid()
@@ -149,8 +149,11 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	eA_04_2 = (sdss[age+'_up_1sig'][ok_sdss_04]-sdss[age+'_low_1sig'][ok_sdss_04])/2.
 	eZ_04_2 = (sdss[metal+'_up_1sig'][ok_sdss_04]-sdss[metal+'_low_1sig'][ok_sdss_04])/2.
 	# normalized comparison ratio
+	print('MMM', M_04_2, M_04_1, M_04_ref )
 	delta_m1 = (M_04_1-M_04_ref)*(eM_04_ref**2.+eM_04_1**2.)**(-0.5)
+	print('delta_m1', n.median(delta_m1))
 	delta_m2 = (M_04_2-M_04_ref)*(eM_04_ref**2.+eM_04_2**2.)**(-0.5)
+	print('delta_m2', n.median(delta_m2))
 	# figure
 	p.figure(3, (4.5, 4.5))
 	p.axes([0.12,0.18,0.8,0.73])
@@ -159,7 +162,7 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), label='N(0,1)', ls='dashed')
 	#p.ylabel('normed distribution')
 	p.xlabel(r'$(M_1-M_{ref})/\sqrt{\sigma^2_{M_1}+\sigma^2_{M_{ref}}}$')
-	p.title('SDSS	 '+imf_ref.split('_')[1])
+	p.title('SDSS '+imf_ref.split('_')[1])
 	p.legend(loc=2, frameon = False, fontsize=14)
 	p.xlim((-5.5, 5.5))
 	p.grid()
