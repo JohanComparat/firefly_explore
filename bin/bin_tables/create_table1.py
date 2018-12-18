@@ -8,6 +8,7 @@ f=open(out_file, 'w')
 for IMF in imfs :
 	prf = IMF.split('_')[0]+' & '+IMF.split('_')[1]
 	l2w = get_basic_stat_firefly_DR14(boss, 'Z_NOQSO', 'Z_ERR_NOQSO', 'CLASS_NOQSO', 'ZWARNING_NOQSO', prf, 0., IMF)
+	print(l2w)
 	f.write(l2w + " \n")
 	
 f.write('\\hline \n')
@@ -21,6 +22,7 @@ f=open(out_file, 'w')
 for IMF in imfs :
 	prf = IMF.split('_')[0]+' & '+IMF.split('_')[1]
 	l2w = get_basic_stat_firefly_DR14(sdss, 'Z', 'Z_ERR', 'CLASS', 'ZWARNING', prf, 0., IMF)
+	print(l2w)
 	f.write(l2w + " \n")
 
 f.write('\\hline \n')

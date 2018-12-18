@@ -2,6 +2,7 @@
 import astropy.io.fits as fits
 import matplotlib
 matplotlib.use('Agg')
+matplotlib.rcParams.update({'font.size': 14})
 import matplotlib.pyplot as p
 
 from cycler import cycler
