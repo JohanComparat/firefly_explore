@@ -157,9 +157,9 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	delta_m2 = (M_04_2-M_04_ref)*(eM_04_ref**2.+eM_04_2**2.)**(-0.5)
 	print('MMM', M_04_2, M_04_1, M_04_ref )
 	delta_m1 = (M_04_1-M_04_ref)*(eM_04_ref**2.+eM_04_1**2.)**(-0.5)
-	print('delta_m1', n.median(delta_m1))
+	print('delta_m1', n.median(delta_m1), n.median(n.log10(M_04_1)-n.log10(M_04_ref)) )
 	delta_m2 = (M_04_2-M_04_ref)*(eM_04_ref**2.+eM_04_2**2.)**(-0.5)
-	print('delta_m2', n.median(delta_m2))
+	print('delta_m2', n.median(delta_m2), n.median(n.log10(M_04_2)-n.log10(M_04_ref)))
 	# figure
 	p.figure(3, (4.5, 4.5))
 	p.axes([0.12,0.18,0.8,0.73])
