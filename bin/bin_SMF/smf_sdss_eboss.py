@@ -19,10 +19,10 @@ SNlimit = 5
 
 smf_ilbert13 = lambda M, M_star, phi_1s, alpha_1s, phi_2s, alpha_2s : ( phi_1s * (M/M_star) ** alpha_1s + phi_2s * (M/M_star) ** alpha_2s ) * n.e ** (-M/M_star) * (M/ M_star)
 
-ff_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'firefly')
-ll_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'literature')
+#ff_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'firefly')
+#ll_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'literature')
 co_dir = os.path.join(os.environ['OBS_REPO'], 'COSMOS', 'catalogs', "photoz-2.0" )
-sdss_dir = os.path.join(os.environ['OBS_REPO'], 'SDSS')
+#sdss_dir = os.path.join(os.environ['OBS_REPO'], 'SDSS')
 #spiders_dir = os.path.join(os.environ['OBS_REPO'], 'spiders')
 
 #out_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'results')
@@ -31,20 +31,20 @@ out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'da
 #path_2_sdss_cat = os.path.join( ff_dir, "FireflyGalaxySdssDR14.fits" )
 #path_2_eboss_cat = os.path.join( ff_dir, "FireflyGalaxyEbossDR14.fits" )
 
-path_2_spall_sdss_dr12_cat = os.path.join( sdss_dir, "specObj-SDSS-dr12.fits" )
-path_2_spall_sdss_dr14_cat = os.path.join( sdss_dir, "specObj-SDSS-dr14.fits" )
-path_2_spall_boss_dr12_cat = os.path.join( sdss_dir, "specObj-BOSS-dr12.fits" )
-path_2_spall_boss_dr14_cat = os.path.join( sdss_dir, "specObj-BOSS-dr14.fits" )
+#path_2_spall_sdss_dr12_cat = os.path.join( sdss_dir, "specObj-SDSS-dr12.fits" )
+#path_2_spall_sdss_dr14_cat = os.path.join( sdss_dir, "specObj-SDSS-dr14.fits" )
+#path_2_spall_boss_dr12_cat = os.path.join( sdss_dir, "specObj-BOSS-dr12.fits" )
+#path_2_spall_boss_dr14_cat = os.path.join( sdss_dir, "specObj-BOSS-dr14.fits" )
 
 #path_2_spall_spiders_dr14_cat = os.path.join( spiders_dir, "cluster_statistics_2016-11-08-DR14_spm.fits" )
 
 #print "SDSS spAll DR14", len(fits.open(path_2_spall_sdss_dr14_cat)[1].data)
 #print "BOSS spAll DR14",len(fits.open(path_2_spall_boss_dr14_cat)[1].data)
 path_2_cosmos_cat = os.path.join( co_dir, "photoz_vers2.0_010312.fits")
-path_2_vvdsW_cat = os.path.join( ff_dir, "VVDS_WIDE_summary.v1.spm.fits" )
-path_2_vipers_cat = os.path.join( ff_dir, "VIPERS_W14_summary_v2.1.linesFitted.spm.fits" )
-path_2_vvdsD_cat = os.path.join( ff_dir, "VVDS_DEEP_summary.v1.spm.fits" )
-path_2_deep2_cat = os.path.join( ff_dir, "zcat.deep2.dr4.v4.LFcatalogTC.Planck15.spm.v2.fits" )
+#path_2_vvdsW_cat = os.path.join( ff_dir, "VVDS_WIDE_summary.v1.spm.fits" )
+#path_2_vipers_cat = os.path.join( ff_dir, "VIPERS_W14_summary_v2.1.linesFitted.spm.fits" )
+#path_2_vvdsD_cat = os.path.join( ff_dir, "VVDS_DEEP_summary.v1.spm.fits" )
+#path_2_deep2_cat = os.path.join( ff_dir, "zcat.deep2.dr4.v4.LFcatalogTC.Planck15.spm.v2.fits" )
 
 cosmos = fits.open(path_2_cosmos_cat)[1].data
 #deep2   = fits.open(path_2_deep2_cat)[1].data
@@ -89,8 +89,9 @@ zmin, zmax, N, M_comp, M_star, phi_1s, alpha_1s, phi_2s, alpha_2s, log_rho_s = n
 
 #smfs_ilbert13 = n.array([lambda mass : smf_ilbert13( mass , 10**M_star[ii], phi_1s[ii]*10**(-3), alpha_1s[ii], phi_2s[ii]*10**(-3), alpha_2s[ii] ) for ii in range(len(M_star)) ])
 
-smf01 = lambda mass : smf_ilbert13( mass , 10**M_star[0], phi_1s[0]*10**(-3), alpha_1s[0], phi_2s[0]*10**(-3), alpha_2s[0] )
-print( 10**M_star[0], phi_1s[0]*10**(-3), alpha_1s[0], phi_2s[0]*10**(-3), alpha_2s[0])
+smf0205 = lambda mass : smf_ilbert13( mass , 10**M_star[0], phi_1s[0]*10**(-3), alpha_1s[0], phi_2s[0]*10**(-3), alpha_2s[0] )
+smf0508 = lambda mass : smf_ilbert13( mass , 10**M_star[1], phi_1s[1]*10**(-3), alpha_1s[1], phi_2s[1]*10**(-3), alpha_2s[1] )
+smf0811 = lambda mass : smf_ilbert13( mass , 10**M_star[2], phi_1s[2]*10**(-3), alpha_1s[2], phi_2s[2]*10**(-3), alpha_2s[2] )
 
 volume_per_deg2 = ( aa.comoving_volume(z_max) -  aa.comoving_volume(z_min) ) * n.pi / 129600.
 volume_per_deg2_val = volume_per_deg2.value
@@ -102,7 +103,6 @@ ld = lambda selection : len(selection.nonzero()[0])
 
 area_sdss = 7900.    
 area_boss = 10000.
-
 area_cosmos = 1.52
 
 
@@ -147,12 +147,14 @@ mbins = n.arange(8,12.5,dlog10m)
 def plot_smf_b(IMF="Chabrier_ELODIE_"):
 	boss_sel, boss_m, boss_w = get_basic_stat_DR14(boss, 'Z_NOQSO', 'Z_ERR_NOQSO', 'CLASS_NOQSO', 'ZWARNING_NOQSO', IMF+' & BOSS & 14 ', 0., IMF)
 	x, y, ye = get_hist(boss_m[boss_sel], weights = boss_w[boss_sel]/(dlog10m*n.log(10)*area_boss*volume_per_deg2_val), mbins = mbins)
-	p.errorbar(x, y, yerr = ye, label=IMF+'BOSS', lw=1)
+	p.errorbar(x, y, yerr = ye)#, label=IMF+'BOSS', lw=1)
+	return x,y,ye
 
 def plot_smf_s(IMF="Chabrier_ELODIE_"):
 	boss_sel, boss_m, boss_w = get_basic_stat_DR14(sdss, 'Z', 'Z_ERR', 'CLASS', 'ZWARNING', IMF+' & BOSS & 14 ', 0., IMF)
 	x, y, ye = get_hist(boss_m[boss_sel], weights = boss_w[boss_sel]/(dlog10m*n.log(10)*area_boss*volume_per_deg2_val), mbins = mbins)
-	p.errorbar(x, y, yerr = ye, label=IMF+'SDSS', lw=1)
+	p.errorbar(x, y, yerr = ye)#, label=IMF+'SDSS', lw=1)
+	return x,y,ye
 
 #def plot_smf_spiders(IMF="Chabrier_ELODIE_"):
 	#boss_sel, boss_m, boss_w = get_basic_stat_DR14(spiders, 'Z', 'Z_ERR', 'CLASS', 'ZWARNING', IMF+' & BOSS & 14 ', 0., IMF)
@@ -160,21 +162,113 @@ def plot_smf_s(IMF="Chabrier_ELODIE_"):
 	#p.errorbar(x, y, yerr = ye, label=IMF+'SPIDERS', lw=1)
 
 
+xs,ys,yes = [],[],[]
+
 p.figure(1, (8,8))
-p.plot(mbins, smf01(10**mbins), label='Ilbert 13, 0.2<z<0.5', ls='dashed')
+if z_min==0.2:
+	p.plot(mbins, smf0205(10**mbins), label='Il 13, 0.2<z<0.5', ls='dashed')
+if z_min==0.5:
+	p.plot(mbins, smf0508(10**mbins), label='Il 13, 0.5<z<0.8', ls='dashed')
+if z_min==0.8:
+	p.plot(mbins, smf0811(10**mbins), label='Il 13, 0.8<z<1.1', ls='dashed')
 
-plot_smf_b("Chabrier_ELODIE_")
-plot_smf_b("Chabrier_MILES_")
-plot_smf_b("Chabrier_STELIB_")
-plot_smf_b("Kroupa_ELODIE_")
-plot_smf_b("Kroupa_MILES_")
-plot_smf_b("Kroupa_STELIB_")
-plot_smf_b("Salpeter_ELODIE_")
-plot_smf_b("Salpeter_MILES_")
-plot_smf_b("Salpeter_STELIB_")
-#plot_smf_spiders("Chabrier_ELODIE_")
+# BOSS eBOSS plot
+x, y, ye = plot_smf_b("Chabrier_ELODIE_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_b("Chabrier_MILES_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_b("Chabrier_STELIB_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_b("Kroupa_ELODIE_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_b("Kroupa_MILES_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_b("Kroupa_STELIB_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_b("Salpeter_ELODIE_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_b("Salpeter_MILES_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_b("Salpeter_STELIB_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
 
-p.title(str(z_min)+'<z<'+str(z_max)+' BOSS+eBOSS')
+xs  = n.array(xs )
+ys  = n.array(ys )
+yes = n.array(yes)
+
+y_up  = ys+yes
+y_low = ys-yes
+
+p.fill_between(xs[0], y1=n.min(y_low, axis=0), y1=n.max(y_up, axis=0), color='r', alpha=0.1, label='eBOSS')
+
+# SDSS 
+
+x, y, ye = plot_smf_s("Chabrier_ELODIE_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_s("Chabrier_MILES_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_s("Chabrier_STELIB_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_s("Kroupa_ELODIE_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_s("Kroupa_MILES_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_s("Kroupa_STELIB_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_s("Salpeter_ELODIE_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_s("Salpeter_MILES_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+x, y, ye = plot_smf_s("Salpeter_STELIB_")
+xs.append(x)
+ys.append(y)
+yes.append(ye)
+
+xs  = n.array(xs )
+ys  = n.array(ys )
+yes = n.array(yes)
+
+y_up  = ys+yes
+y_low = ys-yes
+
+p.fill_between(xs[0], y1=n.min(y_low, axis=0), y1=n.max(y_up, axis=0), color='b', alpha=0.1, label='SDSS')
+
+
+p.title(str(z_min)+'<z<'+str(z_max))
 p.xlabel(r"$\log_{10}$ (M / $M_\odot$ )")
 p.ylabel(r'$\Phi(M)$ [Mpc$^{-3}$ dex$^{-1}$]')
 p.yscale('log')
@@ -186,30 +280,30 @@ p.savefig(os.path.join(out_dir, "firefly_SMFs_BOSS_"+str(z_min)+'_z_'+str(z_max)
 p.clf()
 
 
-p.figure(1, (8,8))
-p.plot(mbins, smf01(10**mbins), label='Ilbert 13, 0.2<z<0.5', ls='dashed')
+#p.figure(1, (8,8))
+#p.plot(mbins, smf01(10**mbins), label='Ilbert 13, 0.2<z<0.5', ls='dashed')
 
-plot_smf_s("Chabrier_ELODIE_")
-plot_smf_s("Chabrier_MILES_")
-plot_smf_s("Chabrier_STELIB_")
-plot_smf_s("Kroupa_ELODIE_")
-plot_smf_s("Kroupa_MILES_")
-plot_smf_s("Kroupa_STELIB_")
-plot_smf_s("Salpeter_ELODIE_")
-plot_smf_s("Salpeter_MILES_")
-plot_smf_s("Salpeter_STELIB_")
-#plot_smf_spiders("Chabrier_ELODIE_")
+#plot_smf_s("Chabrier_ELODIE_")
+#plot_smf_s("Chabrier_MILES_")
+#plot_smf_s("Chabrier_STELIB_")
+#plot_smf_s("Kroupa_ELODIE_")
+#plot_smf_s("Kroupa_MILES_")
+#plot_smf_s("Kroupa_STELIB_")
+#plot_smf_s("Salpeter_ELODIE_")
+#plot_smf_s("Salpeter_MILES_")
+#plot_smf_s("Salpeter_STELIB_")
+##plot_smf_spiders("Chabrier_ELODIE_")
 
-p.title(str(z_min)+'<z<'+str(z_max)+' SDSS')
-p.xlabel(r'$\log_{10}$(M / $M_\odot$ )')
-p.ylabel(r'$\Phi(M)$ [Mpc$^{-3}$ dex$^{-1}$]')
-p.yscale('log')
-p.legend(loc=0, frameon = False)
-p.ylim((1e-8, 1e-2))
-p.xlim((9.5, 12.5))
-p.grid()
-p.savefig(os.path.join(out_dir, "firefly_SMFs_SDSS_"+str(z_min)+'_z_'+str(z_max)+".png" ))
-p.clf()
+#p.title(str(z_min)+'<z<'+str(z_max)+' SDSS')
+#p.xlabel(r'$\log_{10}$(M / $M_\odot$ )')
+#p.ylabel(r'$\Phi(M)$ [Mpc$^{-3}$ dex$^{-1}$]')
+#p.yscale('log')
+#p.legend(loc=0, frameon = False)
+#p.ylim((1e-8, 1e-2))
+#p.xlim((9.5, 12.5))
+#p.grid()
+#p.savefig(os.path.join(out_dir, "firefly_SMFs_SDSS_"+str(z_min)+'_z_'+str(z_max)+".png" ))
+#p.clf()
 
 sys.exit()
 
