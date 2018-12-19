@@ -148,7 +148,7 @@ def plotMF_raw(prefix="Chabrier_ELODIE_"):
     p.ylim((-0.01, 1.01))
     p.xlim((40.5, 43.5))
     p.grid()
-    p.savefig(os.path.join(out_dir, "SMF_"+prefix+"line_detection_raw_"+"_"+str(z_min)+'_z_'+str(z_max)+".jpg" ))
+    p.savefig(os.path.join(out_dir, "SMF_"+prefix+"line_detection_raw_"+"_"+str(z_min)+'_z_'+str(z_max)+".png" ))
     p.clf()
     
     dlog10m = 0.25
@@ -188,7 +188,7 @@ def plotMF_raw(prefix="Chabrier_ELODIE_"):
     p.ylim((1e-8, 1e-2))
     p.xlim((9.5, 12.5))
     p.grid()
-    p.savefig(os.path.join(out_dir, "SMF_"+prefix+"SMF_"+prefix+"SMF_raw_"+"_"+str(z_min)+'_z_'+str(z_max)+".jpg" ))
+    p.savefig(os.path.join(out_dir, "SMF_"+prefix+"SMF_"+prefix+"SMF_raw_"+"_"+str(z_min)+'_z_'+str(z_max)+".png" ))
     p.clf()
 
     p.figure(1, (4.5,4.5))
@@ -208,7 +208,7 @@ def plotMF_raw(prefix="Chabrier_ELODIE_"):
     p.ylim((1e-4, 2.))
     p.xlim((9.5, 12.5))
     p.grid()
-    p.savefig(os.path.join(out_dir, "SMF_"+prefix+"ratio_SMF_"+"_"+str(z_min)+'_z_'+str(z_max)+".jpg" ))
+    p.savefig(os.path.join(out_dir, "SMF_"+prefix+"ratio_SMF_"+"_"+str(z_min)+'_z_'+str(z_max)+".png" ))
     p.clf()
     
 
