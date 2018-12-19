@@ -21,7 +21,7 @@ lO2_min = float(sys.argv[3]) # 'salpeter'
 
 SNlimit = 5
 
-out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/SMF')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images/SMF')
 
 #out_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'results')
 
