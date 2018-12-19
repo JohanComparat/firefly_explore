@@ -23,7 +23,8 @@ co_dir = os.path.join(os.environ['DATA_DIR'], 'COSMOS' )
 sdss_dir = os.path.join(os.environ['DATA_DIR'], 'SDSS')
 spiders_dir = os.path.join(os.environ['DATA_DIR'], 'spiders')
 
-out_dir = os.path.join(os.environ['DATA_DIR'], 'spm', 'results')
+#out_dir = os.path.join(os.environ['DATA_DIR'], 'spm', 'results')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images/SMF')
 
 path_2_cosmos_cat = os.path.join( co_dir, "photoz_vers2.0_010312.fits")
 
