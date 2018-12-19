@@ -17,13 +17,13 @@ SNlimit = 5
 
 smf_ilbert13 = lambda M, M_star, phi_1s, alpha_1s, phi_2s, alpha_2s : ( phi_1s * (M/M_star) ** alpha_1s + phi_2s * (M/M_star) ** alpha_2s ) * n.e ** (-M/M_star) * (M/ M_star)
 
-ff_dir = os.path.join(os.environ['DATA_DIR'], 'spm', 'firefly')
-ll_dir = os.path.join(os.environ['DATA_DIR'], 'spm', 'literature')
-co_dir = os.path.join(os.environ['DATA_DIR'], 'COSMOS' )
-sdss_dir = os.path.join(os.environ['DATA_DIR'], 'SDSS')
-spiders_dir = os.path.join(os.environ['DATA_DIR'], 'spiders')
+ff_dir = os.path.join(os.environ['OBS_DIR'], 'spm', 'firefly')
+ll_dir = os.path.join(os.environ['OBS_DIR'], 'spm', 'literature')
+co_dir = os.path.join(os.environ['OBS_DIR'], 'COSMOS' )
+sdss_dir = os.path.join(os.environ['OBS_DIR'], 'SDSS')
+spiders_dir = os.path.join(os.environ['OBS_DIR'], 'spiders')
 
-#out_dir = os.path.join(os.environ['DATA_DIR'], 'spm', 'results')
+#out_dir = os.path.join(os.environ['OBS_DIR'], 'spm', 'results')
 out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images/SMF')
 
 path_2_cosmos_cat = os.path.join( co_dir, "photoz_vers2.0_010312.fits")
@@ -90,7 +90,7 @@ zmin, zmax, N, M_comp, M_star, phi_1s, alpha_1s, phi_2s, alpha_2s, log_rho_s = n
 #smfs_ilbert13 = n.array([lambda mass : smf_ilbert13( mass , 10**M_star[ii], phi_1s[ii]*10**(-3), alpha_1s[ii], phi_2s[ii]*10**(-3), alpha_2s[ii] ) for ii in range(len(M_star)) ])
 
 smf01 = lambda mass : smf_ilbert13( mass , 10**M_star[0], phi_1s[0]*10**(-3), alpha_1s[0], phi_2s[0]*10**(-3), alpha_2s[0] )
-print 10**M_star[0], phi_1s[0]*10**(-3), alpha_1s[0], phi_2s[0]*10**(-3), alpha_2s[0]
+print( 10**M_star[0], phi_1s[0]*10**(-3), alpha_1s[0], phi_2s[0]*10**(-3), alpha_2s[0])
 
 volume_per_deg2 = ( aa.comoving_volume(z_max) -  aa.comoving_volume(z_min) ) * n.pi / 129600.
 volume_per_deg2_val = volume_per_deg2.value

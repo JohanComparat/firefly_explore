@@ -102,9 +102,9 @@ python3.4 plot_differences_ebv.py
 cd /home/comparat/software/linux/firefly_explore/bin/bin_SMF
 
 # Figure 4, stellar mass functions probed by SDSS and BOSS and DEEP2 in different redshift bins
-python mass_density.py 0.2 0.5
-python mass_density.py 0.5 0.8
-python mass_density.py 0.8 1.1
+python2 smf_sdss_eboss.py 0.2 0.5
+python2 smf_sdss_eboss.py 0.5 0.8
+python2 smf_sdss_eboss.py 0.8 1.1
 
 # Figure 5 stellar mass functions probed by [OII] emitters in DEEP2.
 python smf_plot.py 0.78 0.83 41.8
