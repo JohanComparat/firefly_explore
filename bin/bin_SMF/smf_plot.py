@@ -1,3 +1,5 @@
+from lib_spm import *
+
 import astropy.cosmology as co
 aa=co.Planck15
 import astropy.io.fits as fits
@@ -8,7 +10,7 @@ matplotlib.rcParams['agg.path.chunksize'] = 2000000
 matplotlib.rcParams.update({'font.size': 12})
 matplotlib.use('Agg')
 import matplotlib.pyplot as p
-
+boss_12_portSF_sa
 import numpy as n
 import os
 
@@ -55,7 +57,7 @@ path_2_vvdsD_cat = os.path.join( vvds_dir, "catalogs", "VVDS_DEEP_summary.v1.spm
 # path_2_F16_cat = os.path.join( sdss_dir, "RA_DEC_z_w_fluxOII_Mstar_grcol_Mr_lumOII.dat" )
 
 # OPENS THE CATALOGS
-deep2   = fits.open(path_2_deep2_cat)[1].data
+#deep2   = fits.open(path_2_deep2_cat)[1].data
 #vvdsD   = fits.open(path_2_vvdsD_cat)[1].data
 #vvdsW   = fits.open(path_2_vvdsW_cat)[1].data
 #vipers   = fits.open(path_2_vipers_cat)[1].data

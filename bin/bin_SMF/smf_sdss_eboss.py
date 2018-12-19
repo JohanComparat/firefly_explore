@@ -1,3 +1,5 @@
+from lib_spm import *
+
 import astropy.cosmology as co
 aa=co.Planck15
 import astropy.io.fits as fits
@@ -19,14 +21,12 @@ smf_ilbert13 = lambda M, M_star, phi_1s, alpha_1s, phi_2s, alpha_2s : ( phi_1s *
 
 ff_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'firefly')
 ll_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'literature')
-co_dir = os.path.join(os.environ['OBS_REPO'], 'COSMOS' )
+co_dir = os.path.join(os.environ['OBS_REPO'], 'COSMOS', 'catalogs', "photoz-2.0" )
 sdss_dir = os.path.join(os.environ['OBS_REPO'], 'SDSS')
 spiders_dir = os.path.join(os.environ['OBS_REPO'], 'spiders')
 
 #out_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'results')
 out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images/SMF')
-
-path_2_cosmos_cat = os.path.join( co_dir, "photoz_vers2.0_010312.fits")
 
 #path_2_sdss_cat = os.path.join( ff_dir, "FireflyGalaxySdssDR14.fits" )
 #path_2_eboss_cat = os.path.join( ff_dir, "FireflyGalaxyEbossDR14.fits" )
@@ -47,7 +47,7 @@ path_2_vvdsD_cat = os.path.join( ff_dir, "VVDS_DEEP_summary.v1.spm.fits" )
 path_2_deep2_cat = os.path.join( ff_dir, "zcat.deep2.dr4.v4.LFcatalogTC.Planck15.spm.v2.fits" )
 
 cosmos = fits.open(path_2_cosmos_cat)[1].data
-deep2   = fits.open(path_2_deep2_cat)[1].data
+#deep2   = fits.open(path_2_deep2_cat)[1].data
 vvdsD   = fits.open(path_2_vvdsD_cat)[1].data
 vvdsW   = fits.open(path_2_vvdsW_cat)[1].data
 vipers   = fits.open(path_2_vipers_cat)[1].data
@@ -71,8 +71,8 @@ path_2_F16_cat = os.path.join( sdss_dir, "RA_DEC_z_w_fluxOII_Mstar_grcol_Mr_lumO
 RA, DEC, z, weigth, O2flux, M_star, gr_color, Mr_5logh, O2luminosity = n.loadtxt(path_2_F16_cat, unpack=True)
 
 cosmos = fits.open(path_2_cosmos_cat)[1].data
-sdss   = fits.open(path_2_sdss_cat)[1].data
-boss   = fits.open(path_2_eboss_cat)[1].data
+#sdss   = fits.open(path_2_sdss_cat)[1].data
+#boss   = fits.open(path_2_eboss_cat)[1].data
 
 sdss_12_portSF_kr   = fits.open(path_2_pS_kroupa_cat)[1].data
 boss_12_portSF_kr   = fits.open(path_2_pB_kroupa_cat)[1].data
@@ -137,7 +137,7 @@ def get_basic_stat_DR14(catalog, z_name, z_err_name, class_name, zwarning, name,
 def get_hist(masses, weights, mbins):
     NN = n.histogram(masses, mbins)[0]
     NW = n.histogram(masses, mbins, weights = weights)[0]
-    xx = (mbins[1:] + mbins[:-1])/2.
+    xx boss_12_portSF_sa= (mbins[1:] + mbins[:-1])/2.
     return xx, NW, NN**(-0.5)*NW
 
 
