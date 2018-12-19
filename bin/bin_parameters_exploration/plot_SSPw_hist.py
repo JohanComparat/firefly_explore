@@ -45,11 +45,12 @@ for imf in imfs:
 		deep2_zOk = (deep2[z_name] > 0.6) & (deep2[z_flg]>=2.) & (deep2[z_name] < 1.2) & (deep2['SSR']>0) & (deep2['TSR']>0) & (deep2['SSR']<=1.0001) & (deep2['TSR']<=1.0001)
 		ok_deep2_04 = (deep2_zOk) & (deep2[stellar_mass] < 10**14. ) & (deep2[stellar_mass] > 0. )  & (deep2[stellar_mass] >= deep2[stellar_mass+'_low_1sig'] ) & (deep2[stellar_mass] <= deep2[stellar_mass+'_up_1sig'] ) & ( - n.log10(deep2[stellar_mass+'_low_1sig'])  + n.log10(deep2[stellar_mass+'_up_1sig']) < 0.4 )
 		ok_deep2_04 = (deep2_zOk) & (deep2[stellar_mass] < 10**14. ) & (deep2[stellar_mass] > 0. )  & (deep2[stellar_mass] >= deep2[stellar_mass+'_low_1sig'] ) & (deep2[stellar_mass] <= deep2[stellar_mass+'_up_1sig'] ) & ( - n.log10(deep2[stellar_mass+'_low_1sig'])  + n.log10(deep2[stellar_mass+'_up_1sig']) < 0.8 )
-		ssps = deep2[ssp][ok_deep2_04]
+		ssps = deep2[ss	p.xlabel('SSP mass weight')
+p][ok_deep2_04]
 		if len(ssps[ssps>=0.0001])>0:
 			p.hist(ssps, bins = s_bins, histtype='step', label=str(ii+1) )# , cumulative=True, normed=True )
 	p.ylabel('counts')
-	p.xlabel(r'SSP stellar mass $M_\odot$')
+	p.xlabel('SSP mass weight')
 	p.yscale('log')
 	p.xscale('log')
 	p.title('DEEP2')
