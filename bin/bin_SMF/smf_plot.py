@@ -10,7 +10,6 @@ matplotlib.rcParams['agg.path.chunksize'] = 2000000
 matplotlib.rcParams.update({'font.size': 12})
 matplotlib.use('Agg')
 import matplotlib.pyplot as p
-boss_12_portSF_sa
 import numpy as n
 import os
 
