@@ -186,14 +186,17 @@ def get_basic_stat(catalog, z_name, z_flg, name, zflg_min, prefix):
     return catalog_sel, m_catalog, w_catalog, l_o2, l_o3, l_hb
     
 
+x_M13, yM13 = n.loadtxt( os.path.join(os.environ['HOME'],'/software/linux/firefly_explore/data/literature/Maraston_13_05_06.txt' ), unpack=True) 
 
 p.figure(1, (8,8))
 if z_min==0.2:
-	p.plot(mbins, smf0205(10**mbins), label='Il 13, 0.2<z<0.5', ls='dashed')
+	p.plot(mbins, smf0205(10**mbins), label='Il 13, 0.2<z<0.5', ls='dashed', lw=3)
 if z_min==0.5:
-	p.plot(mbins, smf0508(10**mbins), label='Il 13, 0.5<z<0.8', ls='dashed')
+	p.plot(mbins, smf0508(10**mbins), label='Il 13, 0.5<z<0.8', ls='dashed', lw=3)
 if z_min==0.8:
-	p.plot(mbins, smf0811(10**mbins), label='Il 13, 0.8<z<1.1', ls='dashed')
+	p.plot(mbins, smf0811(10**mbins), label='Il 13, 0.8<z<1.1', ls='dashed', lw=3)
+
+p.plot(x_M13, yM13, label='Ma 13, 0.5<z<0.6', ls='dashed', lw=3)
 
 # DEEP2 lines
 xs,ys,yes = [],[],[]
@@ -212,7 +215,8 @@ yes = n.array(yes)
 y_up  = ys+yes
 y_low = ys-yes
 
-p.fill_between(xs[0], y1=n.min(y_low, axis=0), y2=n.max(y_up, axis=0), color='g', alpha=0.3, label='DEEP2')
+ok = (n.min(y_low, axis=0) < n.max(y_up, axis=0))
+p.fill_between(xs[0][ok], y1=n.min(y_low, axis=0)[ok], y2=n.max(y_up, axis=0)[ok], color='g', alpha=0.3, label='DEEP2')
 
 # BOSS eBOSS lines
 xs,ys,yes = [],[],[]
