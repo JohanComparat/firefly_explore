@@ -21,8 +21,9 @@ lO2_min = float(sys.argv[3]) # 'salpeter'
 
 SNlimit = 5
 
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/SMF')
 
-out_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'results')
+#out_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'results')
 
 #previous catalogs
 ll_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'literature')
@@ -142,7 +143,7 @@ def plotMF_raw(prefix="Chabrier_ELODIE_"):
     p.xlabel('[OII] luminosity')
     p.ylabel('[OII] with mass measurement /  all [OII] detections')
     #p.yscale('log')
-    p.legend(loc=0, frameon = False)
+    p.legend(loc=0, frameon = False, fontsize=10)
     p.ylim((-0.01, 1.01))
     p.xlim((40.5, 43.5))
     p.grid()
@@ -182,7 +183,7 @@ def plotMF_raw(prefix="Chabrier_ELODIE_"):
     p.xlabel(r'$\log_{10}$ (stellar mass '+r" / $M_\odot$ )")
     p.ylabel(r'$\Phi(M)$ [Mpc$^{-3}$ dex$^{-1}$]')
     p.yscale('log')
-    p.legend(loc=0, frameon = False)
+    p.legend(loc=0, frameon = False, fontsize=10)
     p.ylim((1e-8, 1e-2))
     p.xlim((9.5, 12.5))
     p.grid()
@@ -202,7 +203,7 @@ def plotMF_raw(prefix="Chabrier_ELODIE_"):
     p.xlabel(r'$\log_{10}$ (stellar mass '+r" / $M_\odot$ )")
     p.ylabel(r'$\Phi_{[OII]} / \Phi_{all}(M)$')
     p.yscale('log')
-    p.legend(loc=0, frameon = False)
+    p.legend(loc=0, frameon = False, fontsize=10)
     p.ylim((1e-4, 2.))
     p.xlim((9.5, 12.5))
     p.grid()
@@ -268,7 +269,7 @@ def plotMF_raw_many(prefixs=["Chabrier_ELODIE_"]):
 	p.xlabel(r'$\log_{10}$ (stellar mass '+r" / $M_\odot$ )")
 	p.ylabel(r'$\Phi(M)$ [Mpc$^{-3}$ dex$^{-1}$]')
 	p.yscale('log')
-	p.legend(loc=0, frameon = False, fontsize=12)
+	p.legend(loc=0, frameon = False, fontsize=10)
 	p.ylim((1e-8, 1e-2))
 	p.xlim((8.5, 12.))
 	p.grid()
