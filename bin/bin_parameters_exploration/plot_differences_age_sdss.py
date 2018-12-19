@@ -129,7 +129,7 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	# defines errors
 	eM_04_ref = (sdss[stellar_mass+'_up_1sig'][ok_sdss_04]-sdss[stellar_mass+'_low_1sig'][ok_sdss_04])/2.
 	eA_04_ref = (sdss[age+'_up_1sig'][ok_sdss_04]-sdss[age+'_low_1sig'][ok_sdss_04])/2.
-	eZ_04_ref = (sdss[delta_m3metal+'_up_1sig'][ok_sdss_04]-sdss[metal+'_low_1sig'][ok_sdss_04])/2.
+	eZ_04_ref = (sdss[metal+'_up_1sig'][ok_sdss_04]-sdss[metal+'_low_1sig'][ok_sdss_04])/2.
 	# quantity to compare to
 	stellar_mass = imf_1+'stellar_mass'
 	age = imf_1+'age_massW'

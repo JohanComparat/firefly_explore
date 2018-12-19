@@ -182,7 +182,7 @@ p.legend(loc=0, frameon = False)
 p.ylim((1e-8, 1e-2))
 p.xlim((9.5, 12.5))
 p.grid()
-p.savefig(os.path.join(out_dir, "firefly_SMFs_BOSS_"+str(z_min)+'_z_'+str(z_max)+".jpg" ))
+p.savefig(os.path.join(out_dir, "firefly_SMFs_BOSS_"+str(z_min)+'_z_'+str(z_max)+".png" ))
 p.clf()
 
 
@@ -208,7 +208,7 @@ p.legend(loc=0, frameon = False)
 p.ylim((1e-8, 1e-2))
 p.xlim((9.5, 12.5))
 p.grid()
-p.savefig(os.path.join(out_dir, "firefly_SMFs_SDSS_"+str(z_min)+'_z_'+str(z_max)+".jpg" ))
+p.savefig(os.path.join(out_dir, "firefly_SMFs_SDSS_"+str(z_min)+'_z_'+str(z_max)+".png" ))
 p.clf()
 
 sys.exit()
@@ -244,7 +244,7 @@ p.legend(loc=0, frameon = False)
 p.ylim((1e-8, 1e-2))
 p.xlim((9.5, 12.5))
 p.grid()
-p.savefig(os.path.join(out_dir, "SDSS_SMF_"+imf+"_"+str(z_min)+'_z_'+str(z_max)+".jpg" ))
+p.savefig(os.path.join(out_dir, "SDSS_SMF_"+imf+"_"+str(z_min)+'_z_'+str(z_max)+".png" ))
 p.clf()
 
 sys.exit()
@@ -278,7 +278,7 @@ def plotMF_raw(imf='kroupa'):
     p.ylim((1e-8, 1e-2))
     p.xlim((9.5, 12.5))
     p.grid()
-    p.savefig(os.path.join(out_dir, "SDSS_SMF_"+imf+"_"+str(z_min)+'_z_'+str(z_max)+".jpg" ))
+    p.savefig(os.path.join(out_dir, "SDSS_SMF_"+imf+"_"+str(z_min)+'_z_'+str(z_max)+".png" ))
     p.clf()
 
 import time
@@ -306,7 +306,7 @@ p.ylabel(r'$\Delta \log$(mass) dr14-dr12')
 p.xlim((8,13.))
 p.ylim((-2, 2))
 p.grid()
-p.savefig(os.path.join(out_dir, "SDSS_mass_comparison"+imf+"_"+str(z_min)+'_z_'+str(z_max)+".jpg" ))
+p.savefig(os.path.join(out_dir, "SDSS_mass_comparison"+imf+"_"+str(z_min)+'_z_'+str(z_max)+".png" ))
 p.show()
 
 # for each object in the catalog, assign the corresponding stellar mass from firefly
