@@ -128,7 +128,7 @@ def get_basic_stat_DR12(catalog, z_name, z_err_name, name, zflg_val):
 def get_basic_stat_DR14(catalog, z_name, z_err_name, class_name, zwarning, name, zflg_val, prefix):
     catalog_zOk =(catalog[z_err_name] > 0.) & (catalog[z_name] > catalog[z_err_name])  & (catalog[class_name]=='GALAXY')  & (catalog[zwarning]==zflg_val)
     catalog_stat = (catalog_zOk) & (catalog[z_name] > z_min) & (catalog[z_name] < z_max) 
-    catalog_sel = (catalog_stat) & (catalog[prefix+'stellar_mass'] < 10**14. ) & (catalog[prefix+'stellar_mass'] > 0 )  & (catalog[prefix+'stellar_mass'] > catalog[prefix+'stellar_mass_low'] ) & (catalog[prefix+'stellar_mass'] < catalog[prefix+'stellar_mass_up'] ) & ( - n.log10(catalog[prefix+'stellar_mass_low'])  + n.log10(catalog[prefix+'stellar_mass_up']) < 0.4 )
+    catalog_sel = (catalog_stat) & (catalog[prefix+'stellar_mass'] < 10**14. ) & (catalog[prefix+'stellar_mass'] > 0 )  & (catalog[prefix+'stellar_mass'] > catalog[prefix+'stellar_mass_low_1sig'] ) & (catalog[prefix+'stellar_mass'] < catalog[prefix+'stellar_mass_up_1sig'] ) & ( - n.log10(catalog[prefix+'stellar_mass_low_1sig'])  + n.log10(catalog[prefix+'stellar_mass_up_1sig']) < 0.4 )
     m_catalog = n.log10(catalog[prefix+'stellar_mass'])
     w_catalog =  n.ones_like(catalog[prefix+'stellar_mass'])
     print name, '& $',len(catalog), "$ & $", ld(catalog_zOk),"$ & $", ld(catalog_sel),"$ \\\\"

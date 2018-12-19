@@ -106,7 +106,7 @@ else :
 def get_basic_stat(catalog, z_name, z_flg, name, zflg_min, prefix):
     catalog_zOk = (catalog[z_name] > z_min) & (catalog[z_flg]>=zflg_min) 
     catalog_stat = (catalog_zOk) & (catalog[z_name] > z_min) & (catalog[z_name] < z_max) & (catalog['SSR']>0) & (catalog['TSR']>0) & (catalog['SSR']<=1.0001) & (catalog['TSR']<=1.0001)
-    catalog_sel = (catalog_stat) & (catalog[prefix+'stellar_mass'] < 10**14. ) & (catalog[prefix+'stellar_mass'] >= 10**5. )  & (catalog[prefix+'stellar_mass'] <= catalog[prefix+'stellar_mass_up'] ) & (catalog[prefix+'stellar_mass'] >= catalog[prefix+'stellar_mass_low'] ) & (-n.log10(catalog[prefix+'stellar_mass_low'])  + n.log10(catalog[prefix+'stellar_mass_up']) < 0.6 	)
+    catalog_sel = (catalog_stat) & (catalog[prefix+'stellar_mass'] < 10**14. ) & (catalog[prefix+'stellar_mass'] >= 10**5. )  & (catalog[prefix+'stellar_mass'] <= catalog[prefix+'stellar_mass_up_1sig'] ) & (catalog[prefix+'stellar_mass'] >= catalog[prefix+'stellar_mass_low_1sig'] ) & (-n.log10(catalog[prefix+'stellar_mass_low_1sig'])  + n.log10(catalog[prefix+'stellar_mass_up_1sig']) < 0.6 	)
     l_o2 = lineSelection(catalog, "O2_3728") & catalog_stat
     l_o3 = lineSelection(catalog, "O3_5007") & catalog_stat
     l_hb = lineSelection(catalog, "H1_4862") & catalog_stat
