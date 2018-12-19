@@ -65,7 +65,7 @@ cosmos = fits.open(path_2_cosmos_cat)[1].data
 
 lineSelection = lambda catalog, lineName : (catalog[lineName+'_flux']>0.)& (catalog[lineName+'_fluxErr'] >0.) & (catalog[lineName+'_flux'] > SNlimit * catalog[lineName+'_fluxErr']) # & (catalog[lineName+'_luminosity']>0)& (catalog[lineName+'_luminosity']<1e50)
 
-out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures')
+#out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures')
 
 smf_ilbert13 = lambda M, M_star, phi_1s, alpha_1s, phi_2s, alpha_2s : ( phi_1s * (M/M_star) ** alpha_1s + phi_2s * (M/M_star) ** alpha_2s ) * n.e ** (-M/M_star) * (M/ M_star)
 
