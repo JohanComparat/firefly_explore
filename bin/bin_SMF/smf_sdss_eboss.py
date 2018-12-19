@@ -48,40 +48,40 @@ path_2_deep2_cat = os.path.join( ff_dir, "zcat.deep2.dr4.v4.LFcatalogTC.Planck15
 
 cosmos = fits.open(path_2_cosmos_cat)[1].data
 #deep2   = fits.open(path_2_deep2_cat)[1].data
-vvdsD   = fits.open(path_2_vvdsD_cat)[1].data
-vvdsW   = fits.open(path_2_vvdsW_cat)[1].data
-vipers   = fits.open(path_2_vipers_cat)[1].data
-spiders   = fits.open(path_2_spall_spiders_dr14_cat)[1].data
+#vvdsD   = fits.open(path_2_vvdsD_cat)[1].data
+#vvdsW   = fits.open(path_2_vvdsW_cat)[1].data
+#vipers   = fits.open(path_2_vipers_cat)[1].data
+#spiders   = fits.open(path_2_spall_spiders_dr14_cat)[1].data
 
 
-path_2_sdss_cat = os.path.join( ff_dir, "FireflyGalaxySdss26.fits" )
-path_2_eboss_cat = os.path.join( ff_dir, "FireflyGalaxyEbossDR14.fits" )
+#path_2_sdss_cat = os.path.join( ff_dir, "FireflyGalaxySdss26.fits" )
+#path_2_eboss_cat = os.path.join( ff_dir, "FireflyGalaxyEbossDR14.fits" )
 
-path_2_pS_salpeter_cat = os.path.join( ll_dir, "portsmouth_stellarmass_starforming_salp-26.fits.gz" )
-path_2_pB_salpeter_cat = os.path.join( ll_dir, "portsmouth_stellarmass_starforming_salp-DR12-boss.fits.gz" )
+#path_2_pS_salpeter_cat = os.path.join( ll_dir, "portsmouth_stellarmass_starforming_salp-26.fits.gz" )
+#path_2_pB_salpeter_cat = os.path.join( ll_dir, "portsmouth_stellarmass_starforming_salp-DR12-boss.fits.gz" )
 
-path_2_pS_kroupa_cat = os.path.join( ll_dir, "portsmouth_stellarmass_starforming_krou-26.fits.gz" )
-path_2_pB_kroupa_cat = os.path.join( ll_dir, "portsmouth_stellarmass_starforming_krou-DR12-boss.fits.gz" )
+#path_2_pS_kroupa_cat = os.path.join( ll_dir, "portsmouth_stellarmass_starforming_krou-26.fits.gz" )
+#path_2_pB_kroupa_cat = os.path.join( ll_dir, "portsmouth_stellarmass_starforming_krou-DR12-boss.fits.gz" )
 
-path_2_ppS_kroupa_cat = os.path.join( ll_dir, "portsmouth_stellarmass_passive_krou-26.fits")
-path_2_ppB_kroupa_cat = os.path.join( ll_dir, "portsmouth_stellarmass_passive_krou-DR12.fits")
+#path_2_ppS_kroupa_cat = os.path.join( ll_dir, "portsmouth_stellarmass_passive_krou-26.fits")
+#path_2_ppB_kroupa_cat = os.path.join( ll_dir, "portsmouth_stellarmass_passive_krou-DR12.fits")
 
-path_2_F16_cat = os.path.join( sdss_dir, "RA_DEC_z_w_fluxOII_Mstar_grcol_Mr_lumOII.dat" )
+#path_2_F16_cat = os.path.join( sdss_dir, "RA_DEC_z_w_fluxOII_Mstar_grcol_Mr_lumOII.dat" )
 
-RA, DEC, z, weigth, O2flux, M_star, gr_color, Mr_5logh, O2luminosity = n.loadtxt(path_2_F16_cat, unpack=True)
+##RA, DEC, z, weigth, O2flux, M_star, gr_color, Mr_5logh, O2luminosity = n.loadtxt(path_2_F16_cat, unpack=True)
 
-cosmos = fits.open(path_2_cosmos_cat)[1].data
-#sdss   = fits.open(path_2_sdss_cat)[1].data
-#boss   = fits.open(path_2_eboss_cat)[1].data
+#cosmos = fits.open(path_2_cosmos_cat)[1].data
+##sdss   = fits.open(path_2_sdss_cat)[1].data
+##boss   = fits.open(path_2_eboss_cat)[1].data
 
-sdss_12_portSF_kr   = fits.open(path_2_pS_kroupa_cat)[1].data
-boss_12_portSF_kr   = fits.open(path_2_pB_kroupa_cat)[1].data
+#sdss_12_portSF_kr   = fits.open(path_2_pS_kroupa_cat)[1].data
+#boss_12_portSF_kr   = fits.open(path_2_pB_kroupa_cat)[1].data
 
-sdss_12_portPA_kr   = fits.open(path_2_ppS_kroupa_cat)[1].data
-boss_12_portPA_kr   = fits.open(path_2_ppB_kroupa_cat)[1].data
+#sdss_12_portPA_kr   = fits.open(path_2_ppS_kroupa_cat)[1].data
+#boss_12_portPA_kr   = fits.open(path_2_ppB_kroupa_cat)[1].data
 
-sdss_12_portSF_sa   = fits.open(path_2_pS_salpeter_cat)[1].data
-boss_12_portSF_sa   = fits.open(path_2_pB_salpeter_cat)[1].data
+#sdss_12_portSF_sa   = fits.open(path_2_pS_salpeter_cat)[1].data
+#boss_12_portSF_sa   = fits.open(path_2_pB_salpeter_cat)[1].data
 
 
 path_ilbert13_SMF = os.path.join(ll_dir, "ilbert_2013_mass_function_params.txt")

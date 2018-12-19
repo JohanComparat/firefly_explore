@@ -76,7 +76,7 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
   p.hist(delta_m1[bad==False], bins=m_bins, histtype='step', label=imf_1.split('_')[1]+"-"+imf_ref.split('_')[1] , normed=True )
   bad = (delta_m2==-n.inf)|(delta_m2==n.inf)|n.isnan(delta_m2)
   p.hist(delta_m2[bad==False], bins=m_bins, histtype='step', label=imf_2.split('_')[1]+"-"+imf_ref.split('_')[1] , normed=True )
-  p.plot(m_bins, delta_m3norm.pdf(m_bins, loc=0, scale=1), label='N(0,1)', ls='dashed')
+  p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), label='N(0,1)', ls='dashed')
   #p.ylabel('normed distribution')
   p.xlabel(r'$(age_1-age_{ref})/\sqrt{\sigma^2_{age_1}+\sigma^2_{age_{ref}}}$')
   #p.yscale('log')
