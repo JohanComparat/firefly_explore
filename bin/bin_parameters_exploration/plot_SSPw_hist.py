@@ -11,7 +11,7 @@ for imf in imfs:
 	print('deep2')
 	p.figure(1, (4.5, 4.5))
 	p.axes([0.12,0.18,0.8,0.73])
-	for ii in range(7):
+	for ii in range(3):
 		stellar_mass = imf+'stellar_mass'
 		ssp = imf+'weightMass_ssp_'+str(ii)
 		ssp_mass = imf+'stellar_mass_ssp_'+str(ii)
@@ -36,7 +36,7 @@ for imf in imfs:
 	
 	p.figure(1, (4.5, 4.5))
 	p.axes([0.12,0.18,0.8,0.73])
-	for ii in range(7):
+	for ii in range(3):
 		stellar_mass = imf+'stellar_mass'
 		ssp = imf+'weightMass_ssp_'+str(ii)
 		ssp_mass = imf+'stellar_mass_ssp_'+str(ii)
