@@ -23,13 +23,12 @@ for imf in imfs:
 	#Ms_02_boss = n.log10(boss[stellar_mass][ok_boss_02])
 	Ms_04_boss = n.log10(boss[age][ok_boss_04])
 
-	p.hist(Ms_04_boss, bins = m_bins, histtype='step', label=imf[:-1] )#, cumulative=True, normed=True )
+	p.hist(Ms_04_boss, bins = m_bins, histtype='step', label=imf[:-1] , cumulative=True, normed=True )
 
-#p.ylabel('normed cumulative distribution')
-p.ylabel('counts')
+p.ylabel('normed cumulative distribution')
 
 p.xlabel(r'$\log_{10}(Age/yr)$')
-p.yscale('log')
+#p.yscale('log')
 p.title('eBOSS')
 p.legend(loc=2, frameon = False, fontsize=11)
 p.xlim((7.2, 10.3))
@@ -55,13 +54,12 @@ for imf in imfs:
   #Ms_02_sdss = n.log10(sdss[stellar_mass][ok_sdss_02]) 
   Ms_04_sdss = n.log10(sdss[age][ok_sdss_04])
 
-  p.hist(Ms_04_sdss, bins = m_bins, histtype='step', label=imf[:-1])# , cumulative=True, normed=True  )
+  p.hist(Ms_04_sdss, bins = m_bins, histtype='step', label=imf[:-1] , cumulative=True, normed=True  )
 
-#p.ylabel('normed cumulative distribution')
-p.ylabel('counts')
+p.ylabel('normed cumulative distribution')
 
 p.xlabel(r'$\log_{10}(Age/yr)$')
-p.yscale('log')
+#p.yscale('log')
 p.title('SDSS')
 p.legend(loc=2, frameon = False, fontsize=11)
 p.xlim((7.2, 10.3))
@@ -85,13 +83,13 @@ for imf in imfs:
   Ms_02_d2 = n.log10(deep2[age][deep2_sel_02])
   Ms_04_d2 = n.log10(deep2[age][deep2_sel_04])
   w_deep2 = 1. / (deep2['TSR'] * deep2['SSR'])
-  p.hist(Ms_04_d2, bins = m_bins, histtype='step', label=imf[:-1] )#, cumulative=True, normed=True  )
+  p.hist(Ms_04_d2, bins = m_bins, histtype='step', label=imf[:-1] , cumulative=True, normed=True  )
 
 
-#p.ylabel('normed cumulative distribution')
-p.ylabel('counts')
+p.ylabel('normed cumulative distribution')
+
 p.xlabel(r'$\log_{10}(Age/yr)$')
-p.yscale('log')
+#p.yscale('log')
 p.title('DEEP2')
 p.legend(loc=2, frameon = False, fontsize=11)
 p.xlim((7.2, 10.3))
@@ -127,10 +125,9 @@ for imf in imfs:
   #Ms_02_boss = n.log10(boss[stellar_mass][ok_boss_02])
   Ms_04_boss = n.log10(boss[age][ok_boss_04])
 
-  p.hist(Ms_04_boss, bins = m_bins, histtype='step', label=imf[:-1])# , cumulative=True, normed=True )
+  p.hist(Ms_04_boss, bins = m_bins, histtype='step', label=imf[:-1] , cumulative=True, normed=True )
 
-#p.ylabel('normed cumulative distribution')
-p.ylabel('counts')
+p.ylabel('normed cumulative distribution')
 
 p.xlabel(r'$\log_{10}(Age/yr)$')
 #p.yscale('log')
@@ -159,10 +156,9 @@ for imf in imfs:
   #Ms_02_sdss = n.log10(sdss[stellar_mass][ok_sdss_02]) 
   Ms_04_sdss = n.log10(sdss[age][ok_sdss_04])
 
-  p.hist(Ms_04_sdss, bins = m_bins, histtype='step', label=imf[:-1])# , cumulative=True, normed=True  )
+  p.hist(Ms_04_sdss, bins = m_bins, histtype='step', label=imf[:-1] , cumulative=True, normed=True  )
 
-#p.ylabel('normed cumulative distribution')
-p.ylabel('counts')
+p.ylabel('normed cumulative distribution')
 
 p.xlabel(r'$\log_{10}(Age/yr)$')
 #p.yscale('log')
@@ -189,11 +185,10 @@ for imf in imfs:
   Ms_02_d2 = n.log10(deep2[age][deep2_sel_02])
   Ms_04_d2 = n.log10(deep2[age][deep2_sel_04])
   w_deep2 = 1. / (deep2['TSR'] * deep2['SSR'])
-  p.hist(Ms_04_d2, bins = m_bins, histtype='step', label=imf[:-1])# , cumulative=True, normed=True  )
+  p.hist(Ms_04_d2, bins = m_bins, histtype='step', label=imf[:-1] , cumulative=True, normed=True  )
 
 
-#p.ylabel('normed cumulative distribution')
-p.ylabel('counts')
+p.ylabel('normed cumulative distribution')
 
 p.xlabel(r'$\log_{10}(Age/yr)$')
 #p.yscale('log')
