@@ -168,7 +168,7 @@ def plotDIFF(imf_ref, imf_1, imf_2, m_bins = n.arange(-10., 10., 0.1)):
 	p.axes([0.12,0.18,0.8,0.73])
 	p.hist(delta_m1, bins=m_bins, histtype='step', label=imf_1.split('_')[0]+"-"+imf_ref.split('_')[0] , normed=True )
 	p.hist(delta_m2, bins=m_bins, histtype='step', label=imf_2.split('_')[0]+"-"+imf_ref.split('_')[0] , normed=True )
-	p.hist(delta_m3[(delta_m3>-100)&(delta_m3 !=n.inf)], bins=m_bins, histtype='step', label=imf_2.split('_')[1]+"-"+imf_1.split('_')[1] , normed=True )
+	#p.hist(delta_m3[(delta_m3>-100)&(delta_m3 !=n.inf)], bins=m_bins, histtype='step', label=imf_2.split('_')[1]+"-"+imf_1.split('_')[1] , normed=True )
 	p.plot(m_bins, norm.pdf(m_bins, loc=0, scale=1), label='N(0,1)', ls='dashed')
 	#p.ylabel('normed distribution')
 	p.xlabel(r'$(M_1-M_{ref})/\sqrt{\sigma^2_{M_1}+\sigma^2_{M_{ref}}}$')
