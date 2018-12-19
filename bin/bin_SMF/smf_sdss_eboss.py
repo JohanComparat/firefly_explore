@@ -23,7 +23,7 @@ ff_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'firefly')
 ll_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'literature')
 co_dir = os.path.join(os.environ['OBS_REPO'], 'COSMOS', 'catalogs', "photoz-2.0" )
 sdss_dir = os.path.join(os.environ['OBS_REPO'], 'SDSS')
-spiders_dir = os.path.join(os.environ['OBS_REPO'], 'spiders')
+#spiders_dir = os.path.join(os.environ['OBS_REPO'], 'spiders')
 
 #out_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'results')
 out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images/SMF')
@@ -36,7 +36,7 @@ path_2_spall_sdss_dr14_cat = os.path.join( sdss_dir, "specObj-SDSS-dr14.fits" )
 path_2_spall_boss_dr12_cat = os.path.join( sdss_dir, "specObj-BOSS-dr12.fits" )
 path_2_spall_boss_dr14_cat = os.path.join( sdss_dir, "specObj-BOSS-dr14.fits" )
 
-path_2_spall_spiders_dr14_cat = os.path.join( spiders_dir, "cluster_statistics_2016-11-08-DR14_spm.fits" )
+#path_2_spall_spiders_dr14_cat = os.path.join( spiders_dir, "cluster_statistics_2016-11-08-DR14_spm.fits" )
 
 #print "SDSS spAll DR14", len(fits.open(path_2_spall_sdss_dr14_cat)[1].data)
 #print "BOSS spAll DR14",len(fits.open(path_2_spall_boss_dr14_cat)[1].data)
@@ -154,10 +154,10 @@ def plot_smf_s(IMF="Chabrier_ELODIE_"):
 	x, y, ye = get_hist(boss_m[boss_sel], weights = boss_w[boss_sel]/(dlog10m*n.log(10)*area_boss*volume_per_deg2_val), mbins = mbins)
 	p.errorbar(x, y, yerr = ye, label=IMF+'SDSS', lw=1)
 
-def plot_smf_spiders(IMF="Chabrier_ELODIE_"):
-	boss_sel, boss_m, boss_w = get_basic_stat_DR14(spiders, 'Z', 'Z_ERR', 'CLASS', 'ZWARNING', IMF+' & BOSS & 14 ', 0., IMF)
-	x, y, ye = get_hist(boss_m[boss_sel], weights = boss_w[boss_sel]/(dlog10m*n.log(10)*area_boss*volume_per_deg2_val), mbins = mbins)
-	p.errorbar(x, y, yerr = ye, label=IMF+'SPIDERS', lw=1)
+#def plot_smf_spiders(IMF="Chabrier_ELODIE_"):
+	#boss_sel, boss_m, boss_w = get_basic_stat_DR14(spiders, 'Z', 'Z_ERR', 'CLASS', 'ZWARNING', IMF+' & BOSS & 14 ', 0., IMF)
+	#x, y, ye = get_hist(boss_m[boss_sel], weights = boss_w[boss_sel]/(dlog10m*n.log(10)*area_boss*volume_per_deg2_val), mbins = mbins)
+	#p.errorbar(x, y, yerr = ye, label=IMF+'SPIDERS', lw=1)
 
 
 p.figure(1, (8,8))
@@ -172,7 +172,7 @@ plot_smf_b("Kroupa_STELIB_")
 plot_smf_b("Salpeter_ELODIE_")
 plot_smf_b("Salpeter_MILES_")
 plot_smf_b("Salpeter_STELIB_")
-plot_smf_spiders("Chabrier_ELODIE_")
+#plot_smf_spiders("Chabrier_ELODIE_")
 
 p.title(str(z_min)+'<z<'+str(z_max)+' BOSS+eBOSS')
 p.xlabel(r"$\log_{10}$ (M / $M_\odot$ )")
@@ -198,7 +198,7 @@ plot_smf_s("Kroupa_STELIB_")
 plot_smf_s("Salpeter_ELODIE_")
 plot_smf_s("Salpeter_MILES_")
 plot_smf_s("Salpeter_STELIB_")
-plot_smf_spiders("Chabrier_ELODIE_")
+#plot_smf_spiders("Chabrier_ELODIE_")
 
 p.title(str(z_min)+'<z<'+str(z_max)+' SDSS')
 p.xlabel(r'$\log_{10}$(M / $M_\odot$ )')
