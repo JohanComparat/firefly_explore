@@ -137,7 +137,7 @@ def get_basic_stat_DR14(catalog, z_name, z_err_name, class_name, zwarning, name,
 def get_hist(masses, weights, mbins):
     NN = n.histogram(masses, mbins)[0]
     NW = n.histogram(masses, mbins, weights = weights)[0]
-    xx boss_12_portSF_sa= (mbins[1:] + mbins[:-1])/2.
+    xx = (mbins[1:] + mbins[:-1])/2.
     return xx, NW, NN**(-0.5)*NW
 
 
