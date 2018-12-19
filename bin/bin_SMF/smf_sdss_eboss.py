@@ -17,13 +17,13 @@ SNlimit = 5
 
 smf_ilbert13 = lambda M, M_star, phi_1s, alpha_1s, phi_2s, alpha_2s : ( phi_1s * (M/M_star) ** alpha_1s + phi_2s * (M/M_star) ** alpha_2s ) * n.e ** (-M/M_star) * (M/ M_star)
 
-ff_dir = os.path.join(os.environ['OBS_DIR'], 'spm', 'firefly')
-ll_dir = os.path.join(os.environ['OBS_DIR'], 'spm', 'literature')
-co_dir = os.path.join(os.environ['OBS_DIR'], 'COSMOS' )
-sdss_dir = os.path.join(os.environ['OBS_DIR'], 'SDSS')
-spiders_dir = os.path.join(os.environ['OBS_DIR'], 'spiders')
+ff_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'firefly')
+ll_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'literature')
+co_dir = os.path.join(os.environ['OBS_REPO'], 'COSMOS' )
+sdss_dir = os.path.join(os.environ['OBS_REPO'], 'SDSS')
+spiders_dir = os.path.join(os.environ['OBS_REPO'], 'spiders')
 
-#out_dir = os.path.join(os.environ['OBS_DIR'], 'spm', 'results')
+#out_dir = os.path.join(os.environ['OBS_REPO'], 'spm', 'results')
 out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images/SMF')
 
 path_2_cosmos_cat = os.path.join( co_dir, "photoz_vers2.0_010312.fits")
