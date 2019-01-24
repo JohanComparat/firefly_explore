@@ -40,10 +40,9 @@ cp /data36s/comparat/spm/results/*.tex /data42s/comparat/firefly/v1_1_0/tables/
 cd /data42s/comparat/firefly/v1_1_0/tables/
 chmod o+r * 
 
-# explore the parameter space 
-cd /home/comparat/software/linux/firefly_explore/bin/bin_parameters_exploration
 
 # plots the spectra showed in the paper
+cd /home/comparat/software/linux/firefly_explore/bin/bin_spectra
 
 # Figures 1,2,3
 python3.6 plot_result_file.py /data42s/comparat/firefly/v1_1_0/v5_10_0/stellarpop/3586/spFly-3586-55181-0003.fits
@@ -53,6 +52,9 @@ python3.6 plot_result_file_deep2.py /data42s/comparat/firefly/v1_1_0/DEEP2/stell
 cp /data42s/comparat/firefly/v1_1_0/v5_10_0/stellarpop/3586/spFly-3586-55181-0003.png ../../data/spec_plot/
 cp /data42s/comparat/firefly/v1_1_0/26/stellarpop/0266/spFly-0266-51602-0004.png  ../../data/spec_plot/
 cp /data42s/comparat/firefly/v1_1_0/DEEP2/stellarpop/1/spFly-deep2-1103-11013914.png ../../data/spec_plot/
+
+# explore the parameter space 
+cd /home/comparat/software/linux/firefly_explore/bin/bin_parameters_exploration
 
 # Figure 4
 python3.4 plot_age_metal_plane.py
