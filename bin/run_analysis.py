@@ -73,6 +73,11 @@ python3.4 plot_dust_mass_plane.py
 python3.4 plot_SNMED_uncertainty.py
 
 
+# figures 18,19
+python3.4 plot_distribution_metals.py
+python3.4 plot_distribution_ages.py
+
+
 # Figure 1 
 # first row
 python3.4 object_types_mass.py
@@ -88,10 +93,10 @@ python pdf_SM_error.py
 python3.4 plot_distribution_masses.py
 python3.4 plot_distribution_ebv.py
 python3.4 plot_distribution_ages.py
-python3.4 plot_distribution_metals.py
-python3.4 plot_differences_age.py
 python3.4 plot_distribution_masses_imf_diff.py
 python3.4 plot_age_metal_plane.py
+python3.4 plot_distribution_metals.py
+python3.4 plot_differences_age.py
 
 
 python3.4 plot_distribution_ebv.py

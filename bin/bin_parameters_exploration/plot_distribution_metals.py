@@ -9,7 +9,7 @@ p.figure(2, (6.5, 3.5))
 p.axes([0.12,0.18,0.8,0.73])
 
 print('eboss')
-for imf in imfs:
+for imf in imfs[:3]:
   stellar_mass = imf+'stellar_mass'
   age = imf+'metallicity_lightW'
 
@@ -23,7 +23,7 @@ for imf in imfs:
   #Ms_02_boss = n.log10(boss[stellar_mass][ok_boss_02])
   Ms_04_boss = n.log10(boss[age][ok_boss_04])
 
-  p.hist(Ms_04_boss, bins = m_bins, histtype='step', label=imf[:-1], cumulative=True, normed=True )
+  p.hist(Ms_04_boss, bins = m_bins, histtype='step', label=imf[:-1], cumulative=True, normed=True, lw=2)
 
 p.ylabel(r"N(dlogZ=0.02)")
 p.xlabel(r'$\log_{10}(Z/Z_\odot)$')
@@ -39,7 +39,7 @@ print('sdss')
 p.figure(2, (6.5, 3.5))
 p.axes([0.12,0.18,0.8,0.73])
 
-for imf in imfs:
+for imf in imfs[:3]:
   stellar_mass = imf+'stellar_mass'
   age = imf+'metallicity_lightW'
 
@@ -53,7 +53,7 @@ for imf in imfs:
   #Ms_02_sdss = n.log10(sdss[stellar_mass][ok_sdss_02]) 
   Ms_04_sdss = n.log10(sdss[age][ok_sdss_04])
 
-  p.hist(Ms_04_sdss, bins = m_bins, histtype='step', label=imf[:-1] , cumulative=True, normed=True )
+  p.hist(Ms_04_sdss, bins = m_bins, histtype='step', label=imf[:-1] , cumulative=True, normed=True, lw=2)
 
 p.ylabel(r"N(dlogZ=0.02)")
 p.xlabel(r'$\log_{10}(Z/Z_\odot)$')
@@ -70,7 +70,7 @@ p.figure(2, (6.5, 3.5))
 p.axes([0.12,0.18,0.8,0.73])
 
 
-for imf in imfs:
+for imf in imfs[:3]:
   stellar_mass = imf+'stellar_mass'
   age = imf+'metallicity_lightW'
   z_flg = 'ZQUALITY'
@@ -81,7 +81,7 @@ for imf in imfs:
   Ms_02_d2 = n.log10(deep2[age][deep2_sel_02])
   Ms_04_d2 = n.log10(deep2[age][deep2_sel_04])
   w_deep2 = 1. / (deep2['TSR'] * deep2['SSR'])
-  p.hist(Ms_04_d2, bins = m_bins, histtype='step', label=imf[:-1] , cumulative=True, normed=True )
+  p.hist(Ms_04_d2, bins = m_bins, histtype='step', label=imf[:-1] , cumulative=True, normed=True, lw=2)
 
 
 p.ylabel('normed cumulative distribution')
@@ -108,7 +108,7 @@ p.figure(2, (6.5, 3.5))
 p.axes([0.12,0.18,0.8,0.73])
 
 print('eboss')
-for imf in imfs:
+for imf in imfs[:3]:
   stellar_mass = imf+'stellar_mass'
   age = imf+'metallicity_massW'
 
@@ -122,7 +122,7 @@ for imf in imfs:
   #Ms_02_boss = n.log10(boss[stellar_mass][ok_boss_02])
   Ms_04_boss = n.log10(boss[age][ok_boss_04])
 
-  p.hist(Ms_04_boss, bins = m_bins, histtype='step', label=imf[:-1], cumulative=True, normed=True )
+  p.hist(Ms_04_boss, bins = m_bins, histtype='step', label=imf[:-1], cumulative=True, normed=True, lw=2)
 
 p.ylabel('normed cumulative distribution')
 
@@ -139,7 +139,7 @@ print('sdss')
 p.figure(2, (6.5, 3.5))
 p.axes([0.12,0.18,0.8,0.73])
 
-for imf in imfs:
+for imf in imfs[:3]:
   stellar_mass = imf+'stellar_mass'
   age = imf+'metallicity_massW'
 
@@ -153,7 +153,7 @@ for imf in imfs:
   #Ms_02_sdss = n.log10(sdss[stellar_mass][ok_sdss_02]) 
   Ms_04_sdss = n.log10(sdss[age][ok_sdss_04])
 
-  p.hist(Ms_04_sdss, bins = m_bins, histtype='step', label=imf[:-1], cumulative=True, normed=True  )
+  p.hist(Ms_04_sdss, bins = m_bins, histtype='step', label=imf[:-1], cumulative=True, normed=True , lw=2 )
 
 p.ylabel('normed cumulative distribution')
 
@@ -171,7 +171,7 @@ p.figure(2, (6.5, 3.5))
 p.axes([0.12,0.18,0.8,0.73])
 
 
-for imf in imfs:
+for imf in imfs[:3]:
   stellar_mass = imf+'stellar_mass'
   age = imf+'metallicity_massW'
   z_flg = 'ZQUALITY'
@@ -182,7 +182,7 @@ for imf in imfs:
   Ms_02_d2 = n.log10(deep2[age][deep2_sel_02])
   Ms_04_d2 = n.log10(deep2[age][deep2_sel_04])
   w_deep2 = 1. / (deep2['TSR'] * deep2['SSR'])
-  p.hist(Ms_04_d2, bins = m_bins, histtype='step', label=imf[:-1], cumulative=True, normed=True  )
+  p.hist(Ms_04_d2, bins = m_bins, histtype='step', label=imf[:-1], cumulative=True, normed=True , lw=2 )
 
 
 p.ylabel('normed cumulative distribution')
