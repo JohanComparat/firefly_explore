@@ -67,8 +67,11 @@ python3.4 plot_differences_age_deep2.py
 # Figure 7
 python3.4 plot_dust_mass_plane.py
 
+# Figure 11, NZ
+
 # Figure 14 
 python3.4 plot_SNMED_uncertainty.py
+
 
 # Figure 1 
 # first row
