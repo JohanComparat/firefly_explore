@@ -31,7 +31,7 @@ redshift_reliable_sdss =  (sdss['CLASS'] == "GALAXY")       & ( sdss['Z_ERR'] > 
 out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'catalogs')
 
 
-error_reliable_boss = (boss[stellar_A+'_up_1sig'] > boss[stellar_A+'_low_1sig'] ) & (boss[stellar_A+'_up_1sig'] > 0. ) & ( boss[stellar_A+'_low_1sig'] > 0. ) & (boss[stellar_A+'_up_1sig'] < 1e14 ) & ( boss[stellar_A+'_low_1sig'] < 1e14 ) #& ( boss[key_SNR]>0)
+error_reliable_boss = (boss[stellar_A+'_up_1sig'] > boss[stellar_A+'_low_1sig'] ) & (boss[stellar_A+'_up_1sig'] > 0. ) & ( boss[stellar_A+'_low_1sig'] > 0. ) # & (boss[stellar_A+'_up_1sig'] < 1e14 ) & ( boss[stellar_A+'_low_1sig'] < 1e14 ) #& ( boss[key_SNR]>0)
 As_log_err_boss = (n.log10(boss[stellar_A+'_up_1sig'][redshift_reliable_boss & error_reliable_boss]) - n.log10(boss[stellar_A+'_low_1sig'][redshift_reliable_boss & error_reliable_boss]))/2.
 error_reliable_sdss = (sdss[stellar_A+'_up_1sig'] > sdss[stellar_A+'_low_1sig'] ) & (sdss[stellar_A+'_up_1sig'] > 0. ) & ( sdss[stellar_A+'_low_1sig'] > 0. ) & (sdss[stellar_A+'_up_1sig'] < 1e14 ) & ( sdss[stellar_A+'_low_1sig'] < 1e14 ) #& ( sdss[key_SNR]>0)
 As_log_err_sdss = (n.log10(sdss[stellar_A+'_up_1sig'][redshift_reliable_sdss & error_reliable_sdss]) - n.log10(sdss[stellar_A+'_low_1sig'][redshift_reliable_sdss & error_reliable_sdss]))/2.
@@ -51,7 +51,7 @@ p.savefig(os.path.join(out_dir, "hist_stellar_age_err_sdss_boss.png" ))
 p.clf()
 
 
-error_reliable_boss = (boss[stellar_A+'_up_1sig'] > boss[stellar_Z+'_low_1sig'] ) & (boss[stellar_Z+'_up_1sig'] > 0. ) & ( boss[stellar_Z+'_low_1sig'] > 0. ) & (boss[stellar_Z+'_up_1sig'] < 1e14 ) & ( boss[stellar_Z+'_low_1sig'] < 1e14 ) #& ( boss[key_SNR]>0)
+error_reliable_boss = (boss[stellar_A+'_up_1sig'] > boss[stellar_Z+'_low_1sig'] ) & (boss[stellar_Z+'_up_1sig'] > 0. ) & ( boss[stellar_Z+'_low_1sig'] > 0. ) #& (boss[stellar_Z+'_up_1sig'] < 1e14 ) & ( boss[stellar_Z+'_low_1sig'] < 1e14 ) #& ( boss[key_SNR]>0)
 As_log_err_boss = (n.log10(boss[stellar_Z+'_up_1sig'][redshift_reliable_boss & error_reliable_boss]) - n.log10(boss[stellar_Z+'_low_1sig'][redshift_reliable_boss & error_reliable_boss]))/2.
 error_reliable_sdss = (sdss[stellar_Z+'_up_1sig'] > sdss[stellar_Z+'_low_1sig'] ) & (sdss[stellar_Z+'_up_1sig'] > 0. ) & ( sdss[stellar_Z+'_low_1sig'] > 0. ) & (sdss[stellar_Z+'_up_1sig'] < 1e14 ) & ( sdss[stellar_Z+'_low_1sig'] < 1e14 ) #& ( sdss[key_SNR]>0)
 As_log_err_sdss = (n.log10(sdss[stellar_Z+'_up_1sig'][redshift_reliable_sdss & error_reliable_sdss]) - n.log10(sdss[stellar_Z+'_low_1sig'][redshift_reliable_sdss & error_reliable_sdss]))/2.
@@ -71,7 +71,7 @@ p.savefig(os.path.join(out_dir, "hist_stellar_metal_err_sdss_boss.png" ))
 p.clf()
 
 
-error_reliable_boss = (boss[stellar_mass+'_up_1sig'] > boss[stellar_mass+'_low_1sig'] ) & (boss[stellar_mass+'_up_1sig'] > 0. ) & ( boss[stellar_mass+'_low_1sig'] > 0. ) & (boss[stellar_mass+'_up_1sig'] < 1e14 ) & ( boss[stellar_mass+'_low_1sig'] < 1e14 ) #& ( boss[key_SNR]>0)
+error_reliable_boss = (boss[stellar_mass+'_up_1sig'] > boss[stellar_mass+'_low_1sig'] ) & (boss[stellar_mass+'_up_1sig'] > 0. ) & ( boss[stellar_mass+'_low_1sig'] > 0. ) #& (boss[stellar_mass+'_up_1sig'] < 1e14 ) & ( boss[stellar_mass+'_low_1sig'] < 1e14 ) #& ( boss[key_SNR]>0)
 As_log_err_boss = (n.log10(boss[stellar_mass+'_up_1sig'][redshift_reliable_boss & error_reliable_boss]) - n.log10(boss[stellar_mass+'_low_1sig'][redshift_reliable_boss & error_reliable_boss]))/2.
 error_reliable_sdss = (sdss[stellar_mass+'_up_1sig'] > sdss[stellar_mass+'_low_1sig'] ) & (sdss[stellar_mass+'_up_1sig'] > 0. ) & ( sdss[stellar_mass+'_low_1sig'] > 0. ) & (sdss[stellar_mass+'_up_1sig'] < 1e14 ) & ( sdss[stellar_mass+'_low_1sig'] < 1e14 ) #& ( sdss[key_SNR]>0)
 As_log_err_sdss = (n.log10(sdss[stellar_mass+'_up_1sig'][redshift_reliable_sdss & error_reliable_sdss]) - n.log10(sdss[stellar_mass+'_low_1sig'][redshift_reliable_sdss & error_reliable_sdss]))/2.
