@@ -162,7 +162,7 @@ for ii in n.arange(1, len(d), 1):
 
 p.grid()
 # weigths age
-fig.add_subplot(4,2,6, xlabel='age  [$\log_{10}(age/yr)$]', ylabel='mass weight SSP', ylim=((0.,1.)))
+fig.add_subplot(4,2,6, xlabel='age  [$\log_{10}(age/yr)$]', ylabel='mass weight SSP', ylim=(-0.02,1.02) )
 for ii in n.arange(1, len(d), 1):
 	if d[ii].header['IMF']=='Chabrier':
 		weightM = n.array([ d[ii].header['weightMass_ssp_'+str(jj)] for jj in n.arange(d[ii].header['ssp_number'])])
@@ -170,12 +170,12 @@ for ii in n.arange(1, len(d), 1):
 		age = n.array([ n.log10(10**9 * 10**d[ii].header['age_ssp_'+str(jj)]) for jj in n.arange(d[ii].header['ssp_number'])])
 		#metal = n.array([ d[ii].header['metal_ssp_'+str(jj)] for jj in n.arange(d[ii].header['ssp_number'])])
 		iiid=n.argsort(age)
-		p.plot(age[iiid], weightM[iiid], marker='+', lw=1.5)#, ls='none')
+		p.plot(age[iiid], weightM[iiid], marker='+', ls='', lw=1.5)#, ls='none')
 
 p.grid()
 
 # weigths age
-fig.add_subplot(4,2,8	, xlabel='Z [$\log_{10}(Z/Z_\odot)$]', ylabel='mass weight SSP', ylim=((0.,1.)))
+fig.add_subplot(4,2,8	, xlabel='Z [$\log_{10}(Z/Z_\odot)$]', ylabel='mass weight SSP', ylim=(-0.02,1.02) )
 for ii in n.arange(1, len(d), 1):
 	if d[ii].header['IMF']=='Chabrier':
 		weightM = n.array([ d[ii].header['weightMass_ssp_'+str(jj)] for jj in n.arange(d[ii].header['ssp_number'])])
@@ -183,7 +183,7 @@ for ii in n.arange(1, len(d), 1):
 		#age = n.array([ n.log10(10**9 * 10**d[ii].header['log_age_ssp_'+str(jj)]) for jj in n.arange(d[ii].header['ssp_number'])])
 		metal = n.array([ d[ii].header['metal_ssp_'+str(jj)] for jj in n.arange(d[ii].header['ssp_number'])])
 		iiid=n.argsort(metal)
-		p.plot(metal[iiid], weightM[iiid], marker='+', lw=1.5)#, ls='none')
+		p.plot(metal[iiid], weightM[iiid], marker='+', ls='', lw=1.5)#, ls='none')
 
 
 p.grid()
