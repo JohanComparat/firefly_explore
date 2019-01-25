@@ -303,7 +303,32 @@ for z_min, z_max, key_SNR in zip(zmins, zmaxs, SNR_keys):
     print(len(Ms_log_err[oo]))
     plot_SN_ZERR_Z(Ms_log_err[oo], sn_all[oo], str(int(z_min*10)).zfill(2), key_SNR, z_min, z_max)
 
-#sys.exit()
+
+
+
+mass_reliable_boss_02 = (boss[stellar_mass] > 1e6 ) & ( boss[stellar_mass] < 1e14 ) & ((n.log10(boss[stellar_mass+'_up_1sig']) - n.log10(boss[stellar_mass+'_low_1sig']))/2. < 0.2 )
+mass_reliable_sdss_02 = (sdss[stellar_mass] > 1e6 ) & ( sdss[stellar_mass] < 1e14 ) & ((n.log10(sdss[stellar_mass+'_up_1sig']) - n.log10(sdss[stellar_mass+'_low_1sig']))/2. < 0.2 )
+
+mass_reliable_boss_04 = (boss[stellar_mass] > 1e6 ) & ( boss[stellar_mass] < 1e14 ) & ((n.log10(boss[stellar_mass+'_up_1sig']) - n.log10(boss[stellar_mass+'_low_1sig']))/2. < 0.4 )
+mass_reliable_sdss_04 = (sdss[stellar_mass] > 1e6 ) & ( sdss[stellar_mass] < 1e14 ) & ((n.log10(sdss[stellar_mass+'_up_1sig']) - n.log10(sdss[stellar_mass+'_low_1sig']))/2. < 0.4 )
+
+ok_boss_02 = (error_reliable_boss) & (mass_reliable_boss_02) & (redshift_reliable_boss) & ( boss[key_SNR]>0)
+ok_sdss_02 = (error_reliable_sdss) & (mass_reliable_sdss_02) & (redshift_reliable_sdss) & ( sdss[key_SNR]>0)
+
+ok_boss_04 = (error_reliable_boss) & (mass_reliable_boss_04) & (redshift_reliable_boss) & ( boss[key_SNR]>0)
+ok_sdss_04 = (error_reliable_sdss) & (mass_reliable_sdss_04) & (redshift_reliable_sdss) & ( sdss[key_SNR]>0)
+print( "boss 02",len(ok_boss_02.nonzero()[0]))
+print( "sdss 02",len(ok_sdss_02.nonzero()[0]))
+print( "boss 04",len(ok_boss_04.nonzero()[0]))
+print( "sdss 04",len(ok_sdss_04.nonzero()[0]))
+
+zz_02 = n.hstack(( boss['Z_NOQSO'][ok_boss_02], sdss['Z'][ok_sdss_02]))
+sn_02 = n.hstack(( boss[key_SNR][ok_boss_02], sdss[key_SNR][ok_sdss_02] ))
+
+zz_04 = n.hstack(( boss['Z_NOQSO'][ok_boss_04], sdss['Z'][ok_sdss_04]))
+sn_04 = n.hstack(( boss[key_SNR][ok_boss_04], sdss[key_SNR][ok_sdss_04] ))
+
+
 
 #################### Z vs. SN MEDIAN ALL ##########################
 p.figure(1, (4.5, 4.5))
@@ -349,7 +374,7 @@ p.title('SDSS and BOSS')
 p.savefig(os.path.join(out_dir, "SNR_ALL_redshift_sdss_boss_04.png" ))
 p.clf()
 
-
+sys.exit()
 
 p.figure(1, (4.5, 4.5))
 p.axes([0.2,0.2,0.7,0.7])
