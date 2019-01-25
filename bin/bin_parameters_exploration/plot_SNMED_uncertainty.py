@@ -10,8 +10,6 @@ from lib_spm import *
 ##matplotlib.use('Agg')
 #import matplotlib.pyplot as p
 
-#out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures', 'mass-snr')
-
 imfs = ["Chabrier_ELODIE_", "Chabrier_MILES_", "Chabrier_STELIB_", "Kroupa_ELODIE_", "Kroupa_MILES_", "Kroupa_STELIB_",  "Salpeter_ELODIE_", "Salpeter_MILES_", "Salpeter_STELIB_" ]
 
 
@@ -27,7 +25,9 @@ stellar_A = imf+'age_massW'
 redshift_reliable_boss =  (boss['CLASS_NOQSO'] == "GALAXY") & ( boss['Z_ERR_NOQSO'] > 0.0) & (boss['ZWARNING_NOQSO'] == 0) & (boss['Z_NOQSO']>0.001) & (boss['Z_NOQSO'] > boss['Z_ERR_NOQSO'] ) 
 redshift_reliable_sdss =  (sdss['CLASS'] == "GALAXY")       & ( sdss['Z_ERR'] > 0.0)       & (sdss['ZWARNING'] == 0)       & (sdss['Z'] > 0.001) & (sdss['Z'] > sdss['Z_ERR'] ) # (sdss[key_SNR] > 0.1 ) &
 
-out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'catalogs')
+out_dir_1 = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'catalogs')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'mass-snr')
+
 
 
 error_reliable_boss = (boss[stellar_A+'_up_1sig'] > boss[stellar_A+'_low_1sig'] ) & (boss[stellar_A+'_up_1sig'] > 0. ) & ( boss[stellar_A+'_low_1sig'] > 0. ) # & (boss[stellar_A+'_up_1sig'] < 1e14 ) & ( boss[stellar_A+'_low_1sig'] < 1e14 ) #& ( boss[key_SNR]>0)
@@ -46,7 +46,7 @@ p.legend(loc=0, frameon = False)
 #p.ylim((0.1, 200))
 p.grid()
 #p.title(str(n.round(z_min,2)) + '<z<' + str(n.round(z_max,2)))
-p.savefig(os.path.join(out_dir, "hist_stellar_age_err_sdss_boss.png" ))
+p.savefig(os.path.join(out_dir_1, "hist_stellar_age_err_sdss_boss.png" ))
 p.clf()
 
 
@@ -66,7 +66,7 @@ p.legend(loc=0, frameon = False)
 #p.ylim((0.1, 200))
 p.grid()
 #p.title(str(n.round(z_min,2)) + '<z<' + str(n.round(z_max,2)))
-p.savefig(os.path.join(out_dir, "hist_stellar_metal_err_sdss_boss.png" ))
+p.savefig(os.path.join(out_dir_1, "hist_stellar_metal_err_sdss_boss.png" ))
 p.clf()
 
 
@@ -86,13 +86,11 @@ p.legend(loc=0, frameon = False)
 #p.ylim((0.1, 200))
 p.grid()
 #p.title(str(n.round(z_min,2)) + '<z<' + str(n.round(z_max,2)))
-p.savefig(os.path.join(out_dir, "hist_stellar_mass_err_sdss_boss.png" ))
+p.savefig(os.path.join(out_dir_1, "hist_stellar_mass_err_sdss_boss.png" ))
 p.clf()
 
 
 
-
-out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'mass-snr')
 
 
 key_SNR = 'SNR_ALL'
@@ -216,9 +214,6 @@ for z_min, z_max, key_SNR in zip(zmins, zmaxs, SNR_keys):
 
 
 
-#out_dir = os.path.join(os.environ['HOME'],'wwwDir', 'stuff')
-out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'mass-snr')
-
 def plot_SN_AERR_Z(Ms_log_err, sn_all, suffix, key_SNR, z_min, z_max):
   p.figure(1, (4.5, 4.5))
   p.axes([0.2,0.2,0.7,0.7])
@@ -265,9 +260,6 @@ for z_min, z_max, key_SNR in zip(zmins, zmaxs, SNR_keys):
 
 
 
-#out_dir = os.path.join(os.environ['HOME'],'wwwDir', 'stuff')
-out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'mass-snr')
-
 def plot_SN_ZERR_Z(Ms_log_err, sn_all, suffix, key_SNR, z_min, z_max):
   p.figure(1, (4.5, 4.5))
   p.axes([0.2,0.2,0.7,0.7])
@@ -311,7 +303,7 @@ for z_min, z_max, key_SNR in zip(zmins, zmaxs, SNR_keys):
     print(len(Ms_log_err[oo]))
     plot_SN_ZERR_Z(Ms_log_err[oo], sn_all[oo], str(int(z_min*10)).zfill(2), key_SNR, z_min, z_max)
 
-sys.exit()
+#sys.exit()
 
 #################### Z vs. SN MEDIAN ALL ##########################
 p.figure(1, (4.5, 4.5))
@@ -323,7 +315,7 @@ for z_min in z_bins:
 	mean = n.median(sn_02[oo])
 	std = n.std(sn_02[oo])
 	print([z_min+0.05, z_min+0.05], [mean+std, mean-std])
-	p.plot([z_min+0.05, z_min+0.05], [mean+std, mean-std], 'r', lw=1)
+	p.plot([z_min+0.05, z_min+0.05], [mean+std, mean-std], 'r', lw=2)
 	
 p.ylabel("SN MEDIAN ALL")
 p.xlabel('redshift')
@@ -344,7 +336,7 @@ for z_min in z_bins:
 	mean = n.median(sn_04[oo])
 	std = n.std(sn_04[oo])
 	print([z_min+0.05, z_min+0.05], [mean+std, mean-std])
-	p.plot([z_min+0.05, z_min+0.05], [mean+std, mean-std], 'r', lw=1)
+	p.plot([z_min+0.05, z_min+0.05], [mean+std, mean-std], 'r', lw=2)
 	
 p.ylabel("SN MEDIAN ALL")
 p.xlabel('redshift')
@@ -369,7 +361,7 @@ for z_min in z_bins:
 	mean = n.median(Ms_02[oo])
 	std = n.std(Ms_02[oo])
 	print([z_min+0.05, z_min+0.05], [mean+std, mean-std])
-	p.plot([z_min+0.05, z_min+0.05], [mean+std, mean-std], 'r', lw=1)
+	p.plot([z_min+0.05, z_min+0.05], [mean+std, mean-std], 'r', lw=2)
 	
 p.ylabel("SN MEDIAN ALL")
 #p.axvline(n.log10(3.), ls='dashed', label='z=0.1, 0.5, 1, 2')
@@ -398,7 +390,7 @@ for z_min in z_bins:
 	mean = n.median(Ms_04[oo])
 	std = n.std(Ms_04[oo])
 	print([z_min+0.05, z_min+0.05], [mean+std, mean-std])
-	p.plot([z_min+0.05, z_min+0.05], [mean+std, mean-std], 'r', lw=1)
+	p.plot([z_min+0.05, z_min+0.05], [mean+std, mean-std], 'r', lw=2)
 	
 p.ylabel("SN MEDIAN ALL")
 #p.axvline(n.log10(3.), ls='dashed', label='z=0.1, 0.5, 1, 2')
