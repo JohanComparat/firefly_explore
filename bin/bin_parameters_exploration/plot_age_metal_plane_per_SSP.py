@@ -33,7 +33,7 @@ def plot_az_boss(imf=imfs[0], ii=0):
 	p.grid()
 	p.text(-2.1, 7.5,'eBOSS '+imf.split('_')[1]+' '+str(ii) )
 	p.tight_layout()
-	p.savefig(os.path.join(out_dir, "age_metallicity_"+ssp_MW+"eboss_04.png" ))
+	p.savefig(os.path.join(out_dir, "age_metallicity_"+ssp_MW+"_eboss_04.png" ))
 	p.clf()
 	#
 	p.figure(0, (5.5, 4.5))
@@ -48,7 +48,7 @@ def plot_az_boss(imf=imfs[0], ii=0):
 	p.text(-2.1, 7.5,'eBOSS '+imf.split('_')[1]+' '+str(ii) )
 	p.grid()
 	p.tight_layout()
-	p.savefig(os.path.join(out_dir, "no_Y_age_metallicity_"+ssp_MW+"eboss_04.png" ))
+	p.savefig(os.path.join(out_dir, "no_Y_age_metallicity_"+ssp_MW+"_eboss_04.png" ))
 	p.clf()
 	#
 	p.figure(0, (5.5, 4.5))
@@ -63,7 +63,7 @@ def plot_az_boss(imf=imfs[0], ii=0):
 	p.text(-2.1, 7.5,'eBOSS '+imf.split('_')[1]+' '+str(ii) )
 	p.grid()
 	p.tight_layout()
-	p.savefig(os.path.join(out_dir, "no_X_age_metallicity_"+ssp_MW+"eboss_04.png" ))
+	p.savefig(os.path.join(out_dir, "no_X_age_metallicity_"+ssp_MW+"_eboss_04.png" ))
 	p.clf()
 	#
 	p.figure(0, (5.5, 4.5))
@@ -113,7 +113,7 @@ def plot_az_sdss(imf=imfs[0], ii=0):
 	p.grid()
 	p.text(-2.1, 7.5,'SDSS '+imf.split('_')[1]+' '+str(ii) )
 	p.tight_layout()
-	p.savefig(os.path.join(out_dir, "age_metallicity_"+ssp_MW+"sdss_04.png" ))
+	p.savefig(os.path.join(out_dir, "age_metallicity_"+ssp_MW+"_sdss_04.png" ))
 	p.clf()
 	#
 	p.figure(0, (5.5, 4.5))
@@ -128,7 +128,7 @@ def plot_az_sdss(imf=imfs[0], ii=0):
 	p.text(-2.1, 7.5,'SDSS '+imf.split('_')[1]+' '+str(ii) )
 	p.grid()
 	p.tight_layout()
-	p.savefig(os.path.join(out_dir, "no_Y_age_metallicity_"+ssp_MW+"sdss_04.png" ))
+	p.savefig(os.path.join(out_dir, "no_Y_age_metallicity_"+ssp_MW+"_sdss_04.png" ))
 	p.clf()
 	#
 	p.figure(0, (5.5, 4.5))
@@ -143,7 +143,7 @@ def plot_az_sdss(imf=imfs[0], ii=0):
 	p.text(-2.1, 7.5,'SDSS '+imf.split('_')[1]+' '+str(ii) )
 	p.grid()
 	p.tight_layout()
-	p.savefig(os.path.join(out_dir, "no_X_age_metallicity_"+ssp_MW+"sdss_04.png" ))
+	p.savefig(os.path.join(out_dir, "no_X_age_metallicity_"+ssp_MW+"_sdss_04.png" ))
 	p.clf()
 	#
 	p.figure(0, (5.5, 4.5))
@@ -190,7 +190,7 @@ def plot_az_deep2(imf=imfs[0],ii=0):
 	p.text(-2.1, 7.5,'DEEP2 '+imf.split('_')[1]+' '+str(ii)  )
 	p.grid()
 	p.tight_layout()
-	p.savefig(os.path.join(out_dir, "age_metallicity_"+ssp_MW+"deep2_04.png" ))
+	p.savefig(os.path.join(out_dir, "age_metallicity_"+ssp_MW+"_deep2_04.png" ))
 	p.clf()
 	#
 	p.figure(0, (5.5, 4.5))
@@ -205,7 +205,7 @@ def plot_az_deep2(imf=imfs[0],ii=0):
 	p.text(-2.1, 7.5,'DEEP2 '+imf.split('_')[1]+' '+str(ii)  )
 	p.grid()
 	p.tight_layout()
-	p.savefig(os.path.join(out_dir, "no_X_age_metallicity_"+ssp_MW+"deep2_04.png" ))
+	p.savefig(os.path.join(out_dir, "no_X_age_metallicity_"+ssp_MW+"_deep2_04.png" ))
 	p.clf()
 	p.figure(0, (5.5, 4.5))
 	#
@@ -220,7 +220,7 @@ def plot_az_deep2(imf=imfs[0],ii=0):
 	p.text(-2.1, 7.5,'DEEP2 '+imf.split('_')[1]+' '+str(ii)  )
 	p.grid()
 	p.tight_layout()
-	p.savefig(os.path.join(out_dir, "no_Y_age_metallicity_"+ssp_MW+"deep2_04.png" ))
+	p.savefig(os.path.join(out_dir, "no_Y_age_metallicity_"+ssp_MW+"_deep2_04.png" ))
 	p.clf()
 	#
 	p.figure(0, (5.5, 4.5))
@@ -235,7 +235,7 @@ def plot_az_deep2(imf=imfs[0],ii=0):
 	p.text(-2.1, 7.5,'DEEP2 '+imf.split('_')[1]+' '+str(ii)  )
 	p.grid()
 	p.tight_layout()
-	p.savefig(os.path.join(out_dir, "no_XY_age_metallicity_"+ssp_MW+"deep2_04.png" ))
+	p.savefig(os.path.join(out_dir, "no_XY_age_metallicity_"+ssp_MW+"_deep2_04.png" ))
 	p.clf()
 
 for ssp_id in n.arange(8):
