@@ -164,7 +164,7 @@ def plot_az_sdss(imf=imfs[0], ii=0):
 def plot_az_deep2(imf=imfs[0],ii=0):
 	stellar_mass = imf+'stellar_mass'
 	ssp_MW = imf+'weightMass_ssp_'+str(ii)
-	age = imf+'age_ssp_'+str(ii)
+	age = imf+'log_age_ssp_'+str(ii)
 	metal = imf+'metal_ssp_'+str(ii)
 	z_flg = 'ZQUALITY'
 	z_name = 'ZBEST'
@@ -172,6 +172,7 @@ def plot_az_deep2(imf=imfs[0],ii=0):
 	deep2_sel_04 = (deep2_zOk) & (deep2[stellar_mass] < 10**14. ) & (deep2[stellar_mass] > 0. )  & (deep2[stellar_mass] >= deep2[stellar_mass+'_low_1sig'] ) & (deep2[stellar_mass] <= deep2[stellar_mass+'_up_1sig'] ) & ( - n.log10(deep2[stellar_mass+'_low_1sig'])  + n.log10(deep2[stellar_mass+'_up_1sig']) < 0.8 )
 	A_04_ref = n.log10(deep2[age][deep2_sel_04]           )
 	Z_04_ref = n.log10(deep2[metal][deep2_sel_04]         )
+	ssp_MW_ref = deep2[ssp_MW][deep2_sel_04]         
 	a_bins = n.arange(6.5, 10.5, 0.1)
 	z_bins = n.arange(-3,3,0.1)
 	XX, YY = n.meshgrid((z_bins[1:]+z_bins[:-1])/2., 0.5*(a_bins[1:]+a_bins[:-1]))
@@ -237,7 +238,7 @@ def plot_az_deep2(imf=imfs[0],ii=0):
 	p.savefig(os.path.join(out_dir, "no_XY_age_metallicity_"+ssp_MW+"deep2_04.png" ))
 	p.clf()
 
-for ssp_id in n.arange(9):
+for ssp_id in n.arange(8):
 	plot_az_deep2(imf = imfs[0], ii=ssp_id)
 	plot_az_deep2(imf = imfs[1], ii=ssp_id)
 	plot_az_deep2(imf = imfs[2], ii=ssp_id)
