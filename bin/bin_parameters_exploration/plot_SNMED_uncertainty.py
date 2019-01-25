@@ -11,7 +11,6 @@ from lib_spm import *
 #import matplotlib.pyplot as p
 
 #out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures', 'mass-snr')
-out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'mass-snr')
 
 imfs = ["Chabrier_ELODIE_", "Chabrier_MILES_", "Chabrier_STELIB_", "Kroupa_ELODIE_", "Kroupa_MILES_", "Kroupa_STELIB_",  "Salpeter_ELODIE_", "Salpeter_MILES_", "Salpeter_STELIB_" ]
 
@@ -38,8 +37,8 @@ As_log_err_sdss = (n.log10(sdss[stellar_A+'_up_1sig'][redshift_reliable_sdss & e
 
 p.figure(1, (4.5, 4.5))
 p.axes([0.2,0.2,0.7,0.7])
-p.hist(As_log_err_boss, bins=100, normed=True, histtype='step', lw=3, label='eBOSS')
-p.hist(As_log_err_sdss, bins=100, normed=True, histtype='step', lw=3, label='SDSS')
+p.hist(As_log_err_boss, bins=100, normed=True, histtype='step', lw=2, label='eBOSS')
+p.hist(As_log_err_sdss, bins=100, normed=True, histtype='step', lw=2, label='SDSS')
 p.ylabel("Normed histogram")
 p.xlabel(r"$\log \sigma_A$ [dex]")
 p.legend(loc=0, frameon = False)
@@ -58,8 +57,8 @@ As_log_err_sdss = (n.log10(sdss[stellar_Z+'_up_1sig'][redshift_reliable_sdss & e
 
 p.figure(1, (4.5, 4.5))
 p.axes([0.2,0.2,0.7,0.7])
-p.hist(As_log_err_boss, bins=100, normed=True, histtype='step', lw=3, label='eBOSS')
-p.hist(As_log_err_sdss, bins=100, normed=True, histtype='step', lw=3, label='SDSS')
+p.hist(As_log_err_boss, bins=100, normed=True, histtype='step', lw=2, label='eBOSS')
+p.hist(As_log_err_sdss, bins=100, normed=True, histtype='step', lw=2, label='SDSS')
 p.ylabel("Normed histogram")
 p.xlabel(r"$\log \sigma_Z$ [dex]")
 p.legend(loc=0, frameon = False)
@@ -78,8 +77,8 @@ As_log_err_sdss = (n.log10(sdss[stellar_mass+'_up_1sig'][redshift_reliable_sdss 
 
 p.figure(1, (4.5, 4.5))
 p.axes([0.2,0.2,0.7,0.7])
-p.hist(As_log_err_boss, bins=100, normed=True, histtype='step', lw=3, label='eBOSS')
-p.hist(As_log_err_sdss, bins=100, normed=True, histtype='step', lw=3, label='SDSS')
+p.hist(As_log_err_boss, bins=100, normed=True, histtype='step', lw=2, label='eBOSS')
+p.hist(As_log_err_sdss, bins=100, normed=True, histtype='step', lw=2, label='SDSS')
 p.ylabel("Normed histogram")
 p.xlabel(r"$\log \sigma_M$ [dex]")
 p.legend(loc=0, frameon = False)
@@ -93,6 +92,7 @@ p.clf()
 
 
 
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'mass-snr')
 
 
 key_SNR = 'SNR_ALL'
@@ -176,14 +176,14 @@ def plot_SN_MERR_Z(Ms_log_err, sn_all, suffix, key_SNR, z_min, z_max):
   p.axes([0.2,0.2,0.7,0.7])
   p.plot(Ms_log_err, sn_all, 'k,', rasterized=True, alpha=0.3)
   err_bins = n.arange(0,1.5,0.05)
-  p.axhline(5, color='b', ls='dashed' , lw=3)
-  p.axhline(20, color='b', ls='dashed', lw=3)
+  p.axhline(5, color='b', ls='dashed' , lw=2)
+  p.axhline(20, color='b', ls='dashed', lw=2)
   for err_min in err_bins:
     oo = (Ms_log_err>err_min)&(Ms_log_err<err_min+0.025)
     mean = n.median(sn_all[oo])
     std = n.std(sn_all[oo])
     #print([err_min+0.05, err_min+0.05], [mean+std, mean-std])
-    p.plot([err_min+0.05, err_min+0.05], [mean+std, mean-std], 'r', lw=3)
+    p.plot([err_min+0.05, err_min+0.05], [mean+std, mean-std], 'r', lw=2)
   p.ylabel("SNR MEDIAN")
   p.xlabel(r"$\log \sigma_M$ [dex]")
   p.yscale('log')
@@ -216,22 +216,22 @@ for z_min, z_max, key_SNR in zip(zmins, zmaxs, SNR_keys):
 
 
 
-out_dir = os.path.join(os.environ['HOME'],'wwwDir', 'stuff')
-#out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'mass-snr')
+#out_dir = os.path.join(os.environ['HOME'],'wwwDir', 'stuff')
+out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'mass-snr')
 
 def plot_SN_AERR_Z(Ms_log_err, sn_all, suffix, key_SNR, z_min, z_max):
   p.figure(1, (4.5, 4.5))
   p.axes([0.2,0.2,0.7,0.7])
   p.plot(Ms_log_err, sn_all, 'k,', rasterized=True, alpha=0.3)
   err_bins = n.arange(0,1.5,0.05)
-  p.axhline(5, color='b', ls='dashed' , lw=3)
-  p.axhline(20, color='b', ls='dashed', lw=3)
+  p.axhline(5, color='b', ls='dashed' , lw=2)
+  p.axhline(20, color='b', ls='dashed', lw=2)
   for err_min in err_bins:
     oo = (Ms_log_err>err_min)&(Ms_log_err<err_min+0.025)
     mean = n.median(sn_all[oo])
     std = n.std(sn_all[oo])
     #print([err_min+0.05, err_min+0.05], [mean+std, mean-std])
-    p.plot([err_min+0.05, err_min+0.05], [mean+std, mean-std], 'r', lw=3)
+    p.plot([err_min+0.05, err_min+0.05], [mean+std, mean-std], 'r', lw=2)
   p.ylabel("SNR MEDIAN")
   p.xlabel(r"$\log \sigma_A$ [dex]")
   p.yscale('log')
@@ -273,14 +273,14 @@ def plot_SN_ZERR_Z(Ms_log_err, sn_all, suffix, key_SNR, z_min, z_max):
   p.axes([0.2,0.2,0.7,0.7])
   p.plot(Ms_log_err, sn_all, 'k,', rasterized=True, alpha=0.3)
   err_bins = n.arange(0,1.5,0.05)
-  p.axhline(5, color='b', ls='dashed' , lw=3)
-  p.axhline(20, color='b', ls='dashed', lw=3)
+  p.axhline(5, color='b', ls='dashed' , lw=2)
+  p.axhline(20, color='b', ls='dashed', lw=2)
   for err_min in err_bins:
     oo = (Ms_log_err>err_min)&(Ms_log_err<err_min+0.025)
     mean = n.median(sn_all[oo])
     std = n.std(sn_all[oo])
     #print([err_min+0.05, err_min+0.05], [mean+std, mean-std])
-    p.plot([err_min+0.05, err_min+0.05], [mean+std, mean-std], 'r', lw=3)
+    p.plot([err_min+0.05, err_min+0.05], [mean+std, mean-std], 'r', lw=2)
   p.ylabel("SNR MEDIAN")
   p.xlabel(r"$\log \sigma_Z$ [dex]")
   p.yscale('log')
