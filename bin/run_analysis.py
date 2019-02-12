@@ -58,6 +58,7 @@ cd /home/comparat/software/linux/firefly_explore/bin/bin_parameters_exploration
 
 # Figure 4
 python3.4 plot_age_metal_plane.py
+python3.4 plot_age_metal_plane_per_SSP.py
 
 # Figure 5, 6, 8, 9, 10
 python3.4 plot_differences_age_sdss.py

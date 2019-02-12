@@ -14,9 +14,75 @@ p.rc('axes', prop_cycle=cycler('color', ["#638bd9", "#e586b6", "#dd7c25", "#5986
 import numpy as n
 import os
 import sys
-
-
 ll_dir = os.path.join(os.environ['OBS_REPO'], 'spm')
+
+# comparison with wisconsin 
+
+d = fits.open( os.path.join(ll_dir, 'Firefly_wisconsin-26.fits') )[1].data
+prefix = 'Kroupa_MILES_'
+
+z_agree =  ( d['Z_ERR_1']>0 )& ( d['Z_ERR_2']>0 )& (abs(d['Z_1'] - d['Z_2'])<0.001 )&( d['Z_1']>0 )&( d['Z_2']>0 )
+
+converged = (d[prefix+'stellar_mass'] < 10**14. ) & (d[prefix+'stellar_mass'] > 0 )  & (d[prefix+'stellar_mass'] > d[prefix+'stellar_mass_low_1sig'] ) & (d[prefix+'stellar_mass'] < d[prefix+'stellar_mass_up_1sig'] ) & ( - n.log10(d[prefix+'stellar_mass_low_1sig'])  + n.log10(d[prefix+'stellar_mass_up_1sig']) < 0.8 )& (d['Kroupa_MILES_spm_EBV']<0.2)
+
+ok = ( converged ) & (d['MSTELLAR_MEDIAN']>0)
+
+DM = d['MSTELLAR_MEDIAN']-n.log10(d['Kroupa_MILES_stellar_mass'])
+
+out_dir = os.path.join(os.environ['HOME'],'wwwDir', 'stuff')
+#out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images/literature')
+
+p.figure(1, (4.5, 4.5))
+p.axes([0.18,0.18,0.8,0.73])
+p.plot(d['MSTELLAR_MEDIAN'][ok], n.log10(d['Kroupa_MILES_stellar_mass'][ok]), 'k,'  , alpha=0.2, rasterized= True)
+#p.plot(d['LOGMASS'][ok & ebv_agree], n.log10(d['Kroupa_MILES_stellar_mass'][ok & ebv_agree]), 'r,'  , alpha=0.2, rasterized= True, label=r'$\Delta (E(B-V))<0.02$')
+p.plot(n.arange(6,13,0.1), n.arange(6,13,0.1), label='x=y', ls='dashed')
+p.xlabel(r'$\log_{10}(M/M_\odot)$ (Wi DR12)')
+p.ylabel(r'$\log_{10}(M/M_\odot)$ (FF DR14)')
+p.xlim((7,12.5))
+p.ylim((7,12.5))
+p.title('SDSS')
+p.legend(loc=0)
+p.grid()
+p.savefig(os.path.join(out_dir, "sdss_WI_MFF.png" ))
+p.clf()
+
+
+# DR12 boss
+
+
+d = fits.open( os.path.join(ll_dir, 'Firefly_wisconsin-v5_10_0.fits') )[1].data
+prefix = 'Kroupa_MILES_'
+
+z_agree =  ( d['Z_ERR_NOQSO']>0 )& ( d['Z_ERR_2']>0 )& (abs(d['Z_NOQSO'] - d['Z_2'])<0.001 )&( d['Z_NOQSO']>0 )&( d['Z_2']>0 )
+
+converged = (d[prefix+'stellar_mass'] < 10**14. ) & (d[prefix+'stellar_mass'] > 0 )  & (d[prefix+'stellar_mass'] > d[prefix+'stellar_mass_low_1sig'] ) & (d[prefix+'stellar_mass'] < d[prefix+'stellar_mass_up_1sig'] ) & ( - n.log10(d[prefix+'stellar_mass_low_1sig'])  + n.log10(d[prefix+'stellar_mass_up_1sig']) < 0.8 )& (d['Kroupa_MILES_spm_EBV']<0.2)
+
+ok = ( converged ) & (d['MSTELLAR_MEDIAN']>0)
+
+DM = d['MSTELLAR_MEDIAN']-n.log10(d['Kroupa_MILES_stellar_mass'])
+
+out_dir = os.path.join(os.environ['HOME'],'wwwDir', 'stuff')
+#out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images/literature')
+
+p.figure(1, (4.5, 4.5))
+p.axes([0.18,0.18,0.8,0.73])
+p.plot(d['MSTELLAR_MEDIAN'][ok], n.log10(d['Kroupa_MILES_stellar_mass'][ok]), 'k,'  , alpha=0.2, rasterized= True)
+#p.plot(d['LOGMASS'][ok & ebv_agree], n.log10(d['Kroupa_MILES_stellar_mass'][ok & ebv_agree]), 'r,'  , alpha=0.2, rasterized= True, label=r'$\Delta (E(B-V))<0.02$')
+p.plot(n.arange(6,13,0.1), n.arange(6,13,0.1), label='x=y', ls='dashed')
+p.xlabel(r'$\log_{10}(M/M_\odot)$ (Wi DR12)')
+p.ylabel(r'$\log_{10}(M/M_\odot)$ (FF DR14)')
+p.xlim((7,12.5))
+p.ylim((7,12.5))
+p.title('BOSS')
+p.legend(loc=0)
+p.grid()
+p.savefig(os.path.join(out_dir, "boss_WI_MFF.png" ))
+p.clf()
+
+
+# comparison with portsmouth 
+
 
 d = fits.open( os.path.join(ll_dir, 'Firefly_Krou_MILES_portsmouth_starforming_krou-26.fits') )[1].data
 
@@ -24,7 +90,7 @@ prefix = 'Kroupa_MILES_'
 
 z_agree =  ( d['Z_ERR_1']>0 )& ( d['Z_ERR_2']>0 )& (abs(d['Z_1'] - d['Z_2'])<0.001 )&( d['Z_1']>0 )&( d['Z_2']>0 )
 
-converged = (d[prefix+'stellar_mass'] < 10**14. ) & (d[prefix+'stellar_mass'] > 0 )  & (d[prefix+'stellar_mass'] > d[prefix+'stellar_mass_low_1sig'] ) & (d[prefix+'stellar_mass'] < d[prefix+'stellar_mass_up_1sig'] ) & ( - n.log10(d[prefix+'stellar_mass_low_1sig'])  + n.log10(d[prefix+'stellar_mass_up_1sig']) < 0.4 )
+converged = (d[prefix+'stellar_mass'] < 10**14. ) & (d[prefix+'stellar_mass'] > 0 )  & (d[prefix+'stellar_mass'] > d[prefix+'stellar_mass_low_1sig'] ) & (d[prefix+'stellar_mass'] < d[prefix+'stellar_mass_up_1sig'] ) & ( - n.log10(d[prefix+'stellar_mass_low_1sig'])  + n.log10(d[prefix+'stellar_mass_up_1sig']) < 1. )
 
 ebv_agree = (z_agree) & ( abs(d['E_BV'] - d['Kroupa_MILES_spm_EBV'])<0.02 ) & ( converged )
 

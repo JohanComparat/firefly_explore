@@ -1,4 +1,6 @@
 from lib_spm import *
+a_bins = n.arange(6.5, 10.5, 0.1)
+z_bins = n.arange(-3,3,0.1)
 
 #out_dir = os.path.join('/data42s/comparat/firefly/v1_1_0/figures', 'mass-redshift-presentation')
 out_dir = os.path.join(os.environ['HOME'], 'software/linux/firefly_explore', 'data/images', 'az')
@@ -16,10 +18,9 @@ def plot_az_boss(imf=imfs[0], ii=0):
 	A_04_ref = n.log10(boss[age][ok_boss_04]           )
 	Z_04_ref = n.log10(boss[metal][ok_boss_04]         )
 	ssp_MW_ref = boss[ssp_MW][ok_boss_04]         
-	a_bins = n.arange(6.5, 10.5, 0.1)
-	z_bins = n.arange(-3,3,0.1)
 	XX, YY = n.meshgrid((z_bins[1:]+z_bins[:-1])/2., 0.5*(a_bins[1:]+a_bins[:-1]))
 	HH = n.histogram2d(Z_04_ref, A_04_ref, bins=[z_bins, a_bins], weights=ssp_MW_ref)[0].T
+	n.savetxt(os.path.join(out_dir, "age_metallicity_"+ssp_MW+"_eboss_04.data" ), HH)
 	#
 	p.figure(0, (5.5, 4.5))
 	p.axes([0.2,0.2,0.7,0.7])
@@ -96,10 +97,9 @@ def plot_az_sdss(imf=imfs[0], ii=0):
 	A_04_ref = n.log10(sdss[age][ok_sdss_04]           )
 	Z_04_ref = n.log10(sdss[metal][ok_sdss_04]         )
 	ssp_MW_ref = sdss[ssp_MW][ok_sdss_04]         
-	a_bins = n.arange(6.5, 10.5, 0.1)
-	z_bins = n.arange(-3,3,0.1)
 	XX, YY = n.meshgrid((z_bins[1:]+z_bins[:-1])/2., 0.5*(a_bins[1:]+a_bins[:-1]))
 	HH = n.histogram2d(Z_04_ref, A_04_ref, bins=[z_bins, a_bins], weights=ssp_MW_ref)[0].T
+	n.savetxt(os.path.join(out_dir, "age_metallicity_"+ssp_MW+"_sdss_04.data" ), HH)
 	#
 	p.figure(0, (5.5, 4.5))
 	p.axes([0.2,0.2,0.7,0.7])
@@ -173,10 +173,9 @@ def plot_az_deep2(imf=imfs[0],ii=0):
 	A_04_ref = n.log10(deep2[age][deep2_sel_04]           )
 	Z_04_ref = n.log10(deep2[metal][deep2_sel_04]         )
 	ssp_MW_ref = deep2[ssp_MW][deep2_sel_04]         
-	a_bins = n.arange(6.5, 10.5, 0.1)
-	z_bins = n.arange(-3,3,0.1)
 	XX, YY = n.meshgrid((z_bins[1:]+z_bins[:-1])/2., 0.5*(a_bins[1:]+a_bins[:-1]))
 	HH = n.histogram2d(Z_04_ref, A_04_ref, bins=[z_bins, a_bins], weights=ssp_MW_ref)[0].T
+	n.savetxt(os.path.join(out_dir, "age_metallicity_"+ssp_MW+"_deep2_04.data" ), HH)
 	#
 	p.figure(0, (5.5, 4.5))
 	p.axes([0.2,0.2,0.7,0.7])
