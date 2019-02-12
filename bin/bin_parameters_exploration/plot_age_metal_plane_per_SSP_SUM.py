@@ -35,7 +35,7 @@ for imf in imfs:
 		HH_i.append(n.loadtxt(h_i))
 
 	HH = n.sum(HH_i, axis=0)
-
+	print(n.sum(HH[(HH>1)&(XX<-1)&(YY>9.8)]), n.sum(HH), n.sum(HH[(HH>1)&(XX<-1)&(YY>9.8)])/ n.sum(HH))
 	p.figure(0, (5.5, 4.5))
 	p.axes([0.2,0.2,0.7,0.7])
 	p.scatter(XX[HH>1], YY[HH>1], c=n.log10(HH[HH>1]), s=40, edgecolors='none', marker='s', vmin=1, vmax=4 )
@@ -46,7 +46,7 @@ for imf in imfs:
 	p.colorbar(shrink=0.7, label=r'$\log_{10}(N \times w_M)$')
 	p.legend(loc=0, frameon = False)
 	p.grid()
-	p.text(-2.1, 7.5,'eBOSS '+imf.split('_')[0] )
+	p.text(-2.1, 7.5,'eBOSS '+imf.split('_')[1] )
 	p.tight_layout()
 	p.savefig(os.path.join(out_dir, "age_metallicity_"+imf+"eboss_04.png" ))
 	p.clf()
@@ -60,6 +60,7 @@ for imf in imfs:
 		HH_i.append(n.loadtxt(h_i))
 
 	HH = n.sum(HH_i, axis=0)
+	print(n.sum(HH[(HH>1)&(XX<-1)&(YY>9.8)]), n.sum(HH), n.sum(HH[(HH>1)&(XX<-1)&(YY>9.8)])/ n.sum(HH))
 
 	p.figure(0, (5.5, 4.5))
 	p.axes([0.2,0.2,0.7,0.7])
@@ -71,7 +72,7 @@ for imf in imfs:
 	p.colorbar(shrink=0.7, label=r'$\log_{10}(N \times w_M)$')
 	p.legend(loc=0, frameon = False)
 	p.grid()
-	p.text(-2.1, 7.5,'SDSS '+imf.split('_')[0]  )
+	p.text(-2.1, 7.5,'SDSS '+imf.split('_')[1]  )
 	p.tight_layout()
 	p.savefig(os.path.join(out_dir, "age_metallicity_"+imf+"sdss_04.png" ))
 	p.clf()
@@ -87,6 +88,7 @@ for imf in imfs:
 
 	HH = n.sum(HH_i, axis=0)
 
+	print(n.sum(HH[(HH>1)&(XX<-1)&(YY>9.8)]), n.sum(HH), n.sum(HH[(HH>1)&(XX<-1)&(YY>9.8)])/ n.sum(HH))
 
 	p.figure(0, (5.5, 4.5))
 	p.axes([0.2,0.2,0.7,0.7])
@@ -97,7 +99,7 @@ for imf in imfs:
 	p.xlabel(r'$\log_{10}(Z/Z_\odot)$')
 	p.colorbar(shrink=0.7, label=r'$\log_{10}(N)$')
 	p.legend(loc=0, frameon = False)
-	p.text(-2.1, 7.5,'DEEP2 '+imf.split('_')[0]   )
+	p.text(-2.1, 7.5,'DEEP2 '+imf.split('_')[1]   )
 	p.grid()
 	p.tight_layout()
 	p.savefig(os.path.join(out_dir, "age_metallicity_"+imf+"deep2_04.png" ))
