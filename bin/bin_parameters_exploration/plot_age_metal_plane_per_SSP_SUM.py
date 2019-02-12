@@ -1,3 +1,4 @@
+### plots the SSP SUM in the age-metal plane
 import astropy.io.fits as fits
 import matplotlib
 matplotlib.use('Agg')
